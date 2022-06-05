@@ -14,3 +14,4 @@
 - Verde agua: rgb(124,205,173) 
 - Azul: rgb(55,175,180)
 - Amarillo:  rgb(225,171,2)
+- gris:
