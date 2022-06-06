@@ -6,10 +6,10 @@ Rayuela es un proyecto integrador del curso de Programación web full stack que 
 ##### Integrantes:
 
 ------------
-- Cintia Moll
+- [Cintia Moll](https://github.com/CintiaMoll34 "Cintia Moll") (35) No tuve contacto anteriormente con el desarrollo web, este curso es mi primer experiencia y este mi primer proyecto.
 - Denise Arcuri
 - [Pablo Simkievich](https://github.com/pablosimkievich "Pablo Simkievich")
-- [RominaRodes](https://github.com/RominaRode "Perfil de GitHub")
+- [RominaRodes](https://github.com/RominaRode "Perfil de GitHub") (43) Tengo como experiecia el armado de un woo-commerce para un emprendimiento de mi hermana pero esta es mi primera experiencia con html/css y las metodologias de desarrollo.
 
 ------------
 
