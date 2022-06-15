@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+.topbar ul li .logo{
+    align-self: center;
+
+
+}
+.topbar ul li img {
+    width: 100px;
+
+}
+
+.topbar ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+.topbar a {
+    color: rgb(124, 124, 124);
+    font-size: 24px;
+    
+}
+.search-bar input {
+    width: 90vw;
+    border: rgb(124, 124, 124) solid 1px;
+    height: 32px;
+}
+
+.search-bar i {
+    color: rgb(124, 124, 124);
+}
+
+.product img {
+    width: 350px;
+    height: 350px;
+}
