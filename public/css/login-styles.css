@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Finger Paint', cursive;
+    background-color: #B9F8D3;
+}
+
+.form-login {
+    width: 320px;
+    height: 320px;
+    background: #9FC088;
+    margin: auto;
+    margin-top: 200px;
+    box-shadow: 3px 10px 37px #085E7D;
+    padding: 20px 30px;
+    border-top: 4px solid #9FC088;
+    color: #219F94;
+    font-family: 'Finger Paint', cursive;
+    border-radius: 25px;
+}
+
+.form-login h5 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 20px;
+    /*border-bottom: 1px solid #E8C07D;*/
+    font-size: 20px;
+}
+
+.controls {
+    width: 100%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #361500;
+    font-size: 14px;
+    font-weight: bold ;
+    font-family: 'Finger Paint', cursive;
+    color: #603601;
+    background-color: #E4E9BE;
+    border-radius: 5px;
+    border-bottom: 2px solid #085E7D;
+}
+
+.buttons {
+    width: 100%;
+    height: 40px;
+    background: #CC704B;
+    color: #E4E9BE;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    font-family: 'Finger Paint', cursive;
+    border: none;
+}
+
+.buttons:hover {
+    color: #9C0F48;
+}
+
+.buttons:active {
+    color: #E4E9BE;
+    border: 2px solid #9C0F48;
+}
+
+.form-login p {
+    height: 40px;
+    text-align: center;
+    /*border-bottom: 1px solid #E8C07D; */
+}
+
+.form-login a {
+    color: #219F94;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-login a:hover {
+    text-decoration: underline;
+    color: #FFD32D;
+}
