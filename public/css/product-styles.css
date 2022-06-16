@@ -43,3 +43,11 @@
     width: 350px;
     height: 350px;
 }
+
+.checked {
+    color: blue;
+}
+
+footer {
+    background-color: #afe9cc;
+}
