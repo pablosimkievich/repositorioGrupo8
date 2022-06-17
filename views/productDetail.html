@@ -12,47 +12,65 @@
 
 <body>
     <header>
-        <section class="burger-menu">
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-            <script>
-                function myFunction() {
-                  var x = document.getElementById("links");
-                  if (x.style.display === "block") {
-                    x.style.display = "none";
-                  } else {
-                    x.style.display = "block";
-                  }
-                }
+        <section class="top-header">
+            <i class="fa-solid fa-truck"></i>
+            <h4>Envio gratis a partir de 5000$</h4>
+        </section>
+
+        <section class="bottom-header">
+
+            <div class="burger-menu">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("links");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+                        } else {
+                            x.style.display = "block";
+                        }
+                    }
                 </script>
-            <ul id="links">
-                <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
-                <li><a href="/views/productCategory.html">Por edad</a></li>
-                <li><a href="/views/productCategory.html">Por categoria</a></li>
-                <li><a href="/views/productCategory.html">Por edad</a></li>
-                <li><a href="/views/faq.html">FAQ</a></li>
-                <li><a href="/views/contacto.html">Contacto</a></li>
-            </ul>
-          
-        </section>
-        <section class="topbar">
-            <nav>
-                <ul>
-                    <li class="'logo"><img id="logo" src="/img/logo4.png" alt="logo"></li>
-                    <li class="cart"><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                    <li class="my-account"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <ul id="links">
+                    <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
+                    <li><a href="/views/productCategory.html">Por edad</a></li>
+                    <li><a href="/views/productCategory.html">Por categoria</a></li>
+                    <li><a href="/views/productCategory.html">Por edad</a></li>
+                    <li><a href="/views/faq.html">FAQ</a></li>
+                    <li><a href="/views/contacto.html">Contacto</a></li>
                 </ul>
-            </nav>
+            </div>
+
+            <div class="header-logo">
+                <img id="logo" src="/img/logo4.png" alt="logo">
+            </div>
+
+            <ul class="nav">
+                <li class="cart"><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li class="my-account"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
         </section>
-        <form class="search-nav" action="#" method="GET">
-            <input type="text" placeholder="Buscar.." name="search">
-            <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
-        </form>
+
+
+        <section class="search-bar">
+            <form class="search-nav" action="#" method="GET">
+                <input type="text" placeholder="Buscar.." name="search">
+                <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
+            </form>
+        </section>
 
 
 
 
 
     </header>
+    <section class="bread-crumbs">
+        <ul class="breadcrumbs">
+            <li><a href="home.html>=">home</a></li>
+            <li><a href="productCategory.html">instruentos musicales</a></li>
+            <li><a href="productDetail.html">kit instrumento musical</a></li>
+        </ul>
+    </section>
     <section class="product">
         <img src="\img\instrumentos.png">
         <a href="#" class="previous round">&#8249;</a>
@@ -125,29 +143,31 @@
             </article>
             <hr>
     </section>
+
+
     <section class="tambien-te-puede-gustar-carrousel">
         <h2>Tambien te puede gustar</h2>
-        <article class="card-1">
+        <article class="card">
             <img src="/img/xilofon1.png" alt="juguete1">
             <h3>Xilofón</h3>
             <p class="precio-card">5800$</p>
             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
                     CARRITO</i></button>
-            </article>
-        <article class="card-2">
-            <img src="#" alt="juguete2">
+        </article>
+        <article class="card">
+            <img src="/img/maracas.png" alt="juguete2">
             <h3>Bloques</h3>
             <p class="precio-card">5800$</p>
             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
                     CARRITO</i></button>
-            </article>
-            <article class="card-3">
-                <img src="#" alt="juguete3">
-                <h3>Bloques</h3>
-                <p class="precio-card">5800$</p>
-                <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
-                        CARRITO</i></button>
-                </article>
+        </article>
+        <article class="card">
+            <img src="#" alt="juguete3">
+            <h3>Bloques</h3>
+            <p class="precio-card">5800$</p>
+            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
+                    CARRITO</i></button>
+        </article>
         <button class="next"><i class="fa-solid fa-caret-right"></i></button>
         <button class="previous"><i class="fa-solid fa-caret-left"></i></button>
 
@@ -161,9 +181,9 @@
             <li class="redes">
                 <h4>Redes Sociales</h4>
                 <ul>
-                    <li><i class="fa-brands fa-instagram"></i></li>
-                    <li><i class="fa-brands fa-facebook"></i></li>
-                    <li><i class="fa-brands fa-twitch"></i></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></a></i></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
                 </ul>
             </li>
             <li class="medios-de-pago">
@@ -173,15 +193,19 @@
                     <li><i class="fa-brands fa-cc-visa"></i></li>
                 </ul>
             </li>
-            <li><a href='#'>F.A.Q</a></li>
+            <li><a href='#' class="faq">F.A.Q</a></li>
             <li class="contactenos">
                 <h4>Contactanos</h4>
                 <ul class="contacto">
-                    <li><i class="fa-solid fa-phone">11 5451 8758</i></li>
-                    <li><i class="fa-solid fa-location-dot">San Martin 890 - CABA</i></li>
-                    <li><a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp">Comunicate connosotros por
-                                Whatsapp</i></a></li>
-
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>11 5451 8758</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>San Martin 890 - CABA</p>
+                    </li>
+                    <li><a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
                 </ul>
 
             </li>
