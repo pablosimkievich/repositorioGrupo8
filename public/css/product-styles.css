@@ -21,7 +21,7 @@ body {
     background-color: #cde7d9;
     color: rgb(124, 124, 124);
     font-size: 15px;
-    height: 45px;
+    height: 60px;
     padding: 10px;
     text-align: center;
     display:flex;
@@ -32,7 +32,7 @@ body {
 .bottom-header {
     display: flex;
     justify-content: space-between;
-    margin: 10px 10px;
+    margin: 0px 10px;
 }  
 .burger-menu a {
     color: rgb(109, 108, 108);
@@ -50,8 +50,9 @@ body {
 }
 
 .header-logo img {
-    width:150px;
-    margin:0;
+    width: 150px;
+    margin-top:0;
+    margin-bottom: 0;
     
 }
 
@@ -119,12 +120,23 @@ ul.breadcrumbs li+li:before {
 .product img {
         width: 85%;
         margin: 5px;
-        border: solid 1px rgb(170, 163, 163);
-        
+        display: block;
+        margin: auto;        
 }
 
 .checked {
     color: rgb(238, 255, 0);
+}
+.add-to-cart-button {
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    font-family: 'Dosis', sans-serif;
+    margin: 15px;
+    border: none;
+    display: block;
+    margin: auto;
 }
 
 .card img {

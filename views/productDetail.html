@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juguetes Rayuela</title>
+    
     <link rel="stylesheet" href="/css/product-styles.css">
     <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+    <title>Rayuela</title>
 </head>
 
 <body>
@@ -83,13 +84,12 @@
             <span><i class="fa-solid fa-star"></i></span>
             <a href="#">Reviews</a>
         </article>
-        <article class="precio">4250$</article>
-        <form class="add-to-cart">
-            <input type="button" value="-" class="boton-menos" step="-1">
+        <h2 class="precio">4250$</h2>
+        <form class="add-to-cart" method="GET" action="/add-to-cart.html">
+            <label for="cantidad">CANTIDAD</label>
             <input type="number" id="cantidad-articulo-#" name="cantidad" value="1" title="Cantidad"
                 inputmode="numeric">
-            <input type="button" value="+" step="1" class="plus button is-form">
-            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
+                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
                     CARRITO</i></button>
         </form>
         <hr>
@@ -156,7 +156,7 @@
         </article>
         <article class="card">
             <img src="/img/maracas.png" alt="juguete2">
-            <h3>Bloques</h3>
+            <h3>Maracas</h3>
             <p class="precio-card">5800$</p>
             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"> AGREGAR AL
                     CARRITO</i></button>
