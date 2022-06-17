@@ -1,38 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Coming Soon', cursive;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+
 .banner img {
-    width: 90vw;
-    display: block;
-    }
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    object-fit: cover;
+    object-position: 0px 70%;
+    position: relative;
+}  
+
 #menu {
     background-color: rgb(189,212,213);
-
-
 }
+
 #logo {
     display: block;
-    width: 200px;
+    width: 19%;
     margin: left;
+    border-radius: 50%;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: #d6e7df;
+    color: #d6e7df;
+    object-fit: contain;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: 900ms;
+}
+
+#logo:hover {
+    color: yellowgreen;
+    transform: scale(0.7);
 }
 
 .my-account a i{
     color: rgb(151,151,151);
     font-size: 25px;
-    display: block;
-    }
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    transition: all 700ms;
+}
 .cart a i {
     color: rgb(151,151,151);
     font-size: 24px;
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    transition: all 700ms;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-left: 10px;
 }
 
 .search-bar i {
     color: rgb(151,151,151);
     display: block;
+    font-size: 0.8rem;
+    align-self: center;
+    margin: 3px;
+
     
 }
 .search-bar input {
     border: solid 1.5px rgb(151,151,151);
-    border-radius: 15px;
-    display: block;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -53,4 +103,229 @@
     padding: 15px;
     border:  solid black 5px;
     box-sizing: content-box;
+}
+
+ul  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    margin: right;  
+}
+
+.lista-nav li i {
+    transition: all 900ms;
+    margin-right: 15px;
+}
+
+.lista-nav li i:hover {
+    color: rgb(45, 185, 138);
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.galeria-juguetes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.producto {
+    width: 44%;
+    border: 3px solid rgb(131, 131, 150);
+    border-radius: 5px;
+    margin: 25px 10px;
+    padding: 5px;
+    justify-content: space-between;
+    object-fit: contain;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 5px;
+    transition: all 700ms;
+    vertical-align: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.producto h3, p {
+    text-align: center;
+}
+
+.cuotas {
+    color: cadetblue;
+}
+
+.producto img:hover {
+    opacity: 0.4;
+    background-color: white;
+    transform: scale(0.97);  
+}
+
+header {
+    background-color: #d6e7df;
+}
+
+footer {
+    background-color: #d6e7df;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+}
+
+footer ul li a {
+    list-style: none;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.lista-redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.lista-medios-pago {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+
+.lista-redes li {
+    width: 25%;
+    font-size: 1rem;
+}
+
+.lista-medios-pago li { 
+    width: 25%;
+    font-size: 2rem;
+    
+}
+
+.lista-redes li img {
+    width: 35px;
+}
+
+.lista-medios-pago li img {
+    width: 35px;
+    margin: 3px;
+}
+
+.lista-footer li {
+    margin: 8px 4px;
+}
+
+ul li h4 {
+    text-align: center;
+}
+
+.producto-categoria {
+    width: 91vw;
+    border: 3px solid rgb(131, 131, 150);
+    margin: 15px 15px;
+    border-radius: 5px;
+}
+
+.producto-categoria img {
+    width: 100%;
+    padding: 10px;
+    transition: all 700ms;
+}
+
+.producto-categoria h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.producto-categoria img:hover {
+    opacity: 0.4;
+    background-color: white;
+    transform: scale(0.97);    
+}
+
+
+@media (min-width: 361px) {
+    .producto {
+        width: 40%;
+    }
+
+    .producto img {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .galeria-juguetes {
+        justify-content: space-around;
+    }
+    .banner img {
+        height: 150px;
+    }
+    #logo {
+        width: 12%;
+    }
+    .galeria-juguetes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .producto-categoria {
+        margin: 37px;
+    }
+}
+
+@media (min-width: 980px) {
+    .producto  {
+        width: 25%;
+    }
+
+    .producto img {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .banner img {
+        height: 200px;
+    }
+    .header-style {
+        height: 200px;
+    }
+    #logo {
+        width: 10%;
+        margin-left: 20px;
+    }
+    .galeria-juguetes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .search-bar {
+        margin-left: 20px;
+    }
+    .producto-categoria {
+        width: 42%;
+        margin-left: 41px;
+    }
+    .categorias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
