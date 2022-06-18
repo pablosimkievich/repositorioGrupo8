@@ -1,9 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+</style>
 /* font-family: 'Dosis', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+
 */
 
 
@@ -80,6 +84,24 @@ body {
     margin:0;
 }
 
+.whatsapp {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+       font-size:40px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.whatsapp-button{
+	margin-top:11px;
+}
 
 ul.breadcrumbs li{
     display: inline;
@@ -128,19 +150,54 @@ ul.breadcrumbs li+li:before {
     color: rgb(238, 255, 0);
 }
 .add-to-cart-button {
+    width: 75%;
     background-color: black;
     font-size: 18px;
     color: white;
     padding: 10px;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
     margin: 15px;
     border: none;
     display: block;
     margin: auto;
 }
-
-.card img {
+.tambien-te-puede-gustar-carrousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card {
+    
     width: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 8px;
+    box-shadow: 0px 0px 10px rgb(182, 177, 177);
+    border-radius: 5px;
+    
+}
+.card img {
+    width: 100%; 
+}
+.card h3 {
+    text-align: center;
+    margin: 5px;
+}
+.card .precio-card{
+            text-align: center;
+            margin: 5px;
+            font-weight: 400;
+            
+}
+.card .add-to-cart-button{
+    width: 100%;
+    font-size: 10px;
+    margin: 5px;
+    display: block;
+    margin: auto;
 }
 
 footer {
