@@ -151,7 +151,7 @@ ul.breadcrumbs li+li:before {
 }
 .add-to-cart-button {
     width: 75%;
-    background-color: black;
+    background-color: rgb(47, 184, 194);
     font-size: 18px;
     color: white;
     padding: 10px;
