@@ -1,53 +1,389 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+
+/* font-family: 'Dosis', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+
+*/
+
+
 * {
     box-sizing: border-box;
     padding:0;
     margin: 0;
 }
-.topbar ul li .logo{
-    align-self: center;
-
-
-}
-.topbar ul li img {
-    width: 100px;
-
+body {
+    font-family: 'Montserrat';
+    width: 100%;
 }
 
-.topbar ul {
-    list-style: none;
-    margin-top: 10px;
-    padding: 0;
+
+.top-header {
+    background-color: #cde7d9;
+    color:rgb(109, 108, 108);
+    font-size: 15px;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}  
+.burger-menu a {
+    color: rgb(109, 108, 108);
+    font-size: 24px;
+}
+
+#links {
+    display:none;
+    
+}
+.nav {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-
+    list-style: none;
 }
-.topbar a {
+
+.header-logo img {
+    width: 150px;
+    margin-top:0;
+    margin-bottom: 0;
+    
+}
+
+.nav a {
     color: rgb(124, 124, 124);
     font-size: 24px;
+    padding: 5px;
     
 }
 .search-bar input {
-    width: 90vw;
+    width: 90%;
     border: rgb(124, 124, 124) solid 1px;
     height: 32px;
 }
+.search-nav {
+    display:flex;
+}
+.search-nav button {
+    width:10%;
+    height: 32px;
+    
+}
+.search-nav i {
+    color: rgb(109, 108, 108);
+    margin:0;
+}
 
-.search-bar i {
+
+
+.whatsapp {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+       font-size:40px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.whatsapp-button{
+	margin-top:11px;
+}
+
+ul.breadcrumbs li{
+    display: inline;
+    font-size: 12px;
+}
+ul.breadcrumbs {
+    list-style: none;
+    margin: 5px;   
+}
+
+ul.breadcrumbs li a {
+    text-decoration: none;
     color: rgb(124, 124, 124);
+    transition-property: all;
+    transition-duration: 500ms;
 }
 
+ul.breadcrumbs li+li:before {
+    padding: 5px;
+    color: rgb(124, 124, 124);
+    content: ">";
+  }
+
+  ul.breadcrumbs li a:hover {
+    color:  #CDE7D9 ;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+
+.product{
+    display: block;
+    margin:auto;
+    width: 90%;
+   color: rgb(112, 108, 108) ;
+   margin-bottom: 20px;
+    
+}
+.product-info {
+    margin-bottom: 10px;
+}
+.product h1 {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+}
 .product img {
-    width: 350px;
-    height: 350px;
+        width: 100%;
+        margin: 5px;
+        display: block;
+        margin: auto;        
 }
 
-.checked {
-    color: blue;
+h2 {
+    text-align: center;
+    color: rgb(112, 108, 108) ;
+    padding: 10px 0px;
+    margin: 5px;
 }
+
+.add-to-cart-button {
+    background-color: rgb(45, 185, 138);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    margin: 15px;
+    margin-top: 10px;
+    border: none;
+    display: block;
+    margin: auto;
+    transition: all 500ms;
+}
+.add-to-cart-button:hover {
+    font-size: larger;
+    color:rgb(75, 75, 75);
+    background-color:#f5f5f5;
+}
+
+.product hr {
+    width: 100%;
+    border: 1px solid rgb(197, 197, 197);
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    
+
+}
+.envio {
+    color: rgb(112, 108, 108) ;
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+.envio .shipping-icon {
+    display: flex;
+    flex-direction: row;
+   
+}
+.envio i {
+    font-size: 18px;
+}
+.envio .destacado {
+    color: rgb(45, 185, 138);
+    font-weight: 600;
+}
+.envio form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 0;
+   
+}
+.envio form button {
+    background-color: white;
+    border: none;
+    color: rgb(112, 108, 108) ;
+    font-size: 18px;
+    width: 100px;
+    margin-left: 10px;
+  
+    
+}
+.envio input {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 2px;
+}
+.envio form button:hover {
+        color:#999;
+}
+
+.envio a {
+    text-decoration: none;
+    color: red;
+    font-size: 10px;
+    text-align: center;
+    align-self:flex-start;
+    margin: 0;
+}
+.mas-info p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.mas-info {
+    color: rgb(197, 197, 197);
+    margin-bottom: 10px;
+}
+.mas-info h3 {
+    color: rgb(112, 108, 108);
+}
+    
+.info-adicinal .info-table {
+    
+    border-collapse: collapse;
+}
+.info-adicinal .info-table tr {
+    border: red 1px solid;
+    padding: 8px;
+}
+
+
+/*.1 {
+    font-size: 60px;
+}*/ 
+    
+
+.tambien-te-puede-gustar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px ;
+   
+}
+.card {
+border: solid 1px gray;
+    width: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 8px;
+    /*box-shadow: 0px 0px 10px rgb(182, 177, 177);*/
+    border-radius: 5px;
+    
+}
+.card img {
+    width: 100%; 
+}
+.card h3 {
+    text-align: center;
+    margin: 5px;
+  
+}
+.card .precio-card{
+            text-align: center;
+            margin: 5px;
+            font-weight: 400;
+            
+}
+.card .add-to-cart-button{
+    font-size: 10px;
+    margin: 5px;
+    display: block;
+    margin: auto;
+}
+
 
 footer {
-    background-color: #afe9cc;
+    background-color:  rgb(189,212,213);
+    display: flex;
+    color: #d6e7df;
+    font-size: 14px;
+    width: 100%;
+    font-family:'Montserrat', sans-serif;
+    padding: 10px;
+   
+}
+.quienes-somos, .faq {
+    text-decoration: none;
+    font-family:'Montserrat', sans-serif;
+    color: #4b7a7a;
+    font-size: 14px;
+    
+}
+footer ul li h4 {
+    color: #4b7a7a;
+    font-size: 20px;
+    font-family:'Montserrat', sans-serif;
+    
+}
+
+.redes h4 {
+    display: block;
+}
+.redes ul {
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    
+  }
+.redes ul li a {
+    color: #607e7e;
+    margin-left:0px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    font-size: 20px;
+}
+.medios-de-pago ul {
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.medios-de-pago ul li {
+    margin-left:0px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    font-size: 20px;
+}
+.contacto li {
+    display: flex;
+}
+.contacto li i {
+    margin-left:0px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    font-size: 18px;
+}
+
+.contacto li p {
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.contacto li a {
+    color: #607e7e;
+    margin-left:0px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    font-size: 20px;
+    
 }
