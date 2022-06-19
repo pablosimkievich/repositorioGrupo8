@@ -1,8 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
-</style>
+
 /* font-family: 'Dosis', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto', sans-serif;
@@ -21,9 +20,10 @@ body {
     width: 100%;
 }
 
+
 .top-header {
     background-color: #cde7d9;
-    color: rgb(124, 124, 124);
+    color:rgb(109, 108, 108);
     font-size: 15px;
     height: 60px;
     padding: 10px;
@@ -84,6 +84,8 @@ body {
     margin:0;
 }
 
+
+
 .whatsapp {
 	position:fixed;
 	width:60px;
@@ -116,7 +118,7 @@ ul.breadcrumbs li a {
     text-decoration: none;
     color: rgb(124, 124, 124);
     transition-property: all;
-    transition-duration: 0.25ms;
+    transition-duration: 500ms;
 }
 
 ul.breadcrumbs li+li:before {
@@ -126,56 +128,165 @@ ul.breadcrumbs li+li:before {
   }
 
   ul.breadcrumbs li a:hover {
-    color: #ffcbbf;
+    color:  #CDE7D9 ;
     font-size: 20px;
     text-decoration: underline;
   }
 
 .product{
-    margin: auto;
+    display: block;
+    margin:auto;
+    width: 90%;
+   color: rgb(112, 108, 108) ;
+   margin-bottom: 20px;
     
+}
+.product-info {
+    margin-bottom: 10px;
 }
 .product h1 {
     font-size: 40px;
-    color: rgb(112, 108, 108) ;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
 }
 .product img {
-        width: 85%;
+        width: 100%;
         margin: 5px;
         display: block;
         margin: auto;        
 }
 
-.checked {
-    color: rgb(238, 255, 0);
+h2 {
+    text-align: center;
+    color: rgb(112, 108, 108) ;
+    padding: 10px 0px;
+    margin: 5px;
 }
+
 .add-to-cart-button {
-    width: 75%;
-    background-color: rgb(47, 184, 194);
+    background-color: rgb(45, 185, 138);
     font-size: 18px;
     color: white;
     padding: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 100;
     margin: 15px;
+    margin-top: 10px;
     border: none;
     display: block;
     margin: auto;
+    transition: all 500ms;
 }
-.tambien-te-puede-gustar-carrousel {
+.add-to-cart-button:hover {
+    font-size: larger;
+    color:rgb(75, 75, 75);
+    background-color:#f5f5f5;
+}
+
+.product hr {
+    width: 100%;
+    border: 1px solid rgb(197, 197, 197);
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    
+
+}
+.envio {
+    color: rgb(112, 108, 108) ;
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+.envio .shipping-icon {
+    display: flex;
+    flex-direction: row;
+   
+}
+.envio i {
+    font-size: 18px;
+}
+.envio .destacado {
+    color: rgb(45, 185, 138);
+    font-weight: 600;
+}
+.envio form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 0;
+   
+}
+.envio form button {
+    background-color: white;
+    border: none;
+    color: rgb(112, 108, 108) ;
+    font-size: 18px;
+    width: 100px;
+    margin-left: 10px;
+  
+    
+}
+.envio input {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 2px;
+}
+.envio form button:hover {
+        color:#999;
+}
+
+.envio a {
+    text-decoration: none;
+    color: red;
+    font-size: 10px;
+    text-align: center;
+    align-self:flex-start;
+    margin: 0;
+}
+.mas-info p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.mas-info {
+    color: rgb(197, 197, 197);
+    margin-bottom: 10px;
+}
+.mas-info h3 {
+    color: rgb(112, 108, 108);
+}
+    
+.info-adicinal .info-table {
+    
+    border-collapse: collapse;
+}
+.info-adicinal .info-table tr {
+    border: red 1px solid;
+    padding: 8px;
+}
+
+
+.1 {
+    font-size: 60px;
+}  
+    
+
+.tambien-te-puede-gustar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px ;
+   
 }
 .card {
-    
+border: solid 1px gray;
     width: 40%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 10px;
     padding: 8px;
-    box-shadow: 0px 0px 10px rgb(182, 177, 177);
+    /*box-shadow: 0px 0px 10px rgb(182, 177, 177);*/
     border-radius: 5px;
     
 }
@@ -185,6 +296,7 @@ ul.breadcrumbs li+li:before {
 .card h3 {
     text-align: center;
     margin: 5px;
+  
 }
 .card .precio-card{
             text-align: center;
@@ -193,17 +305,17 @@ ul.breadcrumbs li+li:before {
             
 }
 .card .add-to-cart-button{
-    width: 100%;
     font-size: 10px;
     margin: 5px;
     display: block;
     margin: auto;
 }
 
+
 footer {
-    background-color: #baebd1;
+    background-color:  rgb(189,212,213);
     display: flex;
-    color: #4b7a7a;
+    color: #d6e7df;
     font-size: 14px;
     width: 100%;
     font-family:'Montserrat', sans-serif;
