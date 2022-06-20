@@ -265,9 +265,9 @@ h2 {
 }
 
 
-.1 {
+/*.1 {
     font-size: 60px;
-}  
+}*/ 
     
 
 .tambien-te-puede-gustar {
@@ -279,7 +279,7 @@ h2 {
    
 }
 .card {
-border: solid 1px gray;
+border: solid 1px #808080;
     width: 40%;
     margin-top: 10px;
     margin-bottom: 10px;
