@@ -33,7 +33,7 @@ app.get('/register', (req, res) => {
 });
 
 
-//app.listen(3031, () => console.log("servidor escuchando puerto 3031 funcionando"))
+
 app.set('puerto',process.env.PORT || 3000)
 
 
