@@ -408,8 +408,7 @@ h2 {
     border-collapse: collapse;
 }
 .info-adicinal .info-table tr {
-    
-    padding: 8px;
+     padding: 8px;
 }
 
  #uno   {
@@ -517,12 +516,38 @@ ul li h4 {
     color: #7D7D7D;
 }
 
-@media (min-width: 361px) {
+@media (min-width:361px) {
+   
+   
+    @media (min-width: 760px) {
+        .info-principal {
+            display: flex;
+            width: 60%;
+            
+
+        }
+        .info-principal article {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+        }
+       
+        .card {
+            width: 23%;
+        }
+       .tambien-te-puede-gustar {
+        display: flex;
+        flex-direction: row;
+       }
+    
+}
+    
+
 }
 @media (min-width: 980px) {
     header {
         width: 100vw;
-        /*height: 15vh;*/
+    
     }
     #logo {
         width: 10%;
@@ -532,4 +557,7 @@ ul li h4 {
     .search-bar {
         margin-left: 20px;
     }
+    
+    
+    
 }
