@@ -513,10 +513,7 @@ ul li h4 {
     color: #7D7D7D;
 }
 
-@media (min-width:361px) {
-   
-   
-    @media (min-width: 760px) {
+@media (min-width: 760px) {
 
 h2.precio {
     font-size: 22px;
@@ -525,13 +522,18 @@ h2.precio {
         
         .info-principal {
             display: flex;
-            width: 60%;
+        
 
+        }
+        .info-principal img {
+            width:65%;
+            margin:0;
         }
         .info-principal article {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;                
+                justify-content: space-around; 
+                width:100%;               
         }
        
         .card {
@@ -549,7 +551,7 @@ h2.precio {
 }
     
 
-}
+
 @media (min-width: 980px) {
     header {
         width: 100vw;
