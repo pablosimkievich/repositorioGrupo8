@@ -70,34 +70,39 @@
     </a>
 
     <section class="product">
+        <article class="info-principal">
 
-        <img src="\img\instrumentos.png">
-        <div class="product-info">
-            <h1 class="product-name">Kit musical</h1>
+            <img src="\img\instrumentos.png">
 
-            <h2 class="precio">4250$</h2>
+            <article>
 
-            <form class="add-to-cart" method="GET" action="/add-to-cart.html">
-                <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>AGREGAR AL
-                    CARRITO</button>
-            </form>
-        </div>
-        
-        <div class="envio">
-            <article class='shipping-icon'>
-                <i class="fa-solid fa-truck"></i>
-                <p>
-                <p class="destacado"> Envio gratis </p> _a partir de 5000$</p>
+                <div class="product-info">
+                    <h1 class="product-name">Kit musical</h1>
+
+                    <h2 class="precio">4250$</h2>
+
+                    <form class="add-to-cart" method="GET" action="/add-to-cart.html">
+                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>AGREGAR
+                            AL
+                            CARRITO</button>
+                    </form>
+                </div>
+
+                <div class="envio">
+                    <article class='shipping-icon'>
+                        <i class="fa-solid fa-truck"></i>
+                        <p>
+                        <p class="destacado"> Envio gratis </p> _a partir de 5000$</p>
+                    </article>
+
+                    <form action="/" method="post">
+                        <input type="text" name="cp" placeholder="Tu codigo postal">
+                        <button type="submit" ">CALCULAR</button>                
+                    </form>
+                    <a href=" https://codigopostal.com.ar/">No se mi CP</a>
+                </div>
             </article>
-
-            <form action="/" method="post">
-                <input type="text" name="cp" placeholder="Tu codigo postal">
-                <button type="submit" ">CALCULAR</button>
-                <br>
-                
-            </form>
-            <a href=" https://codigopostal.com.ar/">No se mi CP</a>
-        </div>
+        </article>
 
 
         <div class="mas-info">
@@ -109,8 +114,6 @@
         </div>
         <div class="mas-info">
             <h3>Información Adicional </h3>
-
-        
             <table class="info-table">
                 <tr>
                     <td>Edad recomendada</td>
@@ -127,7 +130,7 @@
             </table>
         </div>
 
-    
+
     </section>
 
     <h2 id="uno">Tambien te puede gustar</h2>
