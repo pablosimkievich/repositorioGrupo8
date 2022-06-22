@@ -243,6 +243,7 @@ nav {
 
 .whatsapp-button{
 	margin-top:11px;
+    font-size: 40px;
 }
 
 ul.breadcrumbs li{
@@ -514,6 +515,18 @@ ul li h4 {
 }
 
 @media (min-width: 760px) {
+    .burger-menu{
+        display: block;
+    }
+    #links {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    #links li {
+        justify-content: space-around;
+        font-weight: bold;
+    }
 
 h2.precio {
     font-size: 22px;
@@ -546,6 +559,11 @@ h2.precio {
        footer ul {
         flex-direction: row;
         justify-content: space-evenly;
+        
+    }
+    .lista-footer li {
+        align-self: flex-start;
+        margin-top: 25px;
     }
     
 }
