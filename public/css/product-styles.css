@@ -16,7 +16,6 @@ font-family: 'Lato', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
 
-
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -24,9 +23,6 @@ font-family: 'Lato', sans-serif;
     font-family: 'Coming Soon', cursive;
     font-weight: 400;
     font-size: 14px;
-}
-body {
-    width: 100%;
 }
 
 .top-header h4 {
@@ -224,8 +220,223 @@ nav {
     justify-content: flex-end;
     flex-wrap: wrap;
 }
+/*
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Coming Soon', cursive;
+    font-weight: 400;
+    font-size: 14px;
+}
+body {
+    width: 100%;
+}
+
+.top-header h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #7D7D7D;
+}
+
+.top-header i {
+    margin: 10px;
+    color: #7D7D7D
+}
+
+.banner img {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    object-fit: cover;
+    object-position: 0px 70%;
+    position: relative;
+}  
+
+.topbar {
+    display: flex;
+}
+
+#menu {
+    background-color: rgb(189,212,213);
+}
+
+.burger-menu  {
+    align-self: center;
+}
+
+.burger-menu a {
+    color: rgb(109, 108, 108);
+    text-decoration: none;
+    margin: 10px;
+}
+
+.burger-menu i {
+    color: rgb(151,151,151);
+    font-size: 22px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    transition: all 700ms;
+}
+
+#logo {
+    display: block;
+    width: 19%;
+    border-radius: 50%;
+    text-align: center;
+    color: #d6e7df;
+    object-fit: contain;
+    margin: 10px 10px;
+    transition: 900ms;
+}
+
+#logo:hover {
+    transform: scale(0.7);
+}
+
+.my-account a i{
+    color: rgb(151,151,151);
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    transition: all 700ms;
+}
+.cart a i {
+    color: rgb(151,151,151);
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    transition: all 700ms;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.search-bar i {
+    color: #5D5B6A;
+    display: block;
+    font-size: 0.8rem;
+    align-self: center;
+    margin: 3px;  
+}
+
+.search-bar input {
+    border-bottom: 2px solid green;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+    border: none;
+    background-color: #32AFA9;
+    width: 90%;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar button {
+    border: none;
+    border-radius: 5px;
+    margin: 3px;
+    background-color: rgb(151,151,151);
+    align-self: center;
+}
 
 
+#links {
+    display:none;   
+    text-decoration: none;
+    
+}
+
+
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.top-header {
+    background-color:#C2DED1;
+    font-size: 15px;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rosa {
+    background-color: rgb(248, 238, 237); 
+}
+#verde-agua {
+    background-color: rgb(124,205,173);
+} 
+#azul {
+    background-color: rgb(55,175,180);
+}
+#amarillo {
+    background-color: rgb(225,171,2);
+}
+
+.texto {
+    width: 80vw;
+    padding: 15px;
+    border:  solid black 5px;
+    box-sizing: content-box;
+}
+
+ul  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    margin: right;  
+}
+
+.lista-nav li i {
+    transition: all 900ms;
+    margin-right: 15px;
+}
+
+.lista-nav li i:hover {
+    color: rgb(45, 185, 138);
+    color: #32AFA9;
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color:#C2DED1;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+*/
+
+
+header {
+    background-color:#C2DED1;
+}
 .whatsapp {
 	position:fixed;
 	width:60px;
@@ -263,7 +474,7 @@ ul.breadcrumbs li a {
     text-decoration: none;
     color: rgb(124, 124, 124);
     transition-property: all;
-    transition-duration: 500ms;
+    transition-duration: 1s;
 }
 
 ul.breadcrumbs li+li:before {
@@ -273,8 +484,8 @@ ul.breadcrumbs li+li:before {
   }
 
   ul.breadcrumbs li a:hover {
-    color:  #CDE7D9 ;
-    font-size: 20px;
+    color:  #32afa9 ;
+    font-size: 18px;
     text-decoration: underline;
   }
 
@@ -392,7 +603,7 @@ h2 {
     margin-bottom: 10px;
 }
 .mas-info {
-    color: rgb(197, 197, 197);
+    color: rgb(168, 165, 165);
     margin-bottom: 10px;
 }
 .mas-info h3 {
@@ -401,12 +612,11 @@ h2 {
     border-bottom: 2px solid rgb(197, 197, 197);
 }
     
-.info-adicinal .info-table {
-    
-    border-collapse: collapse;
+table.info-table {
+    width:100%;
 }
-.info-adicinal .info-table tr {
-     padding: 8px;
+.info-table tr td {
+    border-bottom: 1px rgb(197, 197, 197) solid;
 }
 
  #uno   {
@@ -517,10 +727,20 @@ ul li h4 {
 @media (min-width: 760px) {
     .burger-menu{
         display: block;
+        align-self: flex-end;
+        transition: all 1s;
     }
+    div,.burger-menu:hover{
+        color:  #32afa9 ;
+        font-size: 18px;
+    }
+
     #links {
         display: flex;
         flex-direction: row;
+       
+
+       
         
     }
     #links li {
@@ -528,27 +748,43 @@ ul li h4 {
         font-weight: bold;
     }
 
+   
+
 h2.precio {
     font-size: 22px;
     font-weight: 600;
 }
         
-        .info-principal {
+  .info-principal {
             display: flex;
-        
-
-        }
-        .info-principal img {
+                }
+    
+    .info-principal img {
             width:65%;
             margin:0;
         }
         .info-principal article {
+            width: 35%;
+        }
+
+.product-info {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around; 
-                width:100%;               
+                               
         }
-       
+ span.info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+h1.product-name {
+    align-items: flex-start;
+}
+    
         .card {
             width: 23%;
         }
@@ -584,7 +820,9 @@ h2.precio {
         margin-left: 20px;
     }
    
-    
+    .product{
+        max-width: 800px;
+    }
     
     
 }
