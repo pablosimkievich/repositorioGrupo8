@@ -3,7 +3,7 @@
 > 
 Rayuela es un proyecto integrador del curso de Programación web full stack que ofrece Digital House. El objetivo es desarrollar un sitio web.
 
-##### Integrantes:
+#### Integrantes:
 
 ------------
 - [Cintia Moll](https://github.com/CintiaMoll34 "Cintia Moll") (35) No tuve contacto anteriormente con el desarrollo web, este curso es mi primer experiencia y este mi primer proyecto.
@@ -13,7 +13,7 @@ Rayuela es un proyecto integrador del curso de Programación web full stack que 
 
 ------------
 
-#### Temática del Market Place
+### Temática del Market Place
 
 Rayuela será un e-commerce que **ofrecerá juguetes orientados a la filosofía Montessori**. Estos son juguetes didácticos que permiten que los niños potencien al máximo el desarrollo de sus habilidades y capacidades y por lo general cumplen con las siguientes carracteristicas:
 
@@ -26,12 +26,12 @@ Rayuela será un e-commerce que **ofrecerá juguetes orientados a la filosofía 
 ------------
 
 
-#### Público objetivo
+### Público objetivo
 
 El** público** al que apunta el sitio son **padres** y, adultos en general ,interesados en que sus hijos, mientras juegan, desarrollen la motricidad, la creatividad, la cognición y las emociones. 
 
 ------------
-#### Referentes:
+### Referentes:
 Nos parece importante destacar ciertas caracteristicas de algunos sitios de interes:
 
 ##### https://capenane.cl/
