@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const mainRouter = require('./src/routes/mainRouter');
-const userRouter = require('./src/routes/userRouter');
-const productRouter = require('./src/routes/productRouter');
+const mainRouter = require('./routes/mainRouter');
+const userRouter = require('./routes/userRouter');
+const productRouter = require('./routes/productRouter');
 
 
 const publicPath = path.resolve(__dirname, './public');
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs'); // motor de plantillas ejs
 
 app.use('/', mainRouter);
 
-app.use('/usuarios', userRouter);
+app.use('/users', userRouter);
 
 app.use('/productos', productRouter);
 

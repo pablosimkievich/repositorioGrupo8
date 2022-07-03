@@ -1,15 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-
-router.get('/', (req, res) => {
-    res.send('Bienvenidos a usuarios')
-})
+//userController.login
 
 router.get('/login', userController.login);
 
 router.get('/registro', userController.registro);
 
-router.get('/carrito-de-compras', userController.productCart);
+router.get('/carrito', userController.productCart);
 
 module.exports = router;

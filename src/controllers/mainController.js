@@ -1,6 +1,8 @@
+const path =require('path')
+
 const mainController = {
     index : (req, res) => {
-        res.render('home'); // home ejs
+        res.render(path.join(__dirname,'../views/home.ejs')); // home ejs
     }
 }
 

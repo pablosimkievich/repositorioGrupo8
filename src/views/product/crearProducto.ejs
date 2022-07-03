@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="/css/product-styles.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+        <title>Rayuela</title>
+    </head>
+    
+
+<body>
+   
+    <form action="/crear-poducto" method="POST" class="create-form">
+        <div class="control-formulario">
+            <label for="nombre-producto">Nombre del producto:</label>
+            <input type="text" name="nombre-producto" class="control" required>
+        </div>
+        <div class="control-formulario">
+            <label for="precio">Precio:</label>
+            <input type="text" name="precio" class="control" required>
+        </div>
+
+        <div class="control-formulario">
+            <label for="en-oferta">Esta en oferta:</label>
+            <input type="radio" name="en-oferta" value="si">Si
+            <input type="radio" name="en-oferta" value="no">No
+            <label for="descuento">Descuento a aplicar</label>
+            <input type="number" name="descuento">
+        </div>
+
+        <div class="control-formulario">
+            <label>Categorias</label>
+            <select name="categoria" class="control" required>
+                <option value="Sensoriales">Sensoriales</option>
+                <option value="Instrumentos Musicales">Instrumentos Musicales</option>
+                <option value="Movimientos">Movimientos</option>
+                <option value="Rompecabezas">Rompecabezas</option>
+                <option value="Pizarras">Pizarras</option>
+            </select>
+        </div>            
+        
+        <div class="control-formulario">
+            <label for="imagen-producto">Seleccionar la imagen principal</label>
+            <input type="file" name="imagen principal" class="control" accept=".jpg .png" required></>
+        </div>
+        <div class="control-formulario">
+            <label for="imagen-producto">Seleccionar imagenes adicionales</label>
+            <input type="file" name="imagenes adicionales" class="control" accept=".jpg .png" multiple></>
+        </div>
+        <div class="control-formulario">
+            <label for="descripcion">Descripcion del producto:</label>
+            <textarea name="descripcion" class="control" required></textarea>
+        </div>
+        <h4>Edad recomendada</h4>
+            <label for="6 meses a 1 año"><input type="checkbox" name="Edad recomendada" value="6 meses a 1 año">6 meses
+                a 1 año</label>
+            <label for="1 a 3 años"> <input type="checkbox" name="Edad recomendada" value="1 a 3 años">1 a 3
+                años</label>
+            <label for="3 a 6 años"><input type="checkbox" name="Edad recomendada" value="3 a 6 años">3 a 6
+                años"</label>
+            <label for="mas de 6 años"><input type="checkbox" name=value="mas de 6 años">mas de 6 años</label>
+        </div>
+        
+        <button type="reset" class="button">Borrar</button>
+        <button type="submit" class="button">Guardar</button>
+    </form>
+
+
+</body>
+
+</html>

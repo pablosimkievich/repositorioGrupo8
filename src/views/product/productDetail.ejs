@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/product-styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+    <title>Rayuela</title>
+</head>
+
+<body>
+    
+    <%- include('../views/partials/header.ejs') %>
+    <%- include('./partials/whatsappButton.ejs') %>
+    <section class="bread-crumbs">
+        <ul class="breadcrumbs">
+            <li><a href="/views/home.html>=">home</a></li>
+            <li><a href="productCategory.html">instruentos musicales</a></li>
+            <li><a href="productDetail.html">kit instrumento musical</a></li>
+        </ul>
+    </section>
+
+  
+    <section class="product">
+        <article class="info-principal">
+
+            <img src="\img\instrumentos.png">
+
+            <article class="product-info">
+                <span class="info">
+                    <h1 class="product-name">Kit musical</h1>
+                    <h2 class="precio">4250$</h2>
+                    <form class="add-to-cart" method="GET" action="/add-to-cart.html">
+                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
+                            </i>AGREGAR AL CARRITO</button>
+                    </form>
+                </span>
+
+                <span class="envio">
+                    <div class='shipping-icon'>
+                        <i class="fa-solid fa-truck"></i>
+                        <p class="destacado"> Envio gratis </p> _a partir de 5000$</p>
+                    </div>
+
+                    <form action="/" method="post">
+                        <input type="text" name="cp" placeholder="Tu codigo postal">
+                        <button type="submit" ">CALCULAR</button>                
+                    </form>
+                 <a href=" https://codigopostal.com.ar/">No se mi CP</a>
+                            </div>
+                </span>
+            </article>
+
+        </article>
+            <article class="mas-info">
+                <h3>Descripcion</h3>
+                <p>El Kit musical Golden 6 piezas incluye:
+                    Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión).
+                    Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la
+                    disponibilidad de stock.</p>
+            </article>
+            <article class="mas-info">
+                <h3>Información Adicional </h3>
+                <table class="info-table">
+                    <tr>
+                        <td>Edad recomendada</td>
+                        <td>+ 2 años</td>
+                    </tr>
+                    <tr>
+                        <td>Materiales</td>
+                        <td>Madera y metal</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensines</td>
+                        <td>20cm x 30 cm x 15 cm</td>
+                    </tr>
+                </table>
+            </article>
+
+
+    </section>
+    <%- include('./partials/seccionTbnMeGusta.ejs') %>
+  
+   <%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

@@ -1,9 +1,15 @@
+const path = require('path')
+
 const productController = {
-    producto : (req, res) => {
-        res.render('productDetail')   // productDetail.ejs
+    productList: (req,res)=> {
+        res.render(path.join(__dirname,'../views/product/products') ) // products.ejs
     },
-    kitmusical : (req, res) => {
-        res.render('productDetail')
+    productDetail:  (req,res)=> {
+        res.render(path.join(__dirname,'../views/product/productDetail') )  // productDetail.ejs
+    },
+    
+    crearProducto: (req, res)=> {
+        res.render(path.join(__dirname,'../views/product/crearProducto')) //crearProducto ejs
     }
 }
 
