@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%-include('../partials/head.ejs')%>
     
-        <link rel="stylesheet" href="/css/product-styles.css">
-        <link rel="stylesheet" href="/css/styles.css">
-        <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
-        <title>Rayuela</title>
-    </head>
     
 
 <body>
-   
+   <!-- <%-include('../partials/header.ejs')%>  -->
+   <main>
     <form action="/crear-poducto" method="POST" class="create-form">
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
@@ -68,6 +61,7 @@
         <button type="reset" class="button">Borrar</button>
         <button type="submit" class="button">Guardar</button>
     </form>
+</main>
 
 
 </body>

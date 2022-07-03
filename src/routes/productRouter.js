@@ -6,7 +6,7 @@ const path=require('path')
 
 router.get('/', productController.productList);
 
-router.get('/:id', productController.productDetail);
+router.get('/juguetes/:id', productController.productDetail);
 
 router.get('/crearProducto', productController.crearProducto );
 

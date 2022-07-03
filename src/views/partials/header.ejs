@@ -1,44 +1,47 @@
-    <header class="header-style">
-        <section class="top-banner">
-            <i class="fa-solid fa-truck"></i>
-            <h4>Envío gratis a partir de $ 5000</h4>
-        </section>
-        <section class="topbar">
-            <div class="topbar_burger-menu">
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-                <script>
-                    function myFunction() {
-                        var x = document.getElementById("links");
-                        if (x.style.display === "block") {
-                            x.style.display = "none";
-                        } else {
-                            x.style.display = "block";
-                        }
-                    }
-                </script>
-                <ul id="links">
-                    <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
-                    <li><a href="/views/productCategory.html">Por edad</a></li>
-                    <li><a href="/views/productCategory.html">Por categoria</a></li>
-                    <li><a href="/views/productCategory.html">Por edad</a></li>
-                    <li><a href="/views/faq.html">FAQ</a></li>
-                    <li><a href="/views/contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-        <section class="search-bar">
-            <img id="logo" src="/img/logo5.png" alt="logo">
-        <form class="search">
-            <input type="search" name="q" placeholder="Buscar...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+    
+<header class="header-style">
+    <section class="top-header">
+        <i class="fa-solid fa-truck"></i>
+        <h4>Envío gratis a partir de $ 5000</h4>
     </section>
-            <nav class="topbar_iconos-header">
-            <div class="topbar_nav">
-                <a href="/productCart"><i class="fa-solid fa-bag-shopping"></i></a>
-            </div>
-            <div class="topbar_nav">
-                <a href="/login"><i class="fa-solid fa-user"></i></a>
-            </div>
+
+    <section class="topbar">
+        
+        <div class="burger-menu">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("links");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    } else {
+                        x.style.display = "block";
+                    }
+                }
+            </script>
+            <ul id="links">
+                <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
+                <li><a href="/views/productCategory.html">Por edad</a></li>
+                <li><a href="/views/productCategory.html">Por categoria</a></li>
+                <li><a href="/views/productCategory.html">Por edad</a></li>
+                <li><a href="/views/faq.html">FAQ</a></li>
+                <li><a href="/views/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <img id="logo" src="/img/logo4.png" alt="logo">
+        <nav>
+            <ul class="lista-nav">
+                <li class="cart"><a href="/productCart"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li class="my-account"><a href="/login"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
         </nav>
-        </section>
-    </header>
+    </section>
+    <section class="search-bar">
+        <input type='search' placeholder="">
+        <button type="submit"><a href="#"></a><i class="fa-solid fa-magnifying-glass"></i></a></button>
+    </section>
+
+
+
+</header>
