@@ -1,15 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
-
-
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Coming Soon', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
 }
-
+/* Header section*/
 .header {
     position:relative;
     background-color: white;
@@ -122,6 +121,8 @@
     height: 34px;
     padding: 8px;
   }
+/* Main section*/
+
 main {
     width:100%;
     background-color: rgb(247, 249, 249);
@@ -131,7 +132,7 @@ section.bread-crumbs {
     border-top: solid 2px rgb(197, 197, 197);
     border-bottom: solid 2px rgb(197, 197, 197);
     padding:20px;
-    margin:10px;
+    margin-top: 127px;
     background-color: white;
 }
 
@@ -347,6 +348,8 @@ table.info-table {
     border-bottom: 1px rgb(197, 197, 197) solid;
 }
 
+/* Tambien te puede gustar section*/
+
  #h-tambien-te-puede-gustar   {
     font-size: 25px;
     font-weight: 700;
@@ -414,6 +417,16 @@ table.info-table {
     display: block;
     margin: auto;
 }
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;
@@ -512,4 +525,3 @@ flex-direction: row;
     }
        
 }
-

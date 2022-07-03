@@ -1,116 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        
-      
-        <link rel="stylesheet" href="/css/product-styles.css" rel="stylesheet">
-     
-        
-    
-        <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
-        
-        <title>Rayuela</title>
-    </head>
+<%-include('../partials/head.ejs')%>
 
 <body>
-   <%-include('../partials/header.ejs')%>
-   <%-include('../partials/whatsappButton.ejs')%>
-   <main>
-    <section class="bread-crumbs">
-        <ul class="breadcrumbs">
-            <li><a href="/views/home.html>=">home</a></li>
-            <li><a href="productCategory.html">instruentos musicales</a></li>
-            <li><a href="productDetail.html">kit instrumento musical</a></li>
-        </ul>
-    </section>
+    <%-include('../partials/header.ejs')%>
+    <main>
+        <section class="bread-crumbs">
+            <ul class="breadcrumbs">
+                <li><a href="/views/home.html>=">home</a></li>
+                <li><a href="productCategory.html">instruentos musicales</a></li>
+                <li><a href="productDetail.html">kit instrumento musical</a></li>
+            </ul>
+        </section>
 
 
-    <section class="product">
-        <article class="product_infoPrincipal">
-            <div class="product_infoPrincipal_images">
-                <img class='imagen-principal' src="\img\instrumentos.png">
-               <a href="#"><img class='imagen-2' src="\img\xilofon1.png"></a> 
-               <a href="#"><img class='imagen-3' src="\img\maracas.png"></a> 
-                <div class="dots">
-                    <i id="seleccionado" class="fa-regular fa-circle"></i>
-                    <i class="fa-regular fa-circle"></i>
-                    <i class="fa-regular fa-circle"></i>
-                    <i class="fa-regular fa-circle"></i>
-                </div>
-
-            </div>
-            <div class="product_infoPrincipal_productInfo">
-                <span class="productInfo_info">
-                    <h1 class="product-name">Kit musical</h1>
-                    <span class="reviews">
-                        <h2>Reviews (4)</h2>
-                        <p class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </p>
-
-                    </span>
-                    <h2 class="precio">4250$</h2>
-                    <form class="add-to-cart" method="GET" action="/add-to-cart.html">
-                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
-                            </i>AGREGAR AL CARRITO</button>
-                    </form>
-                </span>
-
-                <span class="productInfo_envio">
-                    <div class='shipping-icon'>
-                        <i class="fa-solid fa-truck"></i>
-                        <p> <strong>Envio </strong>gratis a partir de 5000$</p>
+        <section class="product">
+            <article class="product_infoPrincipal">
+                <div class="product_infoPrincipal_images">
+                    <img class='imagen-principal' src="\img\instrumentos.png">
+                   <a href="#"><img class='imagen-2' src="\img\xilofon1.png"></a> 
+                   <a href="#"><img class='imagen-3' src="\img\maracas.png"></a> 
+                    <div class="dots">
+                        <i id="seleccionado" class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
                     </div>
 
-                    <form action="/" method="post">
-                        <input type="text" name="cp" placeholder="Tu codigo postal">
-                        <button type="submit" ">CALCULAR</button>                
-                            </form>
-                            <a href=" https://codigopostal.com.ar/">No se mi CP</a>
-            </div>
-            </span>
-            </div>
+                </div>
+                <div class="product_infoPrincipal_productInfo">
+                    <span class="productInfo_info">
+                        <h1 class="product-name">Kit musical</h1>
+                        <span class="reviews">
+                            <h2>Reviews (4)</h2>
+                            <p class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </p>
 
-        </article>
-        <article class="product_masInfo">
-            <h3>Descripcion</h3>
-            <p>El Kit musical Golden 6 piezas incluye:
-                Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión).
-                Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la
-                disponibilidad de stock.</p>
-        </article>
-        <article class="product_masInfo">
-            <h3>Información Adicional </h3>
-            <table class="info-table">
-                <tr>
-                    <td>Edad recomendada</td>
-                    <td>+ 2 años</td>
-                </tr>
-                <tr>
-                    <td>Materiales</td>
-                    <td>Madera y metal</td>
-                </tr>
-                <tr>
-                    <td>Dimensines</td>
-                    <td>20cm x 30 cm x 15 cm</td>
-                </tr>
-            </table>
-        </article>
-    </section>
+                        </span>
+                        <h2 class="precio">4250$</h2>
+                        <form class="add-to-cart" method="GET" action="/add-to-cart.html">
+                            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
+                                </i>AGREGAR AL CARRITO</button>
+                        </form>
+                    </span>
 
-  <%-include('../partials/seccionTbnMeGusta.ejs') %> 
+                    <span class="productInfo_envio">
+                        <div class='shipping-icon'>
+                            <i class="fa-solid fa-truck"></i>
+                            <p> <strong>Envio </strong>gratis a partir de 5000$</p>
+                        </div>
 
-</main>
-   <%-include('../partials/footer.ejs')%>
-</body>
-</html>
+                        <form action="/" method="post">
+                            <input type="text" name="cp" placeholder="Tu codigo postal">
+                            <button type="submit" ">CALCULAR</button>                
+                                </form>
+                                <a href=" https://codigopostal.com.ar/">No se mi CP</a>
+                </div>
+                </span>
+                </div>
+
+            </article>
+            <article class="product_masInfo">
+                <h3>Descripcion</h3>
+                <p>El Kit musical Golden 6 piezas incluye:
+                    Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión).
+                    Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la
+                    disponibilidad de stock.</p>
+            </article>
+            <article class="product_masInfo">
+                <h3>Información Adicional </h3>
+                <table class="info-table">
+                    <tr>
+                        <td>Edad recomendada</td>
+                        <td>+ 2 años</td>
+                    </tr>
+                    <tr>
+                        <td>Materiales</td>
+                        <td>Madera y metal</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensines</td>
+                        <td>20cm x 30 cm x 15 cm</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <%-include('../partials/seccionTbnMeGusta.ejs') %> 
+
+    </main>
+
+       <%-include('../partials/footer.ejs')%>
+    </body>
+    </html>
+    
+  
