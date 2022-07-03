@@ -5,9 +5,7 @@ const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
 
-
-const publicPath = path.resolve(__dirname, './public');
-app.use(express.static(publicPath));
+app.use(express.static(path.join(__dirname,'../public')));
 
 app.set('view engine', 'ejs'); // motor de plantillas ejs
 

@@ -1,83 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayuela</title>
-     <!-- iconos -->
-     <script src="https://kit.fontawesome.com/4c9feabc71.js"
-     crossorigin="anonymous"></script>
- 
-     <!-- Link con CSS -->
-     <link rel="stylesheet" href="/css/stylesPRL.css">
- 
-     <!-- Fuente Roboto -->
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-         
-     <!-- Fuente Monserrat -->
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&family=Roboto&display=swap" rel="stylesheet"> 
-         <style>
-         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
-         </style>
- 
-     <!-- Viewport -->
-     <meta name="viewport" content=
-     "width=device-width, initial-scale=1.0"> 
+<$-include('../partials/head.ejs') %>
 
-     <header class="header-style">
-        <section class="top-header">
-            <i class="fa-solid fa-truck"><h4>Envío gratis a partir de $ 5000</h4></i>  
-        </section>
-    
-
-        <section class="topbar">
-            
-            <div class="burger-menu">
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-                <script>
-                    function myFunction() {
-                        var x = document.getElementById("links");
-                        if (x.style.display === "block") {
-                            x.style.display = "none";
-                        } else {
-                            x.style.display = "block";
-                        }
-                    }
-                </script>
-                <ul id="links">
-                    <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
-                    <li><a href="/views/productCategory.html">Por edad</a></li>
-                    <li><a href="/views/productCategory.html">Por categoria</a></li>
-                    <li><a href="/views/productCategory.html">Por edad</a></li>
-                    <li><a href="/views/faq.html">FAQ</a></li>
-                    <li><a href="/views/contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <a href="/"><img id="logo" src="/images/logo4.png" alt="logo"></a>
-            </div>
-            <nav>
-                <ul class="lista-nav">
-                    <li class="cart"><a href="/usuarios/carrito-de-compras"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                    <li class="my-account"><a href="/usuarios/login"><i class="fa-solid fa-user"></i></a></li>
-                </ul>
-            </nav>
-        </section>
-        <section class="search-bar">
-            <input type='search' placeholder="">
-            <button type="submit"><a href="#"></a><i class="fa-solid fa-magnifying-glass"></i></a></button>
-        </section>
-
-
-
-    </header>   
-
-</head>
 <body>
+    <%include('../partials/header')%>
 
     <main class="login">
         <br>
