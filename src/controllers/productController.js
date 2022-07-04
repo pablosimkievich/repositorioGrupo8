@@ -33,11 +33,11 @@ const productController = {
                     }
 
                     let archivojuguetes = fs.readFileSync('../database/jugetes.json', {encoding: 'UTF-8'});
-                    
+                    let juguetes
                     if(archivojuguetes == ''){
-                        let juguetes =[];
+                        juguetes =[];
                     }else {
-                        let juguetes = JSON.parse(archivojuguetes);
+                        juguetes = JSON.parse(archivojuguetes);
                     }
                     juguetes.push(jugueteCreado)
 
