@@ -1,0 +1,15 @@
+[
+    {   "SKU": "1",
+        "nombre": "Kit musical",
+        "precio":"4200",
+        "categoria": "instrumentos musicales",
+        "imagen principal": "#",
+        "imagenes adicionales": "#",
+        "descripcion": "descripcion",
+        "edad recomenada": "+ 3años",
+        "materiales": "Madera y metal",
+        "dimensiones": "20cm x 30 cm x 15 cm",
+        "reviews": "a completar"
+    }
+
+]

@@ -9,6 +9,7 @@ router.get('/', productController.productList);
 router.get('/juguetes/:id', productController.productDetail);
 
 router.get('/crearProducto', productController.crearProducto );
+router.post('/crearProducto', productController.guardar);
 
 //router.post('/crearProducto', );
 
