@@ -5,29 +5,31 @@
     
 
 <body>
-   <!-- <%-include('../partials/header.ejs')%>  -->
+   <%-include('../partials/header.ejs')%> 
    <main>
     <form action="/crear-poducto" method="POST" class="create-form">
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
-            <input type="text" name="nombre-producto" class="control" required>
+            <input type="text" name="nombre-producto" class="input-control" required>
         </div>
         <div class="control-formulario">
-            <label for="precio">Precio:</label>
-            <input type="text" name="precio" class="control" required>
+            <label for="precio">Precio:</label><br>
+            <input type="text" name="precio" class="input-control" required>
         </div>
 
         <div class="control-formulario">
             <label for="en-oferta">Esta en oferta:</label>
             <input type="radio" name="en-oferta" value="si">Si
             <input type="radio" name="en-oferta" value="no">No
+           </div> 
+           <div class="control-formulario">   
             <label for="descuento">Descuento a aplicar</label>
-            <input type="number" name="descuento">
+            <input type="number" name="descuento" class="input-control" placeholder="25%">
         </div>
 
         <div class="control-formulario">
             <label>Categorias</label>
-            <select name="categoria" class="control" required>
+            <select name="categoria" class="input-control" required>
                 <option value="Sensoriales">Sensoriales</option>
                 <option value="Instrumentos Musicales">Instrumentos Musicales</option>
                 <option value="Movimientos">Movimientos</option>
@@ -46,21 +48,29 @@
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
-            <textarea name="descripcion" class="control" required></textarea>
+            <textarea name="descripcion" class="textarea" required></textarea>
         </div>
-        <h4>Edad recomendada</h4>
-            <label for="6 meses a 1 año"><input type="checkbox" name="Edad recomendada" value="6 meses a 1 año">6 meses
-                a 1 año</label>
+        <div class="control-formulario">
+            <label>Edad recomendada</label><br>
+            <label for="6 meses a 1 año">
+                <input type="checkbox" name="Edad recomendada" value="6 meses a 1 año">6 meses a 1 año
+            </label><br>
             <label for="1 a 3 años"> <input type="checkbox" name="Edad recomendada" value="1 a 3 años">1 a 3
-                años</label>
+                años
+            </label><br>
             <label for="3 a 6 años"><input type="checkbox" name="Edad recomendada" value="3 a 6 años">3 a 6
-                años"</label>
-            <label for="mas de 6 años"><input type="checkbox" name=value="mas de 6 años">mas de 6 años</label>
+                años"
+            </label><br>
+            <label for="mas de 6 años"><input type="checkbox" name=value="mas de 6 años">mas de 6 años
+            </label><br>
         </div>
-        
-        <button type="reset" class="button">Borrar</button>
-        <button type="submit" class="button">Guardar</button>
+        <div class="form-buttons">
+        <button type="reset" class="form-button">Borrar</button>
+        <button type="submit" class="form-button">Guardar</button>
+    </div>
     </form>
+
+    <%include('../partials/footer.ejs')%>
 </main>
 
 
