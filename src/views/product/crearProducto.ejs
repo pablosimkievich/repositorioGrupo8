@@ -6,8 +6,12 @@
 
 <body>
    <%-include('../partials/header.ejs')%> 
-   <main>
-    <form action="/crearPoducto" method="POST" class="create-form">
+   <main class="main__form">
+    <form action="../product/crearProducto.ejs" method="POST" class="create-form">
+        <div class="control-formulario">
+            <label for="SKU">SKU:</label>
+            <input type="text" name="SKU" class="input-control" required>
+        </div>
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
             <input type="text" name="nombre" class="input-control" required>
@@ -44,7 +48,7 @@
         </div>
         <div class="control-formulario">
             <label for="imagen-producto">Seleccionar imagenes adicionales:</label>
-            <input type="file" name="imagenesAdicionales" class="control" accept=".jpg .png" multiple></>
+            <input type="file" name="imagenesAdicionales" class="control" accept=".jpg,.png" multiple></>
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
@@ -78,8 +82,8 @@
 
         </div>
         <div class="form-buttons">
-        <input type="reset" class="form-button"></input>
-        <input type="submit" class="form-button"></input>
+       <button type="reset" class="form-button">RESET</button>
+        <button type="submit" class="form-button">GUARDAR</button>
     </div>
     </form>
 

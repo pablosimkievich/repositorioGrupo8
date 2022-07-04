@@ -198,6 +198,7 @@ ul.breadcrumbs li+li:before {
 }
 .product_infoPrincipal_images {
     position: relative;
+    z-index: 80;
 }
 .product_infoPrincipal_images img {
         width: 100%;
@@ -423,7 +424,7 @@ table.info-table {
 /*Seccion Formularios */
  .create-form {
     width: 90%;
-    box-shadow: 0px 0px 10px #d1c6c6;
+    box-shadow: 0px 0px 10px #b9b4b4;
     margin:auto;
     margin-top: 126px;
     background-color: white;
@@ -433,6 +434,9 @@ table.info-table {
     justify-content: flex-start;
     max-width:500px;
    
+ }
+ .main__form{
+    background-color: rgb(189,212,213);
  }
  .control-formulario{
     padding-top:10px;
@@ -487,7 +491,8 @@ table.info-table {
 }
 .form-button:hover {
     color:rgb(75, 75, 75);
-    background-color:rgb(255,216,20);
+    background-color:rgb(197, 194, 194);
+    
 }
 
 

@@ -9,8 +9,9 @@ router.get('/', productController.productList);
 router.get('/juguetes/:id', productController.productDetail);
 
 router.get('/crearProducto', productController.crearProducto );
-router.post('/crearProducto', productController.guardar);
 
-//router.post('/crearProducto', );
+router.post('/crearProducto', (req,res)=>res.send('hola') );
+//productController.guardar
+
 
 module.exports = router;
