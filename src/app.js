@@ -9,14 +9,16 @@ app.use(express.static(path.join(__dirname,'../public')));
 
 app.set('view engine', 'ejs'); // motor de plantillas ejs
 
+app.set('views','src/views');
+
 app.use(express.urlencoded({ extended: false }));  //capturainfo formulario y si queremos lo pasa json
 app.use(express.json());
 
 app.use('/', mainRouter);
 
-app.use('/users', userRouter);
+app.use( userRouter);
 
-app.use('/productos', productRouter);
+app.use( productRouter);
 
 
 
