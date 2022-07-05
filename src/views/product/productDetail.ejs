@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('../partials/head.ejs')%>
+
+<body>
+    <%-include('../partials/header.ejs')%>
+    <main>
+        <section class="bread-crumbs">
+            <ul class="breadcrumbs">
+                <li><a href="/views/home.html>=">home</a></li>
+                <li><a href="productCategory.html">instruentos musicales</a></li>
+                <li><a href="productDetail.html">kit instrumento musical</a></li>
+            </ul>
+        </section>
+
+
+        <section class="product">
+            <article class="product_infoPrincipal">
+                <div class="product_infoPrincipal_images">
+                    
+                    <img class='imagen-principal' src="\img\instrumentos.png">
+                   <a href="#"><img class='imagen-2' src="\img\xilofon1.png"></a> 
+                   <a href="#"><img class='imagen-3' src="\img\maracas.png"></a> 
+                    <div class="dots">
+                        <i id="seleccionado" class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                    </div>
+
+                </div>
+                <div class="product_infoPrincipal_productInfo">
+                    <span class="productInfo_info">
+                        <h1 class="product-name"><%=juguete.nombre%></h1>
+                        <span class="reviews">
+                            <h2>Reviews (4)</h2>
+                            <p class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </p>
+
+                        </span>
+                        <h2 class="precio">4250$</h2>
+                        <form class="add-to-cart" method="POST" action="/add-to-cart">
+                            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
+                                </i>AGREGAR AL CARRITO</button>
+                        </form>
+                    </span>
+
+                    <span class="productInfo_envio">
+                        <div class='shipping-icon'>
+                            <i class="fa-solid fa-truck"></i>
+                            <p> <strong>Envio </strong>gratis a partir de 5000$</p>
+                        </div>
+
+                        <form action="/" method="post">
+                            <input type="text" name="cp" placeholder="Tu codigo postal">
+                            <button type="submit" ">CALCULAR</button>                
+                                </form>
+                                <a href=" https://codigopostal.com.ar/">No se mi CP</a>
+                </div>
+                </span>
+                </div>
+
+            </article>
+            <article class="product_masInfo">
+                <h3>Descripcion</h3>
+                <p>El Kit musical Golden 6 piezas incluye:
+                    Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión).
+                    Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la
+                    disponibilidad de stock.</p>
+            </article>
+            <article class="product_masInfo">
+                <h3>Información Adicional </h3>
+                <table class="info-table">
+                    <tr>
+                        <td>Edad recomendada</td>
+                        <td>+ 3 años</td>
+                    </tr>
+                    <tr>
+                        <td>Materiales</td>
+                        <td>Madera y metal</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensines</td>
+                        <td>20cm x 30 cm x 15 cm</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <%-include('../partials/seccionTbnMeGusta.ejs') %> 
+
+    </main>
+
+       <%-include('../partials/footer.ejs')%>
+    </body>
+    </html>
+    
+  

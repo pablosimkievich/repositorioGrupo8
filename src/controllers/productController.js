@@ -1,10 +1,40 @@
-const productController = {
-    producto : (req, res) => {
-        res.render('productDetail')   // productDetail.ejs
+
+
+const path = require('path');
+const fs = require('fs');
+const dataPath = path.join(__dirname,'../database/jugetes.json');
+const data =JSON.parse(fs.readFileSync(dataPath,"UTF-8"));
+
+
+module.exports = {
+    productList: (req,res)=> {
+
+        res.render('product/productos', {data}) // products.ejs
     },
-    kitmusical : (req, res) => {
-        res.render('productDetail')
-    }
+    productDetail:  (req,res)=> {
+        let id = req.params.id;
+        let juguete = data.find( e => e.id == parseInt(id) )
+
+        res.render('product/productDetail', {juguete})  // productDetail.ejs
+    },
+    
+    crearProducto: (req, res)=> {
+        res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
+    
+    },
+    guardar: (req, res)=> {
+        let newProduct = req.body;
+        data.push(newProduct);
+        fs.writeFileSync(dataPath, JSON.stringify(data,null,' '))
+
+        console.log(newProduct)
+
+
+
+        res.redirect('/')
+
+                
+
+        },
 }
 
-module.exports = productController;

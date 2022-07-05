@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const path=require('path')
 
 
-router.get('/', (req, res) => {
-    res.send('Hola');
-})
+router.get('/productos', productController.productList);
 
-router.get('/kit-musical', productController.kitmusical);
+router.get('/juguetes/:id', productController.productDetail);
+
+router.get('/crearProducto', productController.crearProducto );
+
+router.post('/crearProducto',productController.guardar );
+
 
 
 module.exports = router;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+
+
+<body>
+    <!--<%- include('../partials/header.ejs') %>-->
+    <% data.map(e => { %>
+    <article class="producto">
+        <a href="/productos/kit-musical">
+            <img src= "../<%= e.imagenPrincipal %>"  alt="cocodrilo">
+            <h3><%= e.nombre %></h3>
+        </a>
+        <p>$<%=e.precio%></p>
+        <p id="cuotas">3 cuotas de $ <%=1066</p>
+        <button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button>
+
+    </article>
+
+        
+       
+        
+        <% }) %>
+    
+    
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>

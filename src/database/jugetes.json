@@ -1,0 +1,32 @@
+[
+ {
+  "SKU": "11",
+  "nombre": "Maracas",
+  "precio": "4500",
+  "descuento": "",
+  "categoria": "Sensoriales",
+  "imagenPrincipal": "4anios.jpg",
+  "imagenesAdicionales": "",
+  "descripcion": "DVGS",
+  "Edad recomendada": "3 a 6 años",
+  "materiales": "madera",
+  "altura": "2564",
+  "ancho": "5",
+  "profundidad": "5"
+ },
+ {
+  "SKU": "11",
+  "nombre": "Maracas",
+  "precio": "4500",
+  "descuento": "",
+  "categoria": "Sensoriales",
+  "imagenPrincipal": "4anios.jpg",
+  "imagenesAdicionales": "",
+  "descripcion": "DVGS",
+  "Edad recomendada": "3 a 6 años",
+  "materiales": "madera",
+  "altura": "2564",
+  "ancho": "5",
+  "profundidad": "5"
+ }
+]
