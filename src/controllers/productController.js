@@ -12,8 +12,10 @@ module.exports = {
         res.render('product/productos', {data}) // products.ejs
     },
     productDetail:  (req,res)=> {
-        let juguetes
-        res.render('productDetail', {data})  // productDetail.ejs
+        let id = req.params.id;
+        let juguete = data.find( e => e.id == parseInt(id) )
+
+        res.render('product/productDetail', {juguete})  // productDetail.ejs
     },
     
     crearProducto: (req, res)=> {
