@@ -45,9 +45,14 @@ module.exports = {
 
 
         res.redirect('/')
-
-                
-
         },
+    getCategory: (req,res)=> {
+            let categoria = req.params.categoria
+            let juguetesCategoria = data.filter(e => (e.categoria).replace(' ', '').toLowerCase() == categoria)
+           
+
+    res.render('product/categoria', {juguetesCategoria}) }
+
+
 }
 
