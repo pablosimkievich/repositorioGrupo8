@@ -12,7 +12,7 @@
 
         <article class="home_categoria_card">
             <% categorias.map(e => { %>
-            <a href="#">
+            <a href="/categorias/<%= e.categoria %>">
                 <img src="<%= e.img %>" alt="banco">
                 <h3><%= e.categoria %></h3>
             </a>
