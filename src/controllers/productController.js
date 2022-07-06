@@ -32,6 +32,9 @@ module.exports = {
         res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
     
     },
+    productDirect: (req, res) => {
+        res.render('/product/productDetail')   // link de home ( / ) a productDetail.ejs ddirecto 
+    },
     guardar: (req, res)=> {
         let newProduct = req.body;
         data.push(newProduct);

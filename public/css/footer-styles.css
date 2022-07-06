@@ -1,0 +1,89 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family:  cursive;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+ul  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    margin: right;  
+}
+
+
+footer {
+    background-color:#C2DED1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    color: #7D7D7D;
+    text-decoration: none;
+}
+
+footer ul li a {
+    list-style: none;
+    text-decoration: none;
+    margin: 5px;
+    color: #7D7D7D;
+}
+
+.lista-redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.lista-medios-pago {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    text-decoration: none;
+}
+
+.lista-redes li {
+    width: 25%;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.lista-medios-pago li { 
+    width: 25%;
+    font-size: 2rem;
+    color: #7D7D7D;
+    text-decoration: none;
+}
+
+.lista-redes li img {
+    width: 35px;
+}
+
+.lista-medios-pago li img {
+    width: 35px;
+    margin: 3px;
+}
+
+.lista-footer li {
+    margin: 8px 4px;
+    color: #7D7D7D;
+    text-decoration: none;
+}
+
+ul li h4 {
+    text-align: center;
+    color: #7D7D7D;
+}

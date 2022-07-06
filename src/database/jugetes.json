@@ -9,11 +9,13 @@
   "imagenPrincipal": "instrumentos.png",
   "imagenesAdicionales": "",
   "descripcion": "El Kit musical Golden 6 piezas incluye: Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión). Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la disponibilidad de stock.",
+  "edadrecomendada": "3 a 6 años",
   "Edad recomendada": "3 a 6 años",
   "materiales": "Madera y Metal",
   "altura": "10",
   "ancho": "15",
-  "profundidad": "5"
+  "profundidad": "5",
+  "dimensiones": "20 cm x 10 cm x 10 cm"
  },
  {
   "SKU": "2",
@@ -24,16 +26,17 @@
   "categoria": "Instrumentos Musicales",
   "imagenPrincipal": "xilofon1.png",
   "imagenesAdicionales": "",
-  "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum elementum sollicitudin. Nullam pellentesque suscipit orci cursus feugiat. Vivamus posuere elit sit amet euismod egestas. Praesent vitae turpis lectus. Vestibulum sollicitudin facilisis neque, ut rutrum sapien tincidunt id. Donec non lacinia erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras blandit felis sed lacus mattis, ut venenatis ex tempor. Vivamus sem tortor, aliquet ac augue at, rutrum tempor leo. Duis nunc turpis, faucibus eget vestibulum a, egestas et sapien. Curabitur vitae nibh ac eros elementum mattis sed accumsan urna. Nunc fringilla cursus lorem a ullamcorper.Lorem Ipsum.",
-  "Edad recomendada": [
+  "descripcion": "Hermoso xilofón de madera. Muy colorido e ideal para estimulación auditiva.",
+  "edadrecomendada": [
    "1 a 3 años",
    "3 a 6 años"
   ],
   "value=\"mas": "on",
   "materiales": "Metal",
-  "altura": "12",
-  "ancho": "16",
-  "profundidad": "5"
+  "altura": "36",
+  "ancho": "22",
+  "profundidad": "16",
+  "dimensiones": "15 cm x 10 cm x 5 cm"
  },
  {
   "SKU": "3",
@@ -44,8 +47,8 @@
   "categoria": "Instrumentos Musicales",
   "imagenPrincipal": "maracas.png",
   "imagenesAdicionales": "",
-  "descripcion": "hcbahbckjbkhjbhbbs. ",
-  "Edad recomendada": [
+  "descripcion": "Para iniciar a los niños en la música rítmica, Ideal para niños con inquietudes creativas.",
+  "edadrecomendada": [
    "1 a 3 años",
    "3 a 6 años"
   ],
@@ -53,8 +56,30 @@
   "materiales": "madera",
   "altura": "10",
   "ancho": "5",
-  "profundidad": "5"
+  "profundidad": "5",
+  "dimensiones": "15 cm x 10 cm x 5 cm"
  },
+ {
+    "SKU": "4",
+    "nombre": "Carro andador",
+    "precio": "2500",
+    "enPromo": "si",
+    "descuento": "",
+    "categoria": "Locomotivos",
+    "imagenPrincipal": "carro-andador-de-madera.jpg",
+    "imagenesAdicionales": "",
+    "descripcion": "¡Para aprender a caminar y trasladar juguetes a la vez!",
+    "edadrecomendada": [
+    "A partir de 1 año",
+     "1 a 3 años" 
+    ],
+    "value=\"mas": "on",
+    "materiales": "madera",
+    "altura": "43",
+    "ancho": "52",
+    "profundidad": "25",
+    "dimensiones": "40 cm x 30 cm x 25 cm"
+},
  {
   "SKU": "5",
   "nombre": "Bloques",
@@ -64,13 +89,16 @@
   "categoria": "Movimientos",
   "imagenPrincipal": "bloques-paraguas.png",
   "imagenesAdicionales": "",
-  "descripcion": "orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum elementum sollicitudin. Nullam pellentesque suscipit orci cursus feugiat. Vivamus posuere elit sit amet euismod egestas. Praesent vitae turpis lectus. Vestibulum sollicitudin facilisis neque, ut rutrum sapien tincidunt id. Donec non lacinia erat. ",
-  "edadRecomendada": "6 meses a 1 año",
-  "Edad recomendada": "1 a 3 años",
+  "descripcion": "Bloques de madera de encastre de diversas formas y colores",
+  "edadrecomendada": [
+    "1 a 3 años",
+    "A partir de 1 año"
+   ],
   "materiales": "Madera",
   "altura": "15",
   "ancho": "15",
-  "profundidad": "10"
+  "profundidad": "10",
+  "dimensiones": "20 cm x 20 cm x 15 cm"
  },
  {
   "SKU": "6",
@@ -81,12 +109,14 @@
   "categoria": "Movimientos",
   "imagenPrincipal": "cohete-multifuncion.png",
   "imagenesAdicionales": "",
-  "descripcion": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+  "descripcion": "En el cohete podemos encontrar: 12 salas, tales como: dormitorio, quirófano o laboratorio, en varios estilos y colores.",
+  "edadrecomendada": "Para todas las edades",
   "value=\"mas": "on",
   "materiales": "Plastico y madera",
   "altura": "35",
   "ancho": "15",
-  "profundidad": "10"
+  "profundidad": "10",
+  "dimensiones": "50 cm x 45 cm x 15 cm"
  },
  {
   "SKU": "8",
@@ -97,13 +127,14 @@
   "categoria": "Movimientos",
   "imagenPrincipal": "cocodrilo-de-arrastre.png",
   "imagenesAdicionales": "",
-  "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum elementum sollicitudin. Nullam pellentesque suscipit orci cursus feugiat. Vivamus posuere elit sit amet euismod egestas. Praesent vitae turpis lectus. Vestibulum sollicitudin facilisis neque, ut rutrum sapien tincidunt id. Donec non lacinia erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras blandit felis sed lacus mattis, ut venenatis ex tempor. Vivamus sem tortor, aliquet ac augue at, rutrum tempor leo. Duis nunc turpis, faucibus eget vestibulum a, egestas et sapien. Curabitur vitae nibh ac eros elementum mattis sed accumsan urna. Nunc fringilla cursus lorem a ullamcorper.",
-  "edadRecomendada": "6 meses a 1 año",
+  "descripcion": "Cocodrilo de Arrastre Classic World. Con tira de arrastre.",
+  "edadrecomendada": "6 meses a 1 año",
   "Edad recomendada": "1 a 3 años",
   "materiales": "madera",
   "altura": "20",
   "ancho": "15",
-  "profundidad": "10"
+  "profundidad": "10",
+  "dimensiones": "10 cm x 10 cm x 15 cm"
  },
  {
   "SKU": "7",
@@ -114,13 +145,14 @@
   "categoria": "Movimientos",
   "imagenPrincipal": "banco didactico-4-en1.jpg",
   "imagenesAdicionales": "",
-  "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum elementum sollicitudin. Nullam pellentesque suscipit orci cursus feugiat. Vivamus posuere elit sit amet euismod egestas. Praesent vitae turpis lectus. Vestibulum sollicitudin facilisis neque, ut rutrum sapien tincidunt id. Donec non lacinia erat.",
-  "edadRecomendada": "6 meses a 1 año",
+  "descripcion": "¡Banco didáctico 4 en 1 para desarrollar la motricidad y cognición de los más peques!",
+  "edadrecomendada": "6 meses a 1 año",
   "Edad recomendada": "1 a 3 años",
   "materiales": "Madera y metal",
   "altura": "40",
   "ancho": "40",
-  "profundidad": "30"
+  "profundidad": "30",
+  "dimensiones": "60 cm x 40 cm x 30 cm"
  },
  {
   "SKU": "9",
@@ -131,12 +163,13 @@
   "categoria": "Sensoriales",
   "imagenPrincipal": "pizarra-mesa-expresion.png",
   "imagenesAdicionales": "",
-  "descripcion": "orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum elementum sollicitudin. Nullam pellentesque suscipit orci cursus feugiat. Vivamus posuere elit sit amet euismod egestas. Praesent vitae turpis lectus. Vestibulum sollicitudin facilisis neque, ut rutrum sapien tincidunt id. Donec non lacinia erat.",
-  "edadRecomendada": "6 meses a 1 año",
+  "descripcion": "¡Ideal para las clases virtuales de los chicos! ¿Por qué? Incluye un espacio para colocar la tablet o celular. Permite usar la pizarra anotando con marcador. Pueden dibujar o escribir mientras desayunan, almuerzan, meriendan o cenan. ¡Tiene portavasos!",
+  "edadrecomendada": "6 meses a 1 año",
   "Edad recomendada": "1 a 3 años",
   "materiales": "Madera",
   "altura": "25",
   "ancho": "30",
-  "profundidad": "15"
+  "profundidad": "15",
+  "dimensiones": "70 cm x 50 cm x 25 cm"
  }
 ]

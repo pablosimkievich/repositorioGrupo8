@@ -8,10 +8,12 @@ router.get('/productos', productController.productList);
 
 router.get('/juguetes/:id', productController.productDetail);
 
+router.get('/kit', productController.productDirect);
+
 router.get('/crearProducto', productController.crearProducto );
 
 router.post('/crearProducto',productController.guardar );
-
+  
 
 
 module.exports = router;
