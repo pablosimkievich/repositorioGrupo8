@@ -13,9 +13,19 @@ module.exports = {
     },
     productDetail:  (req,res)=> {
         let id = req.params.id;
-        let juguete = data.find( e => e.id == parseInt(id) )
-
-        res.render('product/productDetail', {juguete})  // productDetail.ejs
+        console.log(id)
+       
+      
+        let juguete = data.find( e => e.SKU ==parseInt(id));
+        console.log(juguete)
+        console.log(data)
+        if(juguete){
+            res.render('product/productDetail', {juguete})  // productDetail.ejs
+        }else{
+                res.send("No existe el juguete")
+        }
+       
+        
     },
     
     crearProducto: (req, res)=> {
@@ -32,9 +42,14 @@ module.exports = {
 
 
         res.redirect('/')
-
-                
-
         },
+    getCategory: (req,res)=> {
+            let categoria = req.params.categoria
+            let juguetesCategoria = data.filter(e => (e.categoria).replace(' ', '').toLowerCase() == categoria)
+           
+
+    res.render('product/categoria', {juguetesCategoria}) }
+
+
 }
 

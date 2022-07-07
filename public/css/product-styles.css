@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: cursive;
     font-weight: 400;
     font-size: 14px;
 }
@@ -121,6 +121,9 @@
     height: 34px;
     padding: 8px;
   }
+
+
+
 /* Main section*/
 
 main {
@@ -171,7 +174,11 @@ ul.breadcrumbs li+li:before {
     color:  #32afa9 ;
     text-decoration: underline;
   }
-
+.product-display{
+    margin-top: 128px;    
+    display: flex;
+    flex-flow: row wrap;
+}
   
 
 .product{

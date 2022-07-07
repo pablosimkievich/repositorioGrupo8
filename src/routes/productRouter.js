@@ -8,6 +8,8 @@ router.get('/productos', productController.productList);
 
 router.get('/juguetes/:id', productController.productDetail);
 
+router.get('/categorias/:categoria', productController.getCategory);
+
 router.get('/crearProducto', productController.crearProducto );
 
 router.post('/crearProducto',productController.guardar );
