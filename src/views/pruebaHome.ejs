@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/head.ejs')%>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/pruebahome-styless.css" title="cont">
+        <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+        <title>Rayuela</title>
+    </head>
 
 <body>
-    <%-include('./partials/header.ejs')%>
+    
+    
+    
     <section class="banner" id="home-banner">
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
-    <h1>Elegí por Categoría</h1>
-    <section class="home_categoria">
 
-        <article class="home_categoria_card">
+
+<main>
+        <h2 class="home_header">Elegí por Categoría</h2>
+
+
+    <section id="juguetes_home">
+
+        <article class="unicoIrrepetible">
             <% categorias.map(e => { %>
-            <a href="#">
+            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>">
                 <img src="<%= e.img %>" alt="banco">
                 <h3><%= e.categoria %></h3>
             </a>
             <% }) %>
-        </article>      
+        </article>    
+        
+        
     </section>
 
-    <h1>Elegí por Edad</h1>
+    <h2 class="home_header">Elegí por Edad</h2>
  
     <section class="home_categoria">
         <article class="home_categoria_card">
             <a href="#">
-               
                 <img src="/img/categoria-6meses.png" alt="banco">
                 <h3>De 6 meses a un año</h3>
             </a>
@@ -33,7 +48,6 @@
 
         <article class="home_categoria_card">
             <a href="#">
-           
                 <img src="/img/categoria-1año.png" alt="banco">
                 <h3>De 1 a 3 años</h3>
             </a>
@@ -55,6 +69,8 @@
         </article>
 
    </section> 
+</main>
+
 
 </body>
 </html>

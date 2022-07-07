@@ -106,7 +106,7 @@
   "precio": "7450",
   "enPromo": "no",
   "descuento": "",
-  "categoria": "Movimientos",
+  "categoria": "movimientos",
   "imagenPrincipal": "cohete-multifuncion.png",
   "imagenesAdicionales": "",
   "descripcion": "En el cohete podemos encontrar: 12 salas, tales como: dormitorio, quirófano o laboratorio, en varios estilos y colores.",
@@ -124,7 +124,7 @@
   "precio": "5600",
   "enPromo": "no",
   "descuento": "",
-  "categoria": "Movimientos",
+  "categoria": "movimientos",
   "imagenPrincipal": "cocodrilo-de-arrastre.png",
   "imagenesAdicionales": "",
   "descripcion": "Cocodrilo de Arrastre Classic World. Con tira de arrastre.",
@@ -142,7 +142,7 @@
   "precio": "8900",
   "enPromo": "no",
   "descuento": "",
-  "categoria": "Movimientos",
+  "categoria": "movimientos",
   "imagenPrincipal": "banco didactico-4-en1.jpg",
   "imagenesAdicionales": "",
   "descripcion": "¡Banco didáctico 4 en 1 para desarrollar la motricidad y cognición de los más peques!",
@@ -170,6 +170,24 @@
   "altura": "25",
   "ancho": "30",
   "profundidad": "15",
-  "dimensiones": "70 cm x 50 cm x 25 cm"
+  "dimensiones": "70 cm x 50 cm x 25 cm",
+  "profundidad": "15"
+ },
+ {
+  "SKU": "11",
+  "nombre": "Rompecabezas Bloques",
+  "precio": "12500",
+  "enPromo": "no",
+  "descuento": "",
+  "categoria": "Rompecabezas",
+  "imagenPrincipal": "rompecabezas-animales.jpg",
+  "imagenesAdicionales": "",
+  "descripcion": "Lorem  jla;shfIWUEHIHX IHCBPY HFCEHCHN",
+  "Edad recomendada": "3 a 6 años",
+  "materiales": "Madera",
+  "altura": "10",
+  "ancho": "5",
+  "profundidad": "4",
+  "dimensiones": "35 cm x 15 cm x 25 cm"
  }
 ]
