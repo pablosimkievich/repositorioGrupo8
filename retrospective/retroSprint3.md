@@ -6,7 +6,7 @@
 ------------
 
 
-- **Start Doing (comenzar a hacer):** En este primer punto creemos que sería importante no solo poner nuestra atención en la división de tareas sino también en comenzar a administrar el tiempo que tenemos de acuerdo a las tareas a realizar, de esta manera, evaluaríamos la forma en que vamos trabajando y a su vez, el tiempo que cada tarea requiere de acuerdo a su complejidad.
+- **Start Doing (comenzar a hacer):** En este primer punto creemos que sería importante no solo poner nuestra atención en la división de tareas sino también en comenzar a administrar el tiempo que tenemos de acuerdo a las tareas a realizar, de esta manera, evaluaríamos la forma en que vamos trabajando y a su vez, el tiempo que cada tarea requiere de acuerdo a su complejidad. Es fundamental la delimitación clara de actividades que evite duplicar trabajo.  Ademas, tenemos que ir buscando la manera de dejar de producir un código desordenado y poco prolijo. De a poco debemos ir forjandonos el compromiso de producir un código más fácilmente legible para los diferentes miembros del grupo y ocasionales colaboradores. Un código mejor identado para un mejor entendimiento de nuestros proyectos y para que la experiencia de lectura del código sea más satisfactoria.
 
 ------------
 
