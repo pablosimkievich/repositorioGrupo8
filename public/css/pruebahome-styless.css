@@ -1,0 +1,83 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: cursive, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.banner{
+    width:100%;
+}
+  
+.banner img {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    object-fit: cover;
+    object-position: 0px 70%;
+    position: relative;
+}  
+
+
+
+h2.home_header {
+                 font-size: 20px;
+                 color: #999;
+}
+
+
+
+
+#juguetes_home{
+                width:100%;
+                border: solid red 1px;
+
+}
+
+
+
+#juguetes_home a img {
+                        width:100%;
+}
+
+
+
+.unicoIrrepetible{
+                    width:100%;
+                    display: flex;
+                    flex-flow: row wrap;
+
+}
+
+
+
+.home_categoria {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.home_categoria_card {
+margin: 10px; 
+width: 35%;
+position: relative;
+
+}
+.home_categoria_card img{
+width: 100%;
+}
+article.home_categoria_card a  h3{
+    outline: none;
+    border: red solid 1px;
+    position: absoulte;
+    bottom: 0px;
+    background-color: #999;
+    opacity: 0.7;
+}
+
