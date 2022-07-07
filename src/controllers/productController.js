@@ -13,14 +13,27 @@ module.exports = {
     },
     productDetail:  (req,res)=> {
         let id = req.params.id;
-        let juguete = data.find( e => e.id == parseInt(id) )
-
-        res.render('product/productDetail', {juguete})  // productDetail.ejs
+        console.log(id)
+       
+      
+        let juguete = data.find( e => e.SKU ==parseInt(id));
+        console.log(juguete)
+        console.log(data)
+        if(juguete){
+            res.render('product/productDetail', {juguete})  // productDetail.ejs
+        }else{
+                res.send("No existe el juguete")
+        }
+       
+        
     },
     
     crearProducto: (req, res)=> {
         res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
     
+    },
+    productDirect: (req, res) => {
+        res.render('/product/productDetail')   // link de home ( / ) a productDetail.ejs ddirecto 
     },
     guardar: (req, res)=> {
         let newProduct = req.body;

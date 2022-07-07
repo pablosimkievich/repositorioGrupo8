@@ -7,18 +7,18 @@
     <main>
         <section class="bread-crumbs">
             <ul class="breadcrumbs">
-                <li><a href="/views/home.html>=">home</a></li>
-                <li><a href="productCategory.html">instruentos musicales</a></li>
-                <li><a href="productDetail.html">kit instrumento musical</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="productCategory.html"> <%= juguete.categoria %> </a></li>
+                <li><a href="productDetail.html"> <%= juguete.nombre %> </a></li>
             </ul>
         </section>
 
-
+<%=  %>
         <section class="product">
             <article class="product_infoPrincipal">
                 <div class="product_infoPrincipal_images">
                     
-                    <img class='imagen-principal' src="\img\instrumentos.png">
+                    <img class='imagen-principal' src="/img/<%= juguete.imagenPrincipal %>">
                    <a href="#"><img class='imagen-2' src="\img\xilofon1.png"></a> 
                    <a href="#"><img class='imagen-3' src="\img\maracas.png"></a> 
                     <div class="dots">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
-                        <h1 class="product-name"><%=juguete.nombre%></h1>
+                        <h1 class="product-name"> <%= juguete.nombre %> </h1>
                         <span class="reviews">
                             <h2>Reviews (4)</h2>
                             <p class="stars">
@@ -40,11 +40,11 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
+                                
                             </p>
 
                         </span>
-                        <h2 class="precio">4250$</h2>
+                        <h2 class="precio">$ <%= juguete.precio %> </h2>
                         <form class="add-to-cart" method="POST" action="/add-to-cart">
                             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
@@ -69,25 +69,23 @@
             </article>
             <article class="product_masInfo">
                 <h3>Descripcion</h3>
-                <p>El Kit musical Golden 6 piezas incluye:
-                    Cascabel, Flauta 20 cm, Xilofon, Maraca Baby, Castañuela y Guiro (Percusión).
-                    Todos los instrumentos vienen dentro de una bolsa de Tela, los colores van rotando de acuerdo a la
-                    disponibilidad de stock.</p>
+                <p> <%= juguete.descripcion %>
+                </p>
             </article>
             <article class="product_masInfo">
                 <h3>Información Adicional </h3>
                 <table class="info-table">
                     <tr>
-                        <td>Edad recomendada</td>
-                        <td>+ 3 años</td>
+                        <td>Edad: </td>
+                        <td> <%= juguete.edadrecomendada %> </td>
                     </tr>
                     <tr>
                         <td>Materiales</td>
-                        <td>Madera y metal</td>
+                        <td> <%= juguete.materiales %> </td>
                     </tr>
                     <tr>
-                        <td>Dimensines</td>
-                        <td>20cm x 30 cm x 15 cm</td>
+                        <td>Dimensiones</td>
+                        <td>  <%= juguete.dimensiones %> </td>
                     </tr>
                 </table>
             </article>
