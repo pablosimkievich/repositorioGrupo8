@@ -11,6 +11,7 @@
 
 <body>
     <%- include('../views/partials/header.ejs') %>
+    <%- include('../views/partials/whatsappButton.ejs') %>
     <section class="banner" id="home-banner">
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
@@ -31,26 +32,8 @@
        
         </article>
         <% }) %>
-
-    <!--    <h2 class="home_header">Elegí por Categoría</h2>
-
-
-    <section id="juguetes_home">
-
-        <article class="unicoIrrepetible">
-            <% categorias.map(e => { %>
-            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>">
-                <img src="<%= e.img %>" alt="banco">
-                <h3><%= e.categoria %></h3>
-            </a>
-            <% }) %>
-        </article>    
-        
-        
     </section>
-
-    
- -->
+   <a href="/productos">Ver todos juguetes</a>
     <section class="home_categoria">
 
         <h2 class="home_header">Elegí por Edad</h2>
@@ -88,6 +71,51 @@
         </div>
 
    </section> 
+   <%- include('../views/partials/seccionTbnMeGusta.ejs') %>
+   
+   <footer>
+
+    <ul class="footer-list-container">
+        <li class="quienes-somos">
+           <a href="#" class="quienes-somos">Quienes Somos</a>
+        </li>
+        <li class="redes">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram"></a></i></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
+            </ul>
+        </li>
+        <li class="medios-de-pago">
+            <h4>Medios de Pago</h4>
+            <ul>
+                <li><i class="fa-brands fa-cc-mastercard"></i></i></li>
+                <li><i class="fa-brands fa-cc-visa"></i></li>
+            </ul>
+        </li>
+        <li><a href='#' class="faq">F.A.Q</a></li>
+        <li class="footer-list">
+            <h4>Contactanos</h4>
+            <ul class="contacto">
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>11 5451 8758</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>San Martin 890 - CABA</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>contacto@rayuela.com.ar</p>
+                </li>
+                
+            </ul>
+
+        </li>
+    </ul>
+</footer>
 
 
 </body>

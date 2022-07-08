@@ -7,20 +7,39 @@
     font-weight: 400;
     font-size: 16px;
 }
+.whatsapp {
+    position:fixed;
+    bottom:40px;
+    width: 54px;
+    height: 54px;
+    right:5px;
+    background-color:#25D366;
+    color:#FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.whatsapp-button {
+    font-size: 45px;
+}
 
 .banner{
     width:100%;
     margin-top: 127px;
-    position: absolut;
+   
 }
   
 .banner img {
     width: 100vw;
-    height: 100px;
-    display: flex;
     object-fit: cover;
     object-position: 0px 70%;
-    position: relative;
+    
 }  
 
 
@@ -148,6 +167,8 @@ h2.home_header {
                  font-size: 35px;
                  color: #999;
                  text-align: center;
+                 margin: 20px;
+
 }
 
 
@@ -196,6 +217,192 @@ h2.home_header {
 .container .card a:hover{
         color: #303E37;
 }
+/*seccion tbn me gustaa*/
+#h-tambien-te-puede-gustar   {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(112, 108, 108) ;
+    padding: 10px 0px;
+    margin: 5px;
+  
+
+ }
+
+.tambien-te-puede-gustar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px ;
+   background-color: white;
+   margin:auto;
+   width:90%;
+   margin-bottom: 20px;
+}
+.card {
+/*border: solid 1px #808080;*/
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: white;
+    transition: all  500ms;
+    
+    
+}
+.card:hover {
+    
+    transform: scale(103%);
+
+}
+.card a{
+    text-decoration: none;
+}
+
+.card img {
+    width: 100%; 
+}
+.card h3 {
+    text-align: center;
+    margin: 5px;
+    font-size: 18px;
+   
+  
+}
+.card .precio-card{
+            text-align: center;
+            margin: 5px;
+            font-weight: 400;
+            
+}
+
+.add-to-cart-button {
+    background-color: rgb(45, 185, 138);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    margin: 15px;
+    margin-top: 10px;
+    border: none;
+    display: block;
+    margin: auto;
+    transition: all 500ms;
+    border-radius: 2px;
+}
+.card .add-to-cart-button{
+    font-size: 10px;
+    margin: 5px;
+    display: block;
+    margin: auto;
+}
+
+/*seccion footer*/
+
+footer {
+        width:100%;
+        background-color: rgb(159,212,239);
+        padding:15px;
+}
+
+.footer-list-container {
+    margin: auto;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+ 
+}
+
+.footer-list-container li{
+    margin:10px;
+    text-align: center;
+}
+.footer-list-container h4 {
+    color: rgb(40, 40, 109);
+    text-align: center;
+    font-size: 18px;
+ }
+ .footer-list-container a {
+    text-decoration: none;
+    color: rgb(40, 40, 109);
+    font-size: 18px;
+ }
+
+ 
+ .quienes-somos{
+    display:flex;
+    justify-content: center;
+
+ }
+.quienes-somos img{
+    width:20%;
+}
+.medios-de-pago ul {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.medios-de-pago li i {
+    font-size: 25px;
+    color: rgb(40, 40, 109);
+}
+.contacto li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+.contacto li p {
+    color: rgb(40, 40, 109);
+    font-size: 12px;
+
+}
+.contacto li i {
+    font-size: 15px;
+    color: rgb(40, 40, 109);
+}
+.redes ul{
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+.redes li i {
+    font-size: 35px;
+    color: rgb(40, 40, 109);
+}
+
+@media (min-width: 450px)
+{
+
+    .footer-list-container {
+      
+        flex-direction: row;
+        flex-wrap: wrap;
+}
 
 
-
+}
+@media (min-width: 750px){
+.banner img{
+    height: 300px;
+}
+.tambien-te-puede-gustar{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80%;
+}
+}

@@ -4,7 +4,9 @@ const productController = require('../controllers/productController');
 const path=require('path')
 
 
-router.get('/productos', productController.productList);
+router.get('/productos/', productController.productList);
+
+//router.get('/categorias/:edadrecomendada', productController.getEdad)
 
 router.get('/juguetes/:id', productController.productDetail);
 
