@@ -10,16 +10,29 @@
     </head>
 
 <body>
-    
-    
-    
+    <%- include('../views/partials/header.ejs') %>
     <section class="banner" id="home-banner">
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
 
 
-<main>
+    <section class="home_categoria">
         <h2 class="home_header">Elegí por Categoría</h2>
+
+    <div class="container">
+        <% categorias.map(e => { %>
+        <article class="card">
+          
+                <img src="<%= e.img %>" alt="imagen">
+        <div>
+            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>"><%= e.categoria %></a>
+           
+        </div>
+       
+        </article>
+        <% }) %>
+
+    <!--    <h2 class="home_header">Elegí por Categoría</h2>
 
 
     <section id="juguetes_home">
@@ -36,40 +49,45 @@
         
     </section>
 
-    <h2 class="home_header">Elegí por Edad</h2>
- 
+    
+ -->
     <section class="home_categoria">
-        <article class="home_categoria_card">
-            <a href="#">
+
+        <h2 class="home_header">Elegí por Edad</h2>
+
+        <div class="container">
+            <article class="card">
+                
                 <img src="/img/categoria-6meses.png" alt="banco">
-                <h3>De 6 meses a un año</h3>
-            </a>
-        </article>
+            <div>
+                <a href="#">De 6 meses a 1 año</a>
+            </div>
+            </article>
 
-        <article class="home_categoria_card">
-            <a href="#">
+            <article class="card">
                 <img src="/img/categoria-1año.png" alt="banco">
-                <h3>De 1 a 3 años</h3>
-            </a>
-        </article>
+                <div>
+                <a href="#">De 1 años a 3 años</a>
+            </div>
+            </article>
 
-        <article class="home_categoria_card">
-            <a href="#">
-               
+            <article class="card">
                 <img src="/img/categoria-3años.png" alt="banco">
-                <h3>De 3 a 6 años</h3>
-            </a>
-        </article>
+                <div>
+                <a href="#">De 3 años a 6 años</a>
+            </div>
+            </article>
 
-        <article class="home_categoria_card">
-            <a href="#">
+            <article class="card">
                 <img src="/img/categoria-6años.png" alt="banco">
-                <h3>Mas de 6 años</h3>
-            </a>
-        </article>
+                <div>
+                <a href="#">Mas de 6 años</a>
+            </div>
+            </article>
+                
+        </div>
 
    </section> 
-</main>
 
 
 </body>
