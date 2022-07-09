@@ -171,5 +171,22 @@
   "ancho": "30",
   "profundidad": "15",
   "dimensiones": "70 cm x 50 cm x 25 cm"
+ },
+ {
+  "SKU": "11",
+  "nombre": "Rompecabezas Bloques",
+  "precio": "12500",
+  "enPromo": "no",
+  "descuento": "",
+  "categoria": "Rompecabezas",
+  "imagenPrincipal": "rompecabezas-animales.jpg",
+  "imagenesAdicionales": "",
+  "descripcion": "Lorem  jla;shfIWUEHIHX IHCBPY HFCEHCHN",
+  "Edad recomendada": "3 a 6 años",
+  "materiales": "Madera",
+  "altura": "10",
+  "ancho": "5",
+  "profundidad": "4",
+  "dimensiones": "35 cm x 15 cm x 25 cm"
  }
 ]
