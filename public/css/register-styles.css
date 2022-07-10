@@ -1,0 +1,68 @@
+/* REGISTER STYLES*/
+
+.register {
+    margin-top: 200px;    
+}
+
+.register h3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.register form{
+ display: flex;
+ flex-wrap: wrap;
+ padding: 0px 40px 0px 40px;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.register form input {
+    margin-top: 10px;
+    width: 60vw;
+    padding: 2px;
+}
+
+
+.register .register-look-for-img {
+    /* text-align: center; */
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.register .register-termYCond {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 15px;
+    text-decoration: underline;
+    font-style: italic;
+
+}
+
+.register .register-termYCond:visited {
+    color: rgb(152, 13, 152);
+}
+
+#buttonRegister {
+    display: flex;
+    cursor: pointer;
+    margin-top: 10px;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-right: 40px;
+}
+
+#buttonRegister button {
+    width: 25%;
+    text-align: center;
+    position: relative;
+    right: 62px;
+}
+
+#buttonRegister button:hover {
+    background-color: #cde7d9;
+}
+

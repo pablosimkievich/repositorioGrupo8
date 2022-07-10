@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rayuela</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home-styles.css">
+    <link rel="stylesheet" href="/css/whatsapp.css">
     <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
     
 </head>
 
+<header>
+    <%- include('../views/partials/header.ejs') %>
+</header>
+
 <body>
-  <%- include('../views/partials/header.ejs') %>
     <section class="banner" id="home-banner">
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
@@ -114,9 +118,17 @@
             </a>
         </article>
 
+        <div>
+            <a href="https://api.whatsapp.com/send?phone=1155996575&text=Hola. como te podemos ayudar?%21%20." class="whatsapp" target="_blank">
+                <img src="/img/icons8-whatsapp-48.png" alt="">
+            </a>
+        </div>
    </section>
-<%-include('../views/partials/footer.ejs')%>
    
 </body>
+
+<footer>
+    <%-include('../views/partials/footer.ejs')%>
+</footer>
 
 </html>

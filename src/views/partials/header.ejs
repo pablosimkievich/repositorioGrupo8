@@ -7,27 +7,25 @@
     <link rel="stylesheet" href="/css/header-styles.css">
     <title>Document</title>
 </head>
-    <body>
-    
         <header class="header-style">
-            <section class="top-banner">
+            <section class="header-top-banner">
                 <i class="fa-solid fa-truck"></i>
                 <h4>Envío gratis a partir de $ 5000</h4>
             </section>
-            <section class="topbar">
-                <div class="topbar_burger-menu">
+            <section class="header-topbar">
+                <div class="header-topbar-burger-menu">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
                     <script>
                         function myFunction() {
-                            var x = document.getElementById("links");
-                            if (x.style.display === "block") {
-                                x.style.display = "none";
-                            } else {
-                                x.style.display = "block";
-                            }
-                        }
+                    var x = document.getElementById("header-links");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    } else {
+                        x.style.display = "block";
+                    }
+                }
                     </script>
-                    <ul id="links">
+                    <ul id="header-links">
                         <li><a href="/views/quienes-somos.html">Quienes Somos</a></li>
                         <li><a href="/views/productCategory.html">Por edad</a></li>
                         <li><a href="/views/productCategory.html">Por categoria</a></li>
@@ -36,25 +34,35 @@
                         <li><a href="/views/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-            <section class="search-bar">
-                <img id="logo" src="/img/logo5.png" alt="logo">
-            <form class="search">
-                <input type="search" name="q" placeholder="Buscar...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </section>
-                <nav class="topbar_iconos-header">
-                <div class="topbar_nav">
-                    <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                
+                <div class="header-search-bar">
+                    <!-- <section > -->
+                        <a href="/"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                        <form class="header-search">
+                        <input type="search" name="q" placeholder="Buscar...">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    <!-- </section> -->
+
                 </div>
-                <div class="topbar_nav">
-                    <a href="/login"><i class="fa-solid fa-user"></i></a>
+                       
+                
+                <div class="header-topbar-icons">
+                    <nav>
+                        <div class="header-topbar-each-icon">
+                            <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                        </div>
+                        <div class="header-topbar-each-icon">
+                            <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+                  
             </section>
         </header>
-
-    </body>
+        <body>  
+            
+        </body>
 
 </html>
 
