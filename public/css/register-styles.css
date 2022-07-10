@@ -1,7 +1,7 @@
 /* REGISTER STYLES*/
 
 .register {
-    margin-top: 200px;    
+    margin-top: 220px;    
 }
 
 .register h3 {
@@ -50,16 +50,14 @@
     display: flex;
     cursor: pointer;
     margin-top: 10px;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 10px;
-    margin-right: 40px;
 }
 
 #buttonRegister button {
     width: 25%;
     text-align: center;
     position: relative;
-    right: 62px;
 }
 
 #buttonRegister button:hover {

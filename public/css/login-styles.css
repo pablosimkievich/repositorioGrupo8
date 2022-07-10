@@ -14,8 +14,9 @@
     display: block;
     text-align: center;
     /* flex-wrap: wrap; */
-    margin-top: 200px;
+    margin-top: 220px;
     /* width: 100%; */
+    align-items: center;
 }
 
 .login input {
@@ -33,6 +34,7 @@
  text-decoration: underline;
  font-style: italic;
  margin-top: 20px;
+ margin-bottom: 60px;
 }
 
 .login .links:visited {

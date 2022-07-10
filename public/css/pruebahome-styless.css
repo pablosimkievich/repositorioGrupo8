@@ -385,6 +385,12 @@ footer {
     color: rgb(40, 40, 109);
 }
 
+.verTodosLosJuguetes {
+    display: block;
+    margin:auto;
+    text-align: center;
+}
+
 @media (min-width: 450px)
 {
 

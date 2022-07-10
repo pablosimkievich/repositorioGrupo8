@@ -14,7 +14,7 @@
 
 #shoppingCart {
     border: solid black 1px; 
-    margin-top: 200px;
+    margin-top: 220px;
     margin-bottom: 10px;
     background-color:  #cde7d9;
     display: flex;
@@ -164,7 +164,7 @@ width: 80%;
 }
 
 #logoEnDomicilio {
-    width: 30vw;
+    width: 400px;
     margin-top:0;
     margin-bottom: 0;
     margin-left: 20px;
