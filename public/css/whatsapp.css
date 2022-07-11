@@ -1,0 +1,49 @@
+
+/* LOGO WHATSAPP */
+
+/* .whatsapp img {
+    display:block;
+    position: absolute;
+    bottom:120px;
+    width: 54px;
+    height: 54px;
+    right:20px;
+    background-color:#25D366;
+    color:#FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+.whatsapp {
+    position:fixed;
+    bottom:40px;
+    width: 54px;
+    height: 54px;
+    right:40px;
+    background-color:#25D366;
+    color:#FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-button {
+    margin-top: 15px;
+}
+
+.whatsapp img {
+    justify-content: center; 
+    align-items: center;
+    width: 75%;
+    height: 75%;
+    text-align: center;    
+}

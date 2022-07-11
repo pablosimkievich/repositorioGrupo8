@@ -175,7 +175,7 @@ ul.breadcrumbs li+li:before {
     text-decoration: underline;
   }
 .product-display{
-    margin-top: 128px;    
+    margin-top: 168px;    
     display: flex;
     flex-flow: row wrap;
 }
