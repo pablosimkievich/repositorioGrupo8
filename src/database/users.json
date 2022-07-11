@@ -119,5 +119,16 @@
   "password": "3322",
   "confirmPassword": "3322",
   "fotoPerfil": "F01.jpg"
+ },
+ {
+  "id": 12,
+  "nombre": "Fernanda",
+  "apellido": "Filomeni",
+  "email": "ferfil@mail.com",
+  "telefono": "1198657436",
+  "domicilio": "Chacabuco 5645",
+  "password": "11445522",
+  "confirmPassword": "11445522",
+  "fotoPerfil": "F01.jpg"
  }
 ]

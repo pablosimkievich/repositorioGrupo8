@@ -58,7 +58,7 @@ const userController = {
         let guardar = fs.writeFileSync(pathUserDB, newUserListString)
         guardar
 
-        res.redirect('/');
+        res.redirect('/login');
     }
 };
 
