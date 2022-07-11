@@ -1,0 +1,123 @@
+[
+ {
+  "id": 1,
+  "nombre": "Ramón",
+  "apellido": "Saralegui",
+  "email": "raymond@mailg.com",
+  "telefono": "1525489762",
+  "domicilio": "Maipu 237",
+  "password": "1234",
+  "confirmPassword": "1234",
+  "fotoPerfil": "imagen.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Ramón",
+  "apellido": "Saralegui",
+  "email": "raymond@mailg.com",
+  "telefono": "1525489762",
+  "domicilio": "Maipu 237",
+  "password": "1234",
+  "confirmPassword": "1234",
+  "fotoPerfil": "imagen.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "Gonzalo",
+  "apellido": "Arastiaga",
+  "email": "ara@mailgoo.com",
+  "telefono": "1198457632",
+  "domicilio": "Echeverria457",
+  "password": "12",
+  "confirmPassword": "12",
+  "fotoPerfil": "hombre.png"
+ },
+ {
+  "id": 4,
+  "nombre": "Silvia",
+  "apellido": "Salgano",
+  "email": "mail@mailg.com",
+  "telefono": "1159765423",
+  "domicilio": "Azcuenaga 479",
+  "password": "987",
+  "confirmPassword": "987",
+  "fotoPerfil": "mujer-de-negocios.png"
+ },
+ {
+  "id": 5,
+  "nombre": "Karen",
+  "apellido": "Ferrari",
+  "email": "karferrari@msmail.com",
+  "telefono": "1158976543",
+  "domicilio": "Dorrego743",
+  "password": "456987",
+  "confirmPassword": "456987",
+  "fotoPerfil": "nina.png"
+ },
+ {
+  "id": 6,
+  "nombre": "Juan",
+  "apellido": "Palomino",
+  "email": "juani@msn.com",
+  "telefono": "1158889977",
+  "domicilio": "Urquiza 1254",
+  "password": "987654",
+  "confirmPassword": "987654",
+  "fotoPerfil": "hombre (1).png"
+ },
+ {
+  "id": 7,
+  "nombre": "Hugo",
+  "apellido": "Carranza",
+  "email": "huguito@mailgoo.com",
+  "telefono": "11987456633",
+  "domicilio": "Florida 457",
+  "password": "321",
+  "confirmPassword": "321",
+  "fotoPerfil": "avatarM.png"
+ },
+ {
+  "id": 8,
+  "nombre": "Analia",
+  "apellido": "Esposito",
+  "email": "abaespo@gmill.com",
+  "telefono": "119635987456",
+  "domicilio": "Chile 456",
+  "password": "3322",
+  "confirmPassword": "3322",
+  "fotoPerfil": "mujer (1).png"
+ },
+ {
+  "id": 9,
+  "nombre": "Rodolfo",
+  "apellido": "Frias",
+  "email": "rodof@mill.com",
+  "telefono": "11987457894",
+  "domicilio": "Formosa 457",
+  "password": "3366",
+  "confirmPassword": "3366",
+  "fotoPerfil": "avatarM.png"
+ },
+ {
+  "id": 10,
+  "nombre": "Jon",
+  "apellido": "Leningrad",
+  "email": "lejon@mail.com",
+  "telefono": "11987456368",
+  "domicilio": "Salta 986",
+  "password": "4455",
+  "confirmPassword": "4455",
+  "fotoPerfil": "hombre (1).png"
+ },
+ {
+  "id": 11,
+  "nombre": "Nina",
+  "apellido": "Arciaga",
+  "email": "nin@mail.com",
+  "telefono": "1198567485",
+  "domicilio": "La Pampa 996",
+  "password": "3322",
+  "confirmPassword": "3322",
+  "fotoPerfil": "F01.jpg"
+ }
+]
