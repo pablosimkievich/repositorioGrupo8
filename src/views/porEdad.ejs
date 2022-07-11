@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/pruebahome-styless.css" title="cont">
+        <link rel="stylesheet" href="/css/porEdad.css" title="cont">
         <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
         <title>Rayuela</title>
     </head>
@@ -17,27 +17,6 @@
     </section>
 
 
-    <section class="home_categoria">
-        <h2 class="home_header">Elegí por Categoría</h2>
-
-    <div class="container">
-        <% categorias.map(e => { %>
-        <article class="card">
-          
-                <img src="<%= e.img %>" alt="imagen">
-        <div>
-            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>"><%= e.categoria %></a>
-           
-        </div>
-       
-        </article>
-        <% }) %>
-    </section>
-    <div class="verTodosLosJuguetes">
-        <a href="/productos" >Ver todos juguetes</a>
-        <section class="home_categoria">
-    </div>
-   
 
         <h2 class="home_header">Elegí por Edad</h2>
 
@@ -69,17 +48,19 @@
                 <div>
                 <a href="#">Mas de 6 años</a>
             </div>
-            </article>
-                
+            </article>  
+
+        </div>
+        <div class="verTodosLosJuguetes">
+            <a href="/productos" >Ver todos juguetes</a>
+            <section class="home_categoria">
         </div>
 
    </section> 
    <%- include('../views/partials/seccionTbnMeGusta.ejs') %>
    
-   <footer>
-
+<footer>
     <%-include('../views/partials/footer.ejs')%>
-
 </footer>
 
 
