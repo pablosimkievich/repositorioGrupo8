@@ -36,9 +36,10 @@
 
 <body>
     <main class="register">
-        
+        <h3>Registrate</h3>
+            <br>    
         <form action="/registro" method="POST">
-            <h3>Registrate</h3>
+           
             <input type="text" name="nombre" placeholder="Nombre"  required>
             <input type="text" name="apellido" placeholder="Apellido"  required>
             <input type="email" name="email" placeholder="E-mail"  required>
@@ -56,10 +57,12 @@
             <br>
             
             <!-- Terminos y Condiciones -->
-            <div class="termYCond"><a href="#">Terminos y Condiciones</a></div>
-
-            <div class="termYCond">¿Ya tienes cuenta?<a href="/login">Ingresá</a></div>
-
+            <div>
+                <div class="register-termYCond"><a href="#">Terminos y Condiciones</a></div>
+                <div class="register-termYCond">¿Ya tienes cuenta?</div>
+                <div class="register-termYCond"><a href="/login">Ingresá</a></div>
+            </div>
+            <br>
              <!-- Botones -->
     <div id="buttonRegister">
     <button id=buttonR type="reset" value="Borrar" >Borrar</button>
