@@ -3,6 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const e = require('express');
+const { Console } = require('console');
 const dataPath = path.join(__dirname, '../database/jugetes.json');
 const data = JSON.parse(fs.readFileSync(dataPath, "UTF-8"));
 
@@ -53,18 +54,16 @@ module.exports = {
 
        res.render('product/categoria',{juguetesCategoria})
     },
-    /*getEdad: (req,res)=>{
-    let categoria = req.params.categoria;
-    let juguetesCategoria = data.filter(e => {
-        let claseEdad =e.edadRecomendada ;
-        let claseCategoria =e.categoria.replace(' ', '').toLowerCase() ;
-        
-        (claseEdad || claseCategoria) == categoria;
-})
 
-console.log(claseEdad)
-   console.log(jugueteCategoria)
-res.send(categoria)
-   //res.render('product/categoria',{juguetesCategoria})*/
+    getEdad: (req,res)=>{
+        
+        let edad = req.params.edadrecomendada;
+
+        let juguetesXedad = data.filter(e =>(e.edadRecomendada.includes(edad))? e : '')
+
+        res.render('product/edades',{juguetesXedad})     
+                                
+    },
+   
 }
 
