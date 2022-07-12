@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -6,27 +5,6 @@
     font-family: cursive, sans-serif;
     font-weight: 400;
     font-size: 16px;
-}
-.whatsapp {
-    position:fixed;
-    bottom:40px;
-    width: 54px;
-    height: 54px;
-    right:5px;
-    background-color:#25D366;
-    color:#FFF;
-    border-radius: 50px;
-    text-align: center;
-    box-shadow: 2px 2px 3px #999;
-    z-index:100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.whatsapp-button {
-    font-size: 45px;
 }
 
 .banner{
@@ -72,96 +50,7 @@
     color: white;
     font-size: 18px;
 }
-.topbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-}
-/*
-#menu {
-    background-color: rgb(189,212,213);
-}
-*/
-.topbar_iconos-header{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-.topbar_nav a i{
-    color: rgb(151,151,151);
-    font-size: 30px;
-    transition: all 700ms;
-    margin: 5px;
-}
-.topbar_burger-menu{
-    justify-self: flex-start;
-}
-.topbar_burger-menu a {
-    color: rgb(109, 108, 108);
-    text-decoration: none;
-    margin: 10px;
-}
-.topbar_burger-menu i {
-    color: rgb(151,151,151);
-    font-size: 30px;
-    margin: 5px;
-    transition: all 700ms;
-}
-#links {
-    display:none;
-    text-decoration: none;
-}
-#logo {
-    width:80px;
-    margin: 5px;
-}
-.search-bar {
-    background-color: white;
-    width:100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.search {
-    background-color: white;
-    width: 80%;
-    height: 40px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: solid 1px #D7D7D7;
-  }
-  .search input {
-    border: none;
-    font: 16px;
-    font-family: 'Montserrat', sans-serif;
-    color: grey;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-  }
-  .search button {
-    all: unset;
-    width: 44px;
-    height: 40px;
-  }
-  .search i {
-    color: grey;
-    width: 44px;
-    font-size: 18px;
-    height: 34px;
-    padding: 8px;
-  }
 
-
-
-
-.home_categoria{
-    width: 100%;
-}
 
 h2.home_header {
                  font-size: 35px;
@@ -299,90 +188,6 @@ h2.home_header {
     margin: 5px;
     display: block;
     margin: auto;
-}
-
-/*seccion footer*/
-
-footer {
-        width:100%;
-        background-color: rgb(159,212,239);
-        padding:15px;
-}
-
-.footer-list-container {
-    margin: auto;
-    margin-top: 20px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
- 
-}
-
-.footer-list-container li{
-    margin:10px;
-    text-align: center;
-}
-.footer-list-container h4 {
-    color: rgb(40, 40, 109);
-    text-align: center;
-    font-size: 18px;
- }
- .footer-list-container a {
-    text-decoration: none;
-    color: rgb(40, 40, 109);
-    font-size: 18px;
- }
-
- 
- .quienes-somos{
-    display:flex;
-    justify-content: center;
-
- }
-.quienes-somos img{
-    width:20%;
-}
-.medios-de-pago ul {
-    list-style: none;
-    display: flex;
-    padding: 10px;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-
-}
-.medios-de-pago li i {
-    font-size: 25px;
-    color: rgb(40, 40, 109);
-}
-.contacto li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-}
-.contacto li p {
-    color: rgb(40, 40, 109);
-    font-size: 12px;
-
-}
-.contacto li i {
-    font-size: 15px;
-    color: rgb(40, 40, 109);
-}
-.redes ul{
-    display:flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-}
-.redes li i {
-    font-size: 35px;
-    color: rgb(40, 40, 109);
 }
 
 .verTodosLosJuguetes {
