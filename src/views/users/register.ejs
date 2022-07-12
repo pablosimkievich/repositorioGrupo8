@@ -36,33 +36,29 @@
 
 <body>
     <main class="register">
-        <h3>Registrate</h3>
-            <br>
-        <form action="/" method="POST">
-            
-            <input type="text" name="nombre" placeholder="Nombre" value="Nombre" required>
-            <input type="text" name="apellido" placeholder="Apellido" value="Apellido" required>
-            <input type="email" name="email" placeholder="E-mail" value="E-mail" required>
-            <input type="text" name="telefono" placeholder="Ej: 1511111111" value="Telefono" required>
-            <input type="text" name="domicilio" placeholder="Domicilio" value="Domicilio" required>
+        
+        <form action="/registro" method="POST">
+            <h3>Registrate</h3>
+            <input type="text" name="nombre" placeholder="Nombre"  required>
+            <input type="text" name="apellido" placeholder="Apellido"  required>
+            <input type="email" name="email" placeholder="E-mail"  required>
+            <input type="number" name="telefono" placeholder="Ej: 1511111111"  required>
+            <input type="text" name="domicilio" placeholder="Domicilio"  required>
             <input type="password" name="password" placeholder="Contraseña"  required>
             <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" required>
             
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
                 <h4>Foto de perfil (opcional)</h4>
-                <input type="file" name="fotoPerfil">
+                <input type="file" name="fotoPerfil" required>
             </div>
         </form>
             <br>
             
             <!-- Terminos y Condiciones -->
-            <div>
-                <div class="register-termYCond"><a href="#">Terminos y Condiciones</a></div>
-                <div class="register-termYCond">¿Ya tienes cuenta?</div>
-                <div class="register-termYCond"><a href="/usuarios/login">Ingresá</a></div>
-            </div>
-            <br>
+            <div class="termYCond"><a href="#">Terminos y Condiciones</a></div>
+
+            <div class="termYCond">¿Ya tienes cuenta?<a href="/login">Ingresá</a></div>
 
              <!-- Botones -->
     <div id="buttonRegister">
