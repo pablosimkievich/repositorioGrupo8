@@ -41,14 +41,23 @@ module.exports = {
         res.render('home', {arrayMock, arrayMock}); // home ejs 
     },
     indexCategorias: (req, res) => {
-        let categorias= [
-            {categoria: 'Sensoriales', img:"/img/categoria-6meses.png"},
-            {categoria: 'Instrumentos Musicales', img:"/img/categoria-6meses.png"},
-            {categoria: 'Rompecabezas', img:"/img/categoria-6meses.png"},
-            {categoria: 'Movimientos', img:"/img/categoria-6meses.png"} ,
-            {categoria: 'Bloques', img:"/img/pizzaras.png"}
-        ]         //en n futuro agregar a base de datos   
+     
+        let categorias= 
+            [{categoria: 'Sensoriales', img:"/img/categoria-sensorial.png"},
+            {categoria: 'Instrumentos Musicales', img:"/img/instrumentos.png"},
+            {categoria: 'Rompecabezas', img:"/img/categoria-rompecabezas.png"},
+            {categoria: 'Movimientos', img:"/img/categoria-movimientos.png"} ,
+        ]         //en un futuro agregar a base de datos
         
         res.render('pruebaHome', {data, categorias}); // prueba de pagina home dinamica
+    },
+    indexEdad: (req, res) => {
+        let edad=
+        [{edad: '6a1Año', img:"/img/categoria-6meses.png"},
+         {edad: '1a3Años', img:"/img/categoria-1año.png"},
+         {edad: '3a6Años', img:"/img/categoria-3años.png"},
+         {edad: 'masDe6Años', img:"/img/categoria-6años.png"} ,
+        ]    
+        res.render('porEdad', {data, edad}); 
     }
 }

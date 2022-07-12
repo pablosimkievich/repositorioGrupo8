@@ -59,7 +59,18 @@ const userController = {
         guardar
 
         res.redirect('/login');
-    }
+    },
+    quienesSomos : (req,res) => {
+        res.render (path.join(__dirname,'../views/users/quienesSomos.ejs'))  //quienesSomos.ejs
+    },
+
+    preguntasFrecuentes : (req,res) => {
+        res.render (path.join(__dirname,'../views/users/preguntasFrecuentes.ejs')) //preguntasFrecuentes.ejs
+    },
+
+    contacto : (req,res) => {
+        res.render (path.join(__dirname,'../views/users/contacto.ejs')) //contacto.ejs
+    },
 };
 
 
