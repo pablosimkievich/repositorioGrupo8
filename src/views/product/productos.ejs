@@ -11,6 +11,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+            <link rel="stylesheet" href="/css/whatsapp.css">
 
 
             <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
@@ -36,8 +37,15 @@
 
                 <% }) %>
         </section>
-
-        <%- include('../partials/footer.ejs') %>
+        <div>
+            <a href="https://api.whatsapp.com/send?phone=1155996575&text=Hola. como te podemos ayudar?%21%20." class="whatsapp" target="_blank">
+                <img src="/img/icons8-whatsapp-48.png" alt="">
+            </a>
+        </div>  
     </body>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
 
 </html>
