@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
     <%-include('../partials/head.ejs')%>
     
@@ -7,18 +7,18 @@
 <body>
    <%-include('../partials/header.ejs')%> 
    <main class="main__form">
-    <form action="../crearProducto" method="POST" class="create-form">
+    <form action="../edit/<%=jugueteEdit.id%>?_method=PUT" method="POST" class="create-form">
         <div class="control-formulario">
             <label for="SKU">SKU:</label>
-            <input type="text" name="SKU" class="input-control" required>
+            <input type="text" name="SKU" class="input-control" placeholder="<%= jugueteEdit.SKU %>">
         </div>
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
-            <input type="text" name="nombre" class="input-control" required>
+            <input type="text" name="nombre" class="input-control" value="<%= jugueteEdit.nombre %>">
         </div>
         <div class="control-formulario">
             <label for="precio">Precio:</label><br>
-            <input type="text" name="precio" class="input-control" required>
+            <input type="text" name="precio" class="input-control" value="<%= jugueteEdit.precio %>">
         </div>
 
         <div class="control-formulario">
@@ -28,7 +28,7 @@
            </div> 
            <div class="control-formulario">   
             <label for="descuento">Descuento a aplicar</label>
-            <input type="number" name="descuento" class="input-control" placeholder="25%">
+            <input type="number" name="descuento" class="input-control" value="<%= jugueteEdit.descuento %>">
         </div>
 
         <div class="control-formulario">
@@ -52,7 +52,7 @@
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
-            <textarea name="descripcion" class="textarea" required></textarea>
+            <textarea name="descripcion" class="textarea" value="<%= jugueteEdit.SKU %>'></textarea>
         </div>
         <div class="control-formulario">
             <label>Edad recomendada:</label><br>
@@ -75,15 +75,15 @@
         <div class="control-formulario">
             
             <label for="dimensiones">Dimensiones en cm:</label><br>
-            <label><input type="text" name="altura" class="dimensiones" required>Ancho</label><br>
-           <label><input type="number" name="ancho" class="dimensiones" required>Altura</label><br>
-            <label><input type="number" name="profundidad" class="dimensiones" required>Profundidad</label><br>
+            <label><input type="text" name="altura" class="dimensiones" value="<%= jugueteEdit.ancho %>">Ancho</label><br>
+           <label><input type="number" name="ancho" class="dimensiones" value="<%= jugueteEdit.alto %>">Altura</label><br>
+            <label><input type="number" name="profundidad" class="dimensiones" value="<%= jugueteEdit.profundidad %>">Profundidad</label><br>
     
         
 
         </div>
         <div class="form-buttons">
-       <button type="reset" class="form-button">RESET</button>
+       
         <button type="submit" class="form-button">GUARDAR</button>
     </div>
     </form>

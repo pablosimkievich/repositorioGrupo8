@@ -29,20 +29,22 @@ module.exports = {
 
 
     },
-
-    crearProducto: (req, res) => {
-        res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
-
-    },
     productDirect: (req, res) => {
         res.render('/product/productDetail')   // link de home ( / ) a productDetail.ejs ddirecto 
     },
-    guardar: (req, res) => {
+    create: (req, res) => {
+        res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
+
+    },
+   
+  
+    saveNewProduct: (req, res) => {
+        let id = data[data.length-1].id +1;
         let newProduct = req.body;
+    
+
         data.push(newProduct);
         fs.writeFileSync(dataPath, JSON.stringify(data, null, ' '))
-
-        console.log(newProduct)
 
         res.redirect('/')
     },
@@ -61,9 +63,26 @@ module.exports = {
 
         let juguetesXedad = data.filter(e =>(e.edadRecomendada.includes(edad))? e : '')
 
-        res.render('product/edades',{juguetesXedad})     
-                                
+        res.render('product/edades',{juguetesXedad})                                 
     },
+
+    edit: (req,res)=>{
+       let id =parseInt(req.params.id)
+       let jugueteEdit = data.find(e => e.SKU ==id)
+        res.render('product/edit-form',{jugueteEdit})
+    /*do magic*/
+
+
+    },
+    saveEdit: (req,res) =>{
+        /*do magic*/
+    },
+    delete: (req,res)=> {
+        /*magic*/
+    }
+
+
+
    
 }
 
