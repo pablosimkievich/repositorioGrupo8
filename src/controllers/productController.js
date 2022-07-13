@@ -131,9 +131,9 @@ module.exports = {
           
     },
     delete: (req,res)=> {
-        const id = parseInt(req.params.id); 
+        const id = req.params.id; 
 
-        let productDelete = data.filter(e => e.id != id);
+        let productDelete = data.filter(e => e.id != parseInt(id));
 
         console.log(productDelete);
 
