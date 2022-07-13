@@ -131,11 +131,29 @@ module.exports = {
           
     },
     delete: (req,res)=> {
-        /*magic*/
+        const id = parseInt(req.params.id); 
+
+        let productDelete = data.filter(e => e.id != id);
+
+        console.log(productDelete);
+
+        fs.writeFile(dataPath, JSON.stringify(productDelete), (error)=>{
+        if(error){
+            res.send('Error' + error)
+        }else{
+            res.redirect("/")
+        }
+            })
+        },
+
+
+        
+        
+    
     }
 
 
 
    
-}
+
 
