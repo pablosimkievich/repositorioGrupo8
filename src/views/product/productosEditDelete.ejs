@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs') %>
-
-
     <body>
 
         <head>
@@ -15,7 +13,7 @@
 
 
             <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
-            <title>Rayuela</title>
+            <title>Listado de Juguetes</title>
         </head>
          <%- include('../partials/header.ejs') %>
         <section class="product-display">
@@ -29,19 +27,17 @@
                         <p class="precio-card">
                             <%=e.precio%>$
                         </p>
-                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>
-                            AGREGAR AL
-                            CARRITO</button>
-                    </a>
+                      <a href="../edit/<%=e.id%>">  <button type="submit" class="add-to-cart-button">EDIT</button></a>
+                            
+                      <form action="../delete?_method=DELETE" method="POST">
+                            <button type="submit" class="add-to-cart-button">DELETE</button>
+                      </form>
+                    
                 </article>
 
                 <% }) %>
         </section>
-        <div>
-            <a href="https://api.whatsapp.com/send?phone=1155996575&text=Hola. como te podemos ayudar?%21%20." class="whatsapp" target="_blank">
-                <img src="/img/icons8-whatsapp-48.png" alt="">
-            </a>
-        </div>  
+          
     </body>
 
     <footer>

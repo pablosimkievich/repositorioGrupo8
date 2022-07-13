@@ -23,7 +23,7 @@
      <section class="product-display">
         <% juguetesCategoria.map(e=> { %>
             <article class="card">
-                <a href="/juguetes/<%= e.SKU %>">
+                <a href="/juguetes/<%= e.id %>">
                     <img src="/img/<%= e.imagenPrincipal %>" alt="juguete1">
                     <h3>
                         <%= e.nombre %>

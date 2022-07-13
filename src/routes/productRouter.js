@@ -6,6 +6,10 @@ const path=require('path')
 
 router.get('/productos/', productController.productList);
 
+/********PRODUCT LIST TO EDIT/DELETE***********/
+router.get('/editDelete', productController.editDelete);
+
+
 router.get('/edad/:edadrecomendada', productController.getEdad);
 router.get('/categorias/:categoria', productController.getCategory);
 
@@ -19,7 +23,7 @@ router.post('/crearProducto',productController.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', productController.edit );
-router.post('/edit/:id',productController.saveEdit );
+router.put('/edit/:id', productController.saveEdit );
 
 /********DELETE A PRODUCT***********/
 router.delete('/:id' , productController.delete)

@@ -9,8 +9,8 @@
    <main class="main__form">
     <form action="../edit/<%=jugueteEdit.id%>?_method=PUT" method="POST" class="create-form">
         <div class="control-formulario">
-            <label for="SKU">SKU:</label>
-            <input type="text" name="SKU" class="input-control" placeholder="<%= jugueteEdit.SKU %>">
+            <label for="id">ID:</label>
+            <input type="text" name="id" class="input-control" placeholder="<%= jugueteEdit.id %>">
         </div>
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
@@ -52,7 +52,7 @@
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
-            <textarea name="descripcion" class="textarea" value="<%= jugueteEdit.SKU %>'></textarea>
+            <textarea name="descripcion" class="textarea" value="<%= jugueteEdit.descripcion %>"></textarea>
         </div>
         <div class="control-formulario">
             <label>Edad recomendada:</label><br>

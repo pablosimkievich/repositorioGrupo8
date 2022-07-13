@@ -13,14 +13,19 @@ module.exports = {
         
         res.render('product/productos', { data }) // products.ejs
     },
+    editDelete: (req, res)=> {
+
+        res.render('product/productosEditDelete', {data})     //listado de productos para edita o borrar
+    },
+
     productDetail: (req, res) => {
         let id = req.params.id;
         console.log(id)
 
+        let juguete = data.find(e => e.id == parseInt(id));
 
-        let juguete = data.find(e => e.SKU == parseInt(id));
         console.log(juguete)
-        console.log(data)
+        //console.log(data)
         if (juguete) {
             res.render('product/productDetail', { juguete })  // productDetail.ejs
         } else {
@@ -33,18 +38,36 @@ module.exports = {
         res.render('/product/productDetail')   // link de home ( / ) a productDetail.ejs ddirecto 
     },
     create: (req, res) => {
+      
         res.render('product/crearProducto');           // vemos el form en crearProducto.ejs
 
     },
    
   
     saveNewProduct: (req, res) => {
-        let id = data[data.length-1].id +1;
-        let newProduct = req.body;
+        let id = data[data.length-1].id 
+        let newId = id + 1;
+       
+        let newProduct = {
+            id: newId,
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            enPromo: req.body.enpromo,
+            descuento: req.body.descuento,
+            categoria: req.body.categoria,
+            imagenPrincipal: req.body.imagenPrincipal,
+            imagenesAdicionales: req.body.imagenesAdicionales,
+            descripcion: req.body.descripcion,
+            edadRecomendada: req.body.edadRecomendada,
+            materiales: req.body.materiales,
+            altura: req.body.altura,
+            ancho: req.body.ancho,
+            profundidad:req.body.profundidad
+        }
     
 
         data.push(newProduct);
-        fs.writeFileSync(dataPath, JSON.stringify(data, null, ' '))
+        fs.writeFile(dataPath, JSON.stringify(data, null, ' '))
 
         res.redirect('/')
     },
@@ -60,22 +83,52 @@ module.exports = {
     getEdad: (req,res)=>{
         
         let edad = req.params.edadrecomendada;
+        
 
         let juguetesXedad = data.filter(e =>(e.edadRecomendada.includes(edad))? e : '')
-
+        
         res.render('product/edades',{juguetesXedad})                                 
     },
 
     edit: (req,res)=>{
        let id =parseInt(req.params.id)
-       let jugueteEdit = data.find(e => e.SKU ==id)
+       let jugueteEdit = data.find(e => e.id ==id)
         res.render('product/edit-form',{jugueteEdit})
     /*do magic*/
 
 
     },
     saveEdit: (req,res) =>{
-        /*do magic*/
+        let sameId = parseInt(req.params.id);
+
+        let productEdited =  {
+            id: sameId,
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            enPromo: req.body.enpromo,
+            descuento: req.body.descuento,
+            categoria: req.body.categoria,
+            imagenPrincipal: req.body.imagenPrincipal,
+            imagenesAdicionales: req.body.imagenesAdicionales,
+            descripcion: req.body.descripcion,
+            edadRecomendada: req.body.edadRecomendada,
+            materiales: req.body.materiales,
+            altura: req.body.altura,
+            ancho: req.body.ancho,
+            profundidad:req.body.profundidad
+        }
+
+      data.map(e => (e.id == productEdited.id)? e = productEdited : e );
+     
+      fs.writeFile(dataPath,JSON.stringify(data),(error) => {
+        if(error){
+            res.send(error);
+        }else{
+            res.redirect('/');
+        }
+    })
+        
+          
     },
     delete: (req,res)=> {
         /*magic*/
