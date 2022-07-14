@@ -28,5 +28,8 @@ router.put('/edit/:id', productController.saveEdit );
 /********DELETE A PRODUCT***********/
 router.delete('/:id' , productController.delete)
 
+/********SEARCH A PRODUCT***********/
+router.get('/search', productController.search);
+
 
 module.exports = router;

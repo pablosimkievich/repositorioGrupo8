@@ -148,8 +148,15 @@ module.exports = {
       if (error) {
         res.send("Error" + error);
       } else {
-        res.redirect("/");
+        res.render("/");
       }
     });
+  },
+  search: (req,res)=>{
+    let name = req.query.name;
+    if(name){
+        data.filer(e => e.nombre.toLowerCase.replace(' ','').includes(name.toLowerCase.replace('&', '')))
+    }
+
   },
 };

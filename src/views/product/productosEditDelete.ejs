@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs') %>
-
-    <body>
 
         <head>
             <meta charset="UTF-8">
@@ -16,8 +13,22 @@
             <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
             <title>Listado de Juguetes</title>
         </head>
-        <%- include('../partials/header.ejs') %>
-            <section class="product-display">
+        <body>
+     
+        <%- include('../partials/header.ejs') %>  
+
+
+      
+    <form class="search-by-name" action="/search" method="GET" >
+    <input type="search" placeholder="Busca un juguete">
+    <button type="submit" class="add-to-cart-button" >Buscar</button>
+</form>
+
+
+<a href="/crearProducto" id="create-link-button"> <button class="add-to-cart-button">Crear un juguete</button> </a>
+            
+
+<section class="product-display">
                 <% data.map(e=> { %>
                     <article class="card">
                         <a href="/juguetes/<%= e.id %>">

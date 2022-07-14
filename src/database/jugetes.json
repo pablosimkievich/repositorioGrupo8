@@ -278,19 +278,5 @@
     "altura": "22",
     "ancho": "22",
     "profundidad": "22"
-  },
-  {
-    "id": 20,
-    "nombre": "Maracas",
-    "precio": "52",
-    "descuento": "",
-    "categoria": "Sensoriales",
-    "imagenPrincipal": "",
-    "imagenesAdicionales": "",
-    "descripcion": "",
-    "materiales": "",
-    "altura": "",
-    "ancho": "",
-    "profundidad": ""
   }
 ]
