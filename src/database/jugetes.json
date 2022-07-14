@@ -251,17 +251,18 @@
   {
     "id": 17,
     "nombre": "Maracas",
-    "precio": "222",
-    "descuento": "0",
-    "categoria": "Instrumentos Musicales",
-    "imagenPrincipal": "Captura de pantalla (49).png",
-    "imagenesAdicionales": "",
-    "descripcion": "",
+    "precio": "89999",
+    "descuento": "8",
+    "categoria": "Sensoriales",
+    "imagenPrincipal": "cohete-multifuncion.png",
+    "imagenesAdicionales": "instrumentos.png",
+    "descripcion": "descripcion del producto editado",
     "edadRecomendada": "1",
-    "materiales": "k",
-    "altura": "11",
-    "ancho": "11",
-    "profundidad": "122"
+    "materiales": "materiales eddddd",
+    "altura": "89",
+    "ancho": "4",
+    "profundidad": "85",
+    "enPromo": "no"
   },
   {
     "id": 18,
@@ -277,21 +278,6 @@
     "altura": "22",
     "ancho": "22",
     "profundidad": "22"
-  },
-  {
-    "id": 19,
-    "nombre": "Maracas",
-    "precio": "4500",
-    "descuento": "52",
-    "categoria": "Sensoriales",
-    "imagenPrincipal": "bloques-paraguas.png",
-    "imagenesAdicionales": "banco didactico-4-en1.jpg",
-    "descripcion": "banco didactico-4-en1.jpg",
-    "edadRecomendada": "2",
-    "materiales": "Metal",
-    "altura": "22",
-    "ancho": "2",
-    "profundidad": "2"
   },
   {
     "id": 20,
