@@ -44,7 +44,7 @@ module.exports = {
      
         let categorias= 
             [{categoria: 'Sensoriales', img:"/img/categoria-sensorial.png"},
-            {categoria: 'Instrumentos Musicales', img:"/img/instrumentos.png"},
+            {categoria: 'Instrumentos Musicales', img:"/img/categoria-instrumentos.png"},
             {categoria: 'Rompecabezas', img:"/img/categoria-rompecabezas.png"},
             {categoria: 'Movimientos', img:"/img/categoria-movimientos.png"} ,
         ]         //en un futuro agregar a base de datos

@@ -18,9 +18,9 @@
             <article class="product_infoPrincipal">
                 <div class="product_infoPrincipal_images">
                     
-                    <img class='imagen-principal' src="/img/<%= juguete.imagenPrincipal %>">
-                   <a href="#"><img class='imagen-2' src="\img\xilofon1.png"></a> 
-                   <a href="#"><img class='imagen-3' src="\img\maracas.png"></a> 
+                    <img class='imagen-principal' src="/img/products/<%= juguete.imagenPrincipal %>">
+                   <a href="#"><img class='imagen-2' src="/img/products/xilofon1.png"></a> 
+                   <a href="#"><img class='imagen-3' src="/img/products/maracas.png"></a> 
                     <div class="dots">
                         <i id="seleccionado" class="fa-regular fa-circle"></i>
                         <i class="fa-regular fa-circle"></i>
@@ -77,7 +77,7 @@
                 <table class="info-table">
                     <tr>
                         <td>Edad: </td>
-                        <td> <%= juguete.edadrecomendada %> </td>
+                        <td> <%= juguete.edadRecomendada %> </td>
                     </tr>
                     <tr>
                         <td>Materiales</td>
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <td>Dimensiones</td>
-                        <td>  <%= juguete.dimensiones %> </td>
+                        <td><%= juguete.ancho %>cm x <%= juguete.altura %>cm x <%= juguete.profundidad %>cm </td>
                     </tr>
                 </table>
             </article>
