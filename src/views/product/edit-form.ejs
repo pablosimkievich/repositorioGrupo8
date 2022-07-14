@@ -9,8 +9,9 @@
    <main class="main__form">
     <form action="../edit/<%=jugueteEdit.id%>?_method=PUT" method="POST" class="create-form">
         <div class="control-formulario">
+            <img scr="<%=jugueteEdit.imagenPrincipal%>">
             <label for="id">ID:</label>
-            <input type="text" name="id" class="input-control" placeholder="<%= jugueteEdit.id %>">
+            <input type="text" name="id" class="input-control" placeholder="<%= jugueteEdit.id %>" readonly>
         </div>
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
@@ -44,7 +45,7 @@
         
         <div class="control-formulario">
             <label for="imagen-producto">Seleccionar la imagen principal:</label>
-            <input type="file" name="imagenPrincipal" class="control" accept=".jpg .png" required></>
+            <input type="file" name="imagenPrincipal" class="control"></>
         </div>
         <div class="control-formulario">
             <label for="imagen-producto">Seleccionar imagenes adicionales:</label>
@@ -52,7 +53,7 @@
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
-            <textarea name="descripcion" class="textarea" value="<%= jugueteEdit.descripcion %>"></textarea>
+            <textarea name="descripcion" class="textarea" placeholder="<%= jugueteEdit.descripcion %>"></textarea>
         </div>
         <div class="control-formulario">
             <label>Edad recomendada:</label><br>
@@ -70,14 +71,14 @@
         </div>
         <div class="control-formulario">
             <label for="materiales">Materiales:</label><br>
-            <input type="text" name="materiales" class="input-control" required>
+            <input type="text" name="materiales" class="input-control" placeholder="<%=jugueteEdit.materiales%>" required>
         </div>
         <div class="control-formulario">
             
             <label for="dimensiones">Dimensiones en cm:</label><br>
-            <label><input type="text" name="altura" class="dimensiones" value="<%= jugueteEdit.ancho %>">Ancho</label><br>
-           <label><input type="number" name="ancho" class="dimensiones" value="<%= jugueteEdit.alto %>">Altura</label><br>
-            <label><input type="number" name="profundidad" class="dimensiones" value="<%= jugueteEdit.profundidad %>">Profundidad</label><br>
+            <label><input type="text" name="altura" class="dimensiones" placeholder="<%= jugueteEdit.ancho %>">Ancho</label><br>
+           <label><input type="number" name="ancho" class="dimensiones" placeholder="<%= jugueteEdit.altura %>">Altura</label><br>
+            <label><input type="number" name="profundidad" class="dimensiones" placeholder="<%= jugueteEdit.profundidad %>">Profundidad</label><br>
     
         
 

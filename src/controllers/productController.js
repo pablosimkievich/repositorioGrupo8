@@ -116,10 +116,11 @@ module.exports = {
             altura: req.body.altura,
             ancho: req.body.ancho,
             profundidad:req.body.profundidad
-        }
+        };
+console.log(productEdited)
 
       data.map(e => (e.id == productEdited.id)? e = productEdited : e );
-     
+       
       fs.writeFile(dataPath,JSON.stringify(data),(error) => {
         if(error){
             res.send(error);
