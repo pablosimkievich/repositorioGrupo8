@@ -9,9 +9,6 @@ module.exports = {
   productList: (req, res) => {
     res.render("product/productos", { data }); // products.ejs
   },
-  editDelete: (req, res) => {
-    res.render("product/productosEditDelete", { data }); //listado de productos para edita o borrar
-  },
 
   productDetail: (req, res) => {
     let id = req.params.id;
@@ -152,11 +149,24 @@ module.exports = {
       }
     });
   },
+editDelete: (req, res) => {
+    res.render("product/editDelete", { data }); //listado de productos para edita o borrar
+  },
   search: (req,res)=>{
-    let name = req.query.name;
-    if(name){
-        data.filer(e => e.nombre.toLowerCase.replace(' ','').includes(name.toLowerCase.replace('&', '')))
-    }
+    let name = req.query.keywords;
+    
+    
+    if(name){ 
+      let searchResult = data.filter(e => e.nombre.toLowerCase().includes(name.toLowerCase()));
 
+     ( searchResult.length>0 ) ? res.render('product/searchResults', {searchResult}) : res.sendStatus(404);
+      
+
+      }else{
+        res.render('/product/editDelete')}
+         /* res.render('/products', {searchResult})*/
+    
+      
+    
   },
 };
