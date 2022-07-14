@@ -1,4 +1,4 @@
-# Retrospectiva Estrella de Mar 
+> # SPRINT 2: Starfish retrospective
 
 *Implementamos la dinámica Starfish retrospective, la cual nos permitió evaluar el trabajo realizado como grupo hasta ahora. Concluimos en resaltar los siguientes puntos:*
 
