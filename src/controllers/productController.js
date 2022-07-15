@@ -5,32 +5,45 @@ const { Console } = require("console");
 const dataPath = path.join(__dirname, "../database/jugetes.json");
 const data = JSON.parse(fs.readFileSync(dataPath, "UTF-8"));
 
+ 
+
 module.exports = {
   productList: (req, res) => {
     res.render("product/productos", { data }); // products.ejs
   },
 
-  productDetail: (req, res) => {
+  productDetail: (req, res) => {                                        
     let id = req.params.id;
     console.log(id);
-
+    
     let juguete = data.find((e) => e.id == parseInt(id));
+  
 
-    console.log(juguete);
-    //console.log(data)
-    if (juguete) {
-      res.render("product/productDetail", { juguete }); // productDetail.ejs
+    let cuatro = [];
+        for(let i=0; i<=3; i++){ 
+          cuatro.push(data.filter(e => e.categoria === juguete.categoria)[i]);
+          };
+          
+          if(cuatro.length<4){ 
+            for(let i=0; i<(4-cuatro.length);i++){
+              cuatro.push(data.filter(e => e.categoria !== juguete.categoria)[i])
+            }
+          }
+        
+  
+   if (juguete) {
+      res.render("product/productDetail", { juguete, cuatro});           
     } else {
       res.send("No existe el juguete");
     }
   },
+
   productDirect: (req, res) => {
     res.render("/product/productDetail"); // link de home ( / ) a productDetail.ejs ddirecto
   },
   create: (req, res) => {
     res.render("product/crearProducto"); // vemos el form en crearProducto.ejs
   },
-
   saveNewProduct: (req, res) => {
     let id = data[data.length - 1].id;
     let newId = id + 1;
@@ -52,10 +65,16 @@ module.exports = {
       profundidad: req.body.profundidad,
     };
 
-    data.push(newProduct);
-    fs.writeFile(dataPath, JSON.stringify(data, null, " "));
+       data.push(newProduct);
 
-    res.redirect("/");
+       fs.writeFile(dataPath, JSON.stringify(data), (error) => {
+        if (error) {
+          res.send(error);
+        } else {
+          res.redirect("/");
+        }
+      });
+
   },
 
   getCategory: (req, res) => {
@@ -134,6 +153,7 @@ module.exports = {
       }
     });
   },
+
   delete: (req, res) => {
     const id = req.params.id;
 
@@ -149,11 +169,14 @@ module.exports = {
       }
     });
   },
+
 editDelete: (req, res) => {
     res.render("product/editDelete", { data }); //listado de productos para edita o borrar
   },
+
+
   search: (req,res)=>{
-    let name = req.query.keywords;
+    let name = req.query.keywords;               //busca jguetes en editdelete
     
     
     if(name){ 
@@ -163,10 +186,8 @@ editDelete: (req, res) => {
       
 
       }else{
-        res.render('/product/editDelete')}
-         /* res.render('/products', {searchResult})*/
-    
-      
-    
+        res.render('/product/editDelete')} 
   },
+
+
 };

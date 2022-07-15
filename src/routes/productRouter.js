@@ -14,7 +14,7 @@ router.get('/edad/:edadrecomendada', productController.getEdad);
 router.get('/categorias/:categoria', productController.getCategory);
 
 
-/********GET ONE PRODUCT***********/
+/********GET PRODUCT DETAIL***********/
 router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/
