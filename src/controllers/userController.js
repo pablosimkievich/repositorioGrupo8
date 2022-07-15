@@ -2,10 +2,12 @@ const path = require('path');
 //const login= path.join(__dirname,'/views/users/login')
 const fs = require('fs');
 const { markAsUntransferable } = require('worker_threads');
+const { join } = require('path');
 const pathUserDB = path.join(__dirname, '../database/users.json');
 const userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
 
-const allUsers = userDB.map ( e => {
+
+let allUsers = userDB.map ( e => {
     return {
         id: e.id,
         nombre: e.nombre,
@@ -47,7 +49,7 @@ const userController = {
             domicilio: req.body.domicilio,
             password: req.body.password,
             confirmPassword: req.body.confirmPassword,
-            fotoPerfil: req.body.fotoPerfil
+            fotoPerfil: req.file ? req.file.filename : ""
         }
 
 
@@ -57,7 +59,7 @@ const userController = {
 
         let guardar = fs.writeFileSync(pathUserDB, newUserListString)
         guardar
-
+        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
         res.redirect('/login');
     },
     quienesSomos : (req,res) => {
@@ -72,13 +74,29 @@ const userController = {
         res.render (path.join(__dirname,'../views/users/contacto.ejs')) //contacto.ejs
     },
     usersList: (req, res) => {
+
+        let userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
+        let allUsers = userDB.map ( e => {
+            return {
+                id: e.id,
+                nombre: e.nombre,
+                apellido: e.apellido,
+                email: e.email,
+                telefono: e.telefono,
+                domicilio: e.domicilio,
+                password: e.password,
+                confirmPassword: e.confirmPassword,
+                fotoPerfil: e.fotoPerfil
+            }
+        });
         res.render('users/userList', {allUsers})
         
     },
     userEdit: (req, res) => {
+        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
         const id = parseInt(req.params.id);
         const userEdit = allUsers.find( e => e.id === id);
-        //res.send(`formulario de edición de usuario ${id}`)
+
         res.render('users/userEdit', {userEdit})  //  pagina de deición de usuario
     },
     userEditSave: (req, res) => {
@@ -90,7 +108,9 @@ const userController = {
         const nuevoDomicilio = req.body.domicilio;
         const nuevopassword = req.body.password;
         const nuevoconfirmpassword = req.body.confirmPassword;
+        const nuevofotoPerfil = req.file ? req.file.filename : "";
 
+        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));     
         allUsers.map( e => {
             if (e.id == nuevoId) {
                 e.id = nuevoId
@@ -101,6 +121,7 @@ const userController = {
                 e.domicilio = nuevoDomicilio;
                 e.password = nuevopassword;
                 e.confirmPassword = nuevoconfirmpassword;
+                e.fotoPerfil = nuevofotoPerfil
             }
         });
 
@@ -108,13 +129,14 @@ const userController = {
             if (error) {
                 res.send(error);
             } else {
-                res.redirect('/usuarios')
+                res.render('users/userList', {allUsers})
             }
             
         })
     },
     userDelete: (req, res) => {
         const id = parseInt(req.params.id);
+        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8')); 
         const newUsers = allUsers.filter( e => e.id != id);
 
         fs.writeFile(pathUserDB, JSON.stringify(newUsers, null, " "), (error) => {
@@ -136,7 +158,7 @@ const userController = {
                         fotoPerfil: e.fotoPerfil
                     }
                 });
-                
+                res.redirect('/usuarios')
                 res.render('users/userList', {allUsers})
             }
         })
@@ -147,7 +169,8 @@ const userController = {
     },
     userDetail: (req, res) => {
         const id = parseInt(req.params.id);
-        const userDetail = allUsers.find( e => e.id === id);
+        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));  
+        let userDetail = allUsers.find( e => e.id === id);
         if (userDetail) {
             res.render('users/userDetail', {userDetail});
         } else {

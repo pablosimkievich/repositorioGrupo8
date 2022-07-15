@@ -26,8 +26,12 @@
     
         
             <article class="producto">
-                
+                    <% if (userDetail.fotoPerfil == "" ) { %>
+                    <img src="/img/users/undefined-user1280.png" alt="banco">
+                    <% } else { %> 
                     <img src="/img/users/<%= userDetail.fotoPerfil %>" alt="banco">
+                    <% } %>
+                    
                     <h3> <%= userDetail.nombre %>  <%= userDetail.apellido %></h3>
                 
                 <p>  <%= userDetail.email %> </p>

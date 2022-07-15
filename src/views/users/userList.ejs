@@ -21,13 +21,20 @@
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
 
-    <h2 class="user-list-tittle">Lista de Usuarios</h2>
+    <a class="user-list-link" href="/usuarios"><h2 class="user-list-tittle">Lista de Usuarios</h2></a> 
     <section class="lista-de-usuarios">
-    
+        
+        
         <% allUsers.map(e => { %>
             <article class="producto">
-                <a href="/usuario/<%= e.id %>">
-                    <img src="/img/users/<%= e.fotoPerfil %>" alt="banco">
+                
+                    <a href="/usuario/<%= e.id %>">
+                    <% if (e.fotoPerfil == "") { %>
+                    <img src="/img/users/undefined-user1280.png" alt="fotoPerfil">
+                    <% } else { %>
+                    <img src="/img/users/<%= e.fotoPerfil %>" alt="fotoPerfil">
+                    <% } %>
+                    
                     <h3> <%= e.nombre %>  <%= e.apellido %></h3>
                 </a>
                 <p>  <%= e.email %> </p>

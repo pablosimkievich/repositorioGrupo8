@@ -39,7 +39,7 @@
     <main class="register">
         <h3>Formulario de edición del usuario nro. <%= userEdit.id %></h3>
             <br>
-        <form action="/edicion-usuario?_method=PUT" method="POST">
+        <form action="/edicion-usuario?_method=PUT" method="POST" enctype="multipart/form-data">
             
             <input type="text" name="id" placeholder="Nombre" value="<%= userEdit.id %>" readonly="true">
             <input type="text" name="nombre" placeholder="Nombre" value="<%= userEdit.nombre %>" required>
