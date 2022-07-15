@@ -13,7 +13,7 @@ const allUsers = userDB.map ( e => {
         email: e.email,
         telefono: e.telefono,
         domicilio: e.domicilio,
-        passWord: e.password,
+        password: e.password,
         confirmPassword: e.confirmPassword,
         fotoPerfil: e.fotoPerfil
     }
@@ -71,7 +71,92 @@ const userController = {
     contacto : (req,res) => {
         res.render (path.join(__dirname,'../views/users/contacto.ejs')) //contacto.ejs
     },
-};
+    usersList: (req, res) => {
+        res.render('users/userList', {allUsers})
+        
+    },
+    userEdit: (req, res) => {
+        const id = parseInt(req.params.id);
+        const userEdit = allUsers.find( e => e.id === id);
+        //res.send(`formulario de edición de usuario ${id}`)
+        res.render('users/userEdit', {userEdit})  //  pagina de deición de usuario
+    },
+    userEditSave: (req, res) => {
+        const nuevoId = parseInt(req.body.id);
+        const nuevoNombre = req.body.nombre;
+        const nuevoApellido = req.body.apellido;
+        const nuevoEmail = req.body.email;
+        const nuevoTelefono = req.body.telefono;
+        const nuevoDomicilio = req.body.domicilio;
+        const nuevopassword = req.body.password;
+        const nuevoconfirmpassword = req.body.confirmPassword;
+
+        allUsers.map( e => {
+            if (e.id == nuevoId) {
+                e.id = nuevoId
+                e.nombre = nuevoNombre;
+                e.apellido = nuevoApellido;
+                e.email = nuevoEmail;
+                e.telefono = nuevoTelefono;
+                e.domicilio = nuevoDomicilio;
+                e.password = nuevopassword;
+                e.confirmPassword = nuevoconfirmpassword;
+            }
+        });
+
+        fs.writeFile(pathUserDB, JSON.stringify(allUsers, null, " "), (error) => {
+            if (error) {
+                res.send(error);
+            } else {
+                res.redirect('/usuarios')
+            }
+            
+        })
+    },
+    userDelete: (req, res) => {
+        const id = parseInt(req.params.id);
+        const newUsers = allUsers.filter( e => e.id != id);
+
+        fs.writeFile(pathUserDB, JSON.stringify(newUsers, null, " "), (error) => {
+            if (error) {
+                res.send('Error ' + error);
+            } else {
+                let newDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
+                
+                const allUsers = newDB.map ( e => {
+                    return {
+                        id: e.id,
+                        nombre: e.nombre,
+                        apellido: e.apellido,
+                        email: e.email,
+                        telefono: e.telefono,
+                        domicilio: e.domicilio,
+                        password: e.password,
+                        confirmPassword: e.confirmPassword,
+                        fotoPerfil: e.fotoPerfil
+                    }
+                });
+                
+                res.render('users/userList', {allUsers})
+            }
+        })
+
+
+        //res.send('Borrar usuario')
+
+    },
+    userDetail: (req, res) => {
+        const id = parseInt(req.params.id);
+        const userDetail = allUsers.find( e => e.id === id);
+        if (userDetail) {
+            res.render('users/userDetail', {userDetail});
+        } else {
+            res.send(`No se encontro a usuario ${id}`);
+        }
+            
+        
+    }
+ };
 
 
 module.exports = userController;

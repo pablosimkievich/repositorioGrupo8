@@ -11,11 +11,12 @@
     
 </head>
 
-<header>
-    <%- include('../views/partials/header.ejs') %>
-</header>
-
 <body>
+
+    <header>
+        <%- include('../views/partials/header.ejs') %>
+    </header>
+
     <section class="banner" id="home-banner">
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
@@ -70,11 +71,12 @@
             <%- include('../views/partials/whatsappButton.ejs') %>
         </div>
    </section>
-   
+
+   <footer>
+    <%-include('../views/partials/footer.ejs')%>
+    </footer>
+
 </body>
 
-<footer>
-    <%-include('../views/partials/footer.ejs')%>
-</footer>
 
 </html>
