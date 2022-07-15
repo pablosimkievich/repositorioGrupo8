@@ -121,7 +121,7 @@ const userController = {
                 e.domicilio = nuevoDomicilio;
                 e.password = nuevopassword;
                 e.confirmPassword = nuevoconfirmpassword;
-                e.fotoPerfil = nuevofotoPerfil
+                e.fotoPerfil =  nuevofotoPerfil == "" ? e.fotoPerfil:  nuevofotoPerfil;
             }
         });
 

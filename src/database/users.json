@@ -16,10 +16,10 @@
   "apellido": "Saralegui",
   "email": "dami@mailg.com",
   "telefono": "1525671262",
-  "domicilio": "Maipu 888",
+  "domicilio": "Maipu 111",
   "password": "1234",
   "confirmPassword": "1234",
-  "fotoPerfil": "img-user-1657904773139.png"
+  "fotoPerfil": "img-user-1657913634650.png"
  },
  {
   "id": 3,
@@ -27,7 +27,7 @@
   "apellido": "Arastiaga",
   "email": "ara@mailgoo.com",
   "telefono": "1198457632",
-  "domicilio": "Echeverria457",
+  "domicilio": "Echeverria 368",
   "password": "12",
   "confirmPassword": "12",
   "fotoPerfil": "img-user-1657905595304.png"
@@ -49,7 +49,7 @@
   "apellido": "Ferrari",
   "email": "karferrari@msmail.com",
   "telefono": "1158976543",
-  "domicilio": "Montevideo 743",
+  "domicilio": "Montevideo 879",
   "password": "456987",
   "confirmPassword": "456987",
   "fotoPerfil": "img-user-1657903726935.png"
