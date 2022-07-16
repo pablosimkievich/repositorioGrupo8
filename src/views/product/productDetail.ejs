@@ -13,20 +13,24 @@
             </ul>
         </section>
 
-<%=  %>
+
         <section class="product">
             <article class="product_infoPrincipal">
                 <div class="product_infoPrincipal_images">
                     
                     <img class='imagen-principal' src="/img/products/<%= juguete.imagenPrincipal %>">
-            <%if (juguete.imagenesAdicionales.length>0) {%> 
-                <% for(let i=0; i<juguete.imagenesAdicionales.length; i++){%> 
-                    <a href="#"><img class='imagenAdicional-<%= i+1  %>' src="/img/products/<%=juguete.imagenesAdicionales[i]%>"></a> 
                     
-                    <% } %>            
-                
-                
-                <% } %>
+            
+                    
+            <%if(Array.isArray(juguete.imagenesAdicionales) ){%>   
+                        <% for(let i=0; i < juguete.imagenesAdicionales.length; i++){%> 
+                            <a href="#"><img class='imagenAdicional-<%=i+1 %>' src="/img/products/<%=juguete.imagenesAdicionales[i]%>"></a> 
+                                <%}}else if(!Array.isArray(juguete.imagenesAdicionales) && juguete.imagenesAdicionales === ""){%> 
+                                    <a href="#" style="display:none"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
+                                    <%}else{%>
+                                    <a href="#"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
+                                        <%}%>       
+
                     <div class="dots">
                         <i id="seleccionado" class="fa-regular fa-circle"></i>
                         <i class="fa-regular fa-circle"></i>
@@ -104,8 +108,8 @@
         <article class="card">
             <a href="../juguetes/<%=e.id%>">
                 <img src="/img/products/<%=e.imagenPrincipal%>" alt="juguete1">
-            <h3><%= e.nombre%></h3>
-            <p class="precio-card"><%= e.precio%></p>
+            <h3><%= e.nombre %></h3>
+            <p class="precio-card"><%= e.precio %></p>
             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
                 CARRITO</button>
             </a>

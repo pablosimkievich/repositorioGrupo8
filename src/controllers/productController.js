@@ -16,12 +16,14 @@ module.exports = {
     let id = req.params.id;
     console.log(id);
     
-    let juguete = data.find((e) => e.id == parseInt(id));
+    let juguete = data.find((e) => e.id == parseInt(id));   
   
+   if (juguete) {
+    let categoriaJuguete = juguete.categoria
 
     let cuatro = [];
         for(let i=0; i<=3; i++){ 
-          cuatro.push(data.filter(e => e.categoria === juguete.categoria)[i]);
+          cuatro.push(data.filter(e => e.categoria === categoriaJuguete)[i])
           };
           
           if(cuatro.length<4){ 
@@ -29,9 +31,6 @@ module.exports = {
               cuatro.push(data.filter(e => e.categoria !== juguete.categoria)[i])
             }
           }
-        
-  
-   if (juguete) {
       res.render("product/productDetail", { juguete, cuatro});           
     } else {
       res.send("No existe el juguete");
