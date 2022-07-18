@@ -1,18 +1,32 @@
-!DOCTYPE html>
+
 <html lang="en">
-    <%-include('../partials/head.ejs')%>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+    
+      
+        
+        <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+        <title> Edicion Juguete - Rayuela</title>
+    </head>
     
     
 
 <body>
-   <%-include('../partials/header.ejs')%> 
    <main class="main__form">
+    
+   <a href="/controlPanel"><button>Back to Control Panel</button></a>
     <form action="../edit/<%=jugueteEdit.id%>?_method=PUT" method="POST" class="create-form">
-        <div class="control-formulario">
-            <img scr="<%=jugueteEdit.imagenPrincipal%>">
-            <label for="id">ID:</label>
-            <input type="text" name="id" class="input-control" placeholder="<%= jugueteEdit.id %>" readonly>
+        <div class="form-logo">
+            <img id="logo" src="/img/logo5.png" alt="logo">
+            <h1 class="h1-edit-form">Editando el Juguete id nro. <%=jugueteEdit.id%> </h1>
+            
         </div>
+      
+        
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
             <input type="text" name="nombre" class="input-control" value="<%= jugueteEdit.nombre %>">
@@ -42,12 +56,14 @@
                 <option value="Pizarras">Pizarras</option>
             </select>
         </div>            
-        
+      
         <div class="control-formulario">
-            <label for="imagen-producto">Seleccionar la imagen principal:</label>
+            <img src="/img/products/<%=jugueteEdit.imagenPrincipal%>" width="150px">
+            <label for="imagen-producto">Cambiar la imagen principal:</label>
             <input type="file" name="imagenPrincipal" class="control"></>
         </div>
         <div class="control-formulario">
+     
             <label for="imagen-producto">Seleccionar imagenes adicionales:</label>
             <input type="file" name="imagenesAdicionales" class="control" accept=".jpg,.png" multiple></>
         </div>

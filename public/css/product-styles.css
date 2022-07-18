@@ -514,7 +514,12 @@ table.info-table {
  margin-top: 300px;
 }
  
- 
+.h1-edit-form{
+    font-size: 25px;
+    color:rgb(124, 124, 124);
+    text-align: center;
+    margin: 20px;
+}
 
 
 
