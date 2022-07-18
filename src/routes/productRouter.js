@@ -6,15 +6,15 @@ const path=require('path')
 
 router.get('/productos/', productController.productList);
 
-/********PRODUCT LIST TO EDIT/DELETE***********/
-router.get('/editDelete', productController.editDelete);
+/********CONTROL PANEL PARA EDITAR/BORRAR PRODUCTOS***********/
+router.get('/controlPanel', productController.editDelete);
 
-
+/********PRODUCT LIST por categoria y edad***********/
 router.get('/edad/:edadrecomendada', productController.getEdad);
 router.get('/categorias/:categoria', productController.getCategory);
 
 
-/********GET ONE PRODUCT***********/
+/********GET PRODUCT DETAIL***********/
 router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/

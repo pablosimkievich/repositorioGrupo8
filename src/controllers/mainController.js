@@ -49,7 +49,17 @@ module.exports = {
             {categoria: 'Movimientos', img:"/img/categoria-movimientos.png"} ,
         ]         //en un futuro agregar a base de datos
         
-        res.render('pruebaHome', {data, categorias}); // prueba de pagina home dinamica
+    let cuatro = [];
+    for(let i=0; i<=3; i++){ 
+      cuatro.push(data.filter(e => e.enPromo === true)[i]);
+      };
+      
+      if(cuatro.length<4){ 
+        for(let i=0; i<(4-cuatro.length);i++){
+          cuatro.push(data.filter(e => e.enPromo !== true)[i])
+        }
+      }
+        res.render('pruebaHome', {data, categorias, cuatro}); // prueba de pagina home dinamica
     },
     indexEdad: (req, res) => {
         let edad=
