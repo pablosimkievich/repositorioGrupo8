@@ -170,7 +170,7 @@ module.exports = {
   },
 
 editDelete: (req, res) => {
-    res.render("product/editDelete", { data }); //listado de productos para edita o borrar
+    res.render("product/controlPanel", { data }); //listado de productos para edita o borrar
   },
 
 
