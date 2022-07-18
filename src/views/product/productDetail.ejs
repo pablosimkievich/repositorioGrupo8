@@ -22,7 +22,7 @@
         <section class="bread-crumbs">
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
-                <li><a href="productCategory.html"> <%= juguete.categoria %> </a></li>
+                <li><a href="/categorias/<%= juguete.categoria.replace( ' ', '').toLowerCase() %>"> <%= juguete.categoria %> </a></li>
                 <li><a href="productDetail.html"> <%= juguete.nombre %> </a></li>
             </ul>
         </section>

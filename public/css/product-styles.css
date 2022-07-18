@@ -544,6 +544,11 @@ flex-direction: row;
         width: 500px;
         border-radius: 10px;
     }
+    section.bread-crumbs {
+       
+        margin-top: 200px;
+     
+    }
 .product_infoPrincipal{
     flex-direction: row;
     flex-wrap: nowrap;
