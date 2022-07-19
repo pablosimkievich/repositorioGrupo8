@@ -25,8 +25,8 @@
 
         <% data.map(e => { %>
             <article class="producto">
-                <a href="/juguetes/<%= e.SKU %>">
-                    <img src="/img/<%= e.imagenPrincipal %>" alt="banco">
+                <a href="/juguetes/<%= e.id %>">
+                    <img src="/img/products/<%= e.imagenPrincipal %>" alt="banco">
                     <h3> <%= e.nombre %> </h3>
                 </a>
                 <p>$  <%= e.precio %> </p>
@@ -42,28 +42,28 @@
         <article class="producto-categoria">
             <a href="/index-categorias">
                 <h3>Juguetes de madera</h3>
-                <img src="/img/valija-carpintero.png" alt="banco">
+                <img src="/img/products/valija-carpintero.png" alt="banco">
             </a>
         </article>
 
         <article class="producto-categoria">
             <a href="/index-categorias">
                 <h3>Rompecabezas</h3>
-                <img src="/img/rompecabezas-animales.jpg" alt="banco">
+                <img src="/img/products/rompecabezas-animales.jpg" alt="banco">
             </a>
         </article>
 
         <article class="producto-categoria">
             <a href="/index-categorias">
                 <h3>Niños 2 a 4 años</h3>
-                <img src="/img/4anios.jpg" alt="banco">
+                <img src="/img/products/4anios.jpg" alt="banco">
             </a>
         </article>
 
         <article class="producto-categoria">
             <a href="/index-categorias">
                 <h3>Pizarras</h3>
-                <img src="/img/pizarras.png" alt="banco">
+                <img src="/img/products/pizarras.png" alt="banco">
             </a>
         </article>
 
