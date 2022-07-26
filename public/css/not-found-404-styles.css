@@ -7,12 +7,51 @@
     margin-top: 240px;
 }
 
+/* MOBIL */
+
+.messageMobile{
+    display: flex;
+    border: solid black 5px;
+    background-color: #C2DED1;
+    justify-content: space-around;
+}
+
+.messageMobile img {
+    border: solid black 3px;
+    margin: 10px;
+    width: 50%;
+
+}
+.messageMobile .message404M {
+    z-index: 10;
+    text-align: center;
+    padding: 5px;
+    border: solid black 5px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 10%;
+    justify-content: center;
+    width: 30%;
+    background-color: red;
+    
+}
+
+.messageMobile .message404M h2 {
+    font-size: 100%;
+}
+
+.messageMobile .message404M h3 {
+    font-size: 20%;
+    font-style: italic;
+
+}
+
+
+
+/* DESKTOP */
 .fullMessage{
     display: block;
     position: relative;
-    background-color: red;
-    border: solid black 5px;
-    /* height: 500px; */
+    /* border: solid black 5px; */
 }
 
 .fullMessage img {
@@ -49,8 +88,8 @@
 .fullMessage .imgBarquitoOnly {
     /* display:block; */
     position: absolute;
-    left: 1119px;
-    top: 0px;
+    left: 1120px;
+    top: -2px;
     z-index: 9;
     animation-name: movBarquito;
     animation-duration: 1000ms;
@@ -83,8 +122,9 @@
 }
 
 footer {
-    margin-top: 250px;
+    margin-top: 280px;
 }
+
 
 
 @keyframes creciendoCielo {
@@ -94,3 +134,8 @@ footer {
 @keyframes movBarquito {
    0% {}
    100% {transform: rotateY(-18deg) } ;}
+
+   /* @media (max-width: 2549px) {
+    .fullMessage { display: none;}
+
+   }  */
