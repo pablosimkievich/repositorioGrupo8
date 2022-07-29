@@ -79,10 +79,10 @@
  {
   "id": 8,
   "nombre": "Analia",
-  "apellido": "Esposito",
+  "apellido": "Spina",
   "email": "abaespo@gmill.com",
-  "telefono": "119635987456",
-  "domicilio": "Chile 456",
+  "telefono": "119635987465",
+  "domicilio": "Chile 654",
   "password": "3322",
   "confirmPassword": "3322",
   "fotoPerfil": "img-user-1657906088892.png"
@@ -399,10 +399,10 @@
  {
   "id": 43,
   "nombre": "Tiffany",
-  "apellido": "Riverdale",
+  "apellido": "Riverdall",
   "email": "tiff@gmail.com",
-  "telefono": "44557788",
-  "domicilio": "Coronel Diaz 2567",
+  "telefono": "44557766",
+  "domicilio": "Coronel Diaz 2532",
   "password": "$2a$10$W2wgY62JHKlI9X.u8SV18Oy/n2er3tjceCpTM1tyVh3seaHzyf42a",
   "fotoPerfil": "img-user-1659128532449.png"
  },

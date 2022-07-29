@@ -122,8 +122,6 @@ const userController = {
         const nuevoEmail = req.body.email;
         const nuevoTelefono = req.body.telefono;
         const nuevoDomicilio = req.body.domicilio;
-        const nuevopassword = req.body.password;
-        const nuevoconfirmpassword = req.body.confirmPassword;
         const nuevofotoPerfil = req.file ? req.file.filename : "";
 
         let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));     
@@ -135,8 +133,6 @@ const userController = {
                 e.email = nuevoEmail;
                 e.telefono = nuevoTelefono;
                 e.domicilio = nuevoDomicilio;
-                e.password = nuevopassword;
-                e.confirmPassword = nuevoconfirmpassword;
                 e.fotoPerfil =  nuevofotoPerfil == "" ? e.fotoPerfil:  nuevofotoPerfil;
             }
         });

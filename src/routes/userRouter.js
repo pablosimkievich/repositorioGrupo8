@@ -4,8 +4,7 @@ const userController = require('../controllers/userController');
 const path = require('path')
 const multer = require('multer');
 const { body } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const validateRegister = require('../middlewares/validateRegister')
+const validateRegister = require('../middlewares/validateRegister');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
