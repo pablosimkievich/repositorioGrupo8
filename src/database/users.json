@@ -295,5 +295,135 @@
   "password": "115566",
   "confirmPassword": "115566",
   "fotoPerfil": ""
+ },
+ {
+  "id": 29,
+  "nombre": "hugo",
+  "apellido": "sivori",
+  "email": "huguito@gmail.com",
+  "telefono": "654789",
+  "domicilio": "Junin 457",
+  "password": "12345678",
+  "fotoPerfil": ""
+ },
+ {
+  "id": 31,
+  "nombre": "debora",
+  "apellido": "granada",
+  "email": "deb@gmail.com",
+  "telefono": "4567898",
+  "domicilio": "Urquiza 225",
+  "password": "12345678",
+  "fotoPerfil": ""
+ },
+ {
+  "id": 32,
+  "nombre": "Rodrigo",
+  "apellido": "Balmacera",
+  "email": "balma@gmall.com",
+  "telefono": "456789",
+  "domicilio": "Azcuenaga 333",
+  "password": "87654321",
+  "fotoPerfil": ""
+ },
+ {
+  "id": 34,
+  "nombre": "Gonzalo",
+  "apellido": "Sanatea",
+  "email": "gonza@gmail.com",
+  "telefono": "45678965",
+  "domicilio": "Avellaneda 569",
+  "password": "12345678",
+  "fotoPerfil": "img-user-1659123690879.png"
+ },
+ {
+  "id": 35,
+  "nombre": "Helena",
+  "apellido": "Almeria",
+  "email": "helen@gmail.com",
+  "telefono": "4567894",
+  "domicilio": "Moreno 569",
+  "password": "12345678",
+  "fotoPerfil": "img-user-1659124099973.jpg"
+ },
+ {
+  "id": 38,
+  "nombre": "Alberto",
+  "apellido": "Livingston",
+  "email": "livin@gmeil.com",
+  "telefono": "6655997744",
+  "domicilio": "Gral Mitre 2678",
+  "password": "$2a$10$FDJu/G/2CwTgP/XP26tIQOcNzs1.11oOzp0BEhWKfbx0gwQwiEYAK",
+  "fotoPerfil": "img-user-1659126652528.png"
+ },
+ {
+  "id": 39,
+  "nombre": "Ana",
+  "apellido": "Derby",
+  "email": "derb@homail.com",
+  "telefono": "65478965",
+  "domicilio": "Ñuñez 654",
+  "password": "$2a$10$6prBj6991khu/5FE0dJAHunqKHk0.GQCsp.34dhCfrctXNRHGj0ki",
+  "fotoPerfil": "img-user-1659126826940.png"
+ },
+ {
+  "id": 40,
+  "nombre": "Marcos ",
+  "apellido": "Salgán",
+  "email": "marcs@yuhu.com",
+  "telefono": "66998844",
+  "domicilio": "Italia 995",
+  "password": "$2a$10$0N4tC09sV9zG2uS.JUFuOugutZBpggAx1pVmMJVvuRrCaW29Vrzdu",
+  "fotoPerfil": "img-user-1659126918430.png"
+ },
+ {
+  "id": 41,
+  "nombre": "Jessica ",
+  "apellido": "Rabin",
+  "email": "rabjes@gmeil.com",
+  "telefono": "66448877",
+  "domicilio": "Anchorena 667",
+  "password": "$2a$10$kGB.NrBTWJoxaBYCTqh19OgYlfjVzWG8UytHTso0qaeRHdG4a5R1q",
+  "fotoPerfil": "img-user-1659126994712.png"
+ },
+ {
+  "id": 42,
+  "nombre": "Monique",
+  "apellido": "Della Rivere",
+  "email": "della@homeil.com",
+  "telefono": "44557788",
+  "domicilio": "Honduras 547",
+  "password": "$2a$10$AxXb8wvdVg4LWi9FVPWhO.1EkdQ83A07O9rRdz4S81A430SVQGDO2",
+  "fotoPerfil": "img-user-1659128429539.png"
+ },
+ {
+  "id": 43,
+  "nombre": "Tiffany",
+  "apellido": "Riverdale",
+  "email": "tiff@gmail.com",
+  "telefono": "44557788",
+  "domicilio": "Coronel Diaz 2567",
+  "password": "$2a$10$W2wgY62JHKlI9X.u8SV18Oy/n2er3tjceCpTM1tyVh3seaHzyf42a",
+  "fotoPerfil": "img-user-1659128532449.png"
+ },
+ {
+  "id": 44,
+  "nombre": "Sebastián ",
+  "apellido": "Serizolo",
+  "email": "seriz@yuhu.com",
+  "telefono": "666445",
+  "domicilio": "Tapiales 1467",
+  "password": "$2a$10$yoaq5kjmJQwIEJ/Q5L1SUu/53EHGCZNQMWp5fiQeaarf6aJvmYgG.",
+  "fotoPerfil": "img-user-1659128621073.png"
+ },
+ {
+  "id": 45,
+  "nombre": "Raul",
+  "apellido": "Rabena",
+  "email": "rab@yuhu.com",
+  "telefono": "66699444",
+  "domicilio": "Costa Rica 1498",
+  "password": "$2a$10$VMHYpMKQpiSUxdFinOXIyuxX841CrMZiI.uznyGRX9ywNMNscePqS",
+  "fotoPerfil": "img-user-1659128693377.png"
  }
 ]

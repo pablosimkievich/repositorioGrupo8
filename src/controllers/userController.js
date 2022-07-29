@@ -5,6 +5,8 @@ const { markAsUntransferable } = require('worker_threads');
 const { join } = require('path');
 const pathUserDB = path.join(__dirname, '../database/users.json');
 const userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 
 let allUsers = userDB.map ( e => {
@@ -34,33 +36,47 @@ const userController = {
         res.render(path.join(__dirname,'../views/users/productCart.ejs')) //  productCart.ejs
     },
     userCreate: (req, res) => {
-        let readJSON = fs.readFileSync(pathUserDB, 'utf-8');
-        let jsonParseado = JSON.parse(readJSON);
+        const resultValidation = validationResult(req);
         
-        const id = jsonParseado[jsonParseado.length - 1].id;
-        const newId = id + 1;
 
-        let newUser = {
-            id: newId,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            telefono: req.body.telefono,
-            domicilio: req.body.domicilio,
-            password: req.body.password,
-            confirmPassword: req.body.confirmPassword,
-            fotoPerfil: req.file ? req.file.filename : ""
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation)
+            res.render('users/register', {
+                
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
+                  // res.render('users/register', {oldData: req.body})
+        
+            let readJSON = fs.readFileSync(pathUserDB, 'utf-8');
+            let jsonParseado = JSON.parse(readJSON);
+        
+            const id = jsonParseado[jsonParseado.length - 1].id;
+            const newId = id + 1;
+
+            let newUser = {
+                id: newId,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                telefono: req.body.telefono,
+                domicilio: req.body.domicilio,
+                password: bcrypt.hashSync(req.body.password, 10),
+                fotoPerfil: req.file ? req.file.filename : ""
+            }
+
+
+            let newUserlist = [...jsonParseado, newUser];
+            // let newUserList = userDB.push(newUser);
+            let newUserListString = JSON.stringify(newUserlist, null, ' ');
+
+            let guardar = fs.writeFileSync(pathUserDB, newUserListString)
+            guardar
+            let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
+            res.redirect('/login');
         }
-
-
-        let newUserlist = [...jsonParseado, newUser];
-        // let newUserList = userDB.push(newUser);
-        let newUserListString = JSON.stringify(newUserlist, null, ' ');
-
-        let guardar = fs.writeFileSync(pathUserDB, newUserListString)
-        guardar
-        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
-        res.redirect('/login');
+        
     },
     quienesSomos : (req,res) => {
         res.render (path.join(__dirname,'../views/users/quienesSomos.ejs'))  //quienesSomos.ejs

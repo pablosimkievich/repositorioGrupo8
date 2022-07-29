@@ -3,6 +3,9 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const path = require('path')
 const multer = require('multer');
+const { body } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const validateRegister = require('../middlewares/validateRegister')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,8 +26,8 @@ router.get('/usuario/:id', userController.userDetail) // detalle de usuario
 
 router.get('/login', userController.login); // login
 
-router.get('/registro', userController.registro);  // trae formulario registro
-router.post('/registro', uploadFile.single('fotoPerfil'), userController.userCreate)  //  post de registro de usuarios graba data
+router.get('/registro',  userController.registro);  // trae formulario registro
+router.post('/registro', uploadFile.single('fotoPerfil'), validateRegister,  userController.userCreate)  //  post de registro de usuarios graba data
 
 router.get('/edicion-usuario/:id', userController.userEdit) // trae formulario edición
 router.put('/edicion-usuario', uploadFile.single('fotoPerfil'), userController.userEditSave) // graba edición usuario
