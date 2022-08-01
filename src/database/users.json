@@ -243,7 +243,7 @@
  },
  {
   "id": 24,
-  "nombre": "Fede",
+  "nombre": "Federico",
   "apellido": "Echeverria",
   "email": "fede@lolmail.com",
   "telefono": "116699887744",
@@ -425,5 +425,85 @@
   "domicilio": "Costa Rica 1498",
   "password": "$2a$10$VMHYpMKQpiSUxdFinOXIyuxX841CrMZiI.uznyGRX9ywNMNscePqS",
   "fotoPerfil": "img-user-1659128693377.png"
+ },
+ {
+  "id": 46,
+  "nombre": "Camila ",
+  "apellido": "Presto",
+  "email": "cami@gmeil.com",
+  "telefono": "64559988",
+  "domicilio": "España 589",
+  "password": "$2a$10$Zso1UaJ/8K5DM8eB5lwhm.Sc0uT21LwBSrZP5by3XGUbcquEA1bxu",
+  "fotoPerfil": "img-user-1659367780184.png"
+ },
+ {
+  "id": 47,
+  "nombre": "Marcos",
+  "apellido": "Salgán",
+  "email": "marquitos@yuhumail.com",
+  "telefono": "65987458",
+  "domicilio": "Italia 125",
+  "password": "$2a$10$npIWNt6NU75x5YmVnHPro.ag22IWlf4vuyf0rQqUQODmKn4Te5zPC",
+  "fotoPerfil": "img-user-1659367898073.png"
+ },
+ {
+  "id": 48,
+  "nombre": "Albert",
+  "apellido": "Eisenstein",
+  "email": "eise@gmeil.com",
+  "telefono": "6699885544",
+  "domicilio": "Francia 554",
+  "password": "$2a$10$KTL4sln3tk/RyabqSnezFOYK5DUuiQofF73s.AcIqOp84KBrDZkr.",
+  "fotoPerfil": "img-user-1659368039958.png"
+ },
+ {
+  "id": 49,
+  "nombre": "Gabriela",
+  "apellido": "Trillo",
+  "email": "trillo@yuhumeil.com",
+  "telefono": "6655447788",
+  "domicilio": "Guatemala 234",
+  "password": "$2a$10$AmX9AfkJCwLqmo5s.M2KgugFOskAcIVHs06U3CC07jAkC/C7JRAOO",
+  "fotoPerfil": "img-user-1659368150344.png"
+ },
+ {
+  "id": 50,
+  "nombre": "Lidia",
+  "apellido": "Torrontesi",
+  "email": "torront@homeil.com",
+  "telefono": "6655998877",
+  "domicilio": "Estados Unidos 1256",
+  "password": "$2a$10$6cuIRs5lYl7JrdAjyFeqEODmY5mqLgw0aUh8IsZ1lyuwT4ebRzL7W",
+  "fotoPerfil": "img-user-1659368255126.png"
+ },
+ {
+  "id": 51,
+  "nombre": "Julio",
+  "apellido": "Estenssoro",
+  "email": "esten@homeil.com",
+  "telefono": "6633225544",
+  "domicilio": "Cordoba 1654",
+  "password": "$2a$10$TmIlJ5k9vMnIWD4D2Rc0PugmokTTRXzqqNbGo3BfjBfe0xEz8aIPi",
+  "fotoPerfil": "img-user-1659368368878.png"
+ },
+ {
+  "id": 52,
+  "nombre": "Julieta ",
+  "apellido": "Rossi",
+  "email": "rossi@gmeil.com",
+  "telefono": "6655994789",
+  "domicilio": "Montevideo 2697",
+  "password": "$2a$10$5swlFeAq7.efnOIb7qNxjOwB9kU4K/mwOIfJpaCLl/IkX/BmHBqDi",
+  "fotoPerfil": "img-user-1659368482169.png"
+ },
+ {
+  "id": 53,
+  "nombre": "Manuel",
+  "apellido": "Ugarte",
+  "email": "Manugart@gmeil.com",
+  "telefono": "64978546",
+  "domicilio": "Uruguay 2333",
+  "password": "$2a$10$v4THzhu8EocsEe8.w3gz9.3eUKKpfK141IKKZjCURx6GmIMWhg29y",
+  "fotoPerfil": "img-user-1659368643261.png"
  }
 ]
