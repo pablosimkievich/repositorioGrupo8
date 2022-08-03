@@ -179,13 +179,9 @@ const userController = {
                     }
                 });
                 res.redirect('/usuarios')
-                res.render('users/userList', {allUsers})
+                
             }
         })
-
-
-        //res.send('Borrar usuario')
-
     },
     userDetail: (req, res) => {
         const id = parseInt(req.params.id);
@@ -195,9 +191,7 @@ const userController = {
             res.render('users/userDetail', {userDetail});
         } else {
             res.send(`No se encontro a usuario ${id}`);
-        }
-            
-        
+        }      
     }
  };
 
