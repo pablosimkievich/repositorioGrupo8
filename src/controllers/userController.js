@@ -7,7 +7,7 @@ const pathUserDB = path.join(__dirname, '../database/users.json');
 const userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-
+const User = require('../models/User');
 
 let allUsers = userDB.map ( e => {
     return {
@@ -37,7 +37,7 @@ const userController = {
     },
     userCreate: (req, res) => {
         const resultValidation = validationResult(req);
-        
+        const userInDb = User.findByField('email', req.body.email);
 
         if (resultValidation.errors.length > 0) {
             console.log(resultValidation)
@@ -45,6 +45,14 @@ const userController = {
                 
                 errors: resultValidation.mapped(),
                 oldData: req.body
+            });
+        } else if (userInDb) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'El email ya se encuentra registrado'
+                    }               
+                }, oldData: req.body
             });
         } else {
                   // res.render('users/register', {oldData: req.body})
