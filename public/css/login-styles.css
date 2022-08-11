@@ -44,3 +44,7 @@
 .botonLogin:hover {
     background-color: #cde7d9;
 }
+
+.msg-error {
+    color: tomato;
+}

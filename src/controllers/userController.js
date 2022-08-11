@@ -30,6 +30,10 @@ const userController = {
        res.render(path.join(__dirname,'../views/users/login')) // login ejs
     },
     processLogin: (req,res)=>{
+        const resultValidation = validationResult(req);
+        errors = resultValidation.mapped();
+        oldData = req.body;
+        
         const { email,
         password}=req.body;
         let userToLogin = User.findByField('email', email);
@@ -42,10 +46,22 @@ const userController = {
                res.redirect('/')
 
             }else{
-                res.send('Contra invalida')
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }               
+                    }, oldData: req.body
+                })
             }
         }else{
-                res.send('no se encontro el mail registrado')
+                res.render('users/login' , {
+                    errors: {
+                        email: {
+                            msg: 'El email no se encuentra registrado'
+                        }               
+                    }, oldData: req.body
+                })        
         }
     },
     registro : (req, res) => {
@@ -73,8 +89,7 @@ const userController = {
                     }               
                 }, oldData: req.body
             });
-        } else {
-                  // res.render('users/register', {oldData: req.body})
+        } else {                 
         
             let readJSON = fs.readFileSync(pathUserDB, 'utf-8');
             let jsonParseado = JSON.parse(readJSON);
