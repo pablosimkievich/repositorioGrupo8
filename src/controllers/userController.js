@@ -29,6 +29,25 @@ const userController = {
     login : (req, res) => {
        res.render(path.join(__dirname,'../views/users/login')) // login ejs
     },
+    processLogin: (req,res)=>{
+        const { email,
+        password}=req.body;
+        let userToLogin = User.findByField('email', email);
+        if(userToLogin){
+            let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
+            if(passwordMatch){
+                delete userToLogin.password 
+                req.session.userLogged = userToLogin
+
+               res.redirect('/')
+
+            }else{
+                res.send('Contra invalida')
+            }
+        }else{
+                res.send('no se encontro el mail registrado')
+        }
+    },
     registro : (req, res) => {
         res.render(path.join(__dirname,'../views/users/register.ejs')) // registro.ejs
     },
