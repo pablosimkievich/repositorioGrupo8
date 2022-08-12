@@ -1,9 +1,28 @@
+
+
 .body-Contacto {
-    margin-top: 230px;
+    margin: 230px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     
 }
 
 .contactoEmail {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.formulario {
+    flex-direction: row;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
 }

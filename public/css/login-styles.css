@@ -9,14 +9,20 @@
     font-weight: 400;
  }
 
+ body {
+    width: 100%;
+    
+ }
+
 .login {
     padding: 20px;
     display: block;
     text-align: center;
     /* flex-wrap: wrap; */
-    margin-top: 220px;
+    margin-top: 300px;
     /* width: 100%; */
     align-items: center;
+    
 }
 
 .login input {
