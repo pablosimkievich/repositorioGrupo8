@@ -5,6 +5,7 @@ const path = require('path')
 const multer = require('multer');
 const { body } = require('express-validator');
 const validateRegister = require('../middlewares/validateRegister');
+const validateUserUpdate = require('../middlewares/validateUserUpdate');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -32,7 +33,7 @@ router.get('/registro', guestMiddleware, userController.registro);  // trae form
 router.post('/registro', uploadFile.single('fotoPerfil'), validateRegister,  userController.userCreate)  //  post de registro de usuarios graba data
 
 router.get('/edicion-usuario/:id', userController.userEdit) // trae formulario edición
-router.put('/edicion-usuario', uploadFile.single('fotoPerfil'), userController.userEditSave) // graba edición usuario
+router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'), validateUserUpdate, userController.userUpdate) // graba edición usuario
 router.delete('/delete/:id', userController.userDelete) // borra usuario
 
 router.get('/carrito', userController.productCart);

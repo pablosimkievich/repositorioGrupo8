@@ -448,13 +448,13 @@
  },
  {
   "id": 48,
-  "nombre": "Albert",
+  "nombre": "Rupert",
   "apellido": "Eisenstein",
   "email": "eise@gmeil.com",
-  "telefono": "6699885544",
-  "domicilio": "Francia 554",
+  "telefono": "6699885533",
+  "domicilio": "Francia 334",
   "password": "$2a$10$KTL4sln3tk/RyabqSnezFOYK5DUuiQofF73s.AcIqOp84KBrDZkr.",
-  "fotoPerfil": "img-user-1659368039958.png"
+  "fotoPerfil": "img-user-1660327903358.png"
  },
  {
   "id": 49,
@@ -499,10 +499,10 @@
  {
   "id": 53,
   "nombre": "Manuel",
-  "apellido": "Ugarte",
+  "apellido": "Ugart",
   "email": "Manugart@gmeil.com",
   "telefono": "64978546",
-  "domicilio": "Uruguay 2333",
+  "domicilio": "Uruguay 2111",
   "password": "$2a$10$v4THzhu8EocsEe8.w3gz9.3eUKKpfK141IKKZjCURx6GmIMWhg29y",
   "fotoPerfil": "img-user-1659368643261.png"
  }
