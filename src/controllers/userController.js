@@ -5,7 +5,9 @@ const { markAsUntransferable } = require('worker_threads');
 const { join } = require('path');
 const pathUserDB = path.join(__dirname, '../database/users.json');
 const userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
-
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const User = require('../models/User');
 
 let allUsers = userDB.map ( e => {
     return {
@@ -27,6 +29,41 @@ const userController = {
     login : (req, res) => {
        res.render(path.join(__dirname,'../views/users/login')) // login ejs
     },
+    processLogin: (req,res)=>{
+        const resultValidation = validationResult(req);
+        errors = resultValidation.mapped();
+        oldData = req.body;
+        
+        const { email,
+        password}=req.body;
+        let userToLogin = User.findByField('email', email);
+        if(userToLogin){
+            let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
+            if(passwordMatch){
+                delete userToLogin.password 
+                req.session.userLogged = userToLogin
+
+                res.redirect('/')
+
+            }else{
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }               
+                    }, oldData: req.body
+                })
+            }
+        }else{
+                res.render('users/login' , {
+                    errors: {
+                        email: {
+                            msg: 'El email no se encuentra registrado'
+                        }               
+                    }, oldData: req.body
+                })        
+        }
+    },
     registro : (req, res) => {
         res.render(path.join(__dirname,'../views/users/register.ejs')) // registro.ejs
     },
@@ -34,33 +71,54 @@ const userController = {
         res.render(path.join(__dirname,'../views/users/productCart.ejs')) //  productCart.ejs
     },
     userCreate: (req, res) => {
-        let readJSON = fs.readFileSync(pathUserDB, 'utf-8');
-        let jsonParseado = JSON.parse(readJSON);
+        const resultValidation = validationResult(req);
+        const userInDb = User.findByField('email', req.body.email);
+
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation)
+            res.render('users/register', {
+                
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else if (userInDb) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'El email ya se encuentra registrado'
+                    }               
+                }, oldData: req.body
+            });
+        } else {                 
         
-        const id = jsonParseado[jsonParseado.length - 1].id;
-        const newId = id + 1;
+            let readJSON = fs.readFileSync(pathUserDB, 'utf-8');
+            let jsonParseado = JSON.parse(readJSON);
+        
+            const id = jsonParseado[jsonParseado.length - 1].id;
+            const newId = id + 1;
 
-        let newUser = {
-            id: newId,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            telefono: req.body.telefono,
-            domicilio: req.body.domicilio,
-            password: req.body.password,
-            confirmPassword: req.body.confirmPassword,
-            fotoPerfil: req.file ? req.file.filename : ""
+            let newUser = {
+                id: newId,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                telefono: req.body.telefono,
+                domicilio: req.body.domicilio,
+                password: bcrypt.hashSync(req.body.password, 10),
+                fotoPerfil: req.file ? req.file.filename : ""
+            }
+
+
+            let newUserlist = [...jsonParseado, newUser];
+            // let newUserList = userDB.push(newUser);
+            let newUserListString = JSON.stringify(newUserlist, null, ' ');
+
+            let guardar = fs.writeFileSync(pathUserDB, newUserListString)
+            guardar
+            let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
+            res.redirect('/login');
         }
-
-
-        let newUserlist = [...jsonParseado, newUser];
-        // let newUserList = userDB.push(newUser);
-        let newUserListString = JSON.stringify(newUserlist, null, ' ');
-
-        let guardar = fs.writeFileSync(pathUserDB, newUserListString)
-        guardar
-        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
-        res.redirect('/login');
+        
     },
     quienesSomos : (req,res) => {
         res.render (path.join(__dirname,'../views/users/quienesSomos.ejs'))  //quienesSomos.ejs
@@ -106,8 +164,6 @@ const userController = {
         const nuevoEmail = req.body.email;
         const nuevoTelefono = req.body.telefono;
         const nuevoDomicilio = req.body.domicilio;
-        const nuevopassword = req.body.password;
-        const nuevoconfirmpassword = req.body.confirmPassword;
         const nuevofotoPerfil = req.file ? req.file.filename : "";
 
         let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));     
@@ -119,8 +175,6 @@ const userController = {
                 e.email = nuevoEmail;
                 e.telefono = nuevoTelefono;
                 e.domicilio = nuevoDomicilio;
-                e.password = nuevopassword;
-                e.confirmPassword = nuevoconfirmpassword;
                 e.fotoPerfil =  nuevofotoPerfil == "" ? e.fotoPerfil:  nuevofotoPerfil;
             }
         });
@@ -159,13 +213,9 @@ const userController = {
                     }
                 });
                 res.redirect('/usuarios')
-                res.render('users/userList', {allUsers})
+                
             }
         })
-
-
-        //res.send('Borrar usuario')
-
     },
     userDetail: (req, res) => {
         const id = parseInt(req.params.id);
@@ -175,10 +225,13 @@ const userController = {
             res.render('users/userDetail', {userDetail});
         } else {
             res.send(`No se encontro a usuario ${id}`);
-        }
-            
-        
-    }
+        }      
+    },
+    logout: (req, res) => {
+		// res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
  };
 
 

@@ -42,13 +42,12 @@
         <form action="/edicion-usuario?_method=PUT" method="POST" enctype="multipart/form-data">
             
             <input type="text" name="id" placeholder="Nombre" value="<%= userEdit.id %>" readonly="true">
-            <input type="text" name="nombre" placeholder="Nombre" value="<%= userEdit.nombre %>" required>
-            <input type="text" name="apellido" placeholder="Apellido" value="<%= userEdit.apellido %>"  required>
-            <input type="email" name="email" placeholder="E-mail" value="<%= userEdit.email %>" required>
-            <input type="number" name="telefono" placeholder="Telefono" value="<%= userEdit.telefono %>" required>
-            <input type="text" name="domicilio" placeholder="Domicilio" value="<%= userEdit.domicilio %>"  required>
-            <input type="password" name="password" placeholder="Contraseña" value="<%= userEdit.password %>" required>
-            <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" value="<%= userEdit.confirmPassword %>" required>
+            <input type="text" name="nombre" placeholder="Nombre" value="<%= userEdit.nombre %>">
+            <input type="text" name="apellido" placeholder="Apellido" value="<%= userEdit.apellido %>">
+            <input type="email" name="email" placeholder="E-mail" value="<%= userEdit.email %>">
+            <input type="number" name="telefono" placeholder="Telefono" value="<%= userEdit.telefono %>">
+            <input type="text" name="domicilio" placeholder="Domicilio" value="<%= userEdit.domicilio %>">
+            
             
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
