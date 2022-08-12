@@ -18,7 +18,7 @@
             <section class="header-topbar">
                 <div class="user-style">
                 <% if (locals.isLogged) { %>
-                    <img src="/img/users/<%= locals.userLogged.fotoPerfil %>" class="user-style__img"><br>
+                    <img src="/img/users/<%= locals.userLogged.fotoPerfil %>" class="user-style__img">
                     Hola <%= locals.userLogged.nombre %>
                     <a href="/logout" class="user-style__logout">Logout</a>
                 <% } %>

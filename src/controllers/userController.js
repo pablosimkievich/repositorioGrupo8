@@ -157,36 +157,75 @@ const userController = {
 
         res.render('users/userEdit', {userEdit})  //  pagina de deición de usuario
     },
-    userEditSave: (req, res) => {
-        const nuevoId = parseInt(req.body.id);
-        const nuevoNombre = req.body.nombre;
-        const nuevoApellido = req.body.apellido;
-        const nuevoEmail = req.body.email;
-        const nuevoTelefono = req.body.telefono;
-        const nuevoDomicilio = req.body.domicilio;
-        const nuevofotoPerfil = req.file ? req.file.filename : "";
+    userUpdate: (req, res) => {
+        const resultValidation = validationResult(req);
+        // const userInDb = User.findByField('email', req.body.email);
+        const userEdit = User.findByPk(req.body.id);
+        // res.send(userEdit);
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation)
+            res.render('users/userEdit', {
+                
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                userEdit: userEdit,
+            }); 
+        } else {
+            const nuevoId = parseInt(req.body.id);
+            const nuevoNombre = req.body.nombre;
+            const nuevoApellido = req.body.apellido;
+            const nuevoEmail = req.body.email;
+            const nuevoTelefono = req.body.telefono;
+            const nuevoDomicilio = req.body.domicilio;
+            const nuevofotoPerfil = req.file ? req.file.filename : "";
 
-        let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));     
-        allUsers.map( e => {
-            if (e.id == nuevoId) {
-                e.id = nuevoId
-                e.nombre = nuevoNombre;
-                e.apellido = nuevoApellido;
-                e.email = nuevoEmail;
-                e.telefono = nuevoTelefono;
-                e.domicilio = nuevoDomicilio;
-                e.fotoPerfil =  nuevofotoPerfil == "" ? e.fotoPerfil:  nuevofotoPerfil;
-            }
-        });
+            const userInDb = User.findByField('email', req.body.email);
 
-        fs.writeFile(pathUserDB, JSON.stringify(allUsers, null, " "), (error) => {
-            if (error) {
-                res.send(error);
-            } else {
-                res.render('users/userList', {allUsers})
+        if ( userInDb && (userInDb.email != userEdit.email) ) {
+            return res.render('users/userEdit', {
+                errors: {
+                    email: {
+                        msg: 'El email ya se encuentra registrado'
+                    }               
+                }, oldData: req.body,
+                userEdit,
+            });  
+        } else {
+            let allUsers = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));     
+            allUsers.map( e => {
+                if (e.id == nuevoId) {
+                    e.id = nuevoId
+                    e.nombre = nuevoNombre;
+                    e.apellido = nuevoApellido;
+                    e.email = nuevoEmail;
+                    e.telefono = nuevoTelefono;
+                    e.domicilio = nuevoDomicilio;
+                    e.fotoPerfil =  nuevofotoPerfil == "" ? e.fotoPerfil:  nuevofotoPerfil;
+                }
+            });
+    
+            fs.writeFile(pathUserDB, JSON.stringify(allUsers, null, " "), (error) => {
+                if (error) {
+                    res.send(error);
+                } else {
+                    const userEdit = User.findByPk(req.body.id);
+                  
+                    req.file ? req.body.fotoPerfil = req.file.filename: req.body.fotoPerfil = userEdit.fotoPerfil
+                    req.session.userLogged = req.body
+                    req.session.userLogged.fotoPerfil = req.body.fotoPerfil;
+                    
+                    
+                    res.locals.userLogged = req.session.userLogged
+                    res.locals.userLogged.fotoPerfil = req.session.userLogged.fotoPerfil;
+
+                    res.render('users/userList', {allUsers})
+                }
+                
+            })
+    
             }
-            
-        })
+    
+        }      
     },
     userDelete: (req, res) => {
         const id = parseInt(req.params.id);

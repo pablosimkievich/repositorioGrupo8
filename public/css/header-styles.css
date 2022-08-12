@@ -181,7 +181,7 @@
 .user-style {
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: space-around;
    align-items: center;
    width: 10%;
    text-decoration: none;
@@ -193,4 +193,9 @@
 
 .user-style__logout {
     text-decoration: none;
+    
+}
+
+.user-style a:visited {
+    color: black
 }
