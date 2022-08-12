@@ -43,7 +43,7 @@ const userController = {
                 delete userToLogin.password 
                 req.session.userLogged = userToLogin
 
-               res.redirect('/')
+                res.redirect('/')
 
             }else{
                 res.render('users/login', {
@@ -226,7 +226,12 @@ const userController = {
         } else {
             res.send(`No se encontro a usuario ${id}`);
         }      
-    }
+    },
+    logout: (req, res) => {
+		// res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
  };
 
 
