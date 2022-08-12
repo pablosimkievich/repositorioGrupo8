@@ -33,7 +33,7 @@ router.get('/registro', guestMiddleware, userController.registro);  // trae form
 router.post('/registro', uploadFile.single('fotoPerfil'), validateRegister,  userController.userCreate)  //  post de registro de usuarios graba data
 
 router.get('/edicion-usuario/:id', userController.userEdit) // trae formulario edición
-router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'),  userController.userUpdate) // graba edición usuario
+router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'), validateUserUpdate, userController.userUpdate) // graba edición usuario
 router.delete('/delete/:id', userController.userDelete) // borra usuario
 
 router.get('/carrito', userController.productCart);
