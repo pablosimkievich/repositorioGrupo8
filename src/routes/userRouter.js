@@ -8,6 +8,7 @@ const validateRegister = require('../middlewares/validateRegister');
 const validateUserUpdate = require('../middlewares/validateUserUpdate');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const { nextTick } = require('process');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -20,8 +21,19 @@ const storage = multer.diskStorage({
     }  
 });
 
-const uploadFile = multer({storage}); 
-
+// const uploadFile = multer({storage}); 
+const uploadFile = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+        cb(null, true);
+      } else {
+        cb(null, false);
+        // return cb(new Error('Sólo archivos con extensión .png, .jpg o .jpeg permitidos'));
+        return cb();
+      }
+    }
+  });
 
 router.get('/usuarios', userController.usersList) // todos los usuarios
 router.get('/usuario/:id', authMiddleware, userController.userDetail) // detalle de usuario
