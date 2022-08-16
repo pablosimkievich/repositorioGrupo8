@@ -1,4 +1,4 @@
-> # Sprint 4: Daily Standup
+> # Sprint 5: Daily Standup
 *Llegamos a la quinta iteración de nuestro trabajo integrador; en esta instancia, podemos ver el gran avance que hemos tenido como grupo y como eso se ve reflejado en nuestro proyecto Rayuela, sin embargo, somos conscientes de que queda mucho por hacer.*
 
 ------------
