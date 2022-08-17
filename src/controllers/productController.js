@@ -30,7 +30,9 @@ module.exports = {
             for(let i=0; i<(4-cuatro.length);i++){
               cuatro.push(data.filter(e => e.categoria !== juguete.categoria)[i])
             }
-          }
+          };
+         
+         
       res.render("product/productDetail", { juguete, cuatro});           
     } else {
       res.send("No existe el juguete");
@@ -62,6 +64,8 @@ module.exports = {
       altura: req.body.altura,
       ancho: req.body.ancho,
       profundidad: req.body.profundidad,
+      reviews: [],
+      rating: 0,
     };
 
        data.push(newProduct);
@@ -139,6 +143,8 @@ module.exports = {
         product.altura= altura;
         product.ancho= ancho;
         product.profundidad= profundidad;
+        product.reviews= [];
+        product.rating= 0;
         
       } else {
       res.sendStatus(404);
