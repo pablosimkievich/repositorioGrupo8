@@ -32,10 +32,10 @@
                     <% if (e.fotoPerfil == "") { %>
                     <img src="/img/users/undefined-user1280.png" alt="fotoPerfil">
                     <% } else { %>
-                    <img src="/img/users/<%= e.fotoPerfil %>" alt="fotoPerfil">
+                    <img src="/img/users/<%= e.user_img %>" alt="fotoPerfil">
                     <% } %>
                     
-                    <h3> <%= e.nombre %>  <%= e.apellido %></h3>
+                    <h3> <%= e.user_first_name %>  <%= e.user_last_name %></h3>
                 </a>
                 <p>  <%= e.email %> </p>
                 
