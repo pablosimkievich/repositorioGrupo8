@@ -8,7 +8,8 @@
   "domicilio": "Maipu 237",
   "password": "1234",
   "confirmPassword": "1234",
-  "fotoPerfil": "img-user-1657903507971.png"
+  "fotoPerfil": "img-user-1657903507971.png",
+  "dni": "20000000"
  },
  {
   "id": 2,
@@ -19,7 +20,8 @@
   "domicilio": "Maipu 111",
   "password": "1234",
   "confirmPassword": "1234",
-  "fotoPerfil": "img-user-1657913634650.png"
+  "fotoPerfil": "img-user-1657913634650.png",
+  "dni": "20000000"
  },
  {
   "id": 3,
@@ -30,7 +32,8 @@
   "domicilio": "Echeverria 368",
   "password": "12",
   "confirmPassword": "12",
-  "fotoPerfil": "img-user-1657905595304.png"
+  "fotoPerfil": "img-user-1657905595304.png",
+  "dni": "20000000"
  },
  {
   "id": 4,
@@ -41,7 +44,8 @@
   "domicilio": "Azcuenaga 479",
   "password": "987",
   "confirmPassword": "987",
-  "fotoPerfil": "img-user-1657903706177.png"
+  "fotoPerfil": "img-user-1657903706177.png",
+  "dni": "20000000"
  },
  {
   "id": 5,
@@ -52,7 +56,8 @@
   "domicilio": "Montevideo 879",
   "password": "456987",
   "confirmPassword": "456987",
-  "fotoPerfil": "img-user-1657903726935.png"
+  "fotoPerfil": "img-user-1657903726935.png",
+  "dni": "20000000"
  },
  {
   "id": 6,
@@ -63,7 +68,8 @@
   "domicilio": "Urquiza 2489",
   "password": "987654",
   "confirmPassword": "987654",
-  "fotoPerfil": "img-user-1657903768215.png"
+  "fotoPerfil": "img-user-1657903768215.png",
+  "dni": "20000000"
  },
  {
   "id": 7,
@@ -74,7 +80,8 @@
   "domicilio": "Florida 457",
   "password": "321",
   "confirmPassword": "321",
-  "fotoPerfil": "img-user-1657905177855.png"
+  "fotoPerfil": "img-user-1657905177855.png",
+  "dni": "20000000"
  },
  {
   "id": 8,
@@ -85,7 +92,8 @@
   "domicilio": "Chile 654",
   "password": "3322",
   "confirmPassword": "3322",
-  "fotoPerfil": "img-user-1657906088892.png"
+  "fotoPerfil": "img-user-1657906088892.png",
+  "dni": "20000000"
  },
  {
   "id": 9,
@@ -96,7 +104,8 @@
   "domicilio": "Cordoba 457",
   "password": "3366",
   "confirmPassword": "3366",
-  "fotoPerfil": "img-user-1657905058452.png"
+  "fotoPerfil": "img-user-1657905058452.png",
+  "dni": "20000000"
  },
  {
   "id": 10,
@@ -107,7 +116,8 @@
   "domicilio": "Salta 986",
   "password": "4455",
   "confirmPassword": "4455",
-  "fotoPerfil": "img-user-1657904938517.png"
+  "fotoPerfil": "img-user-1657904938517.png",
+  "dni": "20000000"
  },
  {
   "id": 11,
@@ -118,7 +128,8 @@
   "domicilio": "De la Rivera 1298",
   "password": "111",
   "confirmPassword": "111",
-  "fotoPerfil": "img-user-1657905318169.png"
+  "fotoPerfil": "img-user-1657905318169.png",
+  "dni": "20000000"
  },
  {
   "id": 13,
@@ -129,7 +140,8 @@
   "domicilio": "Junin 888",
   "password": "17",
   "confirmPassword": "17",
-  "fotoPerfil": "img-user-1657902306073.png"
+  "fotoPerfil": "img-user-1657902306073.png",
+  "dni": "20000000"
  },
  {
   "id": 14,
@@ -140,7 +152,8 @@
   "domicilio": "Las Heras 537",
   "password": "1379",
   "confirmPassword": "1379",
-  "fotoPerfil": "img-user-1657903869690.png"
+  "fotoPerfil": "img-user-1657903869690.png",
+  "dni": "20000000"
  },
  {
   "id": 15,
@@ -151,7 +164,8 @@
   "domicilio": "Scalabrini Ortiz 4698",
   "password": "147",
   "confirmPassword": "147",
-  "fotoPerfil": "img-user-1657904191577.png"
+  "fotoPerfil": "img-user-1657904191577.png",
+  "dni": "20000000"
  },
  {
   "id": 16,
@@ -162,7 +176,8 @@
   "domicilio": "Lavalle 458",
   "password": "1364",
   "confirmPassword": "1364",
-  "fotoPerfil": "img-user-1657904330442.png"
+  "fotoPerfil": "img-user-1657904330442.png",
+  "dni": "20000000"
  },
  {
   "id": 17,
@@ -173,7 +188,8 @@
   "domicilio": "Sarmiento 697",
   "password": "19",
   "confirmPassword": "19",
-  "fotoPerfil": "img-user-1657905418176.png"
+  "fotoPerfil": "img-user-1657905418176.png",
+  "dni": "20000000"
  },
  {
   "id": 18,
@@ -184,7 +200,8 @@
   "domicilio": "Humboldt 2489",
   "password": "99",
   "confirmPassword": "99",
-  "fotoPerfil": "img-user-1657905520395.png"
+  "fotoPerfil": "img-user-1657905520395.png",
+  "dni": "20000000"
  },
  {
   "id": 19,
@@ -195,7 +212,8 @@
   "domicilio": "Virrey Loreto 2597",
   "password": "15",
   "confirmPassword": "15",
-  "fotoPerfil": "img-user-1657906247564.png"
+  "fotoPerfil": "img-user-1657906247564.png",
+  "dni": "20000000"
  },
  {
   "id": 20,
@@ -206,7 +224,8 @@
   "domicilio": "Avellaneda",
   "password": "164",
   "confirmPassword": "164",
-  "fotoPerfil": "img-user-1657906385207.png"
+  "fotoPerfil": "img-user-1657906385207.png",
+  "dni": "20000000"
  },
  {
   "id": 21,
@@ -217,7 +236,8 @@
   "domicilio": "Libertador 1254",
   "password": "147",
   "confirmPassword": "147",
-  "fotoPerfil": "img-user-1657906512630.png"
+  "fotoPerfil": "img-user-1657906512630.png",
+  "dni": "20000000"
  },
  {
   "id": 22,
@@ -228,7 +248,8 @@
   "domicilio": "Entre Ríos 409",
   "password": "16",
   "confirmPassword": "16",
-  "fotoPerfil": "img-user-1657907234726.jpg"
+  "fotoPerfil": "img-user-1657907234726.jpg",
+  "dni": "20000000"
  },
  {
   "id": 23,
@@ -239,7 +260,8 @@
   "domicilio": "Alsina 654",
   "password": "321",
   "confirmPassword": "321",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 24,
@@ -250,7 +272,8 @@
   "domicilio": "La Pampa 459",
   "password": "444",
   "confirmPassword": "444",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 25,
@@ -261,7 +284,8 @@
   "domicilio": "Nicaragua 555",
   "password": "1166",
   "confirmPassword": "1166",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 26,
@@ -272,7 +296,8 @@
   "domicilio": "Talcahuano 945",
   "password": "332211",
   "confirmPassword": "332211",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 27,
@@ -283,7 +308,8 @@
   "domicilio": "Juan Jose Paso 5566",
   "password": "654",
   "confirmPassword": "654",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 28,
@@ -294,7 +320,8 @@
   "domicilio": "Formosa 432",
   "password": "115566",
   "confirmPassword": "115566",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 29,
@@ -304,7 +331,8 @@
   "telefono": "654789",
   "domicilio": "Junin 457",
   "password": "12345678",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 31,
@@ -314,7 +342,8 @@
   "telefono": "4567898",
   "domicilio": "Urquiza 225",
   "password": "12345678",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 32,
@@ -324,7 +353,8 @@
   "telefono": "456789",
   "domicilio": "Azcuenaga 333",
   "password": "87654321",
-  "fotoPerfil": ""
+  "fotoPerfil": "",
+  "dni": "20000000"
  },
  {
   "id": 34,
@@ -334,7 +364,8 @@
   "telefono": "45678965",
   "domicilio": "Avellaneda 569",
   "password": "12345678",
-  "fotoPerfil": "img-user-1659123690879.png"
+  "fotoPerfil": "img-user-1659123690879.png",
+  "dni": "20000000"
  },
  {
   "id": 35,
@@ -344,7 +375,8 @@
   "telefono": "4567894",
   "domicilio": "Moreno 569",
   "password": "12345678",
-  "fotoPerfil": "img-user-1659124099973.jpg"
+  "fotoPerfil": "img-user-1659124099973.jpg",
+  "dni": "20000000"
  },
  {
   "id": 38,
@@ -354,7 +386,8 @@
   "telefono": "6655997744",
   "domicilio": "Gral Mitre 2678",
   "password": "$2a$10$FDJu/G/2CwTgP/XP26tIQOcNzs1.11oOzp0BEhWKfbx0gwQwiEYAK",
-  "fotoPerfil": "img-user-1659126652528.png"
+  "fotoPerfil": "img-user-1659126652528.png",
+  "dni": "20000000"
  },
  {
   "id": 39,
@@ -364,7 +397,8 @@
   "telefono": "65478965",
   "domicilio": "Ñuñez 654",
   "password": "$2a$10$6prBj6991khu/5FE0dJAHunqKHk0.GQCsp.34dhCfrctXNRHGj0ki",
-  "fotoPerfil": "img-user-1659126826940.png"
+  "fotoPerfil": "img-user-1659126826940.png",
+  "dni": "20000000"
  },
  {
   "id": 40,
@@ -374,7 +408,8 @@
   "telefono": "66998844",
   "domicilio": "Italia 995",
   "password": "$2a$10$0N4tC09sV9zG2uS.JUFuOugutZBpggAx1pVmMJVvuRrCaW29Vrzdu",
-  "fotoPerfil": "img-user-1659126918430.png"
+  "fotoPerfil": "img-user-1659126918430.png",
+  "dni": "20000000"
  },
  {
   "id": 41,
@@ -384,7 +419,8 @@
   "telefono": "66448877",
   "domicilio": "Anchorena 667",
   "password": "$2a$10$kGB.NrBTWJoxaBYCTqh19OgYlfjVzWG8UytHTso0qaeRHdG4a5R1q",
-  "fotoPerfil": "img-user-1659126994712.png"
+  "fotoPerfil": "img-user-1659126994712.png",
+  "dni": "20000000"
  },
  {
   "id": 42,
@@ -394,7 +430,8 @@
   "telefono": "44557788",
   "domicilio": "Honduras 547",
   "password": "$2a$10$AxXb8wvdVg4LWi9FVPWhO.1EkdQ83A07O9rRdz4S81A430SVQGDO2",
-  "fotoPerfil": "img-user-1659128429539.png"
+  "fotoPerfil": "img-user-1659128429539.png",
+  "dni": "20000000"
  },
  {
   "id": 43,
@@ -404,7 +441,8 @@
   "telefono": "44557766",
   "domicilio": "Coronel Diaz 2532",
   "password": "$2a$10$W2wgY62JHKlI9X.u8SV18Oy/n2er3tjceCpTM1tyVh3seaHzyf42a",
-  "fotoPerfil": "img-user-1659128532449.png"
+  "fotoPerfil": "img-user-1659128532449.png",
+  "dni": "20000000"
  },
  {
   "id": 44,
@@ -414,7 +452,8 @@
   "telefono": "666445",
   "domicilio": "Tapiales 1467",
   "password": "$2a$10$yoaq5kjmJQwIEJ/Q5L1SUu/53EHGCZNQMWp5fiQeaarf6aJvmYgG.",
-  "fotoPerfil": "img-user-1659128621073.png"
+  "fotoPerfil": "img-user-1659128621073.png",
+  "dni": "20000000"
  },
  {
   "id": 45,
@@ -424,7 +463,8 @@
   "telefono": "66699444",
   "domicilio": "Costa Rica 1498",
   "password": "$2a$10$VMHYpMKQpiSUxdFinOXIyuxX841CrMZiI.uznyGRX9ywNMNscePqS",
-  "fotoPerfil": "img-user-1659128693377.png"
+  "fotoPerfil": "img-user-1659128693377.png",
+  "dni": "20000000"
  },
  {
   "id": 46,
@@ -434,7 +474,8 @@
   "telefono": "64559988",
   "domicilio": "España 589",
   "password": "$2a$10$Zso1UaJ/8K5DM8eB5lwhm.Sc0uT21LwBSrZP5by3XGUbcquEA1bxu",
-  "fotoPerfil": "img-user-1659367780184.png"
+  "fotoPerfil": "img-user-1659367780184.png",
+  "dni": "20000000"
  },
  {
   "id": 47,
@@ -444,7 +485,8 @@
   "telefono": "65987458",
   "domicilio": "Italia 125",
   "password": "$2a$10$npIWNt6NU75x5YmVnHPro.ag22IWlf4vuyf0rQqUQODmKn4Te5zPC",
-  "fotoPerfil": "img-user-1659367898073.png"
+  "fotoPerfil": "img-user-1659367898073.png",
+  "dni": "20000000"
  },
  {
   "id": 48,
@@ -454,7 +496,8 @@
   "telefono": "6699885533",
   "domicilio": "Francia 334",
   "password": "$2a$10$KTL4sln3tk/RyabqSnezFOYK5DUuiQofF73s.AcIqOp84KBrDZkr.",
-  "fotoPerfil": "img-user-1660327903358.png"
+  "fotoPerfil": "img-user-1660327903358.png",
+  "dni": "20000000"
  },
  {
   "id": 49,
@@ -464,7 +507,8 @@
   "telefono": "6655447788",
   "domicilio": "Guatemala 234",
   "password": "$2a$10$AmX9AfkJCwLqmo5s.M2KgugFOskAcIVHs06U3CC07jAkC/C7JRAOO",
-  "fotoPerfil": "img-user-1659368150344.png"
+  "fotoPerfil": "img-user-1659368150344.png",
+  "dni": "20000000"
  },
  {
   "id": 50,
@@ -474,7 +518,8 @@
   "telefono": "6655998877",
   "domicilio": "Estados Unidos 1256",
   "password": "$2a$10$6cuIRs5lYl7JrdAjyFeqEODmY5mqLgw0aUh8IsZ1lyuwT4ebRzL7W",
-  "fotoPerfil": "img-user-1659368255126.png"
+  "fotoPerfil": "img-user-1659368255126.png",
+  "dni": "20000000"
  },
  {
   "id": 51,
@@ -484,7 +529,8 @@
   "telefono": "6633225544",
   "domicilio": "Cordoba 1654",
   "password": "$2a$10$TmIlJ5k9vMnIWD4D2Rc0PugmokTTRXzqqNbGo3BfjBfe0xEz8aIPi",
-  "fotoPerfil": "img-user-1659368368878.png"
+  "fotoPerfil": "img-user-1659368368878.png",
+  "dni": "20000000"
  },
  {
   "id": 52,
@@ -494,7 +540,8 @@
   "telefono": "6655994789",
   "domicilio": "Montevideo 2697",
   "password": "$2a$10$5swlFeAq7.efnOIb7qNxjOwB9kU4K/mwOIfJpaCLl/IkX/BmHBqDi",
-  "fotoPerfil": "img-user-1659368482169.png"
+  "fotoPerfil": "img-user-1659368482169.png",
+  "dni": "20000000"
  },
  {
   "id": 53,
@@ -504,6 +551,29 @@
   "telefono": "64978546",
   "domicilio": "Uruguay 2111",
   "password": "$2a$10$v4THzhu8EocsEe8.w3gz9.3eUKKpfK141IKKZjCURx6GmIMWhg29y",
-  "fotoPerfil": "img-user-1659368643261.png"
+  "fotoPerfil": "img-user-1659368643261.png",
+  "dni": "20000000"
+ },
+ {
+  "id": 54,
+  "nombre": "Alejandro",
+  "apellido": "Gonzales",
+  "email": "gonz@gmail.com",
+  "telefono": "64587496",
+  "domicilio": "Honduras 546",
+  "password": "$2a$10$AMWkm07PoKzqkbozE58PquugQT9Wim0Iq0h9/gANKo2vEK.C/k.ea",
+  "fotoPerfil": "img-user-1661309876482.png",
+  "dni": "20000000"
+ },
+ {
+  "id": 55,
+  "nombre": "Alejandro",
+  "apellido": "Gonzales",
+  "email": "gonzail@gmail.com",
+  "telefono": "64587496",
+  "domicilio": "Honduras 546",
+  "password": "$2a$10$ACF6E3ZvzTf0ESwrA0qCMueTR64GNhfHKcl6gGVSZJeBg9CTFS5Z.",
+  "fotoPerfil": "img-user-1661309963464.png",
+  "dni": "20000000"
  }
 ]

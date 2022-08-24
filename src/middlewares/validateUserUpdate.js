@@ -12,6 +12,7 @@ const validateUserUpdate = [
         .notEmpty().withMessage('Debes ingresar un número telefónico').bail()
         .isInt().withMessage('Debes ingresar un número de teléfono válido'),
     body('domicilio').notEmpty().withMessage('Debes ingresar un domicilio'),
+    body('dni').notEmpty().withMessage('Debes ingresar tu DNI'),
     body('fotoPerfil')
         .custom((value, { req } ) => {
             let file = req.file;

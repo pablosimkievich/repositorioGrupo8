@@ -44,31 +44,36 @@
             <input type="text" name="id" placeholder="Nombre" 
             value="<%= userEdit.id %>" readonly="true">
             <input type="text" name="nombre" placeholder="Nombre" 
-            value="<%= locals.oldData ? oldData.nombre : userEdit.nombre %>">
+            value="<%= locals.oldData ? oldData.nombre : userEdit.user_first_name %>">
             <% if (locals.errors && errors.nombre) { %>
                 <p class="msg-error"><%= errors.nombre.msg %></p>
             <% } %>
             <input type="text" name="apellido" placeholder="Apellido" 
-            value="<%= locals.oldData ? oldData.apellido : userEdit.apellido %>">
+            value="<%= locals.oldData ? oldData.apellido : userEdit.user_last_name %>">
             <% if (locals.errors && errors.apellido) { %>
                 <p class="msg-error"><%= errors.apellido.msg %></p>
             <% } %>
             <input type="email" name="email" placeholder="E-mail" 
-            value="<%= locals.oldData ? oldData.email : userEdit.email %>">
+            value="<%= locals.oldData ? oldData.email : userEdit.user_mail %>">
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
             <% } %>
             <input type="number" name="telefono" placeholder="Telefono" 
-            value="<%= locals.oldData ? oldData.telefono : userEdit.telefono %>">
+            value="<%= locals.oldData ? oldData.telefono : userEdit.user_cel %>">
             <% if (locals.errors && errors.telefono) { %>
                 <p class="msg-error"><%= errors.telefono.msg %></p>
             <% } %>
             <input type="text" name="domicilio" placeholder="Domicilio" 
-            value="<%= locals.oldData ? oldData.domicilio : userEdit.domicilio %>">
+            value="<%= locals.oldData ? oldData.domicilio : userEdit.user_address %>">
             <% if (locals.errors && errors.domicilio) { %>
                 <p class="msg-error"><%= errors.domicilio.msg %></p>
             <% } %>          
-            
+            <input type="text" name="dni" placeholder="Dni"
+            value="<%= locals.oldData ? oldData.dni : userEdit.dni %>">
+            <% if (locals.errors && errors.dni) { %>
+                <p class="msg-error"><%= errors.dni.msg %></p>
+            <% } %>
+
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
                 <h4>Foto de perfil (opcional)</h4>

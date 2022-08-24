@@ -26,15 +26,15 @@
     
         
             <article class="producto">
-                    <% if (userDetail.fotoPerfil == "" ) { %>
+                    <% if (userDetail.user_img == " " || userDetail.user_img == null ) { %>
                     <img src="/img/users/undefined-user1280.png" alt="banco">
                     <% } else { %> 
-                    <img src="/img/users/<%= userDetail.fotoPerfil %>" alt="banco">
+                    <img src="/img/users/<%= userDetail.user_img %>" alt="banco">
                     <% } %>
                     
-                    <h3> <%= userDetail.nombre %>  <%= userDetail.apellido %></h3>
+                    <h3> <%= userDetail.user_first_name %>  <%= userDetail.user_last_name %></h3>
                 
-                <p>  <%= userDetail.email %> </p>
+                <p>  <%= userDetail.user_mail %> </p>
                 
                 <div class="button-box">
                     <a href="/edicion-usuario/<%=userDetail.id%>"><button type="submit" class="add-to-cart-button">EDITAR USUARIO</button></a>   

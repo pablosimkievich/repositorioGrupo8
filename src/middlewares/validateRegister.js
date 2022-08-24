@@ -12,6 +12,7 @@ const validateRegister = [
         .notEmpty().withMessage('Debes ingresar tu número telefónico').bail()
         .isInt().withMessage('Debes ingresar un número de teléfono válido'),
     body('domicilio').notEmpty().withMessage('Debes ingresar tu domicilio'),
+    body('dni').notEmpty().withMessage('Debes ingresar tu DNI'),
     body('password')
         .notEmpty().withMessage('Debes ingresar una contraseña').bail()
         .isLength( { min: 8 } ).withMessage('La contraseña debe tener un mínimo de 8 caracteres').bail(),
