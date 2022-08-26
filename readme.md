@@ -1,7 +1,7 @@
-#  RAYUELA
+# RAYUELA
 
-> 
-Rayuela es un proyecto integrador del curso de Programación web full stack que ofrece Digital House. El objetivo es desarrollar un sitio web.
+
+*Rayuela es un proyecto integrador del curso de Programación web full stack que ofrece Digital House. El objetivo es desarrollar un sitio web.*
 
 #### Integrantes:
 
@@ -9,7 +9,7 @@ Rayuela es un proyecto integrador del curso de Programación web full stack que 
 - [Cintia Moll](https://github.com/CintiaMoll34 "Cintia Moll") (35) No tuve contacto anteriormente con el desarrollo web, este curso es mi primer experiencia y este mi primer proyecto.
 - [Denise Arcuri](https://github.com/DenuArcuri "Denise Arcuri") (27) No tengo experiencia previa en el programación. En mi trabajo obtendo información a través del lenguaje SQL y he trabajado con audio y sonido (protools & photoshop)
 - [Pablo Simkievich](https://github.com/pablosimkievich "Pablo Simkievich") (47) No tengo experiencia previa en programación ni desarrollo web. Pero vengo trabajando en PC con audio digital y aplicaciones de música desde hace 20 años. 
-- [Romina Rodes](https://github.com/RominaRode "Perfil de GitHub") (43) Tengo como experiecia el armado de un woo-commerce para un emprendimiento de mi hermana pero esta es mi primera experiencia con html/css y las metodologias de desarrollo.
+- [Romina Rodes](https://github.com/RominaRode "Perfil de GitHub") (43) Tengo como experiencia el armado de un woo-commerce para un emprendimiento de mi hermana pero esta es mi primera experiencia con html/css y las metodologias de desarrollo.
 
 ------------
 
@@ -23,14 +23,23 @@ Rayuela será un e-commerce que **ofrecerá juguetes orientados a la filosofía 
 1. No están clasificados por edades, sino por las capacidades e intereses del niño.
 1. Las posibilidades de juego deben presentarse de menor a mayor dificultad.
 
+
+<image src="https://img.freepik.com/premium-photo/word-montessori-represented-as-concept-by-wooden-color-letters-background_485255-205.jpg">
+
 ------------
+
 
 
 ### Público objetivo
 
 El **público** al que apunta el sitio son **padres** y, adultos en general ,interesados en que sus hijos, mientras juegan, desarrollen la motricidad, la creatividad, la cognición y las emociones. 
 
+
+<image src="https://i.pinimg.com/564x/a7/3d/a9/a73da9f2021ac7704d78d88974ab9905.jpg">
+
 ------------
+
+
 ### Referentes:
 Nos parece importante destacar ciertas caracteristicas de algunos sitios de interes:
 
@@ -54,13 +63,11 @@ Se trata de una fabrica de juguetes argentina, seleccionada por los clientes a l
 ##### https://latiendamontessori.com
 Tienda online de productos montessori, muebles y juguetes de madera inspirados en filosofías y pedagogías no tradicionales. Elegida por sus productos y diseño sencillo y práctico.
 
-
 ------------
-
-
-
-### Tablero de trabajo
+### Tablero de trabajo  
 
 Para organizarnos en las tareas, para consultar que está haciendo cada miembro del equipo. Y para asignarnos funcionalidades, utilizamos como tablero de trabajo, la herramienta on-line Trello. El link a nuestro tablero de trabajo es el siguiente:
 
 ##### https://trello.com/b/G10r0HVY/rayuela
+
+ <i class="fa fa-gear fa-spin fa-2x" style="color: firebrick"></i>
