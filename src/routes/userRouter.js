@@ -20,8 +20,7 @@ const storage = multer.diskStorage({
         cb(null, newFileName)
     }  
 });
-
-// const uploadFile = multer({storage}); 
+ 
 const uploadFile = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
@@ -35,8 +34,8 @@ const uploadFile = multer({
     }
   });
 
-router.get('/usuarios', userController.usersList) // todos los usuarios
-router.get('/usuario/:id', authMiddleware, userController.userDetail) // detalle de usuario
+router.get('/usuarios', userController.userList) // todos los usuarios
+router.get('/usuario/:id',  authMiddleware, userController.userDetail) // detalle de usuario
 
 router.get('/login', guestMiddleware, userController.login); // login
 router.post('/login', userController.processLogin)
