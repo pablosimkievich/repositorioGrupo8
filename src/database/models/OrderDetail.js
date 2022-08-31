@@ -19,13 +19,19 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'order_detail',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
+    OrderDetail.associate = (models) => {
+        OrderDetail.belongsTo(models.Product, {
             as: 'products',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
+            foreignKey: 'fk_product_id',
         })
-    }; */
+        OrderDetail.belongsTo(models.Order, {
+            as: 'orders',
+            foreignKey: 'fk_order_id'
+        })
+        OrderDetail.belongsTo(models.User, {
+            as: 'users',
+            foreignKey: 'fk_user_id'
+        })
+    }; 
     return OrderDetail;
 }

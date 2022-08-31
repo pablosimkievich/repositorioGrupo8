@@ -37,13 +37,22 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'users',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
+    User.associate = (models) => {
+        User.belongsToMany(models.Product, {
             as: 'products',
             through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
-        })
-    }; */
+            foreignKey: 'user_id',
+            otherKey: 'product_id'
+        });
+        User.belongsTo(models.UserType, {
+            as: 'users_type',
+            foreignKey: 'user_type_id'
+        });
+        User.hasMany(models.Review, {
+            as: 'reviews',
+            foreignKey: 'user_fk_id',
+        });
+        
+    }; 
     return User;
 }

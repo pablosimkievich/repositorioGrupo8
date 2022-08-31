@@ -1,3 +1,5 @@
+const SecondaryImages = require("./SecondaryImages");
+
 module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define('Product', {
         id: {
@@ -50,24 +52,41 @@ module.exports = (sequelize, dataTypes) => {
         weight: {
             type: dataTypes.DECIMAL
         },
-        reviews_id: {
-            type: dataTypes.INTEGER
-        },
         stock: {
             type: dataTypes.INTEGER
-        },
+        }
     },
     {
         tableName: 'products',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
-            as: 'products',
+    Product.associate = (models) => {
+        Product.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'category_id'
+        })
+        Product.belongsTo(models.Age, {
+            as: 'ages',
+            foreignKey: 'age_id'
+        });  
+        Product.belongsToMany(models.User, {
+            as: 'users',
             through: 'orders',
             foreignKey: 'product_id',
-            otherKey: ''
+            otherKey: 'user_id'
+        });
+        Product.hasMany(models.Review, {
+            as: 'reviews',
+            foreignKey: 'product_fk_id',
+        });
+        Product.hasMany(models.OrderDetail, {
+            as: 'order_detail',
+            foreignKey: 'fk_product_id'
+        });
+        Product.hasOne(models.SecondaryImages, {
+            as: 'secondary_images',
+            foreignKey: 'id_product'
         })
-    }; */
+    };
     return Product;
 }
