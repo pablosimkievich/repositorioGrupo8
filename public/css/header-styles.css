@@ -1,12 +1,12 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
-
 
 /* HEADER STYLES */
 
 .header {
     position:relative;
-    background-color: white;
+    /* background-color: #C2DED1; */
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -73,26 +73,23 @@
     text-decoration: none;
 }
 
-
 .header-search-bar {
-    /* background-color: white; */
+    background-color: white;
     display: flex;
     width:40%;
     padding: 10px;
     justify-content: flex-start;
     align-items: flex-start;
+    
 
 }
 
 #header-logo {
-    width:90px;
+    width:100px;
     margin: 5px;
+    border-radius: 10%;
 }
 
-/* #header-logo:hover {
-    transform: scale(0.8);
-    transition all 450ms;
-} */
 
 .header-search {
     background-color: rgb(233, 231, 231);
@@ -104,6 +101,7 @@
     align-items: center;
     border: solid 2px rgb(233, 231, 231);
     margin-top: 20px;
+    
   }
 
   .header-search input {
@@ -114,6 +112,7 @@
     height: 100%;
     width: 100%;
     padding: 6px 10px;
+    background-color: white;
     background-color: #C2DED1;
   }
 
@@ -133,15 +132,16 @@
     align-items: center;
     font-size: 18px;
     padding: 8px;
-
   }
 
   /* Carrito y Usuario */
-  .header-topbar-icons{
+  .header-topbar-icons nav{
     display:flex;
+    flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: flex-end;
-    padding: 20px;
+    justify-content: space-around;
+    padding: 10px;
+    width: 300px;
 }
 
 .header-topbar-each-icon a i{
@@ -151,51 +151,70 @@
     margin: 10px;
 }
 
+.userLogged-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 40px;
+    text-decoration: none;
+ }
+ 
+ .userLogged-style img {
+     width: 70%
+ }
+ 
+ .userLogged-style a {
+     text-decoration: none;
+     }
+ 
+ .userLogged-style a:visited {
+     color: black
+ }
+
+ /* DOWN BAR */
 #header-down-bar {
-    background-color: #C2DED1;
+    background-color: white;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     list-style: none;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    border: black 2px solid;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 10px;
+    width: 100%;
     font-family: cursive, sans-serif;
 }
 
-@media (min-width:581px) {
+#header-down-bar li a {
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+#header-down-bar li a:hover {
+    color: #9abfad
+}
+
+@media (min-width:701px) {
     .header-topbar-burger-menu {
         visibility: hidden;
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 700px) {
     #header-down-bar {
+        display: none;
+    }
+    .header-topbar-icons nav{
+        width: 100px;
+    }
+    .header-search {
         display: none;
     }
 }
 
-
-.user-style {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
-   width: 10%;
-   text-decoration: none;
-}
-
-.user-style__img {
-    width: 70%
-}
-
-.user-style__logout {
-    text-decoration: none;
-    
-}
-
-.user-style a:visited {
-    color: black
-}
