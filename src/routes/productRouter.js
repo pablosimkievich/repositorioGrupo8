@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const productController2 = require('../controllers/productController2');
 const path=require('path')
 
 
@@ -18,8 +19,8 @@ router.get('/categorias/:categoria', productController.getCategory);
 router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/
-router.get('/crearProducto', productController.create );
-router.post('/crearProducto',productController.saveNewProduct );
+router.get('/crearProducto', productController2.create );
+router.post('/crearProducto', productController2.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', productController.edit );
