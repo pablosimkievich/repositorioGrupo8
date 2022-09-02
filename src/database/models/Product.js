@@ -69,19 +69,15 @@ module.exports = (sequelize, dataTypes) => {
             as: 'ages',
             foreignKey: 'age_id'
         });  
-        Product.belongsToMany(models.User, {
-            as: 'users',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: 'user_id'
-        });
         Product.hasMany(models.Review, {
             as: 'reviews',
             foreignKey: 'product_fk_id',
         });
-        Product.hasMany(models.OrderDetail, {
-            as: 'order_detail',
-            foreignKey: 'fk_product_id'
+        Product.belongsToMany(models.User, {
+            as: 'users',
+            through: 'order_detail',
+            foreignKey: 'fk_product_id',
+            otherKey: 'fk_user_id'
         });
         Product.hasOne(models.SecondaryImages, {
             as: 'secondary_images',
