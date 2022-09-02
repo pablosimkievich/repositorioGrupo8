@@ -69,10 +69,10 @@
                             <% if (locals.userLogged.fotoPerfil == "" ) { %>
                                     <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img">
                                       <% } else { %> 
-                                      <img src="/img/users/<%= locals.userLogged.fotoPerfil %>" alt="fotoPerfil" class="user-style__img">
+                                      <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img">
                                       <% } %>
               
-                            Hola <%= locals.userLogged.nombre %>
+                            Hola <%= locals.userLogged.user_first_name %>
                             <a href="/logout" class="user-style__logout">Logout</a>
                         <% } %>
                         </div>
