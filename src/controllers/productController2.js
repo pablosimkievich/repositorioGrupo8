@@ -1,5 +1,5 @@
 const db = require('../database/models/index');
-require
+
 
 const saveNewProduct = async (req, res) => {
     
@@ -27,13 +27,13 @@ const saveNewProduct = async (req, res) => {
     }
 }
 
-const crear = (req, res) => {
+const create = (req, res) => {
         res.render("product/crearProducto"); 
 }
 
 
 
 module.exports = {
-    crear,
+    create,
     saveNewProduct
 }
