@@ -13,13 +13,12 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'users_type',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
-            as: 'products',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
-        })
-    }; */
+    UserType.associate = (models) => {
+        UserType.hasMany(models.User, {
+            as: 'users',
+            foreignKey: 'user_type_id'
+        });
+    }
+
     return UserType;
 }

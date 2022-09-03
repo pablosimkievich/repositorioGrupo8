@@ -5,13 +5,10 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        product_id: {
-            type: dataTypes.INTEGER
-        },
         user_id: {
             type: dataTypes.INTEGER
         },
-        order_tatal_amt: {
+        order_total_amt: {
             type: dataTypes.INTEGER
         },
         order_date: {
@@ -31,13 +28,19 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'orders',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
-            as: 'products',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
+    Order.associate = (models) => {
+        Order.belongsTo(models.PaymentMethod, {
+            as: 'payment_method',
+            foreignKey: 'pay_method_id'
         })
-    }; */
+        Order.hasMany(models.OrderDetail, {
+            as: 'order_detail',
+            foreignKey: 'fk_order_id'
+        })
+        Order.belongsTo(models.User, {
+            as: 'users',
+            foreignKey: 'user_id'
+        })
+    }; 
     return Order;
 }

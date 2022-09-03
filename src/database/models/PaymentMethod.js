@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        payment_method_type: {
+        pay_method_type: {
             type: dataTypes.STRING
         }
     },
@@ -13,13 +13,12 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'payment_method',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
-            as: 'products',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
+    PaymentMethod.associate = (models) => {
+        PaymentMethod.hasMany(models.Order, {
+            as: 'orders',
+            foreignKey: 'pay_method_id'
         })
-    }; */
+    }; 
+
     return PaymentMethod;
 }

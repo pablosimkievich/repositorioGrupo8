@@ -59,7 +59,7 @@ const userCreate = async (req, res) => {
         });
     } else {                 
         let newUser = {
-            user_id_type: 1,
+            user_type_id: 1,
             user_first_name: req.body.nombre,
             user_last_name: req.body.apellido,
             user_mail: req.body.email,
