@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         }      
     },
     {
-        tableName: 'users_type',
+        tableName: 'secondary_images',
         timestamps: false
     });
     SecondaryImages.associate = (models) => {
