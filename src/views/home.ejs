@@ -23,13 +23,13 @@
 
     <section class="galeria-juguetes">
 
-        <% data.map(e => { %>
+        <% allTheProducts.map(e => { %>
             <article class="producto">
                 <a href="/juguetes/<%= e.id %>">
-                    <img src="/img/products/<%= e.imagenPrincipal %>" alt="banco">
-                    <h3> <%= e.nombre %> </h3>
+                    <img src="/img/products/<%= e.principal_img %>" alt="banco">
+                    <h3> <%= e.name %> </h3>
                 </a>
-                <p>$  <%= e.precio %> </p>
+                <p>$  <%= e.price %> </p>
                 
                 <button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button>
             </article>

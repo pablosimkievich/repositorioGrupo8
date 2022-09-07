@@ -54,10 +54,8 @@ const productList = async (req, res) => {
                 },
             ]
         })
-        const secondary = await db.SecondaryImages.findAll();
 
-        console.log(allTheProducts[1].secondary_images.image_2)
-        res.render('admin/productos', {allTheProducts, secondary});
+        res.render('admin/productos', {allTheProducts});
         
     } catch (error) {
         console.log(error);
