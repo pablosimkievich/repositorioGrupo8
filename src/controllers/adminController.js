@@ -3,7 +3,7 @@ const db = require('../database/models/index');
 
 const orderList = async (req, res) => {
     try {
-        const allTheOrders = db.Order.findAll();
+        const allTheOrders = await db.Order.findAll();
         res.send('order-list');
 
     } catch (error) {
@@ -22,8 +22,49 @@ const orderDetail = async (req, res) => {
     }
 };
 
+const userList = async (req, res) => {
+    try {
+        const allUsers = await db.User.findAll({
+            include: [
+                {
+                    association: 'users_type'
+                }
+            ]
+        });
+
+        res.render('admin/userList', {allUsers})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const productList = async (req, res) => {
+    try {
+
+        const allTheProducts = await db.Product.findAll({
+            include: [
+                {
+                    association: 'category'
+                },
+                {
+                    association: 'ages'
+                },
+                {
+                    association: 'secondary_images'
+                },
+            ]
+        })
+
+        res.render('admin/productos', {allTheProducts});
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 module.exports = {
     orderList,
-    orderDetail
+    orderDetail,
+    userList,
+    productList
 }

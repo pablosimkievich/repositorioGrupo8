@@ -42,10 +42,12 @@
         <div class="control-formulario">
             <label>Categorias</label>
             <select name="categoria" class="input-control" >
-                <option value="1">Sensoriales</option>
-                <option value="2">Instrumentos Musicales</option>
-                <option value="3">Movimientos</option>
-                <option value="4">Rompecabezas</option>
+            
+                <option value="Sensoriales"><%= category[0].category_name %></option>
+                <option value="Musicales"><%= category[1].category_name %></option>
+                <option value="Movimientos"><%= category[2].category_name %></option>
+                <option value="Rompecabezas"><%= category[3].category_name %></option>
+                    
             </select>
         </div>  
 
@@ -71,23 +73,26 @@
 
         <div class="control-formulario" id="form-images">
             <label for="imagen-producto">Seleccionar imagenes adicionales:</label>
-            <input type="file" name="imagenesAdicionales" class="control" multiple ></>
+            <input type="file" name="imagenesAdicionales" class="control" multiple >
         </div>
             
         <div>
             <input type="number" name="stock" class="dimensiones">Stock
         </div>
         <div class="control-formulario" id="form-edad-recomendada">
-            <label>Edad recomendada:</label>
-            <select name="categoria" class="input-control" >
-                <option value="1">6 meses a 1 año</option>
-                <option value="2">1 a 3 años</option>
-                <option value="3">3 a 6 años"</option>
-                <option value="4">mas de 6 años</option>
-                <option value="5">Todas las edades</option>
-            </select>
-        </div>  
-    
+            <label>Edad recomendada</label>
+            <label for="6 meses a 1 año">
+                <input type="checkbox" name="edadRecomendada" value=1 >6 meses a 1 año
+            </label>
+            <label for="1 a 3 años"> <input type="checkbox" name="edadRecomendada" value=2 >1 a 3
+                años
+            </label>
+            <label for="3 a 6 años"><input type="checkbox" name="edadRecomendada" value=3 >3 a 6
+                años"
+            </label>
+            <label for="mas de 6 años"><input type="checkbox" name="edadRecomendad" value= 4 >mas de 6 años
+            </label>
+        </div>
         
         <div class="control-formulario" id="form-description">
             <label id="descripcion">Descripcion del producto:</label>

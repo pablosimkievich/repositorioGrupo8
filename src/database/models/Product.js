@@ -70,7 +70,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'fk_product_id',
             otherKey: 'fk_user_id'
         });
-        Product.hasOne(models.SecondaryImages, {
+        Product.hasOne (models.SecondaryImages, {
             as: 'secondary_images',
             foreignKey: 'id_product'
         })
