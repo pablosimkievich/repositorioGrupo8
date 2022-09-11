@@ -14,38 +14,12 @@ const create = async (req, res) => {
 
 const saveNewProduct = async (req, res) => {
     
-    let category_id
-
-    if (req.body.categoria == "Sensoriales") {
-        category_id =  1;
-    } else if (req.body.categoria == "Musicales") {
-        category_id =  2;
-    } else if (req.body.categoria == "Rompecabezas") {
-        category_id =  3;
-    } else if (req.body.categoria == "Movimientos") {
-        category_id =  4;
-    }
-
-    console.log(category_id)
-
-    let age_id
-
-    if (req.body.ages == "De 6 meses a 1 año") {
-        category_id =  1;
-    } else if (req.body.ages == "De 1 año a 3 años") {
-        category_id =  2;
-    } else if (req.body.ages == "De 3 a 6 años") {
-        category_id =  3;
-    } else if (req.body.ages == "Mas de 6 años") {
-        category_id =  4;
-    }
-
-
+    
     let newProduct = {
         name: req.body.nombre,
         price: req.body.precio,
-        discount: req.body.descuento,
-        category_id: category_id,
+        discount: (req.body.descuento)?req.body.descuento: 0,
+        category_id: req.body.categoria,
         age_id: req.body.edadRecomendada,
         principal_img: req.body.imagenPrincipal,
         description: req.body.descripcion,
@@ -70,9 +44,9 @@ const saveNewProduct = async (req, res) => {
 
         let newImages = {
             id_product: lastProduct.id,
-            image_2: req.body.imagenesAdicionales[0],
-            image_3: req.body.imagenesAdicionales[1],
-            image_4: req.body.imagenesAdicionales[2],
+            image_2: (req.body.imagenesAdicionales[0])? (req.body.imagenesAdicionales[0]): null,
+            image_3: (req.body.imagenesAdicionales[1])? (req.body.imagenesAdicionales[1]): null,
+            image_4: (req.body.imagenesAdicionales[2])? (req.body.imagenesAdicionales[2]): null,
               }
               
           await db.SecondaryImages.create(newImages);
@@ -82,10 +56,41 @@ const saveNewProduct = async (req, res) => {
         console.log(error);
     }
 };
+const productList =  async (_req, res) => {
+    try {
+        const data = await db.Product.findAll()
+        res.render("product/productos", { data })
+    } catch(error){
+            console.log(error);
+    }
+    
+  };
+  const productDetail= async (req, res) => {                                        
+   try{
+     let id = req.params.id;
+     
+    const juguete = await db.Product.findByPk(id)   ;
+    res.render("product/productDetail", { juguete}); 
+  /*
+   if (juguete) {
+     const cuatro = await db.Product.findAll({
+        where: { category_id : juguete.category_id},
+        limit: 10
+     })
+         
+      res.render("product/productDetail", { juguete, cuatro});           
+    } else {
+      res.send("No existe el juguete");
+    }*/
+  } catch(error){
+    console.log(error)
+  }}
 
 
 
 module.exports = {
     create,
-    saveNewProduct
-};
+    saveNewProduct,
+    productList,
+    productDetail,
+}

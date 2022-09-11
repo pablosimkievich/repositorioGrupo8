@@ -5,7 +5,7 @@ const productController2 = require('../controllers/productController2');
 const path=require('path')
 
 
-router.get('/productos/', productController.productList);
+router.get('/productos/', productController2.productList);
 
 /********CONTROL PANEL PARA EDITAR/BORRAR PRODUCTOS***********/
 router.get('/controlPanel', productController.editDelete);
@@ -16,7 +16,7 @@ router.get('/categorias/:categoria', productController.getCategory);
 
 
 /********GET PRODUCT DETAIL***********/
-router.get('/juguetes/:id', productController.productDetail);
+router.get('/juguetes/:id', productController2.productDetail);
 
 /********CREATE A PRODUCT***********/
 router.get('/crearProducto', productController2.create );

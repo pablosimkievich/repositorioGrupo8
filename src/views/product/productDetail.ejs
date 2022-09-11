@@ -23,7 +23,7 @@
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
                 <li><a href="/categorias/<%= juguete.categoria.replace( ' ', '').toLowerCase() %>"> <%= juguete.categoria %> </a></li>
-                <li><a href="productDetail.html"> <%= juguete.nombre %> </a></li>
+                <li><a href="productDetail.html"> <%= juguete.name %> </a></li>
             </ul>
         </section>
 
@@ -32,7 +32,7 @@
             <article class="product_infoPrincipal">
                 <div class="product_infoPrincipal_images">
                     
-                    <img class='imagen-principal' src="/img/products/<%= juguete.imagenPrincipal %>">
+                    <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
                     
             
                     
@@ -55,7 +55,7 @@
                 </div>
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
-                        <h1 class="product-name"> <%= juguete.nombre %> </h1>
+                        <h1 class="product-name"> <%= juguete.name %> </h1>
                         <span class="reviews">
                         
                             <h2>Reviews (<%=juguete.reviews.length%>)</h2>
@@ -71,7 +71,7 @@
                      
 
                      
-                        <h2 class="precio">$ <%= juguete.precio %> </h2>
+                        <h2 class="precio">$ <%= juguete.price %> </h2>
                         <form class="add-to-cart" method="POST" action="/add-to-cart">
                             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
@@ -95,7 +95,7 @@
             </article>
             <article class="product_masInfo">
                 <h3>Descripcion</h3>
-                <p> <%= juguete.descripcion %>
+                <p> <%= juguete.description %>
                 </p>
             </article>
             <article class="product_masInfo">
@@ -107,11 +107,11 @@
                     </tr>
                     <tr>
                         <td>Materiales</td>
-                        <td> <%= juguete.materiales %> </td>
+                        <td> <%= juguete.materials %> </td>
                     </tr>
                     <tr>
                         <td>Dimensiones</td>
-                        <td><%= juguete.ancho %>cm x <%= juguete.altura %>cm x <%= juguete.profundidad %>cm </td>
+                        <td><%= juguete.width %>cm x <%= juguete.heigth %>cm x <%= juguete.depth %>cm </td>
                     </tr>
                 </table>
             </article>
@@ -123,8 +123,8 @@
         <article class="card">
             <a href="../juguetes/<%=e.id%>">
                 <img src="/img/products/<%=e.imagenPrincipal%>" alt="juguete1">
-            <h3><%= e.nombre %></h3>
-            <p class="precio-card"><%= e.precio %></p>
+            <h3><%= e.name %></h3>
+            <p class="precio-card"><%= e.price %></p>
             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
                 CARRITO</button>
             </a>
