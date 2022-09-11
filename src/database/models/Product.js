@@ -25,15 +25,6 @@ module.exports = (sequelize, dataTypes) => {
         principal_img: {
             type: dataTypes.STRING
         },
-        img_2: {
-            type: dataTypes.STRING
-        },
-        img_3: {
-            type: dataTypes.STRING
-        },
-        img_4: {
-            type: dataTypes.STRING
-        },
         description: {
             type: dataTypes.STRING
         },

@@ -18,9 +18,18 @@ const saveNewProduct = async (req, res) => {
         weight: req.body.peso,
         stock: req.body.stock
       };
-    
+          
     try {
         await db.Product.create(newProduct);
+        let newImages = {
+            id_product: ,
+            image_2: req.body.imagenesadicionales[0]? req.body.imagenesadicionales[0]: null,
+            image_3: (req.body.imagenesadicionales[1])? req.body.imagenesadicionales[1]:null,
+            image_4: (req.body.imagenesadicionales[2])? req.body.imagenesadicionales[2]:null,
+              }
+              if(req.body.imagenesadicionales.lenght){
+          await db.SecondaryImages.create(newImages);
+              }
         res.redirect('/productos');
     } catch (error) {
         console.log(error);
