@@ -69,23 +69,46 @@ const productList =  async (_req, res) => {
    try{
      let id = req.params.id;
      
-    const juguete = await db.Product.findByPk(id)   ;
-    res.render("product/productDetail", { juguete}); 
-  /*
+    const juguete = await db.Product.findByPk(id, {
+      include: [{
+        association: 'category',
+    },
+    {
+        association: 'ages',
+        
+    },
+    {
+      association: 'secondary_images',
+  },
+  {
+    association: 'reviews',
+},
+    ]})   ;
+  
+
    if (juguete) {
      const cuatro = await db.Product.findAll({
         where: { category_id : juguete.category_id},
-        limit: 10
+        limit: 4
      })
          
       res.render("product/productDetail", { juguete, cuatro});           
     } else {
       res.send("No existe el juguete");
-    }*/
+    }
   } catch(error){
     console.log(error)
-  }}
-
+  }};
+ const edit = async (req, res) => {
+    
+    try{
+    let jugueteEdit = await db.Product.findByPk(req.params.id) 
+    res.render("product/edit-form", { jugueteEdit });
+    }catch(error){
+      alert(error)
+    }
+    
+  };
 
 
 module.exports = {
@@ -93,4 +116,5 @@ module.exports = {
     saveNewProduct,
     productList,
     productDetail,
+    edit,
 }

@@ -22,7 +22,7 @@
         <section class="bread-crumbs">
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
-                <li><a href="/categorias/<%= juguete.categoria.replace( ' ', '').toLowerCase() %>"> <%= juguete.categoria %> </a></li>
+                <li><a href="/categorias/<%= juguete.category %>"> <%= juguete.category %> </a></li>
                 <li><a href="productDetail.html"> <%= juguete.name %> </a></li>
             </ul>
         </section>
@@ -36,12 +36,10 @@
                     
             
                     
-            <%if(Array.isArray(juguete.imagenesAdicionales) ){%>   
-                        <% for(let i=0; i < juguete.imagenesAdicionales.length; i++){%> 
-                            <a href="#"><img class='imagenAdicional-<%=i+1 %>' src="/img/products/<%=juguete.imagenesAdicionales[i]%>"></a> 
-                                <%}}else if(!Array.isArray(juguete.imagenesAdicionales) && juguete.imagenesAdicionales === ""){%> 
-                                    <a href="#" style="display:none"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
-                                    <%}else{%>
+            <%if(juguete.secondary_images) {%>   
+                        <% for(let i=0; i < juguete.secondary_images.length; i++){%> 
+                            <a href="#"><img class='imagenAdicional-<%=i+2 %>' src="/img/products/<%=juguete.secondary_images.img_[i+2]%>"></a> 
+                                <%}}else{%>
                                     <a href="#"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
                                         <%}%>       
 
@@ -58,10 +56,10 @@
                         <h1 class="product-name"> <%= juguete.name %> </h1>
                         <span class="reviews">
                         
-                            <h2>Reviews (<%=juguete.reviews.length%>)</h2>
+                            <h2>Reviews (<%=juguete.reviews%>)</h2>
                       
                             <div class="stars-outer">
-                                <div class="stars-inner" style ="width:<%=juguete.rating %>%">
+                                <div class="stars-inner" style ="width:<%=juguete.reviews.rating %>%">
 
                                 </div>
                             </div>
@@ -103,7 +101,7 @@
                 <table class="info-table">
                     <tr>
                         <td>Edad: </td>
-                        <td> <%= juguete.edadRecomendada %> </td>
+                        <td> <%= juguete.ages %> </td>
                     </tr>
                     <tr>
                         <td>Materiales</td>

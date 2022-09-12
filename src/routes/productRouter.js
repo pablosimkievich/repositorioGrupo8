@@ -23,7 +23,7 @@ router.get('/crearProducto', productController2.create );
 router.post('/crearProducto', productController2.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
-router.get('/edit/:id', productController.edit );
+router.get('/edit/:id', productController2.edit );
 router.put('/edit/:id', productController.saveEdit );
 
 /********DELETE A PRODUCT***********/

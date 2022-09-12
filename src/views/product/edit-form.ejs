@@ -30,74 +30,65 @@
         
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
-            <input type="text" name="nombre" class="input-control" value="<%= jugueteEdit.nombre %>">
+            <input type="text" name="nombre" class="input-control" value="<%= jugueteEdit.name %>">
         </div>
         <div class="control-formulario">
             <label for="precio">Precio:</label><br>
-            <input type="text" name="precio" class="input-control" value="<%= jugueteEdit.precio %>">
+            <input type="text" name="precio" class="input-control" value="<%= jugueteEdit.price %>">
         </div>
 
-        <div class="control-formulario">
-            <label for="en-oferta">Esta en oferta:</label>
-            <input type="radio" name="enPromo" value="si">Si
-            <input type="radio" name="enPromo" value="no">No
-           </div> 
-           <div class="control-formulario">   
+        <div class="control-formulario">   
             <label for="descuento">Descuento a aplicar</label>
-            <input type="number" name="descuento" class="input-control" value="<%= jugueteEdit.descuento %>">
+            <input type="number" name="discount" class="input-control" value="<%= jugueteEdit.discount %>">
         </div>
 
         <div class="control-formulario">
             <label>Categorias</label>
             <select name="categoria" class="input-control" required>
-                <option value="Sensoriales">Sensoriales</option>
-                <option value="Instrumentos Musicales">Instrumentos Musicales</option>
-                <option value="Movimientos">Movimientos</option>
-                <option value="Rompecabezas">Rompecabezas</option>
-                <option value="Pizarras">Pizarras</option>
+                <option value="1">Sensoriales</option>
+                <option value="2">Instrumentos Musicales</option>
+                <option value="3">Movimientos</option>
+                <option value="4">Rompecabezas</option>
+                <option value="5">Pizarras</option>
             </select>
         </div>            
       
         <div class="control-formulario">
-            <img src="/img/products/<%=jugueteEdit.imagenPrincipal%>" width="150px">
+            <img src="/img/products/<%=jugueteEdit.principal_img%>" width="150px">
             <label for="imagen-producto">Cambiar la imagen principal:</label>
-            <input type="file" name="imagenPrincipal" class="control"></>
+            <input type="file" name="principal_img" class="control"></>
         </div>
         <div class="control-formulario">
      
             <label for="imagen-producto">Seleccionar imagenes adicionales:</label>
-            <input type="file" name="imagenesAdicionales" class="control" accept=".jpg,.png" multiple></>
+            <input type="file" name="secondary_img" class="control" accept=".jpg,.png" multiple></>
         </div>
         <div class="control-formulario">
             <label for="descripcion">Descripcion del producto:</label>
-            <textarea name="descripcion" class="textarea" placeholder="<%= jugueteEdit.descripcion %>"></textarea>
+            <textarea name="description" class="textarea" placeholder="<%= jugueteEdit.description %>"></textarea>
         </div>
+    
         <div class="control-formulario">
-            <label>Edad recomendada:</label><br>
-            <label for="6 meses a 1 año">
-                <input type="checkbox" name="edadRecomendada" value=1 >6 meses a 1 año
-            </label><br>
-            <label for="1 a 3 años"> <input type="checkbox" name="edadRecomendada" value=2 >1 a 3
-                años
-            </label><br>
-            <label for="3 a 6 años"><input type="checkbox" name="edadRecomendada" value=3 >3 a 6
-                años"
-            </label><br>
-            <label for="mas de 6 años"><input type="checkbox" name="edadRecomendad" value=4 >mas de 6 años
-            </label><br>
-        </div>
+            <label>Edad recomendada</label>
+            <select name="ages" class="input-control" required>
+                <option value="1">6 meses a 1 año</option>
+                <option value="2">1 a 3 años</option>
+                <option value="3">3 a 6 años"</option>
+                <option value="4">mas de 6 años</option>
+                <option value="5">Todas las edades</option>
+            </select>
+        </div>            
+
         <div class="control-formulario">
             <label for="materiales">Materiales:</label><br>
-            <input type="text" name="materiales" class="input-control" placeholder="<%=jugueteEdit.materiales%>" required>
+            <input type="text" name="materials" class="input-control" placeholder="<%=jugueteEdit.materials%>" required>
         </div>
         <div class="control-formulario">
             
-            <label for="dimensiones">Dimensiones en cm:</label><br>
-            <label><input type="text" name="altura" class="dimensiones" placeholder="<%= jugueteEdit.ancho %>">Ancho</label><br>
-           <label><input type="number" name="ancho" class="dimensiones" placeholder="<%= jugueteEdit.altura %>">Altura</label><br>
-            <label><input type="number" name="profundidad" class="dimensiones" placeholder="<%= jugueteEdit.profundidad %>">Profundidad</label><br>
-    
-        
+            <label for="dimensions">Dimensiones en cm:</label><br>
+            <label><input type="number" name="width" class="dimensiones" placeholder="<%= jugueteEdit.width %>">Ancho</label><br>
+           <label><input type="number" name="height" class="dimensiones" placeholder="<%= jugueteEdit.height %>">Altura</label><br>
+            <label><input type="number" name="depth" class="dimensiones" placeholder="<%= jugueteEdit.depth %>">Profundidad</label><br>
 
         </div>
         <div class="form-buttons">
