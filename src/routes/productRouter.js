@@ -8,7 +8,7 @@ const path=require('path')
 router.get('/productos/', productController2.productList);
 
 /********CONTROL PANEL PARA EDITAR/BORRAR PRODUCTOS***********/
-router.get('/controlPanel', productController.editDelete);
+router.get('/productPanel', productController2.productPanel);
 
 /********PRODUCT LIST por categoria y edad***********/
 router.get('/edad/:edadrecomendada', productController.getEdad);

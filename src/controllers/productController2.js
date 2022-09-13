@@ -109,6 +109,15 @@ const productList =  async (_req, res) => {
     }
     
   };
+  const productPanel = async (_req, res) => {
+    try {
+        const data = await db.Product.findAll()
+        res.render("product/ProductPanel", { data })
+    } catch(error){
+            console.log(error);
+    }
+    
+  }; 
 
 
 module.exports = {
@@ -117,4 +126,6 @@ module.exports = {
     productList,
     productDetail,
     edit,
+    productPanel,
+    
 }
