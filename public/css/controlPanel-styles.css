@@ -50,6 +50,8 @@
     transition: all 500ms;
     
 }
+
+
 .form-button:hover {
     color:rgb(45, 185, 138);
     background-color:rgb(212, 212, 212);
@@ -57,6 +59,7 @@
 }
 .form-buttons form{
     margin-right: 35px;
+    
 }
 .card:hover {
     box-shadow: 0px 0px 10px rgb(180, 179, 179);
