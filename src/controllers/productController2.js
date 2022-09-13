@@ -178,7 +178,7 @@ const productList =  async (_req, res) => {
     } catch(error){
     console.log(error)
   }
-
+}
 
 
 
