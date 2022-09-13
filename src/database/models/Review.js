@@ -5,9 +5,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        user_fk_id: {
-            type: dataTypes.INTEGER
-        },
         rating: {
             type: dataTypes.INTEGER
         },
@@ -16,7 +13,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         product_fk_id: {
             type:dataTypes.INTEGER
-        }
+        },
+        order_detail_fk_id: {
+            type: dataTypes.INTEGER
+        },
     },
     {
         tableName: 'reviews',

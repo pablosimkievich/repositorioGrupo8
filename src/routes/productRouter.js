@@ -27,7 +27,7 @@ router.get('/edit/:id', productController2.edit );
 router.put('/edit/:id', productController.saveEdit );
 
 /********DELETE A PRODUCT***********/
-router.delete('/:id' , productController.delete)
+router.delete('/:id' , productController2.deleteProduct)
 
 /********SEARCH A PRODUCT***********/
 router.get('/search', productController.search);

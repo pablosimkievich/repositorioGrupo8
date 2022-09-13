@@ -30,11 +30,11 @@
         
         <div class="control-formulario">
             <label for="nombre-producto">Nombre del producto:</label>
-            <input type="text" name="nombre" class="input-control" value="<%= jugueteEdit.name %>">
+            <input type="text" name="name" class="input-control" value="<%= jugueteEdit.name %>">
         </div>
         <div class="control-formulario">
             <label for="precio">Precio:</label><br>
-            <input type="text" name="precio" class="input-control" value="<%= jugueteEdit.price %>">
+            <input type="text" name="price" class="input-control" value="<%= jugueteEdit.price %>">
         </div>
 
         <div class="control-formulario">   
@@ -44,7 +44,7 @@
 
         <div class="control-formulario">
             <label>Categorias</label>
-            <select name="categoria" class="input-control" required>
+            <select name="category_id" class="input-control" required>
                 <option value="1">Sensoriales</option>
                 <option value="2">Instrumentos Musicales</option>
                 <option value="3">Movimientos</option>
@@ -70,7 +70,7 @@
     
         <div class="control-formulario">
             <label>Edad recomendada</label>
-            <select name="ages" class="input-control" required>
+            <select name="age_id" class="input-control" required>
                 <option value="1">6 meses a 1 año</option>
                 <option value="2">1 a 3 años</option>
                 <option value="3">3 a 6 años"</option>

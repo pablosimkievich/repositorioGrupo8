@@ -80,9 +80,7 @@ const productList =  async (_req, res) => {
     {
       association: 'secondary_images',
   },
-  {
-    association: 'reviews',
-},
+ 
     ]})   ;
   
 
@@ -92,23 +90,98 @@ const productList =  async (_req, res) => {
         limit: 4
      })
          
-      res.render("product/productDetail", { juguete, cuatro});           
-    } else {
+      res.render("product/productDetail", { juguete, cuatro});  }         
+     else {
       res.send("No existe el juguete");
     }
   } catch(error){
     console.log(error)
   }};
+
  const edit = async (req, res) => {
-    
-    try{
+     try{
     let jugueteEdit = await db.Product.findByPk(req.params.id) 
     res.render("product/edit-form", { jugueteEdit });
     }catch(error){
       alert(error)
     }
-    
-  };
+    };
+    const saveEdit = async (req, res) => {
+      
+      const {
+        id,
+        name,
+        price,
+        discount,
+        category_id,
+        principl_img,
+        description,
+        age_id,
+        materials,
+        width,
+        height,
+        depth,
+        weight
+      } = req.body;
+  
+  
+      try{
+        product = await db.Product.findByPk(req.params.id)
+  
+      if (product) {
+          product.id = req.params.id;
+          product.name = name;
+          product.price = price;
+          product.discount = discount;
+          product.category_id=  category_id;
+          product.principal_img = principal_img;
+          product.description= description;
+          product.age_id= age_id;
+          product.materials= materials;
+          product.height= height;
+          product.width= width;
+          product.depth= depth;
+          
+          await db.Product.create(product);
+
+        const lastProduct = await db.Product.findOne({
+            where: {
+                name: {
+                    [op.like]: req.body.name
+                }
+            }
+        });
+
+        
+        let newImages = {
+          id_product: lastProduct.id,
+          image_2: (req.body.imagenesAdicionales[0])? (req.body.imagenesAdicionales[0]): product.SecondaryImages.img_2,
+          image_3: (req.body.imagenesAdicionales[1])? (req.body.imagenesAdicionales[1]): product.SecondaryImages.img_3,
+          image_4: (req.body.imagenesAdicionales[2])? (req.body.imagenesAdicionales[2]): product.SecondaryImages.img_4,
+            }
+            
+              
+          await db.SecondaryImages.create(newImages);
+
+          
+        } else {
+        res.sendStatus(404);
+      }
+  
+      fs.writeFile(dataPath, JSON.stringify(data), (error) => {
+        if (error) {
+          res.send(error);
+        } else {
+          res.redirect("/");
+        }
+      });
+    } catch(error){
+    console.log(error)
+  }
+
+
+
+
   const productPanel = async (_req, res) => {
     try {
         const data = await db.Product.findAll()
@@ -118,6 +191,25 @@ const productList =  async (_req, res) => {
     }
     
   }; 
+  const deleteProduct = async (req, res) => {
+    
+try{
+  await  db.SecondaryImages.destroy({
+    where: {
+      id_product : req.params.id
+    }
+  });
+    await db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    
+    res.redirect('/productPanel')
+    } catch(error){
+      console.log(error)
+    };
+  }
 
 
 module.exports = {
@@ -127,5 +219,6 @@ module.exports = {
     productDetail,
     edit,
     productPanel,
-    
+    deleteProduct,
+
 }
