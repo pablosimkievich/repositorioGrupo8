@@ -194,5 +194,4 @@ editDelete: (req, res) => {
         res.render('/product/editDelete')} 
   },
 
-
 };

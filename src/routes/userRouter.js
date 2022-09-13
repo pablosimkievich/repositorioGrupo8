@@ -10,7 +10,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { nextTick } = require('process');
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage( {
     destination: (req, file, cb) => {
         const folderPath = path.join(__dirname,'../../public/img/users');
         cb (null, folderPath);

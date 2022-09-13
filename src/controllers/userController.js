@@ -2,7 +2,9 @@ const db = require('../database/models/index');
 const path = require('path');
 // const User = require('../database/models/User');
 const fs = require('fs');
+
 const { markAsUntransferable } = require('worker_threads');
+
 const { join } = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
