@@ -16,13 +16,11 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'ages',
         timestamps: false
     });
-    /* User.associate = (models) => {
-        User.belongsTo(models.Orders, {
+    Age.associate = (models) => {
+        Age.hasMany(models.Product, {
             as: 'products',
-            through: 'orders',
-            foreignKey: 'product_id',
-            otherKey: ''
+            foreignKey: 'age_id'
         })
-    }; */
+    }; 
     return Age;
 }
