@@ -24,7 +24,7 @@ router.post('/crearProducto', productController2.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', productController2.edit );
-router.put('/edit/:id', productController.saveEdit );
+router.put('/edit/:id', productController2.saveEdit );
 
 /********DELETE A PRODUCT***********/
 router.delete('/:id' , productController2.deleteProduct)
