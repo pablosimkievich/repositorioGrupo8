@@ -103,7 +103,7 @@ module.exports = {
     let id = parseInt(req.params.id);
     let jugueteEdit = data.find((e) => e.id == id);
     res.render("product/edit-form", { jugueteEdit });
-    /*do magic*/
+    
   },
   saveEdit: (req, res) => {
     let sameId = parseInt(req.params.id);
@@ -181,7 +181,7 @@ editDelete: (req, res) => {
 
 
   search: (req,res)=>{
-    let name = req.query.keywords;               //busca jguetes en editdelete
+    let name = req.query.keywords;               //busca juguetes en editdelete
     
     
     if(name){ 
