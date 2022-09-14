@@ -1,10 +1,34 @@
 const db = require('../database/models/index');
+const op = db.Sequelize.Op;
 
 
 const orderList = async (req, res) => {
     try {
-        const allTheOrders = await db.Order.findAll();
-        res.send('order-list');
+        const allTheOrders = await db.Order.findAll({
+            include: [
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'payment_method'
+                }
+            ]
+    });
+        const allTheOrderDetails = await db.OrderDetail.findAll({
+            include: [
+                {
+                    association: 'orders'
+                },
+                {
+                    association: 'products'
+                },
+            ]          
+        })
+
+        res.render('admin/orderList', {allTheOrders, allTheOrderDetails});
 
     } catch (error) {
         console.log(error);
@@ -14,8 +38,40 @@ const orderList = async (req, res) => {
 const orderDetail = async (req, res) => {
     try {
         const id = req.params.id
-        const orderDetail = await db.Order.findByPk(id);
-        res.send('order-detail');
+        const orderDetail = await db.Order.findByPk(id, {
+            include: [
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'payment_method'
+                },
+                {
+                    association: 'order_detail'
+                }
+            ]
+        });
+        const orderItems = await db.OrderDetail.findAll({
+            where: {
+                fk_order_id: id
+            },
+            include: [
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'orders'
+                },
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'reviews'
+                }
+            ]
+        }); 
+        
+        res.render('admin/orderDetail', {orderDetail, orderItems});
 
     } catch (error) {
         console.log(error);

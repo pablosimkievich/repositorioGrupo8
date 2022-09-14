@@ -218,6 +218,7 @@ module.exports = {
     productList,
     productDetail,
     edit,
+    saveEdit,
     productPanel,
     deleteProduct,
 

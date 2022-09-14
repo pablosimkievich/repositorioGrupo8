@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
         })
         Review.belongsTo(models.OrderDetail, {
             as: 'order_detail',
-            foreignKey: 'order_detail_fk_id'
+            foreignKey: 'order_detail_fk_id',
         })
     }; 
     return Review;

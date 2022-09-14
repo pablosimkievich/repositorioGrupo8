@@ -32,9 +32,9 @@ module.exports = (sequelize, dataTypes) => {
             as: 'users',
             foreignKey: 'fk_user_id'
         })
-        OrderDetail.hasOne(models.Review, {
+        OrderDetail.hasMany(models.Review, {
             as: 'reviews',
-            foreignKey: 'fk_review_id'
+            foreignKey: 'order_detail_fk_id'
         })
     }; 
     return OrderDetail;
