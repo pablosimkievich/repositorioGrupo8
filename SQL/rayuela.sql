@@ -88,7 +88,7 @@ CREATE TABLE `order_detail` (
   CONSTRAINT `fk_order_id` FOREIGN KEY (`fk_order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_product_id` FOREIGN KEY (`fk_product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +97,7 @@ CREATE TABLE `order_detail` (
 
 LOCK TABLES `order_detail` WRITE;
 /*!40000 ALTER TABLE `order_detail` DISABLE KEYS */;
+INSERT INTO `order_detail` VALUES (2,1,28,1,55),(3,1,29,1,55),(4,1,30,1,55),(5,2,36,1,50),(6,2,39,1,50),(7,2,32,1,50),(8,3,33,1,43),(9,3,79,1,43),(10,3,75,1,43),(11,3,65,1,43),(12,4,67,1,24),(13,5,68,1,21),(14,5,64,1,21),(15,6,63,1,8),(16,6,62,1,8),(17,6,61,1,8),(18,6,60,1,8),(19,6,57,1,8),(20,7,31,1,23),(21,8,35,1,11),(22,8,34,1,11),(23,8,46,1,11),(31,12,40,1,17),(32,12,72,1,17),(33,13,44,1,18),(34,13,56,1,18),(35,13,51,1,18),(36,14,77,1,1);
 /*!40000 ALTER TABLE `order_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +121,7 @@ CREATE TABLE `orders` (
   KEY `pay_method_id_idx` (`pay_method_id`),
   CONSTRAINT `pay_method_id` FOREIGN KEY (`pay_method_id`) REFERENCES `payment_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +130,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,55,22997.00,'2022-09-10','Enviado','Montevideo 879',7),(2,50,35747.00,'2022-09-05','Enviado','Florida 457',1),(3,43,21696.00,'2022-08-25','Enviado','Sarmiento 697',5),(4,24,4299.00,'2022-08-15','Enviado','Honduras 547',4),(5,21,3848.00,'2022-08-05','Enviado','Costa Rica 1498',2),(6,8,20295.00,'2022-07-07','Enviado','Junin 457',3),(7,23,32999.00,'2022-06-17','Enviado','Coronel Diaz 2532',5),(8,11,22397.00,'2022-06-27','Enviado','Jujuy 235',6),(12,17,8498.00,'2022-05-28','Enviado','Guatemala 234',1),(13,18,11087.00,'2022-05-28','Enviado','Francia 334',3),(14,1,1699.00,'2022-08-14','Enviado','Larrea 342',2);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +216,7 @@ CREATE TABLE `reviews` (
   KEY `order_detail_fk_id_idx` (`order_detail_fk_id`),
   CONSTRAINT `order_detail_fk_id` FOREIGN KEY (`order_detail_fk_id`) REFERENCES `order_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,6 +225,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+INSERT INTO `reviews` VALUES (2,9,'Hermoso juguete, mi peque le encantó',30,4);
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -323,4 +326,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-09 19:15:55
+-- Dump completed on 2022-09-14  0:52:11
