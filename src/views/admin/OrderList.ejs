@@ -15,12 +15,12 @@
 
 
 
-            <a href="/order-detail/<%= e.id %>"><h4 class="card_title">Orden de Compra nro: <%= e.id %></h4></a>  <br>
+            <a class="card_title"href="/order-detail/<%= e.id %>"><h4 class="card_title">Orden de Compra nro: <%= e.id %></h4></a>  <br>
 
                 <div class="order_card_data">
 
-                    <div class="order_card_data-box">
-                        <h4>Usuario:  <%= e.users.user_first_name %> <%= e.users.user_last_name %> (ID:<%= e.user_id %>)</h4>
+                    <div class="order_card_data_box2">
+                        <h4 class="user_title">Usuario:  <%= e.users.user_first_name %> <%= e.users.user_last_name %> (ID:<%= e.user_id %>)</h4>
                         <img src="/img/users/<%= e.users.user_img %>" class="order_detail_img">
                         <h4>Monto de la compra: $ <%= e.order_total_amt %></h4>
                         <h4>Método de Pago: <%= e.payment_method.pay_method_type %> (ID: <%= e.pay_method_id %>)</h4>

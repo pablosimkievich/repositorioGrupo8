@@ -9,13 +9,13 @@
 
 .page_title {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     margin: 5px 5px;
 }
 
 .order_card {
     background-color: #D2DAFF;
-    border-radius: 15px;
+    border-radius: 7px;
     margin: 30px 30px;
 }
 
@@ -31,6 +31,8 @@
     display: flex;
     flex-direction: column;
     align-items: space-around;
+    margin: 10px 25px;
+    padding: 15px 15px;
     
 }
 
@@ -38,10 +40,16 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    border: 1px solid black;
-    border-radius: 15px;
-    margin: 10px;
-   
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    margin: 10px 25px;
+    padding: 15px 15px;
+    background-color: #AAC4FF;
+}
+
+.order_card_data_box2 {
+    margin: 10px 25px;
+    padding: 15px 15px;
 }
 
 .order_detail {
@@ -56,7 +64,7 @@
     max-width: 150px;
     flex-direction: row;
     /* border: 3px solid black;*/
-    border-radius: 5px;
+    border-radius: 7px;
     margin: 7px;
 }
 
@@ -64,7 +72,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 15px 15px;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: #EEF1FF;
     flex-wrap: nowrap;
     font-size: 0.8em;
@@ -74,8 +82,13 @@
 .card_title {
     display: flex;
     justify-content: center;
-    
-    margin: 25px 15px;
+    font-size: 1.2em;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.user_title {
+    font-size: 1.2em;
 }
 
 .card_items {

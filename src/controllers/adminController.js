@@ -71,7 +71,11 @@ const orderDetail = async (req, res) => {
             ]
         }); 
         
-        res.render('admin/orderDetail', {orderDetail, orderItems});
+        if (orderDetail) {
+            res.render('admin/orderDetail', {orderDetail, orderItems});
+        } else {
+            res.send(`No existe la orden de compra nro. ${req.params.id}`)
+        }
 
     } catch (error) {
         console.log(error);
