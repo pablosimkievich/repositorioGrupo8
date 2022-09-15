@@ -540,7 +540,8 @@ table.info-table {
 }
 
 .search-by-name{
- margin-top: 300px;
+    margin-top: 0px;
+    margin-left: 50px;
 }
  
 .h1-edit-form{
@@ -557,6 +558,22 @@ table.info-table {
     font-size: 2em;
 }
 
+.space-div {
+    margin-top: 220px;
+}
+
+.result_search_title {
+    font-size: 2em;
+    margin-top: 220px;
+    margin-left: 50px;
+}
+
+.result_search_title2 {
+    font-size: 2em;
+    margin-left: 50px;
+    margin-top: 150px;
+    margin-bottom: 180px;
+}
 
 
 @media (min-width: 361px){

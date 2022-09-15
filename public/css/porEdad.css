@@ -196,6 +196,11 @@ h2.home_header {
     text-align: center;
 }
 
+.age_links {
+    font-size: 1em;
+}
+
+
 @media (min-width: 450px)
 {
 

@@ -21,32 +21,25 @@
         <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
     </section>
 
-    <a class="user-list-link" href="/usuarios"><h2 class="user-list-tittle">Lista de Usuarios</h2></a> 
+    <h2 class="user-list-tittle">Detalle de Usuario</h2>
     <section class="lista-de-usuarios">
+    
         
-        
-        <% allUsers.map(e => { %>
             <article class="producto">
-                
-                    <a href="/user/<%= e.id %>">
-                    <% if (e.user_img == "") { %>
-                    <img src="/img/users/undefined-user1280.png" alt="fotoPerfil">
-                    <% } else { %>
-                    <img src="/img/users/<%= e.user_img %>" alt="fotoPerfil">
+                    <% if (userDetail.user_img == "" || userDetail.user_img == null ) { %>
+                    <img src="/img/users/undefined-user1280.png" alt="banco">
+                    <% } else { %> 
+                    <img src="/img/users/<%= userDetail.user_img %>" alt="banco">
                     <% } %>
                     
-                    <h3> <%= e.user_first_name %>  <%= e.user_last_name %></h3>
-                </a>
-                <p>  <%= e.user_mail %> </p>
-
-                <% if (e.users_type.user_type_name) { %>
-                    <p>  <%= e.users_type.user_type_name %> </p>
-                <% } %>
+                    <h3> <%= userDetail.user_first_name %>  <%= userDetail.user_last_name %></h3>
                 
+                <p> <%= userDetail.user_mail %> </p>
                 
+                <p> <%= userDetail.users_type.user_type_name %> </p>
                 
             </article>
-        <% }) %>
+        
     </section>
 
     <footer>
