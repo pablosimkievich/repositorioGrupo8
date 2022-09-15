@@ -3,7 +3,6 @@
     
 }
 
-
 /* DESKTOP */
 
 body {
@@ -94,7 +93,6 @@ footer {
 }
 
 
-
 @keyframes creciendoCielo {
     0% {}
     100% {transform: translateY(10px)} ;}
@@ -150,3 +148,5 @@ footer {
     }
 
    } 
+
+

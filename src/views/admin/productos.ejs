@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+
+    <body>
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="/css/products-admin-styles.css" title="cont">
+            <link rel="stylesheet" href="/css/whatsapp.css">
+
+
+            <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+            <title>Rayuela</title>
+        </head>
+         <%- include('../partials/header.ejs') %>
+
+       
+
+        <section class="product-display">
+            <% allTheProducts.map(e=> { %>
+                <article class="card">
+                    <a href="/juguetes/<%= e.id %>">
+                        <img src="/img/products/<%= e.principal_img %>" alt="juguete1">
+                        <h3>
+                            <%= e.name %>
+                        </h3>
+                        <p class="precio-card">
+                            <%= e.price %>$
+                            
+                        </p>
+                        <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>
+                            AGREGAR AL
+                            CARRITO</button>
+                    </a>
+
+                    <p class="precio-card"><%= e.description %></p>
+                    <p class="precio-card"><%= e.category.category_name %></p>
+                    
+                    <p class="precio-card"><%= e.ages.recommended_age %></p>
+                    
+
+                    <img class="secondary" src="/img/products/<%= e.secondary_images.image_2%>" alt="juguete1">
+                    <img class="secondary" src="/img/products/<%= e.secondary_images.image_3%>" alt="juguete1">
+                    <img class="secondary" src="/img/products/<%= e.secondary_images.image_4%>" alt="juguete1">
+                    
+                </article>
+
+                <% }) %>
+        </section>
+        <div>
+            <a href="https://api.whatsapp.com/send?phone=1155996575&text=Hola. como te podemos ayudar?%21%20." class="whatsapp" target="_blank">
+                <img src="/img/icons8-whatsapp-48.png" alt="">
+            </a>
+        </div>  
+    </body>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+
+</html>
