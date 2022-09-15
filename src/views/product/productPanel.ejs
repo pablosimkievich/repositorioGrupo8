@@ -35,9 +35,9 @@
             <% data.map(e=> { %>
                 <article class="card">
                     <a href="/juguetes/<%= e.id %>">
-                        <img src="/img/products/<%= e.imagenPrincipal %>" alt="juguete1">
+                        <img src="/img/products/<%= e.principal_img %>" alt="juguete1">
                         <h3>
-                            <%= e.nombre %>
+                            <%= e.name%>
                         </h3>
                         <p>ID:<%=e.id%>
                          </p>
