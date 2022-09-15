@@ -24,9 +24,9 @@
         <% categorias.map(e => { %>
         <article class="card">
           
-                <img src="<%= e.img %>" alt="imagen">
+                <img src="/img/<%= e.category_img %>" alt="imagen">
         <div>
-            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>"><%= e.categoria %></a>
+            <a href="/categorias/<%= e.id %>"><%= e.category_name %></a>
            
         </div>
        

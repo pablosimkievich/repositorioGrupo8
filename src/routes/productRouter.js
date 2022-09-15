@@ -11,8 +11,8 @@ router.get('/productos/', productController2.productList);
 router.get('/productPanel', productController2.productPanel);
 
 /********PRODUCT LIST por categoria y edad***********/
-router.get('/edad/:edadrecomendada', productController.getEdad);
-router.get('/categorias/:categoria', productController.getCategory);
+router.get('/edad/:edadrecomendada', productController2.getEdad);
+router.get('/categorias/:categoria', productController2.getCategory);
 
 
 /********GET PRODUCT DETAIL***********/
@@ -24,7 +24,7 @@ router.post('/crearProducto', productController2.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', productController2.edit );
-router.put('/edit/:id', productController.saveEdit );
+router.put('/edit/:id', productController2.saveEdit );
 
 /********DELETE A PRODUCT***********/
 router.delete('/:id' , productController2.deleteProduct)
