@@ -1,15 +1,9 @@
 const db = require('../database/models/index');
-const path = require('path');
 // const User = require('../database/models/User');
-const fs = require('fs');
+// const fs = require('fs');
 const { markAsUntransferable } = require('worker_threads');
-const { join } = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-
-const pathUserDB = path.join(__dirname, '../database/users.json');
-const userDB = JSON.parse(fs.readFileSync(pathUserDB, 'utf-8'));
-
 
 const op = db.Sequelize.Op;
 
@@ -26,6 +20,7 @@ const userDetail = async (req, res) => {
     try {
         const id = req.params.id
         const userDetail = await db.User.findByPk(id);
+        
         res.render('users/userDetail', {userDetail});
     } catch (error) {
         console.log(error);
