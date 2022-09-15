@@ -29,7 +29,7 @@
             <article class="producto">
                 
                     <a href="/usuario/<%= e.id %>">
-                    <% if (e.fotoPerfil == "") { %>
+                    <% if (e.user_img == "") { %>
                     <img src="/img/users/undefined-user1280.png" alt="fotoPerfil">
                     <% } else { %>
                     <img src="/img/users/<%= e.user_img %>" alt="fotoPerfil">
@@ -37,7 +37,7 @@
                     
                     <h3> <%= e.user_first_name %>  <%= e.user_last_name %></h3>
                 </a>
-                <p>  <%= e.email %> </p>
+                <p>  <%= e.user_mail %> </p>
                 
                 <div class="button-box">
                     <a href="/edicion-usuario/<%=e.id %>"><button type="submit" class="add-to-cart-button">EDITAR USUARIO</button></a>   

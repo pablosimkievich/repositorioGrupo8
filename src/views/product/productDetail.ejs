@@ -12,7 +12,7 @@
 
         <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
        
-        <title><%=juguete.nombre%> - Rayuela</title>
+        <title><%=juguete.name%> - Rayuela</title>
         <link rel="icon" href="/img/logo-icono.png">
     </head>
 
@@ -22,8 +22,8 @@
         <section class="bread-crumbs">
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
-                <li><a href="/categorias/<%= juguete.categoria.replace( ' ', '').toLowerCase() %>"> <%= juguete.categoria %> </a></li>
-                <li><a href="productDetail.html"> <%= juguete.nombre %> </a></li>
+                <li><a href="/categorias/<%= juguete.category.category_name %>"> <%= juguete.category.category_name %> </a></li>
+                <li><a href="/juguetes/<%= juguete.id %>"> <%= juguete.name %> </a></li>
             </ul>
         </section>
 
@@ -32,18 +32,14 @@
             <article class="product_infoPrincipal">
                 <div class="product_infoPrincipal_images">
                     
-                    <img class='imagen-principal' src="/img/products/<%= juguete.imagenPrincipal %>">
+                    <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
+                    <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">    
+                    <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">    
+                    <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete4">    
+                     
+
                     
-            
-                    
-            <%if(Array.isArray(juguete.imagenesAdicionales) ){%>   
-                        <% for(let i=0; i < juguete.imagenesAdicionales.length; i++){%> 
-                            <a href="#"><img class='imagenAdicional-<%=i+1 %>' src="/img/products/<%=juguete.imagenesAdicionales[i]%>"></a> 
-                                <%}}else if(!Array.isArray(juguete.imagenesAdicionales) && juguete.imagenesAdicionales === ""){%> 
-                                    <a href="#" style="display:none"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
-                                    <%}else{%>
-                                    <a href="#"><img class='imagenAdicional-1' src="/img/products/<%=juguete.imagenesAdicionales%>"></a>
-                                        <%}%>       
+             
 
                     <div class="dots">
                         <i id="seleccionado" class="fa-regular fa-circle"></i>
@@ -55,23 +51,17 @@
                 </div>
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
-                        <h1 class="product-name"> <%= juguete.nombre %> </h1>
+                        <h1 class="product-name"> <%= juguete.name %> </h1>
                         <span class="reviews">
                         
-                            <h2>Reviews (<%=juguete.reviews.length%>)</h2>
-                      
-                            <div class="stars-outer">
-                                <div class="stars-inner" style ="width:<%=juguete.rating %>%">
-
-                                </div>
-                            </div>
+                          
                            
                           
                         </span>
                      
 
                      
-                        <h2 class="precio">$ <%= juguete.precio %> </h2>
+                        <h2 class="precio">$ <%= juguete.price %> </h2>
                         <form class="add-to-cart" method="POST" action="/add-to-cart">
                             <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
@@ -95,7 +85,7 @@
             </article>
             <article class="product_masInfo">
                 <h3>Descripcion</h3>
-                <p> <%= juguete.descripcion %>
+                <p> <%= juguete.description %>
                 </p>
             </article>
             <article class="product_masInfo">
@@ -103,33 +93,33 @@
                 <table class="info-table">
                     <tr>
                         <td>Edad: </td>
-                        <td> <%= juguete.edadRecomendada %> </td>
+                        <td> <%= juguete.ages.recommended_age %> </td>
                     </tr>
                     <tr>
                         <td>Materiales</td>
-                        <td> <%= juguete.materiales %> </td>
+                        <td> <%= juguete.materials %> </td>
                     </tr>
                     <tr>
                         <td>Dimensiones</td>
-                        <td><%= juguete.ancho %>cm x <%= juguete.altura %>cm x <%= juguete.profundidad %>cm </td>
+                        <td><%= juguete.width %>cm x <%= juguete.height %>cm x <%= juguete.depth %>cm </td>
                     </tr>
                 </table>
             </article>
         </section>
         <h2 id="h-tambien-te-puede-gustar">Tambien te puede gustar</h2>
     <section class="tambien-te-puede-gustar">
-        
-        <% cuatro.map( e => {%> 
-        <article class="card">
-            <a href="../juguetes/<%=e.id%>">
-                <img src="/img/products/<%=e.imagenPrincipal%>" alt="juguete1">
-            <h3><%= e.nombre %></h3>
-            <p class="precio-card"><%= e.precio %></p>
-            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
-                CARRITO</button>
-            </a>
-        </article>
-        <%})%>
+        <% cuatro.map( e => {%>
+            <article class="card">
+                <a href="../juguetes/<%=e.id%>">
+                    <img src="/img/products/<%=e.principal_img%>" alt="juguete1">
+                <h3><%= e.name %></h3>
+                <p class="precio-card"><%= e.price %></p>
+                <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
+                    CARRITO</button>
+                </a>
+            </article>
+            <%})%>
+      
         
 
     </section>
