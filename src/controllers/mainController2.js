@@ -18,9 +18,24 @@ const index = async (req, res) => {
     });
     res.render('home', {allTheProducts}); 
 };
+ const indexCategorias = async(req,res) => {
+        try{
+          const categorias = await db.Category.findAll();
+          
+          res.render('pruebaHome', {categorias});
+        }catch(error){
+                console.log(error)
+        }
+
+ };
+
+ 
+
 
 
 
 module.exports = {
-    index
+    index,
+    indexCategorias,
+   
 }

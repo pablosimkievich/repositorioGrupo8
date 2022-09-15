@@ -21,7 +21,7 @@ const saveNewProduct = async (req, res) => {
         discount: (req.body.descuento)?req.body.descuento: 0,
         category_id: req.body.categoria,
         age_id: req.body.edadRecomendada,
-        principal_img: req.body.imagenPrincipal,
+        principal_img: req.body.principal_img,
         description: req.body.descripcion,
         materials: req.body.materiales,
         height: req.body.altura,
@@ -44,9 +44,9 @@ const saveNewProduct = async (req, res) => {
 
         let newImages = {
             id_product: lastProduct.id,
-            image_2: (req.body.imagenesAdicionales[0])? (req.body.imagenesAdicionales[0]): null,
-            image_3: (req.body.imagenesAdicionales[1])? (req.body.imagenesAdicionales[1]): null,
-            image_4: (req.body.imagenesAdicionales[2])? (req.body.imagenesAdicionales[2]): null,
+            image_2: (req.body.secondary_img[0])? (req.body.secondary_img[0]): null,
+            image_3: (req.body.secondary_img[1])? (req.body.secondary_img[1]): null,
+            image_4: (req.body.secondary_img[2])? (req.body.secondary_img[2]): null,
               }
               
           await db.SecondaryImages.create(newImages);
@@ -109,8 +109,8 @@ const productList =  async (_req, res) => {
       alert(error)
     }
     };
-    const saveEdit = async (req, res) => {
-      
+ const saveEdit = async (req, res) => {
+  let jugueteEdit = await db.Product.findByPk(req.params.id) 
       const {
         name,
         price,
@@ -123,7 +123,8 @@ const productList =  async (_req, res) => {
         width,
         height,
         depth,
-        weight
+        weight,
+        stock
       } = req.body;
   
      
@@ -135,14 +136,16 @@ const productList =  async (_req, res) => {
       price,
       discount,
       category_id,
-      principal_img,
+      principal_img: req.file? req.file.filename: jugueteEdit.principal_img,
       description,
       age_id,
       materials,
       width,
       height,
       depth,
-      weight}
+      weight,
+      stock
+    }
           
           await db.Product.update(product,
             {
@@ -151,7 +154,7 @@ const productList =  async (_req, res) => {
               }
           });
 
-              
+           
        let newImages = {
           id_product:  req.params.id,
           image_2: req.body.secondary_img[0],
@@ -207,7 +210,47 @@ const deleteProduct = async (req, res) => {
             console.log(error)
                 };
   };
-    
+  const getCategory = async (req,res)=>{
+    try{
+     const juguetesCategoria = await db.Product.findAll(
+        {
+          where: {
+                  category_id : req.params.categoria
+                 }
+                 , 
+                 
+          include: [{
+                    association: 'category',
+                }          
+                            ]})
+         res.render("product/categoria", { juguetesCategoria });
+
+    }catch(error){
+      console.log(error)}
+
+  }
+   
+  const getEdad =  async (req,res)=>{
+    try{
+     const juguetesXedad =  await db.Product.findAll(
+    {
+      where: {
+              age_id : req.params.edadrecomendada
+             }
+             , 
+             
+      include: [{
+                association: 'ages',
+            }          
+                        ]})
+                   
+                   
+     res.render("product/edades", { juguetesXedad });
+
+}catch(error){
+  console.log(error)}
+
+}
 
 module.exports = {
     create,
@@ -218,5 +261,7 @@ module.exports = {
     saveEdit,
     productPanel,
     deleteProduct,
+    getCategory,
+    getEdad
 }
 

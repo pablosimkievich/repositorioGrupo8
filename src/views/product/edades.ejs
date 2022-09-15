@@ -16,20 +16,18 @@
      <%- include('../partials/header.ejs') %>
     
      
-     <h1 id="categoryPage_title">
-          Juguetes por edad
-      
-     </h1>
+     
      <section class="product-display">
         <% juguetesXedad.map(e=> { %>
             <article class="card">
                 <a href="/juguetes/<%= e.id %>">
-                    <img src="/img/products/<%= e.imagenPrincipal %>" alt="juguete1">
+                   
+                    <img src="/img/products/<%=e.principal_img %>" alt="juguete1">
                     <h3>
-                        <%= e.nombre %>
+                        <%= e.name%>
                     </h3>
                     <p class="precio-card">
-                        <%=e.precio%>$
+                        <%=e.price%>$
                     </p>
                     <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>
                         AGREGAR AL

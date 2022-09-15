@@ -33,12 +33,20 @@
                 <div class="product_infoPrincipal_images">
                     
                     <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
-                    <%(<img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">)?<img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">): <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2" style="display:none">)%>
-                    <!-- <%(<img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">)?<img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">): <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete2" style="display:none">)%>
-                    <%(<img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete4">)?<img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete4">): <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete2" style="display:none">)%>
-                     -->
 
+                    <%if(juguete.secondary_images.image_2){%>
+                        <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
+                   <% }%>
+                    <%if(juguete.secondary_images.image_3){%>
+                        <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
+                   <% }%>
+                   
+                  <% if(juguete.secondary_images.image_4){ %>
+                        <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
+                 <%}%>
                     
+
+                
              
 
                     <div class="dots">

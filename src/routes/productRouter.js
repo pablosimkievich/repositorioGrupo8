@@ -11,8 +11,8 @@ router.get('/productos/', productController2.productList);
 router.get('/productPanel', productController2.productPanel);
 
 /********PRODUCT LIST por categoria y edad***********/
-router.get('/edad/:edadrecomendada', productController.getEdad);
-router.get('/categorias/:categoria', productController.getCategory);
+router.get('/edad/:edadrecomendada', productController2.getEdad);
+router.get('/categorias/:categoria', productController2.getCategory);
 
 
 /********GET PRODUCT DETAIL***********/
