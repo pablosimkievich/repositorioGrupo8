@@ -391,6 +391,12 @@ footer {
     text-align: center;
 }
 
+.category_name_link {
+    font-size: 1.15em;
+}
+
+
+
 @media (min-width: 450px)
 {
 

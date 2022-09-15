@@ -25,10 +25,10 @@
         <article class="card">
           
                 <img src="/img/<%= e.category_img %>" alt="imagen">
-        <div>
-            <a href="/categorias/<%= e.id %>"><%= e.category_name %></a>
+        <a href="/categorias/<%= e.id %>"><div class="category_name_link">
+            <%= e.category_name %>
            
-        </div>
+        </div></a>
        
         </article>
         <% }) %>

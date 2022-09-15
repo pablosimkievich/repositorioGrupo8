@@ -175,7 +175,7 @@ ul.breadcrumbs li+li:before {
     text-decoration: underline;
   }
 .product-display{
-    margin-top: 168px;    
+    margin-top: 20px;    
     display: flex;
     flex-flow: row wrap;
 }
@@ -552,7 +552,8 @@ table.info-table {
 
 
 .titulo-categoria{
-    margin-top: 300px;
+    margin-top: 220px;
+    margin-left: 25px;
     font-size: 2em;
 }
 
