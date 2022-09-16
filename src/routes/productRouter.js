@@ -1,33 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
-const productController2 = require('../controllers/productController2');
 const path=require('path')
 
 
-router.get('/productos/', productController2.productList);
+router.get('/productos/', productController.productList);
 
 /********CONTROL PANEL PARA EDITAR/BORRAR PRODUCTOS***********/
-router.get('/productPanel', productController2.productPanel);
+router.get('/productPanel', productController.productPanel);
 
 /********PRODUCT LIST por categoria y edad***********/
-router.get('/edad/:edadrecomendada', productController2.getEdad);
-router.get('/categorias/:categoria', productController2.getCategory);
+router.get('/edad/:edadrecomendada', productController.getEdad);
+router.get('/categorias/:categoria', productController.getCategory);
 
 
 /********GET PRODUCT DETAIL***********/
-router.get('/juguetes/:id', productController2.productDetail);
+router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/
-router.get('/crearProducto', productController2.create );
-router.post('/crearProducto', productController2.saveNewProduct );
+router.get('/crearProducto', productController.create );
+router.post('/crearProducto', productController.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
-router.get('/edit/:id', productController2.edit );
-router.put('/edit/:id', productController2.saveEdit );
+router.get('/edit/:id', productController.edit );
+router.put('/edit/:id', productController.saveEdit );
 
 /********DELETE A PRODUCT***********/
-router.delete('/:id' , productController2.deleteProduct)
+router.delete('/:id' , productController.deleteProduct)
 
 /********SEARCH A PRODUCT***********/
 router.get('/search', productController.search);

@@ -43,11 +43,18 @@
                     
                     <p class="precio-card"><%= e.ages.recommended_age %></p>
                     
-
+                    <%if(e.secondary_images.image_2){%>
                     <img class="secondary" src="/img/products/<%= e.secondary_images.image_2%>" alt="juguete1">
+                    <% }%>
+
+                    <%if(e.secondary_images.image_3){%>
                     <img class="secondary" src="/img/products/<%= e.secondary_images.image_3%>" alt="juguete1">
+                    <% }%>
+                   
+                    <% if(e.secondary_images.image_4){ %>
                     <img class="secondary" src="/img/products/<%= e.secondary_images.image_4%>" alt="juguete1">
-                    
+                    <%}%>
+
                 </article>
 
                 <% }) %>

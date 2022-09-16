@@ -96,7 +96,34 @@ const userList = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
+
+const userDetaille = async (req, res) => {
+    try {
+        const id = req.params.id
+        const userDetail = await db.User.findByPk(id, {
+            include: [
+                {
+                    association: 'users_type'
+                },
+                {
+                    association: 'orders'
+                }   
+        ],
+            
+        });
+
+        if (userDetail) {
+            res.render('admin/userDetail', { userDetail });
+        } else {
+            res.send(`No existe el usuario nro. ${req.params.id}`)
+        };
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 
 const productList = async (req, res) => {
     try {
@@ -126,5 +153,6 @@ module.exports = {
     orderList,
     orderDetail,
     userList,
+    userDetaille,
     productList
 }
