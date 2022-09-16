@@ -54,6 +54,7 @@ router.get('/contacto', userController.contacto);
 
 router.get('/logout', authMiddleware, userController.logout);
 
-router.get('/review', userController.writeAReview )
+router.get('/review/:product_id', userController.writeAReview );
+router.post('/review', userController.postReview)
 
 module.exports = router;

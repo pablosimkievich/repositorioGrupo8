@@ -214,9 +214,28 @@ const quienesSomos = (req, res) => {
 const productCart = (req, res) => {
     res.render('users/productCart');
 };
- const writeAReview = (req, res) => {
-    res.render('users/writeAReview');
+ const writeAReview = async (req, res) => {
+    const jugueteReview = await db.Product.findByPk(req.parms.product_id)
+    res.render('users/writeAReview', jugueteReview);
 };
+const postReview = async (req,res)=>{
+    try{
+       
+
+        const newReview = {
+                rating: req.body.rating,
+                review: req.body.description,
+                product_fk_id: req.params.product_id,
+                title_review: req.body.title,
+               
+                
+        }
+
+    }catch(error){
+        console.log(error)}
+
+
+}
 
 
 module.exports = {
@@ -234,6 +253,7 @@ module.exports = {
     preguntasFrecuentes,
     quienesSomos,
     productCart,
-    writeAReview
+    writeAReview, 
+    postReview
 }
 
