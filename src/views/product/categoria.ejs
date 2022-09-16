@@ -12,24 +12,25 @@
         <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
         <title>Rayuela</title>
     </head>
+
     <body>
      <%- include('../partials/header.ejs') %>
     
+    
+     <h1 class="titulo-categoria">
+        Categoria  <%=juguetesCategoria[0].category.category_name%>
+   </h1>
      
-     <h1 id="categoryPage_title">
-
-       <%= juguetesCategoria[0].categoria %>
-     </h1>
      <section class="product-display">
         <% juguetesCategoria.map(e=> { %>
             <article class="card">
                 <a href="/juguetes/<%= e.id %>">
-                    <img src="/img/products/<%= e.imagenPrincipal %>" alt="juguete1">
+                    <img src="/img/products/<%= e.principal_img %>" alt="juguete1">
                     <h3>
-                        <%= e.nombre %>
+                        <%= e.name %>
                     </h3>
                     <p class="precio-card">
-                        <%=e.precio%>$
+                        <%=e.price%>$
                     </p>
                     <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>
                         AGREGAR AL
@@ -38,9 +39,11 @@
             </article>
 
             <% }) %>
+
+        
     </section>
-
-
+   
+  
     <%- include('../partials/footer.ejs') %>
 </body>
     

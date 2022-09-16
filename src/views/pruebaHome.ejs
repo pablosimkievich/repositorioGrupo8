@@ -24,11 +24,11 @@
         <% categorias.map(e => { %>
         <article class="card">
           
-                <img src="<%= e.img %>" alt="imagen">
-        <div>
-            <a href="/categorias/<%= e.categoria.replace(' ','').toLowerCase() %>"><%= e.categoria %></a>
+                <img src="/img/<%= e.category_img %>" alt="imagen">
+        <a href="/categorias/<%= e.id %>"><div class="category_name_link">
+            <%= e.category_name %>
            
-        </div>
+        </div></a>
        
         </article>
         <% }) %>
@@ -37,41 +37,6 @@
         <a href="/productos" >Ver todos juguetes</a>
         <section class="home_categoria">
     </div>
-   
-
-        <h2 class="home_header">Elegí por Edad</h2>
-
-        <div class="container">
-            <article class="card">
-                
-                <img src="/img/categoria-6meses.png" alt="banco">
-            <div>
-                <a href="/edad/1">De 6 meses a 1 año</a>
-            </div>
-            </article>
-
-            <article class="card">
-                <img src="/img/categoria-1año.png" alt="banco">
-                <div>
-                <a href="/edad/2">De 1 años a 3 años</a>
-            </div>
-            </article>
-
-            <article class="card">
-                <img src="/img/categoria-3años.png" alt="banco">
-                <div>
-                <a href="/edad/3">De 3 años a 6 años</a>
-            </div>
-            </article>
-
-            <article class="card">
-                <img src="/img/categoria-6años.png" alt="banco">
-                <div>
-                <a href="/edad/4">Mas de 6 años</a>
-            </div>
-            </article>
-                
-        </div>
 
    </section> 
    
