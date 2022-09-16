@@ -81,6 +81,10 @@ const productList =  async (_req, res) => {
     {
       association: 'secondary_images',
   },
+  {
+    association: 'reviews',
+},
+  
  
     ]})   ;
   
@@ -89,9 +93,32 @@ const productList =  async (_req, res) => {
      const cuatro = await db.Product.findAll({
         where: { category_id : juguete.category_id},
         limit: 4
-     })
+     });
+     const countReviews = await db.Review.count(
+      {
+        where: {product_fk_id : juguete.id}
+      }
+     )
+     
+    
+      const ratingSum = await db.Review.sum('rating', 
+      {
+        where: {product_fk_id : juguete.id}
+      }
+     ) 
+     const reviews = await db.Review.findAll(
+      {
+        where: {product_fk_id : juguete.id}
+      },
+      {
+        include: [{
+        association: 'order-detail',
+    },]
+  }
+
+     )
          
-      res.render("product/productDetail", { juguete, cuatro});  
+      res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviews});  
     }else {
       res.send("No existe el juguete");
     };

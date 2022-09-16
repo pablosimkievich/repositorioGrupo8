@@ -213,7 +213,10 @@ const quienesSomos = (req, res) => {
 
 const productCart = (req, res) => {
     res.render('users/productCart');
-}
+};
+ const writeAReview = (req, res) => {
+    res.render('users/writeAReview');
+};
 
 
 module.exports = {
@@ -230,6 +233,7 @@ module.exports = {
     contacto,
     preguntasFrecuentes,
     quienesSomos,
-    productCart
+    productCart,
+    writeAReview
 }
 

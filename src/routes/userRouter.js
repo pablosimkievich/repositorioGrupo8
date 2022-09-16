@@ -54,4 +54,6 @@ router.get('/contacto', userController.contacto);
 
 router.get('/logout', authMiddleware, userController.logout);
 
+router.get('/review', userController.writeAReview )
+
 module.exports = router;
