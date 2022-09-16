@@ -13,21 +13,20 @@ const create = async (req, res) => {
 
 
 const saveNewProduct = async (req, res) => {
-    
-    
+     
     let newProduct = {
-        name: req.body.nombre,
-        price: req.body.precio,
-        discount: (req.body.descuento)?req.body.descuento: 0,
-        category_id: req.body.categoria,
-        age_id: req.body.edadRecomendada,
+        name: req.body.name,
+        price: req.body.price,
+        discount: req.body.discount,
+        category_id: req.body.category_id,
+        age_id: req.body.age_id,
         principal_img: req.body.principal_img,
-        description: req.body.descripcion,
-        materials: req.body.materiales,
-        height: req.body.altura,
-        width: req.body.ancho,
-        depth: req.body.profundidad,
-        weight: req.body.peso,
+        description: req.body.description,
+        materials: req.body.materials,
+        height: req.body.height,
+        width: req.body.width,
+        depth: req.body.depth,
+        weight: req.body.weight,
         stock: req.body.stock
       };
           
@@ -37,21 +36,37 @@ const saveNewProduct = async (req, res) => {
         const lastProduct = await db.Product.findOne({
             where: {
                 name: {
-                    [op.like]: req.body.nombre
+                    [op.like]: `%${req.body.name}%`
                 }
             }
         });
+        
+        let arrayCheck = Array.isArray(req.body.secondary_img)
+
+        if (arrayCheck == true) {
+          let newImages = {
+            id_product: lastProduct.id,
+            image_2: req.body.secondary_img[0],
+            image_3: req.body.secondary_img[1],
+            image_4: req.body.secondary_img[2],
+            }
+              
+        await db.SecondaryImages.create(newImages);
+
+        res.redirect('/productos');
+        } else {
+
+        }
 
         let newImages = {
             id_product: lastProduct.id,
-            image_2: (req.body.secondary_img[0])? (req.body.secondary_img[0]): null,
-            image_3: (req.body.secondary_img[1])? (req.body.secondary_img[1]): null,
-            image_4: (req.body.secondary_img[2])? (req.body.secondary_img[2]): null,
-              }
+            image_2: req.body.secondary_img
+            }
               
-          await db.SecondaryImages.create(newImages);
+        await db.SecondaryImages.create(newImages);
 
         res.redirect('/productos');
+
     } catch (error) {
         console.log(error);
     }
@@ -66,6 +81,7 @@ const productList =  async (_req, res) => {
     }
     
   };
+
   const productDetail= async (req, res) => {                                        
    try{
      let id = req.params.id;
@@ -80,35 +96,47 @@ const productList =  async (_req, res) => {
     },
     {
       association: 'secondary_images',
-  },
+    },
  
     ]})   ;
   
 
-   if (juguete) {
-     const cuatro = await db.Product.findAll({
-        where: { category_id : juguete.category_id},
-        limit: 4
-     })
+    if (juguete) {
+    const cuatro = await db.Product.findAll({
+      where: { category_id : juguete.category_id},
+      limit: 4
+    })
          
       res.render("product/productDetail", { juguete, cuatro});  
     }else {
-      res.send("No existe el juguete");
+        res.send(`No existe el juguete nro. ${req.params.id}`);
     };
 
   } catch(error){
-    console.log(error)
+      console.log(error)
       }
 };
 
- const edit = async (req, res) => {
+const edit = async (req, res) => {
      try{
-    let jugueteEdit = await db.Product.findByPk(req.params.id) 
-    res.render("product/edit-form", { jugueteEdit });
-    }catch(error){
+    let jugueteEdit = await db.Product.findByPk(req.params.id, {
+      include: [
+        {
+          association: 'secondary_images'
+        }
+      ]
+    }) 
+      if (jugueteEdit) {
+        res.render("product/edit-form", { jugueteEdit });
+      } else {
+        res.send(`No existe el juguete nro. ${req.params.id}`)
+      }
+
+    } catch(error) {
       alert(error)
     }
     };
+
  const saveEdit = async (req, res) => {
   let jugueteEdit = await db.Product.findByPk(req.params.id) 
       const {
@@ -127,17 +155,15 @@ const productList =  async (_req, res) => {
         stock
       } = req.body;
   
-     
-      try{
+    try {
       
-  
     const product = {
       name,
       price,
       discount,
       category_id,
-      principal_img: req.file? req.file.filename: jugueteEdit.principal_img,
-      description,
+      principal_img: req.body.principal_img ? req.body.principal_img: jugueteEdit.principal_img,
+      description: req.body.description ? req.body.description: jugueteEdit.description,
       age_id,
       materials,
       width,
@@ -154,27 +180,44 @@ const productList =  async (_req, res) => {
               }
           });
 
+          let arrayCheck = Array.isArray(req.body.secondary_img)
            
-       let newImages = {
-          id_product:  req.params.id,
-          image_2: req.body.secondary_img[0],
-          image_3:  req.body.secondary_img[1],
-          image_4: req.body.secondary_img[2],
-            }
-            
-              
-          await db.SecondaryImages.update(newImages,
-            {
-              where: {
-                  id_product:  req.params.id,
+          if (arrayCheck == true) {
+
+            let newImages = {
+              id_product:  req.params.id,
+              image_2: req.body.secondary_img[0],
+              image_3:  req.body.secondary_img[1],
+              image_4: req.body.secondary_img[2],
+                }
+               
+              await db.SecondaryImages.update(newImages,
+                  {
+                where: {
+                    id_product:  req.params.id,
+                }
               }
-          }
-            );
-           
-            res.redirect(`/juguetes/${req.params.id}`)
-          
-       
-    
+              );
+             
+              res.redirect(`/juguetes/${req.params.id}`)
+          } else {
+
+            let newImages = {
+              id_product:  req.params.id,
+              image_2: req.body.secondary_img
+                }
+            
+            await db.SecondaryImages.update(newImages,
+              {
+                where: {
+                    id_product:  req.params.id,
+                }
+            }
+              );
+             
+              res.redirect(`/juguetes/${req.params.id}`)
+            }
+               
     } catch(error){
     console.log(error)
   }
@@ -189,14 +232,14 @@ const productPanel = async (_req, res) => {
             console.log(error);
     }
     
-  }; 
+}; 
 
 const deleteProduct = async (req, res) => {
     
           try{
               await  db.SecondaryImages.destroy({
                 where: {
-                        id_product : req.params.id
+                        id_product: req.params.id
                        }
                        });
                 await db.Product.destroy({
@@ -209,8 +252,9 @@ const deleteProduct = async (req, res) => {
     } catch(error){
             console.log(error)
                 };
-  };
-  const getCategory = async (req,res)=>{
+};
+
+const getCategory = async (req,res)=>{
     try{
      const juguetesCategoria = await db.Product.findAll(
         {
@@ -230,7 +274,7 @@ const deleteProduct = async (req, res) => {
 
   }
    
-  const getEdad =  async (req,res)=>{
+const getEdad =  async (req,res)=>{
     try{
      const juguetesXedad =  await db.Product.findAll(
     {

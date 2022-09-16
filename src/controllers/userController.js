@@ -132,6 +132,10 @@ const userDelete = async (req, res) => {
                 id: req.params.id
             }
         });
+
+        res.clearCookie('userEmail');
+        req.session.destroy();
+
         res.redirect('/usuarios')
    } catch (error) {
         console.log (error);
