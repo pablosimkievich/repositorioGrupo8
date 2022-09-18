@@ -22,7 +22,7 @@
         <section class="bread-crumbs">
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
-                <li><a href="/categorias/<%= juguete.category.category_name %>"> <%= juguete.category.category_name %> </a></li>
+                <li><a href="/categorias/<%= juguete.category.id %>"> <%= juguete.category.category_name %> </a></li>
                 <li><a href="/juguetes/<%= juguete.id %>"> <%= juguete.name %> </a></li>
             </ul>
         </section>
@@ -36,14 +36,15 @@
 
                     <%if(juguete.secondary_images.image_2){%>
                         <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
-                   <% }%>
+                    <% }%>
+
                     <%if(juguete.secondary_images.image_3){%>
                         <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
-                   <% }%>
+                    <% }%>
                    
-                  <% if(juguete.secondary_images.image_4){ %>
+                    <% if(juguete.secondary_images.image_4){ %>
                         <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
-                 <%}%>
+                    <%}%>
                     
 
                 

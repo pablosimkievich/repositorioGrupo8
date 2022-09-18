@@ -15,7 +15,9 @@
     <body>
      <%- include('../partials/header.ejs') %>
     
-     
+     <h1 class="titulo-categoria">
+        Edad Recomendada:  <%=juguetesXedad[0].ages.recommended_age %>
+    </h1>
      
      <section class="product-display">
         <% juguetesXedad.map(e=> { %>

@@ -175,7 +175,7 @@ ul.breadcrumbs li+li:before {
     text-decoration: underline;
   }
 .product-display{
-    margin-top: 168px;    
+    margin-top: 20px;    
     display: flex;
     flex-flow: row wrap;
 }
@@ -477,9 +477,8 @@ table.info-table {
  .control-formulario{
     padding-top:10px;
     padding-bottom: 10px;
-    
-
  }
+
 .control-formulario label{
     font-size: 18px;
     padding:5px 0px;
@@ -513,10 +512,9 @@ table.info-table {
  }
  
  .dimensiones{
-    width: 40px;
+    width: 50px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    
  }
  
  .form-buttons{
@@ -540,7 +538,8 @@ table.info-table {
 }
 
 .search-by-name{
- margin-top: 300px;
+    margin-top: 0px;
+    margin-left: 50px;
 }
  
 .h1-edit-form{
@@ -552,11 +551,57 @@ table.info-table {
 
 
 .titulo-categoria{
-    margin-top: 300px;
+    margin-top: 220px;
+    margin-left: 25px;
     font-size: 2em;
 }
 
+.space-div {
+    margin-top: 220px;
+}
 
+.result_search_title {
+    font-size: 2em;
+    margin-top: 220px;
+    margin-left: 50px;
+}
+
+.result_search_title2 {
+    font-size: 2em;
+    margin-left: 50px;
+    margin-top: 150px;
+    margin-bottom: 180px;
+}
+
+.stock-label {
+    font-size: 1.3em;
+}
+
+.stock-input {
+    font-size: 1em;
+    max-width: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+
+}
+
+.stock-input2 {
+    max-width: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+   
+    
+}
+
+.secondary_img {
+    margin: 25px 0px;
+}
+
+.medidas {
+    max-width: 50px;
+}
 
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
