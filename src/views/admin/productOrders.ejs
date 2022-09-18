@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style=" margin: 20px;">Soy Product Orders</h1>
+
+    <div style="border: 2px solid grey; margin: 20px; border-radius: 7px;">
+    <p>Producto: <%= theProduct.name %></p>
+    <img src="/img/products/<%= theProduct.principal_img %>" style="max-width: 200px;">
+    
+    <img src="/img/products/<%= theProduct.secondary_images.image_2 %>" style="max-width: 200px">
+    <img src="/img/products/<%= theProduct.secondary_images.image_3 %>" style="max-width: 200px">
+    <img src="/img/products/<%= theProduct.secondary_images.image_4 %>" style="max-width: 200px">
+    <p>Descripción: <%= theProduct.description %></p>
+    <p>Categoría: <%= theProduct.category.category_name %></p>
+    <p>Edades Recomendadas: <%= theProduct.ages.recommended_age %></p>
+    <p>Precio: $<%= theProduct.price %></p>
+    <p>Stock: <%= theProduct.stock %> unidades</p>
+    </div>
+
+
+    <div style="display: flex; flex-direction: row;">
+    <% theOrderDetails.map(e => { %>
+
+        <div style="border: 2px solid grey; border-radius: 7px; margin: 20px;  margin: 20px;">
+        <p>El Usuario <%= e.users.user_first_name %> <%= e.users.user_last_name %> compró este producto</p> 
+        <img src="/img/users/<%= e.users.user_img %>" style="max-width: 100px;">
+        <p>Orden de Compra Nro. : <%= e.fk_order_id %></p>
+        <p>Detalle de compra Nro. : <%= e.id %></p>
+        <p>Fecha: <%= e.orders.order_date %></p>
+        <p>Cantidad: <%= e.quantity %> unidad/es</p>
+        </div>
+    <% }) %>
+
+    </div>
+</body>
+</html>

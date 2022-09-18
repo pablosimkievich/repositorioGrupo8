@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Soy un formulario de review</h1>
+
+    <p>Usuario: <%= myOrderDetail.users.user_first_name %>  <%= myOrderDetail.users.user_last_name %></p>
+
+    <img src="/img/users/<%= myOrderDetail.users.user_img %>" style="max-width: 100px;">
+
+    <p>Producto: <%= myOrderDetail.products.name %></p>
+    <img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;">
+    
+    
+    <form action="/review" method="POST">
+        <label for="">Detalle de compra Nro. :</label><br>
+        <input type="number" name="order_detail_fk_id" value="<%= myOrderDetail.id %>" readonly style="width: 300px"><br>
+        <label for="">Id del Producto: </label><br>
+        <input type="number" name="product_fk_id" value="<%= myOrderDetail.fk_product_id %>" readonly style="width: 300px"><br>
+        <label for="">Titulo de la review: </label><br>
+        <input type="text" name="review_title" placeholder="Titulo de la review" style="width: 300px"><br>
+        <label for="">Review: </label><br>
+        <input type="textarea" name="review" placeholder="Escribe aquí tu review" style="width: 300px"><br>
+        <label for="">Rating: </label><br>
+        <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" style="width: 300px"><br>
+        
+        <input type="submit" value="Enviar" class="botonLogin">
+    </form>
+
+</body>
+</html>

@@ -17,7 +17,7 @@
                     <h3>Monto de la Compra: $ <%= orderDetail.order_total_amt %></h3>
                     <h3>Método de Pago: <%= orderDetail.payment_method.pay_method_type %> (ID: <%=orderDetail.pay_method_id %>)</h3>
                     <h3>Fecha de Compra: <%= orderDetail.order_date %></h3>
-                    <h3>Sataus de la Orden: <%= orderDetail.order_status %></h3>
+                    <h3>Status de la Orden: <%= orderDetail.order_status %></h3>
                     <h3>Dirección de Entrega: <%= orderDetail.order_address %></h3>
 
             </div>
@@ -38,8 +38,8 @@
                                             <h4 class="order_detail_items">Precio: $ <%= element.products.price %></h3>
                                             
 
-                                            <a href="/juguetes/<%= element.products.id %>">  <img src="/img/products/<%= element.products.principal_img %>" class="order_items_img" > </a>
-                                            <h3 class="order_detail_items">Stock del Producto: <%= element.products.stock %></h3><br>
+                                            <a href="/product-orders/<%= element.products.id %>">  <img src="/img/products/<%= element.products.principal_img %>" class="order_items_img" > </a>
+                                            <h3 class="order_detail_items">Stock del Producto: <%= element.products.stock %> unidades</h3><br>
                                         </div>
                                 <% }) %>
                         </div>

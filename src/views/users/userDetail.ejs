@@ -41,6 +41,13 @@
                     <form action="/delete/<%=userDetail.id%>?_method=DELETE" method="POST">
                         <button type="submit" class="add-to-cart-button">BORRAR USUARIO</i></button>
                     </form>
+                       
+                    <% if (orders.length >= 1) { %>
+                        <form action="/mis-compras/<%= userDetail.id %>" method="GET" class="button-box">
+                            <button type="submit">Mis Ordenes de Compra</button>
+                        </form>
+                    <% } %>
+                  
                 </div>
             </article>
         

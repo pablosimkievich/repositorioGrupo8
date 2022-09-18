@@ -8,6 +8,9 @@ module.exports = (sequelize, dataTypes) => {
         rating: {
             type: dataTypes.INTEGER
         },
+        review_title: {
+            type: dataTypes.STRING
+        },
         review: {
             type: dataTypes.STRING
         },

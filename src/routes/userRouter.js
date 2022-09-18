@@ -35,7 +35,7 @@ const uploadFile = multer({
   });
 
 router.get('/usuarios', userController.userList) // todos los usuarios
-router.get('/usuario/:id',  authMiddleware, userController.userDetail) // detalle de usuario
+router.get('/usuario/:id',  authMiddleware, userController.userDetaille) // detalle de usuario
 
 router.get('/login', guestMiddleware, userController.login); // login
 router.post('/login', userController.processLogin)
@@ -52,6 +52,13 @@ router.get('/quienesSomos', userController.quienesSomos);
 router.get('/preguntasFrecuentes', userController.preguntasFrecuentes);
 router.get('/contacto', userController.contacto);
 
+router.get('/mis-compras/:id', userController.misCompras) // muestra página de ordenes de compra de usuario
+
+router.get('/review-form/:id', userController.reviewForm)
+router.post('/review', userController.reviewCreate)
+
 router.get('/logout', authMiddleware, userController.logout);
+
+
 
 module.exports = router;
