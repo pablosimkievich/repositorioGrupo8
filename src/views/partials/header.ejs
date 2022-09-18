@@ -67,9 +67,9 @@
                        <div class="userLogged-style">    
                         <% if (locals.isLogged) { %>
                             <% if (locals.userLogged.user_img == "" ) { %>
-                                    <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img">
+                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
                                       <% } else { %> 
-                                      <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img">
+                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
                                       <% } %>
               
                             Hola <%= locals.userLogged.user_first_name %>

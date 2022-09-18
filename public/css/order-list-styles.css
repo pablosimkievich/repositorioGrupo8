@@ -50,6 +50,11 @@ body {
     margin: 0px 25px;
     padding: 15px 15px;
     background-color: #AAC4FF;
+   
+}
+
+.data-box-links {
+    text-decoration: none;
 }
 
 .order_card_data_box2 {
