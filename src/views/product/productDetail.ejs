@@ -48,6 +48,16 @@
                     
 
                 
+             
+
+                    <div class="dots">
+                        <i id="seleccionado" class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                    </div>
+
+                </div>
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
                         <h1 class="product-name"> <%= juguete.name %> </h1>
@@ -56,21 +66,11 @@
                             <div class="stars-outer">
                                 <div class="stars-inner" style ="width:<%= ratingSum/countReviews %>%">
                                 </div>
-                            </div>
-                        
-           
-                               <div class="dots">
-                                   <i id="seleccionado" class="fa-regular fa-circle"></i>
-                                   <i class="fa-regular fa-circle"></i>
-                                   <i class="fa-regular fa-circle"></i>
-                                   <i class="fa-regular fa-circle"></i>
-                               </div>
-           
-                           </div>
-                          
-                           
+                            </div>  
                           
                         </span>
+
+                       
                      
 
                      
@@ -136,13 +136,6 @@
         
 
     </section>
-    <h2 id="h-tambien-te-puede-gustar">Reviews</h2>
-    <section class="tambien-te-puede-gustar">
-        <article class="reviewCard">
-
-        </article>
-
-    </section>
 
     </main>
 
@@ -153,5 +146,5 @@
         <%-include('../partials/footer.ejs')%>
     </footer>
     </html>
-    
-  
+
+
