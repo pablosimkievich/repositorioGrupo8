@@ -13,7 +13,7 @@
             <div class="order_card">
                 <h2 class="order_title">Orden de Compra Nro: <%= orderDetail.id %></h3>
                     <h3>Usuario:   <%= orderDetail.users.user_first_name %> <%= orderDetail.users.user_last_name %> (ID: <%= orderDetail.user_id %> ) </h3>
-                    <img src="/img/users/<%= orderDetail.users.user_img %>" class="order_items_img" >
+                    <a href="/user/<%= orderDetail.users.id %>"> <img src="/img/users/<%= orderDetail.users.user_img %>" class="order_items_img" > </a>  
                     <h3>Monto de la Compra: $ <%= orderDetail.order_total_amt %></h3>
                     <h3>Método de Pago: <%= orderDetail.payment_method.pay_method_type %> (ID: <%=orderDetail.pay_method_id %>)</h3>
                     <h3>Fecha de Compra: <%= orderDetail.order_date %></h3>
@@ -38,7 +38,7 @@
                                             <h4 class="order_detail_items">Precio: $ <%= element.products.price %></h3>
                                             
 
-                                            <img src="/img/products/<%= element.products.principal_img %>" class="order_items_img" >
+                                            <a href="/juguetes/<%= element.products.id %>">  <img src="/img/products/<%= element.products.principal_img %>" class="order_items_img" > </a>
                                             <h3 class="order_detail_items">Stock del Producto: <%= element.products.stock %></h3><br>
                                         </div>
                                 <% }) %>
