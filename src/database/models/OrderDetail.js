@@ -13,6 +13,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         quantity: {
             type: dataTypes.INTEGER
+        },
+        fk_user_id: {
+            type: dataTypes.INTEGER
         }
     },
     {
@@ -32,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'users',
             foreignKey: 'fk_user_id'
         })
-        OrderDetail.hasMany(models.Review, {
+        OrderDetail.hasOne(models.Review, {
             as: 'reviews',
             foreignKey: 'order_detail_fk_id'
         })
