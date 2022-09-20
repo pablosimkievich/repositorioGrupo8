@@ -596,11 +596,11 @@ table.info-table {
 }
 
 .secondary_img {
-    margin: 25px 0px;
+    margin: 5px 5px;
 }
 
 .medidas {
-    max-width: 50px;
+    max-width: 60px;
 }
 
 @media (min-width: 361px){

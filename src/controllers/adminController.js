@@ -252,6 +252,16 @@ const productOrders = async (req, res) => {
     }
 }
 
+const controlPanel = (req, res) => {
+    res.render('admin/controlPanel')
+};
+
+const adminLogout = (req, res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
+}
+
 module.exports = {
     orderList,
     orderDetail,
@@ -260,5 +270,7 @@ module.exports = {
     productList,
     reviewList,
     reviewDetail,
-    productOrders
+    productOrders,
+    controlPanel,
+    adminLogout
 }
