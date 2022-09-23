@@ -261,6 +261,7 @@ span.reviews{
 
   .stars-outer::before {
     content: "\f006 \f006 \f006 \f006 \f006";
+    color: rgb(225,132,51);
   }
    
   .stars-inner {
@@ -270,13 +271,14 @@ span.reviews{
     white-space: nowrap;
     overflow: hidden;
     width:0;
+   
   }
    
   .stars-inner::before {
     font-family: FontAwesome;
     font-size: 22px;
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: rgb(112, 108, 108);
+    color: rgb(255,164,28);
     
   }
 
@@ -603,6 +605,22 @@ table.info-table {
     max-width: 50px;
 }
 
+.h2-review-section{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(112, 108, 108) ;
+    padding: 10px 0px;
+    margin: 5px;
+}
+.review-user-info{
+    display:flex;
+    padding: 5px;
+
+}
+.review-avatar {
+    width:1.5%;
+}
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;

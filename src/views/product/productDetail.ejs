@@ -136,7 +136,27 @@
         
 
     </section>
+    <section class="review-list">
+      
+        <%if(reviewList){%>
+            <h2 class="h2-review-section">Reviews de Clientes</h2>
+            
+                <div class='review-user-info'>
+                <img src="" class="review-avatar">
+                <p>Usuario Nombre</p><br>
+            </div>
+            <%reviewList.map(e => {%> 
+                <div class="stars-outer">
+                    <div class="stars-inner" style ="width:<%= e.rating %>%">
+                    </div>
+                </div>  
+                <h4><%= e.review_title %></h4>
+                <p><%=e.review %></p>
+                <hr>
+                         <%}) %>
+        <%}%>
 
+    </section>
     </main>
 
        

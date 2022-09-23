@@ -1,3 +1,4 @@
+const { decodeBase64 } = require('bcryptjs');
 const db = require('../database/models/index');
 const op = db.Sequelize.Op;
 
@@ -103,7 +104,8 @@ const productList =  async (_req, res) => {
    
   
      ]})   ;
-   
+
+    
  
     if (juguete) {
       const cuatro = await db.Product.findAll({
@@ -121,20 +123,32 @@ const productList =  async (_req, res) => {
        {
          where: {product_fk_id : juguete.id}
        }
-      ) 
-      const reviews = await db.Review.findAll(
-       {
-         where: {product_fk_id : juguete.id}
-       },
-       {
-         include: [{
-         association: 'order-detail',
-     },]
-   }
- 
-      )
-          
-       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviews});  
+      );
+      const reviewList = await db.Review.findAll({
+        where: {
+            product_fk_id: juguete.id
+        },
+        include: [
+            {
+                association: 'products'
+            },
+            {
+              association: 'order_detail'
+            },
+           
+        ]      
+      });
+
+      const userIdR = [] 
+      reviewList.map(e=>{
+        return userIdR.push(e.order_detail.fk_user_id)
+      })
+      const userIdRInfo = []
+ for (i=0; i<userIdR.length;i++){
+       userIdRInfo.push(await db.User.findByPk(userIdR[i]))
+ }     
+ console.log(userIdRInfo)          
+       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList,userIdRInfo});  
      }else {
        res.send("No existe el juguete");
      };
