@@ -124,6 +124,7 @@ const productList =  async (_req, res) => {
          where: {product_fk_id : juguete.id}
        }
       );
+
       const reviewList = await db.Review.findAll({
         where: {
             product_fk_id: juguete.id
@@ -134,21 +135,17 @@ const productList =  async (_req, res) => {
             },
             {
               association: 'order_detail'
-            },
-           
+            },  
+            {
+              association: 'users'
+            },           
         ]      
       });
+     
 
-      const userIdR = [] 
-      reviewList.map(e=>{
-        return userIdR.push(e.order_detail.fk_user_id)
-      })
-      const userIdRInfo = []
- for (i=0; i<userIdR.length;i++){
-       userIdRInfo.push(await db.User.findByPk(userIdR[i]))
- }     
- console.log(userIdRInfo)          
-       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList,userIdRInfo});  
+   
+
+       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList});  
      }else {
        res.send("No existe el juguete");
      };
