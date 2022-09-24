@@ -470,11 +470,12 @@ table.info-table {
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width:500px;
+    max-width:600px;
+    border-radius: 20px;
    
  }
  .main__form{
-    background-color: rgb(189,212,213);
+    background-color: rgb(210,218,255);
  }
  .control-formulario{
     padding-top:10px;
@@ -729,7 +730,7 @@ flex-direction: row;
         width: 100%;
        }
 /******************CREATE FORM********************/
-.main__form{
+/*.main__form{
     width: 100%;
     
 }       
@@ -773,6 +774,7 @@ flex-direction: row;
      /*#descripcion {
         display: none;
      }*/
+     /*
      .textarea{
       width: 90%;
       height: 150px;
@@ -814,7 +816,7 @@ flex-direction: row;
         
     }
    
-    
+ */   
     
 }
     
