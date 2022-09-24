@@ -606,6 +606,15 @@ table.info-table {
     max-width: 50px;
 }
 
+
+/*
+.individual-review {
+    padding:5px;
+    margin: 5px;
+    border-bottom: 2px solid rgb(197, 197, 197);
+}
+*/
+
 .h2-review-section{
     font-size: 25px;
     font-weight: 700;

@@ -21,25 +21,26 @@
         <div class="form-logo">
                 
             
-            <h1 class="h1-edit-form">Review de <%= myOrderDetail.products.name %></h1>
+            <h1 class="h1-edit-form"><img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;"> Review de <%= myOrderDetail.products.name %></h1>
                 
-            <img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;">
+            
+            <div class="control-formulario">
+                <label class="control-formulario">Rating: <div class="stars-outer">      
+                    <div class="stars-inner" style ="width:0">
+                    </div>
+                </div> </label><br>
+                <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" class="input-control"><br>
+            </div>
         </div>
 
 
-         <div class="stars-outer">
-               
-                         
-                <div class="stars-inner" style ="width:0">
-                </div>
-            </div>
+        
+
+
+           
             
         </div>
 
-        <div class="control-formulario">
-            <label class="control-formulario">Rating: </label><br>
-            <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" class="input-control"><br>
-        </div>
 
         <div class="control-formulario">
         <label for="">Titulo de la review: </label><br>

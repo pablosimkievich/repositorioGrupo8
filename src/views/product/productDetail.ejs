@@ -145,7 +145,7 @@
             
                 <%reviewList.map(e => {%> 
                    
-                       
+                    <article class="product_masInfo">
                             <div class='review-user-info'>
                                 <img src="/img/users/<%=e.users.user_img %>" class="review-avatar">
                                 <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
@@ -155,11 +155,12 @@
                     <div class="stars-inner" style ="width:<%= e.rating %>%">
                     </div>
                 </div>  
-                <h4><%= e.review_title %></h4>
+                <h3 style="font-size: 16px;"><%= e.review_title %></h3>
                 <p><%=e.review %></p>
-                <hr>
+                
+            </article>  
                          <%}) %>       
-                        
+                                 
         <%}%>
 
     </section>
