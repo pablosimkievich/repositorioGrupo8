@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes) => {
         order_detail_fk_id: {
             type: dataTypes.INTEGER
         },
+        userr_fk_id: {
+            type: dataTypes.INTEGER
+        },
+      
     },
     {
         tableName: 'reviews',
@@ -29,11 +33,16 @@ module.exports = (sequelize, dataTypes) => {
         Review.belongsTo(models.Product, {
             as: 'products',
             foreignKey: 'product_fk_id',
-        })
+        });
         Review.belongsTo(models.OrderDetail, {
             as: 'order_detail',
             foreignKey: 'order_detail_fk_id',
-        })
+        });
+        Review.belongsTo(models.User, {
+            as: 'users',
+            foreignKey: 'userr_fk_id',
+        });
+       
     }; 
     return Review;
 }

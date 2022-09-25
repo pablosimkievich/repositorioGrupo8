@@ -311,14 +311,14 @@ const reviewForm = async (req, res) => {
 const reviewCreate = async (req, res) => {
 
     try {
-        // res.send('soy review post')
 
         let newReview = {
             order_detail_fk_id: req.body.order_detail_fk_id,
             product_fk_id: req.body.product_fk_id,
             review_title: req.body.review_title,
             review: req.body.review,
-            rating: req.body.rating
+            rating: req.body.rating,
+            userr_fk_id: req.body.userr_fk_id
         } 
         console.log(newReview)
         await db.Review.create(newReview);

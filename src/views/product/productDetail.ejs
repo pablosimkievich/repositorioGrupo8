@@ -62,11 +62,15 @@
                     <span class="productInfo_info">
                         <h1 class="product-name"> <%= juguete.name %> </h1>
                         <span class="reviews">
-                        
-                          
-                           
+                            <h2>Reviews (<%=countReviews %>)</h2>
+                            <div class="stars-outer">
+                                <div class="stars-inner" style ="width:<%= ratingSum/countReviews %>%">
+                                </div>
+                            </div>  
                           
                         </span>
+
+                       
                      
 
                      
@@ -132,7 +136,34 @@
         
 
     </section>
+    <section class="review-list">
+      
+        <%if(reviewList){%>
+            <h2 class="h2-review-section">Reviews de Clientes</h2>
+                
+          
+            
+                <%reviewList.map(e => {%> 
+                   
+                    <article class="product_masInfo">
+                            <div class='review-user-info'>
+                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar">
+                                <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
+                            </div>          
 
+                <div class="stars-outer">
+                    <div class="stars-inner" style ="width:<%= e.rating %>%">
+                    </div>
+                </div>  
+                <h3 style="font-size: 16px;"><%= e.review_title %></h3>
+                <p><%=e.review %></p>
+                
+            </article>  
+                         <%}) %>       
+                                 
+        <%}%>
+
+    </section>
     </main>
 
        
@@ -142,5 +173,5 @@
         <%-include('../partials/footer.ejs')%>
     </footer>
     </html>
-    
-  
+
+
