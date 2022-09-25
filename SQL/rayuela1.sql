@@ -1,15 +1,13 @@
-reviewsCREATE DATABASE  IF NOT EXISTS `rayuela` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `rayuela`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rayuela
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.24-MariaDB
+-- Server version	5.7.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +21,7 @@ USE `rayuela`;
 
 DROP TABLE IF EXISTS `ages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `recommended_age` varchar(200) NOT NULL,
@@ -48,7 +46,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(200) NOT NULL,
@@ -74,7 +72,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_detail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_order_id` int(11) NOT NULL,
@@ -107,7 +105,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -140,7 +138,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payment_method` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pay_method_type` varchar(45) NOT NULL,
@@ -164,7 +162,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -204,7 +202,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `reviews`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rating` int(11) NOT NULL,
@@ -212,12 +210,15 @@ CREATE TABLE `reviews` (
   `review` longtext NOT NULL,
   `product_fk_id` int(11) NOT NULL,
   `order_detail_fk_id` int(11) NOT NULL,
+  `userr_fk_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id_idx` (`product_fk_id`),
   KEY `order_detail_fk_id_idx` (`order_detail_fk_id`),
+  KEY `userr_fk_id_idx` (`userr_fk_id`),
   CONSTRAINT `order_detail_fk_id` FOREIGN KEY (`order_detail_fk_id`) REFERENCES `order_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `userr_fk_id` FOREIGN KEY (`userr_fk_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +227,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2);
+INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4,55),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37,48),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5,50),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9,43),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12,24),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3,55),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2,55),(9,30,'No llego a tiempo!','Me encanto el juguete pero demoró mucho en llegar! ',35,21,11);
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -236,7 +237,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `secondary_images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `secondary_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_product` int(11) NOT NULL,
@@ -265,7 +266,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type_id` int(11) NOT NULL,
@@ -300,7 +301,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type_name` varchar(45) NOT NULL,
@@ -327,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 23:14:36
+-- Dump completed on 2022-09-25 15:14:20

@@ -4,33 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dejanos tu comentarios!</title>
+    <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+    <link rel="icon" href="/img/logo-icono.png">
 </head>
 <body>
-    <h1>Soy un formulario de review</h1>
+    <header>
+        <%- include('../partials/header.ejs')%>
+    </header>
 
-    <p>Usuario: <%= myOrderDetail.users.user_first_name %>  <%= myOrderDetail.users.user_last_name %></p>
-
-    <img src="/img/users/<%= myOrderDetail.users.user_img %>" style="max-width: 100px;">
-
-    <p>Producto: <%= myOrderDetail.products.name %></p>
-    <img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;">
     
+    <main class="main__form">
     
-    <form action="/review" method="POST">
-        <label for="">Detalle de compra Nro. :</label><br>
-        <input type="number" name="order_detail_fk_id" value="<%= myOrderDetail.id %>" readonly style="width: 300px"><br>
-        <label for="">Id del Producto: </label><br>
-        <input type="number" name="product_fk_id" value="<%= myOrderDetail.fk_product_id %>" readonly style="width: 300px"><br>
-        <label for="">Titulo de la review: </label><br>
-        <input type="text" name="review_title" placeholder="Titulo de la review" style="width: 300px"><br>
-        <label for="">Review: </label><br>
-        <input type="textarea" name="review" placeholder="Escribe aquí tu review" style="width: 300px"><br>
-        <label for="">Rating: </label><br>
-        <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" style="width: 300px"><br>
+    <form action="/review" method="POST" class="create-form">
+                
+        <div class="form-logo">
+                
+            
+            <h1 class="h1-edit-form"><img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;"> Review de <%= myOrderDetail.products.name %></h1>
+                
+            
+            <div class="control-formulario">
+                <label class="control-formulario">Rating: <div class="stars-outer">      
+                    <div class="stars-inner" style ="width:0">
+                    </div>
+                </div> </label><br>
+                <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" class="input-control"><br>
+            </div>
+        </div>
+
+
         
-        <input type="submit" value="Enviar" class="botonLogin">
+
+
+           
+            
+        </div>
+
+
+        <div class="control-formulario">
+        <label for="">Titulo de la review: </label><br>
+        <input type="text" name="review_title" placeholder="Titulo de tu comentario"  class="input-control"><br>
+    </div>
+
+
+        <div class="control-formulario">
+        <label for="">Review: </label><br>
+        <input type="textarea" name="review" class="textarea" placeholder="Escribe aquí tu review" ><br>
+    </div>
+
+    
+    
+
+    <div class="control-formulario">
+        <input type="number" name="userr_fk_id" value="<%= myOrderDetail.fk_user_id %>" readonly style="display:none"><br>
+    </div>
+
+    <div class="control-formulario">
+            <input type="number" name="order_detail_fk_id" value="<%= myOrderDetail.id %>" readonly style="display:none"><br>
+    </div>
+    
+
+    <div class="control-formulario">
+       <input type="number" name="product_fk_id" value="<%= myOrderDetail.fk_product_id %>" readonly style="display:none"><br>
+    </div>
+    
+    <div class="form-buttons">
+        <input type="submit" value="Enviar" class="form-button">
+    </div>
+
+
     </form>
 
+
+    </main>
+
+
+    <footer>
+        <%-include('../partials/footer.ejs') %>
+    </footer>
 </body>
 </html>

@@ -60,5 +60,4 @@ router.post('/review', userController.reviewCreate)
 router.get('/logout', authMiddleware, userController.logout);
 
 
-
 module.exports = router;
