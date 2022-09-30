@@ -261,6 +261,7 @@ span.reviews{
 
   .stars-outer::before {
     content: "\f006 \f006 \f006 \f006 \f006";
+    color: rgb(225,132,51);
   }
    
   .stars-inner {
@@ -270,13 +271,14 @@ span.reviews{
     white-space: nowrap;
     overflow: hidden;
     width:0;
+   
   }
    
   .stars-inner::before {
     font-family: FontAwesome;
     font-size: 22px;
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: rgb(112, 108, 108);
+    color: rgb(255,164,28);
     
   }
 
@@ -468,11 +470,12 @@ table.info-table {
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width:500px;
+    max-width:600px;
+    border-radius: 20px;
    
  }
  .main__form{
-    background-color: rgb(189,212,213);
+    background-color: rgb(210,218,255);
  }
  .control-formulario{
     padding-top:10px;
@@ -603,6 +606,31 @@ table.info-table {
     max-width: 50px;
 }
 
+
+/*
+.individual-review {
+    padding:5px;
+    margin: 5px;
+    border-bottom: 2px solid rgb(197, 197, 197);
+}
+*/
+
+.h2-review-section{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(112, 108, 108) ;
+    padding: 10px 0px;
+    margin: 5px;
+}
+.review-user-info{
+    display:flex;
+    padding: 5px;
+
+}
+.review-avatar {
+    width:1.5%;
+}
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;
@@ -711,7 +739,7 @@ flex-direction: row;
         width: 100%;
        }
 /******************CREATE FORM********************/
-.main__form{
+/*.main__form{
     width: 100%;
     
 }       
@@ -755,6 +783,7 @@ flex-direction: row;
      /*#descripcion {
         display: none;
      }*/
+     /*
      .textarea{
       width: 90%;
       height: 150px;
@@ -796,7 +825,7 @@ flex-direction: row;
         
     }
    
-    
+ */   
     
 }
     

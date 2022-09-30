@@ -64,15 +64,19 @@ module.exports = (sequelize, dataTypes) => {
             as: 'reviews',
             foreignKey: 'product_fk_id',
         });
-        Product.belongsToMany(models.User, {
+        /* Product.belongsToMany(models.User, {
             as: 'users',
             through: 'order_detail',
             foreignKey: 'fk_product_id',
             otherKey: 'fk_user_id'
-        });
+        }); */
         Product.hasOne (models.SecondaryImages, {
             as: 'secondary_images',
             foreignKey: 'id_product'
+        });
+        Product.hasMany(models.OrderDetail, {
+            as: 'order_detail',
+            foreignKey: 'fk_product_id'
         })
     };
     return Product;

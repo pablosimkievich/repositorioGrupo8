@@ -8,10 +8,12 @@
     <title>Rayuela</title>
     <link rel="stylesheet" href="/css/home-styles.css">
     <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
-    
+   
+   
 </head>
 
 <body>
+    
 
     <header>
         <%- include('../views/partials/header.ejs') %>
@@ -31,7 +33,8 @@
                 </a>
                 <p>$  <%= e.price %> </p>
                 
-                <button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button>
+                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button></input>
+                
             </article>
         <% }) %>
        
@@ -47,7 +50,7 @@
     <footer>
     <%-include('../views/partials/footer.ejs')%>
     </footer>
-
+    <script src="/js/agregarAlCarrito.js"></script>
 </body>
 
 

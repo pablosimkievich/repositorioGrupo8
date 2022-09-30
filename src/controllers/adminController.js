@@ -147,6 +147,109 @@ const productList = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+const reviewList = async (req, res) => {
+
+    try {
+        const allTheReviews = await db.Review.findAll({
+            include: [
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'order_detail'
+                }
+            ]
+        });
+
+        res.render('admin/reviewProductList', {allTheReviews});
+
+    } catch(error) {
+
+    }
+};
+
+const reviewDetail = async (req, res) => {
+
+    try {
+
+        const id = req.params.id;
+
+        const theProduct = await db.Product.findByPk(id, {
+            include: [
+                {
+                    association: 'reviews'
+                }
+            ]
+        })
+        const reviewDetails = await db.Review.findAll({
+            where: {
+                product_fk_id: id
+            },
+            include: [
+                {
+                    association: 'products'
+                }
+            ]
+            
+
+        });
+
+        if (reviewDetails) {
+            res.render('admin/reviewProductDetail', { reviewDetails, theProduct });
+        } else {
+            res.send(`No existen las reviews del producto Nro. : ${req.params.id}`)
+        };
+    } catch(error) {
+
+    }
+};
+
+const productOrders = async (req, res) => {
+    try {
+        const id = req.params.id
+        const theProduct = await db.Product.findByPk(id, {
+            include: [
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'secondary_images'
+                },
+                {
+                    association: 'category'
+                },
+                {
+                    association: 'ages'
+                }
+            ]
+        })
+
+        const theOrderDetails = await db.OrderDetail.findAll({
+            where: {
+                fk_product_id: id
+            },
+            include: [
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'orders'
+                }
+            ]
+        })
+
+        if (theProduct) {
+
+        } else {
+            res.send(`No existe el producto Nro. ${id}`)
+        }
+
+        res.render('admin/productOrders', {theProduct, theOrderDetails})
+    }catch(error) {
+        console.log(error);
+    }
 }
 
 module.exports = {
@@ -154,5 +257,8 @@ module.exports = {
     orderDetail,
     userList,
     userDetaille,
-    productList
+    productList,
+    reviewList,
+    reviewDetail,
+    productOrders
 }
