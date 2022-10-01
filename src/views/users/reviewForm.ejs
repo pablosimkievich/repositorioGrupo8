@@ -26,13 +26,16 @@
             
             <div class="control-formulario">
                 
-
+                <input type="number" name='id' style='display:none' readonly value=<%=myOrderDetail.id%> ><br>
                 <label class="control-formulario">Rating: <div class="stars-outer">      
-                    <div class="stars-inner" id="starsInner">
+                    <div class="stars-inner" id="starsInner" >
                     </div>
                 </div> </label><br>
-                <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" class="input-control" id="rating-input"><br>
+                <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" value="<%=(locals.old && old.rating)? old.rating:null %>"class="input-control" id="rating-input"><br>
             </div>
+            <%if(locals.errors && errors.rating){%>
+                <p class="errors"><%= errors.rating.msg %></p>
+            <%}%>
         </div>
             
         </div>
@@ -40,17 +43,20 @@
 
         <div class="control-formulario">
         <label for="">Titulo de la review: </label><br>
-        <input type="text" name="review_title" placeholder="Titulo de tu comentario"  class="input-control"><br>
+        <input type="text" name="review_title" placeholder="Titulo de tu comentario" value="<%=(locals.old && old.review_title)? old.review_title:null %>"  class="input-control"id="titulo-input"><br>
+        <% if(locals.errors && errors.review_title){%>
+            <p class="errors"><%= errors.review_title.msg %></p>
+        <%}%>
     </div>
 
 
         <div class="control-formulario">
         <label for="">Review: </label><br>
-        <input type="textarea" name="review" class="textarea" placeholder="Escribe aquí tu review" ><br>
+        <input type="textarea" name="review" class="textarea"value="<%=(locals.old && old.review)? old.review:null %>" placeholder="Escribe aquí tu review" id="review-input"><br>
+        <% if(locals.errors && errors.review){%>
+            <p class="errors"><%= errors.review.msg %></p>
+        <%}%>
     </div>
-
-    
-    
 
     <div class="control-formulario">
         <input type="number" name="userr_fk_id" value="<%= myOrderDetail.fk_user_id %>" readonly style="display:none"><br>
@@ -64,10 +70,16 @@
     <div class="control-formulario">
        <input type="number" name="product_fk_id" value="<%= myOrderDetail.fk_product_id %>" readonly style="display:none"><br>
     </div>
+    <div class="errores">
+        <ul>
+
+        </ul>
+    </div>
     
     <div class="form-buttons">
         <input type="submit" value="Enviar" class="form-button">
     </div>
+   
 
 
     </form>

@@ -275,6 +275,7 @@ const misCompras = async (req, res) => {
             res.send(`No has realizado compras todavía, ususario Nro. : ${id} `)
         }
     } catch(error) {
+        console.log(error)
 
     }
     
@@ -309,25 +310,64 @@ const reviewForm = async (req, res) => {
 };
 
 const reviewCreate = async (req, res) => {
+    let resultValidation = validationResult(req);
+   
+        if(resultValidation.isEmpty()){
+            try {
 
-    try {
+                    let newReview = {
+                        order_detail_fk_id: req.body.order_detail_fk_id,
+                        product_fk_id: req.body.product_fk_id,
+                        review_title: req.body.review_title,
+                        review: req.body.review,
+                        rating: req.body.rating,
+                        userr_fk_id: req.body.userr_fk_id
+                    } 
+                    console.log(newReview)
+                 await db.Review.create(newReview);
+    
+                res.redirect('/')
+                } catch(error) {
+                    console.log(error);
+                  }
+        }else{
+            try {
+                const id = req.body.id;
+                console.log(id)
+                const myOrderDetail = await db.OrderDetail.findByPk(id,{
+                    include: [
+                        {
+                            association: 'products'
+                        },
+                        {
+                            association: 'users'
+                        }
+                    ]
+                })
+                if (myOrderDetail) {
+                    res.render('users/reviewForm', {myOrderDetail, errors: resultValidation.mapped(), old: req.body})
+                } else {
+                    res.send(`No existe el detalle de compra Nro.: ${id}`)
+                }
+        
+               
+        
+                
+        
+            } catch(error) {
+                console.log(error)
+            }
+           
+           
+            
+           
+            
+        }
 
-        let newReview = {
-            order_detail_fk_id: req.body.order_detail_fk_id,
-            product_fk_id: req.body.product_fk_id,
-            review_title: req.body.review_title,
-            review: req.body.review,
-            rating: req.body.rating,
-            userr_fk_id: req.body.userr_fk_id
-        } 
-        console.log(newReview)
-        await db.Review.create(newReview);
 
-        res.redirect('/')
-    } catch(error) {
-        comsole.log(error);
-    }
-}
+     }
+
+    
 
 module.exports = {
     userList,
