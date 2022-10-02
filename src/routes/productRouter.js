@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const validateCreateForm = require('../middlewares/validateCreateProductForm')
 const path=require('path')
 
 
@@ -19,7 +20,7 @@ router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/
 router.get('/crearProducto', productController.create );
-router.post('/crearProducto', productController.saveNewProduct );
+router.post('/crearProducto',validateCreateForm , productController.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', productController.edit );

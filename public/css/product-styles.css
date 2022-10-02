@@ -631,6 +631,11 @@ table.info-table {
 .review-avatar {
     width:1.5%;
 }
+
+.errors {
+    color:red;
+    font-size: 18px;
+}
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;
