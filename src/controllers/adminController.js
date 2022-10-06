@@ -159,6 +159,9 @@ const reviewList = async (req, res) => {
                 },
                 {
                     association: 'order_detail'
+                },
+                {
+                    association: 'users'
                 }
             ]
         });
@@ -190,6 +193,9 @@ const reviewDetail = async (req, res) => {
             include: [
                 {
                     association: 'products'
+                },
+                {
+                    association: 'users'
                 }
             ]
             

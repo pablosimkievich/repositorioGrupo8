@@ -628,9 +628,13 @@ table.info-table {
     padding: 5px;
 
 }
+
+/*
 .review-avatar {
     width:1.5%;
 }
+*/
+
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;

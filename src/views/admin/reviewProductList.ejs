@@ -12,8 +12,9 @@
     <% allTheReviews.map(e => { %>
 
         <div style="background-color: rgb(152, 248, 248);">
-        <a href="/review-product-detail/<%= e.product_fk_id %>" style="text-decoration: none;"> 
+        <a href="/review-product-detail/<%= e.product_fk_id %>" style="text-decoration: none;" > 
         <p>ID de Review: <%= e.id %></p>
+        <img src="/img/users/<%= e.users.user_img %>" alt="usrr" width="100">
         <p>Rating de la Review: <%= e.rating %></p>
         <p>Titulo de la review: <%= e.review_title %></p>
         <p>Review: <%= e.review %></p>

@@ -15,6 +15,7 @@
     <% reviewDetails.map(e => { %>
         <div style="border: 2px solid grey;">
         <p>ID de la review: <%= e.id %> </p>
+        <img src="/img/users/<%= e.users.user_img %>" alt="usrr" width="100">
         <p>Rating: <%= e.rating %> </p>
         <p>Título de la review: <%= e.review_title %> </p>
         <p>Review: <%= e.review %> </p>
