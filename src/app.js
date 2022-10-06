@@ -4,7 +4,8 @@ const path = require('path');
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
-const adminRouter = require('./routes/adminRouter')
+const adminRouter = require('./routes/adminRouter');
+const apiUserRouter = require('./routes/apiRouter/apiUserRouter');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -32,6 +33,7 @@ app.use('/', mainRouter);
 app.use(userRouter);
 app.use(productRouter);
 app.use(adminRouter);
+app.use('/api', apiUserRouter);
 app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })

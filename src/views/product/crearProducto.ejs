@@ -123,7 +123,7 @@
        
         <div class="control-formulario" id="form-description">
             <label id="descripcion">Descripcion del producto</label>
-            <textarea name="description" class="textarea" value='<%=(locals.oldData && oldData.description)? oldData.description:"Descricion del juguete"%>"'></textarea>
+            <textarea name="description" class="textarea" value='<%=(locals.oldData && oldData.description)? oldData.description:null%>' placeholder="Descricion del juguete"></textarea>
             <%if(locals.errors && errors.description){%>
                 <p class="errors"><%= errors.description.msg %></p>
             <%}%>

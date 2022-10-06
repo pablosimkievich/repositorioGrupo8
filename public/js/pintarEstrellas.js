@@ -9,9 +9,7 @@ window.addEventListener('load',function(){
        
           estrellas.style.width = `${inputRating.value}%`
            
-   if(inputRating.value > 100 || inputRating.value < 0){
-        alert('Debes ingresar un numero del 0 al 100')
-            }
+  
           });
 
 
@@ -25,7 +23,7 @@ window.addEventListener('load',function(){
 
         let errores =[]
 
-        if(inputRating.value = ""){
+        if(inputRating.value.isEmpty()){
                   errores.push('Debes ingresar un numero')
                 }else if(inputRating.value>100 || inputRating.value<0){
                   errores.push('Debes ingresar un numero del 0 al 100')
