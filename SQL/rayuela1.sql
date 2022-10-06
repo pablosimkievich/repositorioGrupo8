@@ -1,21 +1,34 @@
-CREATE DATABASE  IF NOT EXISTS `rayuela` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `rayuela`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rayuela
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.24-MariaDB
+-- Server version	5.7.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ages`
+--
+
+DROP TABLE IF EXISTS `ages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `recommended_age` varchar(200) NOT NULL,
+  `age_img` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `ages`
@@ -28,6 +41,22 @@ INSERT INTO `ages` VALUES (1,'De 6 meses a 1 año','categoria-6meses.png'),(2,'D
 UNLOCK TABLES;
 
 --
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(200) NOT NULL,
+  `category_descri` varchar(200) NOT NULL,
+  `category_img` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `category`
 --
 
@@ -36,6 +65,29 @@ LOCK TABLES `category` WRITE;
 INSERT INTO `category` VALUES (1,'Sensoriales','Juguetes que ayudan a que los niños desarrollen sus sentidos, mediante la estimulación de cada uno de ellos, durante sus primeros años de vida.','categoria-sensorial.png'),(2,'Musicales','Los juguetes musicales estimulan la creatividad, expresividad y cognición, de niños en edad de desarrollo.','categoria-instrumentos.png'),(3,'Ingenio','Juegos de mesa que ayudarán a desarrollar la memoria visual y la motricidad fina en niños pequeños.','categoria-rompecabezas.png'),(4,'Movimientos','Los juegos de movimiento favorecen el ejercicio entre los y las pequeñas porque necesitan, para lograr un sano desarrollo, potenciar su motricidad.','categoria-movimientos.png');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `order_detail`
+--
+
+DROP TABLE IF EXISTS `order_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_order_id` int(11) NOT NULL,
+  `fk_product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `fk_user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `order_id_idx` (`fk_order_id`),
+  KEY `product_id_idx` (`fk_product_id`),
+  KEY `fk_user_id_idx` (`fk_user_id`),
+  CONSTRAINT `fk_order_id` FOREIGN KEY (`fk_order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_product_id` FOREIGN KEY (`fk_product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `order_detail`
@@ -48,6 +100,29 @@ INSERT INTO `order_detail` VALUES (2,1,28,1,55),(3,1,29,1,55),(4,1,30,1,55),(5,2
 UNLOCK TABLES;
 
 --
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `order_total_amt` decimal(9,2) NOT NULL,
+  `order_date` date NOT NULL,
+  `order_status` varchar(45) NOT NULL,
+  `order_address` varchar(100) NOT NULL,
+  `pay_method_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id_idx` (`user_id`),
+  KEY `pay_method_id_idx` (`pay_method_id`),
+  CONSTRAINT `pay_method_id` FOREIGN KEY (`pay_method_id`) REFERENCES `payment_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `orders`
 --
 
@@ -56,6 +131,20 @@ LOCK TABLES `orders` WRITE;
 INSERT INTO `orders` VALUES (1,55,22997.00,'2022-09-02','Enviado','Montevideo 879',7),(2,50,35747.00,'2022-09-02','Enviado','Florida 457',1),(3,43,21696.00,'2022-09-02','Enviado','Sarmiento 697',5),(4,24,4299.00,'2022-09-02','Enviado','Honduras 547',4),(5,21,3848.00,'2022-09-02','Enviado','Costa Rica 1498',2),(6,8,20295.00,'2022-09-02','Enviado','Junin 457',3),(7,23,32999.00,'2022-09-02','Enviado','Coronel Diaz 2532',5),(8,11,22397.00,'2022-09-02','Enviado','Jujuy 235',6),(12,17,8498.00,'2022-09-02','Enviado','Guatemala 234',1),(13,18,11087.00,'2022-09-02','Enviado','Francia 334',3),(14,1,1699.00,'2022-09-02','Enviado','Larrea 342',2),(15,48,26097.00,'2022-09-02','Enviado','Angel Pelliza 541',7),(16,54,27997.00,'2022-09-01','Enviado','Riobamba 743',6),(17,53,12796.00,'2022-09-11','Enviado','Urdapilleta 883',5),(18,45,13098.00,'2022-07-16','Enviado','Scalabrini Ortiz 4698',2),(19,42,12499.00,'2022-06-23','Enviado','Humboldt 2489',1),(20,41,8499.00,'2022-06-17','Enviado','Avellaneda 358',3),(21,38,68496.00,'2022-05-05','Enviado','Alsina 654',4),(22,39,19698.00,'2022-04-24','Enviado','Entre Ríos 409',5),(23,37,7448.00,'2022-03-02','Enviado','La Pampa 459',6),(25,55,9398.00,'2022-09-15','Enviado','Montevideo 879',7);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `payment_method`
+--
+
+DROP TABLE IF EXISTS `payment_method`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `payment_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pay_method_type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `payment_method`
@@ -68,6 +157,36 @@ INSERT INTO `payment_method` VALUES (1,'Tarjeta de crédito VISA'),(2,'Tarjeta d
 UNLOCK TABLES;
 
 --
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `price` decimal(9,2) NOT NULL,
+  `discount` decimal(5,2) DEFAULT NULL,
+  `category_id` int(11) NOT NULL,
+  `age_id` int(11) NOT NULL,
+  `principal_img` varchar(500) NOT NULL,
+  `description` longtext NOT NULL,
+  `materials` varchar(500) DEFAULT NULL,
+  `height` decimal(5,2) DEFAULT NULL,
+  `width` decimal(5,2) DEFAULT NULL,
+  `depth` decimal(5,2) DEFAULT NULL,
+  `weight` decimal(5,2) DEFAULT NULL,
+  `stock` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `category_id_idx` (`category_id`),
+  KEY `age_id_idx` (`age_id`),
+  CONSTRAINT `age_id` FOREIGN KEY (`age_id`) REFERENCES `ages` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `products`
 --
 
@@ -78,14 +197,58 @@ INSERT INTO `products` VALUES (28,'Arco Iris de Madera',5499.00,0.00,1,3,'arco-i
 UNLOCK TABLES;
 
 --
+-- Table structure for table `reviews`
+--
+
+DROP TABLE IF EXISTS `reviews`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rating` int(11) NOT NULL,
+  `review_title` varchar(100) NOT NULL,
+  `review` longtext NOT NULL,
+  `product_fk_id` int(11) NOT NULL,
+  `order_detail_fk_id` int(11) NOT NULL,
+  `userr_fk_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_id_idx` (`product_fk_id`),
+  KEY `order_detail_fk_id_idx` (`order_detail_fk_id`),
+  KEY `userr_fk_id_idx` (`userr_fk_id`),
+  CONSTRAINT `order_detail_fk_id` FOREIGN KEY (`order_detail_fk_id`) REFERENCES `order_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `userr_fk_id` FOREIGN KEY (`userr_fk_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `reviews`
 --
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2);
+INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4,55),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37,48),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5,50),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9,43),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12,24),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3,55),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2,55),(9,30,'No llego a tiempo!','Me encanto el juguete pero demoró mucho en llegar! ',35,21,11);
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `secondary_images`
+--
+
+DROP TABLE IF EXISTS `secondary_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `secondary_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_product` int(11) NOT NULL,
+  `image_2` varchar(100) DEFAULT NULL,
+  `image_3` varchar(100) DEFAULT NULL,
+  `image_4` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_product_idx` (`id_product`),
+  CONSTRAINT `id_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `secondary_images`
@@ -98,6 +261,31 @@ INSERT INTO `secondary_images` VALUES (10,28,'arco-iris-de-madera-4.png','arco-i
 UNLOCK TABLES;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_type_id` int(11) NOT NULL,
+  `user_first_name` varchar(45) NOT NULL,
+  `user_last_name` varchar(45) NOT NULL,
+  `user_mail` varchar(45) NOT NULL,
+  `user_cel` varchar(45) NOT NULL,
+  `user_address` varchar(200) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `user_img` varchar(200) NOT NULL,
+  `dni` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_mail_UNIQUE` (`user_mail`),
+  KEY `user_type_id_idx` (`user_type_id`),
+  CONSTRAINT `user_type_id` FOREIGN KEY (`user_type_id`) REFERENCES `users_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `users`
 --
 
@@ -106,6 +294,20 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,1,'Pedro','Alvarez','mail@gneil.com','1565654578','Larrea 342','$2a$10$xY.w/u1jOdeDuDtm52AfvOAvb23g0JTw5eFcXzX4ibXA/ScFj5wsf','img-user-1661456884777.png','20047910'),(2,1,'Juan','Sanchez','sanchmail@gneil.com','1597814578','Moreno 542','$2a$10$7Wgqgmz1JkOEBXUlkrFyGeEppNVh8Ba58oWihqGxsIgYKfsEHyF7z','img-user-1661358391294.png','20000000'),(6,1,'Roberto','Martinez','arsanchmaoil@gneil.com','1597814577','Moreno 542','$2a$10$7Wrqgmh1JkOEBXUlkrFyGeEppNVh8Ba51oWihqGxsIgYKfsEHyF9m','img-user-1659123690879.png','20000000'),(7,1,'Pepe','Wolsen','wol@gmaeil.com','54698741','Junin 457','$2l$10$bCObCv3ap8RfvJmvsvfzw.j1cVbXL94Y3d8ppTxLI0JR9YyjfYFPk','img-user-1661358368489.png','25654913'),(8,1,'Julieta','Tabernera','tabern@gmeil.com','65465478','Junin 457','$2a$10$F/hFkfBjyt5UaJcNUcT7n.LTjSihygKenQP24XWvJWOqOEv7RI/fJ','img-user-1661318922042.png','25654874'),(9,1,'Karen','Wolfenstein','wkar@gmeil.com','56458745','Guatemala 541','$2a$10$Ww.gIgiXZLSWJ.smNFNP0uRFAzHtROKDl6Rv7DjMhUSpUGHZTIyOt','img-user-1661319816948.png','26541241'),(10,1,'Rita','Ferranti','ferr@gmeil.com','65412345','Honduras 124','$2a$10$6DEhRfAZEXzr4KFJZChYMu1Lgt2cNR7mCt/Jpm3iQRz7sTXdsgSn3','img-user-1661321409657.png','21365478'),(11,1,'Brenda','Reiters','reit@gmaeil.com','65478945','Jujuy 235','$2a$10$.aCpPP040QDIhE8AQeBUDuaDPvv3PLraUO9s5s3wn7GDNpAT7AiDa','img-user-1661359546684.png','12345678'),(13,1,'Lidia','Torrontesi','torront@homeil.com','6655998877','Estados Unidos 1256','$2a$10$xY.w/u1jOdeDuDtm72AfvOAvb2Wg0JTw5eFcXzX4ibXA/ScFj5wsK','img-user-1661456585922.png','20000000'),(14,1,'Julio','Estenssoro','esten@homeil.com','6633225544','Cordoba 1654','$2a$10$G47Wm2WI9E.Aivzv6IwsVO3C7JioiTS3/wtdmstWtKAFD7plrMjEO','img-user-1661456848744.png','20364500'),(15,1,'Julieta ','Rossi','rossi@gmeil.com','6655994789','Montevideo 2697','$2a$10$2HPa39Oz5ZqHV0PoouVcoe64hOCG4KoGMDHcaFQv85TnaM4QMEXs2','img-user-1661457269433.png','20000000'),(16,1,'Manuel','Ugart','Manugart@gmeil.com','64978546','Uruguay 2111','$2a$10$IaIpNNRnA7UITaL/KekhveJkM6zewixSM1lWOOOyk43LyLLlYY8Ki','img-user-1661457452304.png','20064810'),(17,1,'Gabriela','Trillo','trillo@yuhumeil.com','6655447788','Guatemala 234','$2a$10$lFZHExy2lp4Kgb3vM1GXSeS3xIlGiSiAKjugV4avkx30CKWuQmr9m','img-user-1661457650730.png','29745000'),(18,1,'Rupert','Eisenstein','eise@gmeil.com','6699885533','Francia 334','$2a$10$fn2xRguWekNJcTvLvichPeIYA8lPV8EjmeykIJECRezUYFeyPGwAS','img-user-1661457818700.png','20098730'),(19,1,'Marcos','Salgán','marquitos@yuhumail.com','65987458','Italia 125','$2a$10$7Wgqgmz1JkOEAXUlkrFyGeEppNVh8Ba58oWuhqGxsIgYKfsEHyF8i','img-user-1661458006088.png','20645700'),(20,1,'Camila ','Presto','cami@gmeil.com','64559988','España 589','$2a$10$x0VSS.yI4nrjIfaS8uMce.ohGVhkiPiFTxtGJv2qZznxAMjYrJ8l6','img-user-1661458192968.png','29514000'),(21,1,'Raul','Rabena','rab@yuhu.com','66699444','Costa Rica 1498','$2a$10$bCObCv3ap8RfcJmvsvfzw.j1cVbXL14Y5d8ppTxLI0JR9YyjjYOUa','img-user-1661458365323.png','20000000'),(22,1,'Sebastián ','Serizolo','seriz@yuhu.com','666445','Tapiales 1467','$2a$10$H7yzDSTI1u84XrRXupwd4uTJ/rm90.M0BIKz8V7kdfSc.0ytVPBBO','img-user-1661458493772.png','20000000'),(23,1,'Tiffany','Riverdall','tiff@gmail.com','44557766','Coronel Diaz 2532','$2a$10$5mcxdAgwrW05oZLqSnqujOvHgOSEMkv0U0/ZTc9ziQnXYJ5mId5om','img-user-1661458579238.png','20951460'),(24,1,'Monique','Della Rivere','della@homeil.com','44557788','Honduras 547','$2a$10$kCN5x9s3uw7PCdgiTdF7aOq0jPxFZJgOPo1IJwU7putFOl/Ce/RNe','img-user-1661458684874.png','29516400'),(25,1,'Jessica ','Rabin','rabjes@gmeil.com','66448877','Anchorena 667','$2a$10$W7LWEmdsMNNLgMFwtZZmvOkYYb20mI9Qv0TegaNcEUmp62RsvTi/S','img-user-1661458771148.png','28457700'),(26,1,'Ana','Derby','derb@homail.com','65478965','Ñuñez 654','$2a$10$oYpaMOMPg6b17R8hMGRQ7OP.Sa9G1ZHNKxggcjEFbPQx8x5IqfbJ2','img-user-1661458871282.png','20000000'),(27,1,'Alberto','Livingston','livin@gmeil.com','6655997744','Gral Mitre 2678','$2a$10$GmfPbZo9ul6zsGrDSjwVyeoeeAAWnp8m6gB5KE4xaCRjxxa0QmRKK','img-user-1661459019024.png','27542300'),(28,1,'Helena','Almeria','helen@gmail.com','4567894','Moreno 569','$2a$10$Sc3CjF6JnWB.P6pYPkFLSOo4k1FQDGcnVUKtGIGo5hS8HOULIrSAO','img-user-1661459104240.jpg','29567800'),(29,1,'Gonzalo','Sanatea','gonza@gmail.com','45678965','Avellaneda 569','$2a$10$Fy.FT9uwpF1sHf.Dw9D/Heswr26j/UHXrtHwHmd5ZPeyApVw6RoAi','img-user-1661459646184.jpg','29651400'),(30,1,'Rodrigo','Balmacera','balma@gmall.com','456789','Azcuenaga 333','$2a$10$XzPeRStPSBO5sWaJlKNjout7LiyjEES8UOAXYQqzMOAbF/6XUKxby','img-user-1661459798853.png','29668400'),(31,1,'debora','granada','deb@gmail.com','4567898','Urquiza 225','$2a$10$ta/OyP0QQuq39V/6erR7Oe05Eozt7rrRiGB9I8gS.48Qnsu0keYxi','img-user-1661459924665.png','28895400'),(32,1,'hugo','sivori','huguito@gmail.com','654789','Junin 457','$2a$10$XxBMJ0R0aWhIb6qKTlVOQOfON29q/tOYdudl56eDmT6sxh7PhqL9y','img-user-1661460050012.png','26598740'),(33,1,'Nicolás ','Pueyrredon','nicop@gmoll.com','1198765987','Formosa 432','$2a$10$t0dKdeMkX1Q3mJJZ9hdJhOOgTY25HNuuJlqZRDNl/kw4obl5Q0MRS','img-user-1661460183613.png','25266100'),(34,1,'Andrés','Broda','bro@gmall.com','1199665588','Juan Jose Paso 5566','$2a$10$ZqcY3CFtflqGuDevi.qmjOEV2AVXLPimCtzSCBzI/h8BOSquWtO6O','img-user-1661460288345.png','29948700'),(35,1,'Monica','Quiroga','quiro@gmall.com','1199884567','Talcahuano 945','$2a$10$QsZgk.Dva9hJnK2U2ha0F.W7FfpsgjlPtyDAxxs0YKfVDZAOV2fuC','img-user-1661460711149.png','20000000'),(36,1,'Estela','Guzman','guz@gmall.com','1169857485','Nicaragua 555','$2a$10$x9Ds2rusExYSn7tmh4EwS.q87SmtbZy8mhx1Abu0UVq8zN137ONx6','img-user-1661461092223.png','29652440'),(37,1,'Federico','Echeverria','fede@lolmail.com','116699887744','La Pampa 459','$2a$10$e2B.LNvTwhqzKzcuI5pNQexJ/Mr1xamIsO1DQolyr68zo4hGA0y9C','img-user-1661461158700.png','26645270'),(38,1,'Constanza','Repetto','coni@hmail.com','1198744789','Alsina 654','$2a$10$SZEfPYTEEqHrtkyZstLYu./ndSUW16c8GBwqSfvniK7pljvz.SaOO','img-user-1661461218952.png','29685740'),(39,1,'Fabian','Quintana','quinta@gmeil.com','1197458632','Entre Ríos 409','$2a$10$6hVYCWvN2xkdwN22GRTKoeEtpbJ/zdsvOPgMCVaEfbNx7UKannmai','img-user-1661461283780.png','26655420'),(40,1,'Jorge','Tobal','jor@gmall.com','1198745698','Libertador 1254','$2a$10$h3HvHCgMA/SwrJznNiYw3ewLhNXqecMtZkGADczSbpANgszO7iSXq','img-user-1661461343877.png','25584790'),(41,1,'Hector','Burma','burma@gmall.com','1165478945','Avellaneda 358','$2a$10$r2WH5qVwKEqTsazB23iESuNtqIH0OMnky5y83gaIxt3CotpM99KDS','img-user-1661461400807.png','23652260'),(42,1,'Fernanda','Lavallol','ferlol@gmeil.com','1166997898','Humboldt 2489','$2a$10$3Nmr/pAk9WsYh/p5SbUsE.iMOEe1Mta1ZTnvocUZDM75THrzVThpu','img-user-1661461463548.png','23326570'),(43,1,'Juana','Pedernera','juani@gmall.com','1165897498','Sarmiento 697','$2a$10$hwSq4TtJOVH5Tc474QeCJuE8BMFWnhTZLVKY17Mq.hRQnz0lgheI6','img-user-1661461542668.png','21125650'),(44,1,'Rafael','Mesina','mesi@msmail.com','1199884456','Lavalle 458','$2a$10$lUksQJdd3mAvu75PuTo0hehGzRh74Igea5ZZDzbGbQFOURmIqJl86','img-user-1661461616955.png','26584560'),(45,1,'Rita','Walters','ritwal@gmall.com','1199887744','Scalabrini Ortiz 4698','$2a$10$F/hFkfBjyt5UaJcNUcT7n.LTjSuhygKenQP24XWvJWOqOEv9RI/gS','img-user-1661461884296.png','25564510'),(46,1,'Victoria','Perez','vicperez@gmal.com','1165457898','Las Heras 537','$2a$10$tsDdHI6ZfET0.GNMgpV3TOJ7zYkxXxErhB8849.Mg6FSMK1D04f3K','img-user-1661461945794.png','25598130'),(47,1,'Jon','Leningrad','lejon@mail.com','11987456368','Salta 986','$2a$10$M6igScoDDlT4N8XqJeuypuxmVEy5rKhJRMH3rkZw8DmWlteBJJwva','img-user-1661462016096.png','26532880'),(48,1,'Jesus','Frias ','jesusf@mill.com','11987457894','Cordoba 457','$2a$10$4uXxxJMmmIkEyWOiwqJaNeuKqxXrEUWZWlVlHqJuVa4jZyIAJdGH2','img-user-1661462076137.png','26532991'),(49,1,'Analia','Spina','abaespo@gmill.com','119635987465','Chile 654','$2a$10$YZaByz9.MUB6MyX1Hy861ugvevKIVYimn51mulqYGcQ1UewhNcAM6','img-user-1661462159905.png','23265970'),(50,1,'Hugo','Carranza','huguito@mailgoo.com','11987456633','Florida 457','$2a$10$RJOjdcS2JZMXhx3oKufj3OKDTap3V6BdKx.LshFbPcaXwFbBQVz9i','img-user-1661462240166.png','23265440'),(51,2,'Juan','Palomino','juani@msn.com','1158889977','Urquiza 2489','$2a$10$QUd1M1a5/SY5l45AEhSSP.4nhM1RHsUlDNF1mJ9PNN3P/OWSwCpdq','img-user-1661462347543.png','26633240'),(52,1,'Gonzalo','Arastiaga','ara@mailgoo.com','1198457632','Echeverria 368','$2a$10$QC0rxFR5/GKLeusTDNlPEuvYq3em.3V8dCWlNqi.5p5tjed/GpIhi','img-user-1661462432503.png','26533210'),(53,1,'Victor','Saralegui','raymond@mailg.com','1525489762','Maipu 237','$2a$10$Ww.gIgiXZLSWJ.smNFNP0uRFAzHtROKDl8Rv7DjMhUSpUYHZTIyOq','img-user-1661462617661.png','23698520'),(54,1,'Silvia','Salgano','mail@mailg.com','1159765422','Azcuenaga 479','$2a$10$NDw.I3ellBIFp2ywpsYDaOwYxvBbmuqkJrN4.AA/RASCsCO7P5w82','img-user-1661462696261.png','23399855'),(55,1,'Karina','Ferrari','karferrari@msmail.com','1158976543','Montevideo 879','$2a$10$6DEhRfAZEXzr4KFJZChYMu2Lgt2cNR7mCt/Jpm3iQRz9sTXdsgXn6','img-user-1661462769142.png','23269970'),(57,1,'Paco','Derribes','derr@gmail.com','645899745','Manuela Pedraza 451','$2a$10$ucgfIIMfEuMCjAMCrUemwOFbqk6RS.BHT3haC1gCuj2/2yo7s.hZ2','','41235987');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users_type`
+--
+
+DROP TABLE IF EXISTS `users_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_type_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users_type`
@@ -126,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 23:15:43
+-- Dump completed on 2022-09-25 15:14:20

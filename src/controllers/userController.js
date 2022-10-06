@@ -16,12 +16,29 @@ const userList = async (req, res) => {
     }
 }
 
-const userDetail = async (req, res) => {
+const userDetaille = async (req, res) => {
     try {
         const id = req.params.id
-        const userDetail = await db.User.findByPk(id);
+        const userDetail = await db.User.findByPk(id, {
+            include: [
+                {
+                    association: 'order_detail'
+                }
+            ]
+        });
         
-        res.render('users/userDetail', {userDetail});
+        const orders = await db.Order.findAll({
+            where: {
+                user_id: id
+            }
+        })
+
+        if (userDetail) {
+            res.render('users/userDetail', {userDetail, orders});
+        } else {
+            res.send(`No existe el usuario Nro. : ${id}`)
+        }
+        
     } catch (error) {
         console.log(error);
     }
@@ -212,12 +229,109 @@ const quienesSomos = (req, res) => {
 
 const productCart = (req, res) => {
     res.render('users/productCart');
-}
+};
 
+const misCompras = async (req, res) => {
+
+    try {
+        const id = req.params.id;
+        const misOrdenesCompra = await db.Order.findAll({
+            where: {
+                user_id: id
+            },
+            include: [
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'payment_method'
+                },
+                {
+                    association: 'order_detail'
+                }
+            ]
+        })
+
+        const misDetallesCompra = await db.OrderDetail.findAll({
+            where: {
+                fk_user_id: id
+            },
+            include: [
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'reviews'
+                }
+            ]
+        }) 
+
+        if (misOrdenesCompra.length >= 1) {
+            
+            // res.send('Tienes compras realizadas')
+            res.render('users/misCompras', {misOrdenesCompra, misDetallesCompra})
+
+        } else  {
+            res.send(`No has realizado compras todavía, ususario Nro. : ${id} `)
+        }
+    } catch(error) {
+
+    }
+    
+};
+
+const reviewForm = async (req, res) => {
+
+    try {
+        const id = req.params.id;
+        const myOrderDetail = await db.OrderDetail.findByPk(id,{
+            include: [
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'users'
+                }
+            ]
+        })
+
+        if (myOrderDetail) {
+            res.render('users/reviewForm', {myOrderDetail});
+        } else {
+            res.send(`No existe el detalle de compra Nro. :${id}`)
+        }
+
+        
+
+    } catch(error) {
+        console.log(error)
+    }
+};
+
+const reviewCreate = async (req, res) => {
+
+    try {
+
+        let newReview = {
+            order_detail_fk_id: req.body.order_detail_fk_id,
+            product_fk_id: req.body.product_fk_id,
+            review_title: req.body.review_title,
+            review: req.body.review,
+            rating: req.body.rating,
+            userr_fk_id: req.body.userr_fk_id
+        } 
+        console.log(newReview)
+        await db.Review.create(newReview);
+
+        res.redirect('/')
+    } catch(error) {
+        comsole.log(error);
+    }
+}
 
 module.exports = {
     userList,
-    userDetail, 
+    userDetaille, 
     registro,
     userCreate,
     userEdit,
@@ -229,6 +343,9 @@ module.exports = {
     contacto,
     preguntasFrecuentes,
     quienesSomos,
-    productCart
+    productCart,
+    misCompras,
+    reviewForm,
+    reviewCreate
 }
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Soy review product detail</h1>
+    <h2>Reviews del producto: <%= theProduct.name %></h2>
+    <img src="/img/products/<%= theProduct.principal_img %>" style="max-width: 100px;">
+    
+    <div style="background-color: rgb(220, 235, 235);">
+    <% reviewDetails.map(e => { %>
+        <div style="border: 2px solid grey;">
+        <p>ID de la review: <%= e.id %> </p>
+        <p>Rating: <%= e.rating %> </p>
+        <p>Título de la review: <%= e.review_title %> </p>
+        <p>Review: <%= e.review %> </p>
+        <p>Detalle de compra Nro. : <%= e.order_detail_fk_id %> </p>
+        <p>Id de Producto: <%= e.product_fk_id %> </p>
+        </div>
+        
+    
+        
+    <% }) %>
+    </div>
+ 
+    
+</body>
+</html>

@@ -21,6 +21,7 @@
     position: fixed;
     z-index: 100;
     top:0;
+    
 }
 
 /* Envio Gratis a Partir de 5K */
@@ -50,6 +51,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
+    
 }
 
 .header-topbar-burger-menu{
@@ -71,7 +73,10 @@
 #header-links {
     display:none;
     text-decoration: none;
+   
 }
+
+
 
 .header-search-bar {
     background-color: white;
@@ -181,7 +186,7 @@
     justify-content: space-around;
     list-style: none;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color:black;
     margin-bottom: 5px;
     padding: 10px;
     width: 100%;
@@ -191,7 +196,7 @@
 #header-down-bar li a {
     font-size: 20px;
     text-decoration: none;
-    color:black;
+    color: RGB(112 108 108);
     font-weight: bold;
     transition: all 450ms;
 }

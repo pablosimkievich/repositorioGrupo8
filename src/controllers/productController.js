@@ -1,3 +1,4 @@
+const { decodeBase64 } = require('bcryptjs');
 const db = require('../database/models/index');
 const op = db.Sequelize.Op;
 
@@ -83,59 +84,85 @@ const productList =  async (_req, res) => {
   };
 
   const productDetail= async (req, res) => {                                        
-   try{
-     let id = req.params.id;
-     
-    const juguete = await db.Product.findByPk(id, {
-      include: [{
-        association: 'category',
-    },
-    {
-        association: 'ages',
-        
-    },
-    {
-      association: 'secondary_images',
-    },
- 
-    ]})   ;
-  
-
-    if (juguete) {
-    const cuatro = await db.Product.findAll({
-      where: { category_id : juguete.category_id},
-      limit: 4
-    })
+    try{
+      let id = req.params.id;
+      
+     const juguete = await db.Product.findByPk(id, {
+       include: [{
+         association: 'category',
+     },
+     {
+         association: 'ages',
          
-      res.render("product/productDetail", { juguete, cuatro});  
-    }else {
-        res.send(`No existe el juguete nro. ${req.params.id}`);
-    };
+     },
+     {
+       association: 'secondary_images',
+   },
+   {
+     association: 'reviews',
+ },
+   
+  
+     ]})   ;
 
-  } catch(error){
-      console.log(error)
-      }
-};
+    
+ 
+    if (juguete) {
+      const cuatro = await db.Product.findAll({
+         where: { category_id : juguete.category_id},
+         limit: 4
+      });
+      const countReviews = await db.Review.count(
+       {
+         where: {product_fk_id : juguete.id}
+       }
+      )
+      
+     
+       const ratingSum = await db.Review.sum('rating', 
+       {
+         where: {product_fk_id : juguete.id}
+       }
+      );
 
-const edit = async (req, res) => {
-     try{
-    let jugueteEdit = await db.Product.findByPk(req.params.id, {
-      include: [
-        {
-          association: 'secondary_images'
-        }
-      ]
-    }) 
-      if (jugueteEdit) {
-        res.render("product/edit-form", { jugueteEdit });
-      } else {
-        res.send(`No existe el juguete nro. ${req.params.id}`)
-      }
+      const reviewList = await db.Review.findAll({
+        where: {
+            product_fk_id: juguete.id
+        },
+        include: [
+            {
+                association: 'products'
+            },
+            {
+              association: 'order_detail'
+            },  
+            {
+              association: 'users'
+            },           
+        ]      
+      });
+     
 
-    } catch(error) {
-      alert(error)
-    }
-    };
+   
+
+       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList});  
+     }else {
+       res.send("No existe el juguete");
+     };
+ 
+   } catch(error){
+     console.log(error)
+       }
+ };
+ 
+ const edit = async (req, res) => {
+  try{
+ let jugueteEdit = await db.Product.findByPk(req.params.id) 
+ res.render("product/edit-form", { jugueteEdit });
+ }catch(error){
+   alert(error)
+ }
+ };
 
  const saveEdit = async (req, res) => {
   let jugueteEdit = await db.Product.findByPk(req.params.id) 
