@@ -152,12 +152,15 @@ CREATE TABLE `reviews` (
   `review` longtext NOT NULL,
   `product_fk_id` int(11) NOT NULL,
   `order_detail_fk_id` int(11) NOT NULL,
+  `userr_fk_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id_idx` (`product_fk_id`),
   KEY `order_detail_fk_id_idx` (`order_detail_fk_id`),
+  KEY `userr_fk_id_idx` (`userr_fk_id`),
   CONSTRAINT `order_detail_fk_id` FOREIGN KEY (`order_detail_fk_id`) REFERENCES `order_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `userr_fk_id` FOREIGN KEY (`userr_fk_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,4 +230,4 @@ CREATE TABLE `users_type` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 23:15:11
+-- Dump completed on 2022-10-06 22:49:11
