@@ -24,11 +24,11 @@ const storage = multer.diskStorage({
 const uploadFile = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
-      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg" || file.mimetype == "image/gif") {
         cb(null, true);
       } else {
         cb(null, false);
-        // return cb(new Error('Sólo archivos con extensión .png, .jpg o .jpeg permitidos'));
+        // return cb(new Error('Sólo archivos con extensión .png, .jpg .jpeg o .gif permitidos'));
         return cb();
       }
     }

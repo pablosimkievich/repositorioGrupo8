@@ -27,7 +27,7 @@ const validateRegister = [
     body('fotoPerfil')
         .custom((value, { req } ) => {
             let file = req.file;
-            let acceptedExtensions = ['.jpg', '.png'];
+            let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
 
             if (file) {
                 let fileExtension = path.extname(file.originalname);
