@@ -57,7 +57,7 @@ router.get('/mis-compras/:id', userController.misCompras) // muestra página de 
 router.get('/review-form/:id', userController.reviewForm)
 router.post('/review', userController.reviewCreate)
 
-router.get('/logout', authMiddleware, userController.logout);
+router.get('/logout', userController.logout);
 
 
 module.exports = router;
