@@ -42,10 +42,42 @@ const indexCategorias = async(req,res) => {
     }
  };
  
+ const searchByUser = async (req, res) => {
+    try {
+      let searchKeyword = req.query.keywords;
+
+      if (searchKeyword) {
+    
+        let searchResult = await db.Product.findAll({
+          where: {
+            name: {
+              [op.like]: `%${searchKeyword}%` 
+            }  
+          }
+        });
+
+          if (searchResult.length >= 1) {
+            res.render('searchByUser', {searchResult});
+          } else if (searchResult.length < 1) {
+            let searchResult = 0;
+            res.render('searchByUser', {searchResult});
+          }
+        
+      } else if (!searchKeyword) {
+        let searchResult = 0;
+        res.render('searchByUser', {searchResult});
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+}
+
 
 
 module.exports = {
     index,
     indexCategorias,
-    indexEdad
+    indexEdad,
+    searchByUser
 }
