@@ -10,17 +10,22 @@ window.addEventListener('load',function(){
     
             for(let boton of botones){
                 boton.addEventListener('click',function(){
+
                     let inputs = document.querySelectorAll('.input-carrito')
                     for (let input of inputs) {
                         
                         console.log(input.value)
                     }
                     
-                              })
-            }
-    
-           
-            
-        
 
+                    let input = document.querySelector('.input-carrito')
+                    console.log(input)
+
+                    })
+            }
+  
   })
+
+ 
+
+

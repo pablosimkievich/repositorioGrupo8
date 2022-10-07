@@ -1,15 +1,13 @@
-reviewsCREATE DATABASE  IF NOT EXISTS `rayuela` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `rayuela`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rayuela
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.24-MariaDB
+-- Server version	5.7.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +21,7 @@ USE `rayuela`;
 
 DROP TABLE IF EXISTS `ages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `recommended_age` varchar(200) NOT NULL,
@@ -48,7 +46,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(200) NOT NULL,
@@ -74,7 +72,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_detail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_order_id` int(11) NOT NULL,
@@ -107,7 +105,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -140,7 +138,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payment_method` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pay_method_type` varchar(45) NOT NULL,
@@ -164,7 +162,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -204,7 +202,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `reviews`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rating` int(11) NOT NULL,
@@ -220,7 +218,7 @@ CREATE TABLE `reviews` (
   CONSTRAINT `order_detail_fk_id` FOREIGN KEY (`order_detail_fk_id`) REFERENCES `order_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `product_fk_id` FOREIGN KEY (`product_fk_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `userr_fk_id` FOREIGN KEY (`userr_fk_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +227,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4,55),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37,48),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5,50),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9,43),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12,24),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3,55),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2,55),(9,30,'No llego a tiempo!','Me encanto el juguete pero demoró mucho en llegar! ',35,21,11),(10,80,'Muy didáctico','Hace tiempo que buscaba un juguete así. Decorativo y educativo al mismo tiempo. Estoy muy conforme como cliente. Sigan así !! ',37,61,55),(11,85,'Muy mono este juguete','Me encantó la tostadora. De madera. Una pinturita. Juguete didáctico y entretenido. ',75,10,43),(12,75,'Juegos para pensar durante un rato','Me parecieron muy copados estos juegos. Un desafío. Para chicos y grandes..',64,14,21),(13,90,'Divino !!','Una maravilla artesanal y moderna este cohete ! Mi sobrino y sus compas se la pasan inmersos, jugando durante horas !',31,20,23),(14,70,'Muy indicado para los mas peques','Un juego que que los mas chiquitos exploren el ingenio con divertidos y coloridos animalitos. Le encantó. ',46,23,11),(15,100,'Clásico y sencillo','Su primer juguete. El sonido le encanta !! Muy buena terminación del producto',72,32,17),(16,70,'Bárbaro este juguete','Estoy muy conforme tanto con el servicio como con el producto. No demoró casi nada y era lo que esperaba. ',40,31,17),(17,100,'Me pueden este tipo de puzzles','Este rompecabezas me tiene como loco !! Es todo un desafío para los 6 sentidos... brilla en la oscuridad. Todo un flassshhh !!! ',56,34,18),(18,80,'De colección','Me la paso jugando durante horas con estos puzzles. Son 3d, y viene con los anteojitos. ',44,33,18),(19,90,'De chico yo no tuve nada así','Estos juguetes son muy cancheros para los chicos que les encanta el 3D además educativos. Me siento privilegiado de poder regalarle a mi hijo el puzzle dino 3D',44,39,48),(20,50,'Mas o menos','Mmm, no estoy muy conforme. Los materiales no me convencen mucho por el precio del producto. Son lindos, pero muuuuuy caros para lo que son, la verdad',49,40,54),(21,60,'Apenas cumple','La calidad del puzzle es un poco menor a lo que esperaba. No se engancho, mucho no le gustó, no creo que vuelva a comprar...',66,43,54),(22,70,'Copado','Es bastante loco este juego, lo jugamos con amigos hasta altas horas de la noche. De ingenio.',77,46,53),(23,80,'Clásico absoluto','El T.E.G. ya lleva varias generaciones dando vuelta por ahí. Por algo será.  Todo un ícono de los 80s ',79,44,53),(24,75,'Multimedia game, atención ahí...original','Se lo regalé a mi primo. Le encanta las pelis de de los 80s. Con esto son Spielberg. ',78,45,53),(25,90,'Que delicia de juguete','Es ideal para jugar al taller, como su padre cuando construye cosas. De todos los colores, esta maravillado con su cinturón carpintero que lo lleva a todos lados',53,49,45),(26,75,'Rainbow Ccocdrile','Me encantó el cocodrilo, que me lo compré para mí cuando le regalé a mi peque para su cumple. Amo los cocodrilos. Animal favorito. Y este viene en colores. ',30,48,45),(27,65,'Me gusto mucho','Era lo esperado. Muy pedagógico, para jugar a trabajar. Un ejemplo de juguete educacional con buena terminación y muy buen diseño',54,50,42),(28,40,'Ukelele Star rompe Ukelele','El juguete es divino, divertidísimo, pero no muy resistente, no resultó muy duradero, igual suena bastante bien, para ser un juguete',55,51,41),(29,60,'Ella ama su Ukelele !!!','Ella y su ukelele se volvieron inseparables, Ella va cantando por ahí chocha de la vida. Satisfecha con el tiempo de entrega. No ningún tipo de  problemas',55,52,38),(30,95,'Caja musical para mi chiquita','Por alguna razón los juguetes musicales atraen su atención mas que otro tipo de juguetes. Mu buena calidad y terminación del producto. Tiempo de entrega optimpo',39,53,38),(31,85,'Camioncito legendario','Hubiera querido tener un juguete así de pibe. Se lo regalé y le gusto mucho realmente. No se va a aburrir rápido como con otros juguetes, se ve que lo artesanal ayuda a crear un vínculo entre el niño y el juguete. No more industrial toys...',33,57,39),(32,70,'Un flash','Colecciono este tipo de juguetes decorativos. Mezcla de adorno y rompecabezas.',47,58,37);
+INSERT INTO `reviews` VALUES (2,85,'Hermoso juguete artesanal','Hermoso juguete, a mis chicos les encantó !',30,4,55),(3,90,'Muy lindo juguete','A mi hijo le encantó este juguete, es genial, hasta le puso nombre; \'Colorinche\'',30,37,48),(4,95,'Espectacular instrumento musical !','Mi sobrino quedo maravillado, será el músico de la familia !',36,5,50),(5,75,'Recuerdos de infancia','Cuando yo era chica, nos quedabamos horas con amigos jugando al T.E.G , ahora le regalo esta version de T.E.G. Junior a mi hija, y ya se prendió a jugarlo con sus amigas',79,9,43),(6,75,'Con esta pizarra, la hija de mi amiga será maestra...','Le lleve la pizarra doble para el cumpleaños a la hija de mi gran amiga de toda la vida. Enseguida se puso a jugar y a hacer cuentas con su nueva adquisición',67,12,24),(7,70,'Genial','Esta 10 puntos el banco didáctico',29,3,55),(8,84,'Divino juguete','Me encantó. Es una pieza artesanal, la verdad.',28,2,55),(9,30,'No llego a tiempo!','Me encanto el juguete pero demoró mucho en llegar! ',35,21,11);
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,7 +237,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `secondary_images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `secondary_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_product` int(11) NOT NULL,
@@ -268,7 +266,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type_id` int(11) NOT NULL,
@@ -303,7 +301,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type_name` varchar(45) NOT NULL,
@@ -330,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-06 22:48:16
+-- Dump completed on 2022-09-25 15:14:20
