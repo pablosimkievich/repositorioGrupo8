@@ -7,14 +7,14 @@ const bcrypt = require('bcryptjs');
 
 const op = db.Sequelize.Op;
 
-const userList = async (req, res) => {
+/* const userList = async (req, res) => {
     try {
         const allUsers = await db.User.findAll()
         res.render('users/userList', {allUsers})
     } catch (error) {
         console.log(error);
     }
-}
+} */
 
 const userDetaille = async (req, res) => {
     try {
@@ -330,7 +330,6 @@ const reviewCreate = async (req, res) => {
 }
 
 module.exports = {
-    userList,
     userDetaille, 
     registro,
     userCreate,

@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/header-styles.css">
-    <title>Document</title>
-</head>
-        <header class="header-style">
-            <section class="header-top-banner">
-                <i class="fa-solid fa-truck"></i>
-                <h4>Envío gratis a partir de $ 5000</h4>
-            </section>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/css/header-styles.css">
+            <title>Document</title>
+        </head>
+        <body>
+            <header class="header-style">
+                <section class="header-top-banner">
+                    <i class="fa-solid fa-truck"></i>
+                    <h4>Envío gratis a partir de $ 5000</h4>
+                </section>
+
+                
+                <section class="header-topbar">
 
             
-    <section class="header-topbar">
 
-         
-
-                <div class="header-topbar-burger-menu">
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-                    <script>
-                        function myFunction() {
-                    var x = document.getElementById("header-links");
-                    if (x.style.display === "block") {
-                        x.style.display = "none";
-                    } else {
-                        x.style.display = "block";
+                    <div class="header-topbar-burger-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
+                        <script>
+                            function myFunction() {
+                        var x = document.getElementById("header-links");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+                        } else {
+                            x.style.display = "block";
+                        }
                     }
-                }
-                    </script>
-                    <ul id="header-links">
-                        <li><a href="/quienesSomos">Quienes Somos</a></li>
-                        <li><a href="/index-categorias">Por categoria</a></li>
-                        <li><a href="/index-edad">Por edad</a></li>
-                        <li><a href="/preguntasFrecuentes">FAQ</a></li>
-                        <li><a href="/contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="header-search-bar">
-                    <!-- <section > -->
-                        <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
-                        <form class="header-search">
-                        <input type="search" name="q" placeholder="Buscar...">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
-                    <!-- </section> -->
+                        </script>
+                        <ul id="header-links">
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/quienes-somos">Quienes Somos</a></li>
+                            <li><a href="/index-categorias">Por categoria</a></li>
+                            <li><a href="/index-edad">Por edad</a></li>
+                            <li><a href="/preguntas-frecuentes">FAQ</a></li>
+                            <li><a href="/productos">Contacto</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="header-search-bar">
+                        <!-- <section > -->
+                            <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                            <form class="header-search">
+                            <input type="search" name="q" placeholder="Buscar...">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        <!-- </section> -->
 
-                </div>
-                       
-                
-                <div class="header-topbar-icons">
-                    <nav>
-                        <div class="header-topbar-each-icon">
-                            <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                        
+                    
+                    <div class="header-topbar-icons">
+                        <nav>
+                            <div class="header-topbar-each-icon">
+                                <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                            </div>
+
+                                
+                            <div class="header-topbar-each-icon">
+                                <% if (!locals.isLogged) { %>
+                                <a href="/login"><i class="fa-solid fa-user"></i></a>
+                                <% } %>
                         </div>
 
-                            
-                        <div class="header-topbar-each-icon">
-                            <% if (!locals.isLogged) { %>
-                            <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <div class="userLogged-style">    
+                            <% if (locals.isLogged) { %>
+                                <% if (locals.userLogged.user_img == "" ) { %>
+                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
+                                        <% } else { %> 
+                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
+                                        <% } %>
+                
+                                Hola <%= locals.userLogged.user_first_name %>
+                                <a href="/logout" class="user-style__logout">Logout</a>
                             <% } %>
-                       </div>
+                            </div>
+                        </nav>
+                    </div>
 
-                       <div class="userLogged-style">    
-                        <% if (locals.isLogged) { %>
-                            <% if (locals.userLogged.user_img == "" ) { %>
-                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
-                                      <% } else { %> 
-                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
-                                      <% } %>
-              
-                            Hola <%= locals.userLogged.user_first_name %>
-                            <a href="/logout" class="user-style__logout">Logout</a>
-                        <% } %>
-                        </div>
-                    </nav>
-                </div>
+                    
 
+                    
+                </section>
+
+                <section>
+                    <ul id="header-down-bar">
+                        <li><a href="/">INICIO</a></li>
+                        <li><a href="/quienes-somos">QUIENES SOMOS</a></li>
+                        <li><a href="/index-categorias">POR CATEGORÍA</a></li>
+                        <li><a href="/index-edad">POR EDAD</a></li>
+                        <li><a href="/preguntas-frecuentes">PREGUNTAS FRECUENTES</a></li>
+                        <li><a href="/productos">PRODUCTOS</a></li>
+                    </ul>
+                </section>
                 
-
-                  
-            </section>
-<section>
-    <ul id="header-down-bar">
-        <li><a href="/quienesSomos">QUIENES SOMOS</a></li>
-        <li><a href="/index-categorias">POR CATEGORÍA</a></li>
-        <li><a href="/index-edad">POR EDAD</a></li>
-        <li><a href="/preguntasFrecuentes">PREGUNTAS FRECUENTES</a></li>
-        <li><a href="/contacto">CONTACTO</a></li>
-    </ul>
-</section>
-            
-        </header
-       
+            </header>
+        </body>
 
 </html>

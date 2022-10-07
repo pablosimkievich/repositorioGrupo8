@@ -125,29 +125,7 @@ const userDetaille = async (req, res) => {
 };
 
 
-const productList = async (req, res) => {
-    try {
 
-        const allTheProducts = await db.Product.findAll({
-            include: [
-                {
-                    association: 'category'
-                },
-                {
-                    association: 'ages'
-                },
-                {
-                    association: 'secondary_images'
-                },
-            ]
-        })
-
-        res.render('admin/productos', {allTheProducts});
-        
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 const reviewList = async (req, res) => {
 
@@ -273,7 +251,6 @@ module.exports = {
     orderDetail,
     userList,
     userDetaille,
-    productList,
     reviewList,
     reviewDetail,
     productOrders,

@@ -34,7 +34,7 @@ const uploadFile = multer({
     }
   });
 
-router.get('/usuarios', userController.userList) // todos los usuarios
+// router.get('/usuarios', userController.userList) // todos los usuarios
 router.get('/usuario/:id',  authMiddleware, userController.userDetaille) // detalle de usuario
 
 router.get('/login', guestMiddleware, userController.login); // login
@@ -48,8 +48,8 @@ router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'), validateUserUpd
 router.delete('/delete/:id', userController.userDelete) // borra usuario
 
 router.get('/carrito', userController.productCart);
-router.get('/quienesSomos', userController.quienesSomos);
-router.get('/preguntasFrecuentes', userController.preguntasFrecuentes);
+router.get('/quienes-Somos', userController.quienesSomos);
+router.get('/preguntas-Frecuentes', userController.preguntasFrecuentes);
 router.get('/contacto', userController.contacto);
 
 router.get('/mis-compras/:id', userController.misCompras) // muestra página de ordenes de compra de usuario
@@ -57,7 +57,7 @@ router.get('/mis-compras/:id', userController.misCompras) // muestra página de 
 router.get('/review-form/:id', userController.reviewForm)
 router.post('/review', userController.reviewCreate)
 
-router.get('/logout', userController.logout);
+router.get('/logout',  userController.logout);
 
 
 module.exports = router;

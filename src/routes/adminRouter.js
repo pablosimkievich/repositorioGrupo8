@@ -10,7 +10,6 @@ router.get('/users', onlyAdminMiddleware, adminController.userList) // todos los
 router.get('/user/:id', onlyAdminMiddleware,  adminController.userDetaille) // detalle de usuario
 router.get('/product-orders/:id', onlyAdminMiddleware, adminController.productOrders)
 
-router.get('/products', onlyAdminMiddleware, adminController.productList)
 
 router.get('/review-product-list', onlyAdminMiddleware, adminController.reviewList)
 router.get('/review-product-detail/:id', onlyAdminMiddleware,  adminController.reviewDetail)

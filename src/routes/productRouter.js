@@ -5,10 +5,10 @@ const path=require('path')
 
 const onlyAdminMiddleware = require('../middlewares/onlyAdminMiddleware');
 
-router.get('/productos/', productController.productList);
+router.get('/productos', productController.productList);
 
 /********CONTROL PANEL PARA EDITAR/BORRAR PRODUCTOS***********/
-router.get('/productPanel', onlyAdminMiddleware, productController.productPanel);
+router.get('/product-panel', onlyAdminMiddleware, productController.productPanel);
 
 /********PRODUCT LIST por categoria y edad***********/
 router.get('/edad/:edadrecomendada', productController.getEdad);
@@ -19,8 +19,8 @@ router.get('/categorias/:categoria', productController.getCategory);
 router.get('/juguetes/:id', productController.productDetail);
 
 /********CREATE A PRODUCT***********/
-router.get('/crearProducto', onlyAdminMiddleware, productController.create );
-router.post('/crearProducto', productController.saveNewProduct );
+router.get('/crear-producto', onlyAdminMiddleware, productController.create );
+router.post('/crear-producto', productController.saveNewProduct );
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', onlyAdminMiddleware, productController.edit );

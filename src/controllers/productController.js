@@ -166,7 +166,7 @@ const edit = async (req, res) => {
    ]
  }) 
    if (jugueteEdit) {
-     res.render("product/edit-form", { jugueteEdit });
+     res.render("product/editForm", { jugueteEdit });
    } else {
      res.send(`No existe el juguete nro. ${req.params.id}`)
    }
@@ -287,7 +287,7 @@ const deleteProduct = async (req, res) => {
                          }
                         });
     
-          res.redirect('/productPanel')
+          res.redirect('/product-panel')
     } catch(error){
             console.log(error)
                 };
