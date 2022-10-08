@@ -621,7 +621,7 @@ table.info-table {
     text-align: center;
     color: rgb(112, 108, 108) ;
     padding: 10px 0px;
-    margin: 5px;
+    margin: 5px; 
 }
 .review-user-info{
     display:flex;
@@ -749,7 +749,6 @@ flex-direction: row;
 }       
 .form-logo{
     flex:80%;
-
 }
 .create-form {
         width: 65%;

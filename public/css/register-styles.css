@@ -22,24 +22,41 @@
 
 .register form input {
     margin-top: 10px;
-    width: 60vw;
+    width: 30vw;
     padding: 2px;
+    border-radius: 5px;
+    min-height: 30px;
 }
 
 
 .register .register-look-for-img {
-    /* text-align: center; */
-    justify-content: center;
-    margin-top: 10px;
+    text-align: center;
+    /* justify-content: center; */
+    
 }
 
-.register .register-termYCond {
+.register .register-look-for-img h4 {
+    text-align: center;
+}
+
+.terminos {
+    text-align: center;
+    align-items: center;
+}
+
+.terminos a {
+    justify-content: center;
+}
+
+.register-termYCond {
     display: flex;
     justify-content: center;
     margin-top: 10px;
     font-size: 15px;
     text-decoration: underline;
     font-style: italic;
+    text-align: center;
+    margin-left: 90px;
 
 }
 

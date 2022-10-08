@@ -150,7 +150,6 @@
                                 <img src="/img/users/<%=e.users.user_img %>" class="review-avatar" width="50">
                                 <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
                             </div>          
-
                 <div class="stars-outer">
                     <div class="stars-inner" style ="width:<%= e.rating %>%">
                     </div>
@@ -165,7 +164,9 @@
 
     </section>
     </main>
-
+    <div>
+        <%- include('../partials/whatsappButton.ejs') %>
+    </div>
        
     </body>
 

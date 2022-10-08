@@ -10,7 +10,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: cursive, sans-serif;
+    font-family: cursive;
     font-weight: 400;
     font-size: 14px; 
 
@@ -57,6 +57,7 @@
 .header-topbar-burger-menu{
     justify-self: flex-start;
     margin: 10px;
+    max-width: 100px;
 }
 .header-topbar-burger-menu a {
     color: rgb(109, 108, 108);
@@ -81,31 +82,32 @@
 .header-search-bar {
     background-color: white;
     display: flex;
-    width:40%;
+    width: 40%;
     padding: 10px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    
-
+    justify-content: center;
+    align-items: center;
 }
 
 #header-logo {
-    width:100px;
-    margin: 5px;
+    width: 100px;
+    margin: 30px 130px;
     border-radius: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 
 .header-search {
     background-color: rgb(233, 231, 231);
-    width: 100%;
+    width: 80%;
     height: 40px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
     border: solid 2px rgb(233, 231, 231);
-    margin-top: 20px;
+  /*  margin-top: 20px; */
+    margin-right: 100px;
     
   }
 
@@ -153,26 +155,26 @@
     color: rgb(151,151,151);
     font-size: 30px;
     transition: all 700ms;
-    margin: 10px;
+    margin: 15px;
 }
 
 .userLogged-style {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    width: 40px;
+    width: 100px;
     text-decoration: none;
  }
  
  .userLogged-style img {
-     width: 70%
+     width: 55%
  }
  
  .userLogged-style a {
      text-decoration: none;
-     }
+}
  
  .userLogged-style a:visited {
      color: black
@@ -204,6 +206,47 @@
 #header-down-bar li a:hover {
     color: #9abfad
 }
+
+.logo-rayuela {
+    display: flex;
+    justify-content: center;
+}
+
+.header-topbar-two-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+
+
+.header-topbar-two-icons i {
+    color: rgb(151,151,151);
+    font-size: 30px;
+    transition: all 700ms;
+    margin: 50px 10px;
+
+}
+
+.hi-user { 
+    font-size: 12px;
+    flex-direction: row;
+}
+
+.shopping-icon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.bag-shop {
+    display: flex;
+    align-items: center;
+}
+
+
 
 @media (min-width:701px) {
     .header-topbar-burger-menu {

@@ -16,7 +16,9 @@
 
                 
                 <section class="header-topbar">
-
+                    <div class="logo-rayuela">
+                        <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                    </div>
             
 
                     <div class="header-topbar-burger-menu">
@@ -37,13 +39,13 @@
                             <li><a href="/index-categorias">Por categoria</a></li>
                             <li><a href="/index-edad">Por edad</a></li>
                             <li><a href="/preguntas-frecuentes">FAQ</a></li>
-                            <li><a href="/productos">Contacto</a></li>
+                            <li><a href="/productos">Juguetes</a></li>
                         </ul>
                     </div>
                     
                     <div class="header-search-bar">
                         <!-- <section > -->
-                            <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                            
                             <form action="/search-by-user" method="GET" class="header-search">
                             <input type="search" name="keywords" placeholder="Buscar...">
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -55,29 +57,45 @@
                     
                     <div class="header-topbar-icons">
                         <nav>
-                            <div class="header-topbar-each-icon">
-                                <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
-                            </div>
+                            <div class="header-topbar-two-icons">
+                                <div class="shopping-icon" ></div>
+                                    <a class="bag-shop" href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a> 
+                            
 
-                                
-                            <div class="header-topbar-each-icon">
+
                                 <% if (!locals.isLogged) { %>
                                 <a href="/login"><i class="fa-solid fa-user"></i></a>
                                 <% } %>
-                        </div>
 
-                        <div class="userLogged-style">    
-                            <% if (locals.isLogged) { %>
-                                <% if (locals.userLogged.user_img == "" ) { %>
-                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
-                                        <% } else { %> 
-                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
-                                        <% } %>
-                
-                                Hola <%= locals.userLogged.user_first_name %>
-                                <a href="/logout" class="user-style__logout">Logout</a>
-                            <% } %>
+                                <div class="userLogged-style">    
+
+
+                                    
+                                    <% if (locals.isLogged) { %>
+
+                                            <div class="hi-user">
+                                                Hola <%= locals.userLogged.user_first_name %>
+                                            </div> 
+
+                                        <% if (locals.userLogged.user_img == "" ) { %>
+
+                                            
+
+                                            <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
+                                                <% } else { %> 
+                                            <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img" > </a>   
+                                                <% } %>
+                        
+                                            <div>
+                                                <a href="/logout" class="user-style__logout">Logout</a>
+                                            </div>      
+                                        
+                                    <% } %>
+                                </div>
+
                             </div>
+
+                        
                         </nav>
                     </div>
 
@@ -93,7 +111,7 @@
                         <li><a href="/index-categorias">POR CATEGORÍA</a></li>
                         <li><a href="/index-edad">POR EDAD</a></li>
                         <li><a href="/preguntas-frecuentes">PREGUNTAS FRECUENTES</a></li>
-                        <li><a href="/productos">PRODUCTOS</a></li>
+                        <li><a href="/productos">JUGUETES</a></li>
                     </ul>
                 </section>
                 
