@@ -1,6 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap'); 
 
 /* HEADER STYLES */
 
@@ -8,9 +8,10 @@
     position:relative;
     /* background-color: #C2DED1; */
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    /* font-family: sans-serif; */
+    font-family: cursive; 
     font-weight: 400;
     font-size: 14px; 
 
@@ -51,6 +52,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
+    max-height: fit-content;
     
 }
 
@@ -107,21 +109,27 @@
     align-items: center;
     border: solid 2px rgb(233, 231, 231);
   /*  margin-top: 20px; */
-    margin-right: 100px;
+    margin-right: 150px;
     
   }
 
   .header-search input {
     border: none;
     font: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
     color: rgb(0, 0, 0);
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-    background-color: white;
-    background-color: #C2DED1;
+    background-color: #08bdbd;
+    border-radius: 5px;
+    border: none;
+    outline: none;
   }
+
+/*
+ background-color: #C2DED1;  //  color anterior de la barra de search
+*/
 
   .header-search button {
     all: unset;
@@ -186,11 +194,12 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    align-items: center;
     list-style: none;
     text-decoration: none;
     color:black;
     margin-bottom: 5px;
-    padding: 10px;
+    padding: 7px; 
     width: 100%;
     font-family: cursive, sans-serif;
 }

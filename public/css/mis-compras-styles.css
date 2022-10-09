@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    font-weight: 400;
+}
+
+.mis-compras-title {
+    text-align: center;
+    background-color: #fff;
+    margin: 25px 5px;
+    font-size: 2em;
+}
+
+.user-card {
+    background-color: #dba8ac;;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin: 25px 45px;
+    padding: 25px;
+}
+
+.user-title {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.user-img {
+    width: 150px;
+    margin: 15px 0;
+}
+
+.user-item {
+    padding: 5px;
+}
+
+.product-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 45px;
+}
+
+.product-card {
+    background-color: #dba8ac;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin: 25px 5px;
+    padding: 5px 5px;
+}
+
+.product-img {
+    width: 150px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+
+.product-item {
+    padding: 5px;
+}
+
+.review-button {
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #c17c74;
+    color: #000;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    padding:  5px;
+    min-width: 200px;
+}
+
+.review-button:hover {
+    background-color: #874C62;
+}

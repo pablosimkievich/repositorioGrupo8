@@ -9,7 +9,8 @@
 }
 
 footer {
-    background-color:#C2DED1;
+    /* background-color:#C2DED1;   */
+    background-color: #7895B2;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -17,6 +18,11 @@ footer {
     width:100%;
     padding:15px;
 }
+
+.footer-container {
+    max-height: 120px;
+}
+
 
 ul  {
     text-decoration: none;
@@ -30,6 +36,7 @@ ul  {
     width: 100px;
     display: flex; 
     align-items: flex-start; 
+    display: none;
 }
 
 .lista-footer {
@@ -37,7 +44,8 @@ ul  {
     /* background-color: red; */
     flex-wrap: nowrap;
     justify-content: center;
-    color: #7D7D7D;
+    /* color: #7D7D7D; */
+    color: #182747;
     text-decoration: none;
     align-items: center;
     width: 90%;
@@ -76,7 +84,7 @@ footer div div a {
 .lista-medios-pago div { 
     width: 25%;
     font-size: 2rem;
-    color: #7D7D7D;
+    color: #182747;
     text-decoration: none;
 }
 
@@ -91,13 +99,13 @@ footer div div a {
 
 .lista-footer div {
     margin: 8px 4px;
-    color: #7D7D7D;
+    color: #182747;
     text-decoration: none;
 }
 
 ul li h4 {
     text-align: center;
-    color: #7D7D7D;
+    color: #182747;
     font-size: 25px;
     justify-content: center;
 
@@ -116,7 +124,9 @@ div .lista-medios-pago div img {
 
 div .lista-footer div {
     margin: 8px 4px;
-    color: #7D7D7D;
+    color: #182747;
+    font-style: bold;
+    font-weight: 700;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
@@ -142,7 +152,7 @@ div div h5 {
 .lista-medios-pago div { 
     width: 25%;
     font-size: 2rem;
-    color: #7D7D7D;
+    color: #182747;
     text-decoration: none;
 }
 

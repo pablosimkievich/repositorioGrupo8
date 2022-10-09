@@ -177,6 +177,7 @@ ul.breadcrumbs li+li:before {
 .product-display{
     margin: 100px 0;    
     display: flex;
+    flex-wrap: wrap;
 
 }
   
@@ -565,15 +566,17 @@ table.info-table {
 
 .result_search_title {
     font-size: 2em;
-    margin-top: 220px;
+    margin-top: 240px;
     margin-left: 50px;
+    text-align: center;
 }
 
 .result_search_title2 {
     font-size: 2em;
     margin-left: 50px;
-    margin-top: 150px;
-    margin-bottom: 180px;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    text-align: center;
 }
 
 .stock-label {

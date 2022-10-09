@@ -37,6 +37,9 @@
     font-size: 16px;
     border-radius: 5px;
     min-height: 30px;
+    border: none;
+    background-color: #AEBDCA;
+    outline: none;
 }
 
 .login .links {
@@ -46,15 +49,19 @@
  font-style: italic;
  margin-top: 20px;
  margin-bottom: 60px;
- margin-left: 120px;
+ margin-left: 0px;
 }
 
 .login .links:visited {
     color: rgb(152, 13, 152);
 }
 
+.botonLogin {
+    background-color: #0b3db1;
+}
+
 .botonLogin:hover {
-    background-color: #cde7d9;
+    background-color: #54BAB9;
 }
 
 .msg-error {

@@ -26,9 +26,14 @@
     padding: 2px;
     border-radius: 5px;
     min-height: 30px;
+    border: none;
+    background-color: #AEBDCA;
+    outline: none;
 }
 
-
+.space {
+    padding: 15px 0px 0px 0px;
+}
 .register .register-look-for-img {
     text-align: center;
     /* justify-content: center; */
@@ -56,12 +61,11 @@
     text-decoration: underline;
     font-style: italic;
     text-align: center;
-    margin-left: 90px;
-
 }
 
 .register .register-termYCond:visited {
-    color: rgb(152, 13, 152);
+    /* color: rgb(152, 13, 152); */
+    color: #000;
 }
 
 #buttonRegister {
@@ -79,8 +83,19 @@
     position: relative;
 }
 
+
+.button-register {
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    min-height: 35px;
+    padding: 7px;
+    margin: 3px;
+    background-color: #D2DAFF;
+}
+
 #buttonRegister button:hover {
-    background-color: #cde7d9;
+    background-color: #54BAB9;
 }
 
 .msg-error {

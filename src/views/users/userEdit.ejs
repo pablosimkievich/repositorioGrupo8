@@ -76,7 +76,7 @@
 
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
-                <h4>Foto de perfil (opcional)</h4>
+                <h4 class="space">Foto de perfil (opcional)</h4>
                 <input type="file" name="fotoPerfil">
                 <% if (locals.errors && errors.fotoPerfil) { %>
                     <p class="msg-error"><%= errors.fotoPerfil.msg %></p>
@@ -95,8 +95,8 @@
             <br>
              <!-- Botones -->
             <div id="buttonRegister">
-                 <button id=buttonR type="reset">Reset</button>
-                 <button id=buttonR type="submit">Guardar</button>
+                 <button class="button-register" id=buttonR type="reset">Reset</button>
+                 <button class="button-register" id=buttonR type="submit">Guardar</button>
     
             </div>  
         </form>

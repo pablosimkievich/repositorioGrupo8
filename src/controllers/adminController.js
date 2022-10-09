@@ -241,8 +241,8 @@ const controlPanel = (req, res) => {
 };
 
 const adminLogout = (req, res) => {
-    res.clearCookie('userEmail');
-    req.session.destroy();
+    // res.clearCookie('userEmail');  //  logout desactivado por fines prácticos
+    // req.session.destroy();
     return res.redirect('/');
 }
 
