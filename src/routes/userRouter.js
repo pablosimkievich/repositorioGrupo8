@@ -5,6 +5,7 @@ const path = require('path')
 const multer = require('multer');
 const { body } = require('express-validator');
 const validateRegister = require('../middlewares/validateRegister');
+//const validateLogin = require('../middlewares/validateLogin');
 const validateUserUpdate = require('../middlewares/validateUserUpdate');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
