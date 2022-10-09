@@ -5,4 +5,4 @@ const productController = require('../../controllers/api/productController');
 router.get('/api/products', productController.getTheToys);
 router.get('/api/products/:id', productController.getTheToyDetail);
 
-module.exports = router
+module.exports = router;

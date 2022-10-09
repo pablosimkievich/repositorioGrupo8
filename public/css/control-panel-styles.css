@@ -57,6 +57,11 @@ a {
     flex-direction: column;
 }
 
+.col-4 {
+    display: flex;
+    flex-direction: column;
+}
+
 
 button {
     min-width: 160px;
@@ -66,4 +71,8 @@ button {
     min-height: 42px;
     font-size: 19px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #1C6758;
 }
