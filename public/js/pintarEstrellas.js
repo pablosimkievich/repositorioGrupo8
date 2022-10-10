@@ -1,11 +1,9 @@
 window.addEventListener('load',function(){
-  let formulario = document.querySelector('#review-form')
-    
-  
-    let inputRating = document.querySelector('#rating-input')
-    let estrellas = document.querySelector('#starsInner')
+  let formulario = document.getElementById('review-form')
+  let inputRating = document.querySelector('#rating-input')
+  let estrellas = document.querySelector('#starsInner')
 
-      inputRating.addEventListener('blur', ()=>{
+    inputRating.addEventListener('blur', ()=>{
        
           estrellas.style.width = `${inputRating.value}%`
            
@@ -15,45 +13,60 @@ window.addEventListener('load',function(){
 
   
 
-   formulario.addEventListener('submit', (e)=>{      
+   formulario.addEventListener('submit', (e)=>{   
+  
 
         let inputRating = document.querySelector('#rating-input')
-        let titulo = document.querySelector('#titulo-input')
-        let review = document.querySelector('#review-input')
+        //let titulo = document.querySelector('#titulo-input')
+        //let review = document.querySelector('#review-input')
 
-        let errores =[]
+        let errores =[];
+        let erroresUl = document.querySelector('.erroresFront ul')
+        let erroresDiv = document.querySelector('.erroresFront')
+       
 
-        if(inputRating.value.isEmpty()){
+      /*  while (erroresDiv.firstChild) {
+          erroresDiv.removeChild(erroresDiv.firstChild);
+      }*/
+
+        if(inputRating.value == ''){
                   errores.push('Debes ingresar un numero')
-                }else if(inputRating.value>100 || inputRating.value<0){
+                  console.log(errores)
+                }
+                
+       if(inputRating.value>100 || inputRating.value<0){
                   errores.push('Debes ingresar un numero del 0 al 100')
+                  console.log(errores)
                       }
         
         if(titulo.value = ""){
           errores.push('el campo de titulo debe estar completo')
-        }else if(titulo.value.length < 3){
+        }
+     /*   if(titulo.value.length < 3){
           errores.push("El titulo tiene que tener al menos 3 caracteres")
         }
 
         if(review.value = null){
           errores.push("el campo de review no puede estar vacio")
-        }else if(review.value.length < 5){
+        }
+        if(review.value.length < 5){
           errores.push("El comentario tiene que tener al menos 5 caracteres")
         }
-        
-        if(errores.length >0){
+        */
+       
+        if(errores.length>0){
           e.preventDefault()
-          let erroresUl = document.querySelector('.errores ul')
+         console.log(errores)
+         console.log(erroresUl)
         
          errores.map(element=>{
-            erroresUl.innerHTML += "<li>" + element + "</li>"
+            erroresUl.innerHTML += "<li >" + element + "</li>"
           })
 
+        }else{
+          formulario.submit()
         }
     
-          })
-    
-            
-        
-
+    })     
+  
   })
