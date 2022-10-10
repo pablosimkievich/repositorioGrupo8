@@ -173,12 +173,12 @@ const processLogin = async (req, res) => {
             user_mail: req.body.email
         }
     });
-    console.log(userToLogin.password)
-    console.log(req.body.password)
+    // console.log(userToLogin.password)
+    // console.log(req.body.password)
     if(userToLogin){
         const password = req.body.password;
         let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
-        console.log(passwordMatch);
+        // console.log(passwordMatch);
         if(passwordMatch){
             delete userToLogin.password 
             req.session.userLogged = userToLogin
