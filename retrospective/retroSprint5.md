@@ -1,7 +1,7 @@
 > # Sprint 5: Starfish Retrospective
 *A continuación, efectuaremos una nueva evaluación de nuestro trabajo y todo el avance logrado hasta el momento. Podemos concluir que:*
 
-------------
+-------------
 
 
 * **Start Doing (comenzar a hacer):** Si bien hemos podido trabajar cada uno independientemente en su rama, todavía guardamos ciertas reservas a la hora de mergear a la rama dev y generar conflictos con el trabajo que pueda haber realizado otro compañero, creemos que debemos dejar de preocuparnos ante el supuesto de “romper código”.

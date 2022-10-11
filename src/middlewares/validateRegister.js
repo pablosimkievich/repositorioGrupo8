@@ -9,8 +9,8 @@ const validateRegister = [
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Debes ingresar un email válido'),
     body('telefono')
-        .notEmpty().withMessage('Debes ingresar tu número telefónico').bail()
-        .isInt().withMessage('Debes ingresar un número de teléfono válido'),
+        .notEmpty().withMessage('Debes ingresar tu numero telefónico').bail()
+        .isInt().withMessage('Debes ingresar un numero de teléfono válido'),
     body('domicilio').notEmpty().withMessage('Debes ingresar tu domicilio'),
     body('dni').notEmpty().withMessage('Debes ingresar tu DNI'),
     body('password')

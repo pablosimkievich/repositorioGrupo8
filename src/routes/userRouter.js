@@ -5,13 +5,14 @@ const path = require('path')
 const multer = require('multer');
 const { body } = require('express-validator');
 const validateRegister = require('../middlewares/validateRegister');
+//const validateLogin = require('../middlewares/validateLogin');
 const validateUserUpdate = require('../middlewares/validateUserUpdate');
 const validateReview = require('../middlewares/validateReviewForm')
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { nextTick } = require('process');
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage( {
     destination: (req, file, cb) => {
         const folderPath = path.join(__dirname,'../../public/img/users');
         cb (null, folderPath);
