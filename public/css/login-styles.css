@@ -56,7 +56,7 @@
 }
 .errores ul {
     
-    color: red;
+    color: tomato;
     justify-content: flex-start;
     padding: 20px;
     display: block;

@@ -3,7 +3,7 @@ let formLogin = document.querySelector("#formLogin");
 let botonForm = document.querySelector("#botonLogin")
 
 botonForm.addEventListener("click", function(e) {
- console.log("algo funciona");
+
 
 let errores = [];
 

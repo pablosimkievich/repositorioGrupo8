@@ -22,16 +22,19 @@
                 <ul>                   
                 </ul>
             </div>
+            <% if (locals.errors && errors.email) { %>
+                <p class="msg-error"><%= errors.email.msg %></p>
+            <% } %> 
+            <% if (locals.errors && errors.password) { %>
+                <p class="msg-error"><%= errors.password.msg %></p>
+            <% } %>
+
             <form  action="/login" method="POST" class="formLogin" id="formLogin">
                 <input class="emailLogin" type="email" name="email" placeholder="E-mail" 
                 value="<%= locals.oldData ? oldData.email : null %>" required>
-                <% if (locals.errors && errors.email) { %>
-                    <p class="msg-error"><%= errors.email.msg %></p>
-                <% } %>
+               
                 <input class="passwordLogin" type="password" name="password" placeholder="Contraseña" required>
-                <% if (locals.errors && errors.password) { %>
-                    <p class="msg-error"><%= errors.password.msg %></p>
-                <% } %>
+               
                 <label class="">
                     <input type="checkbox" class="" name="remember">Recordar mi usuario
                 </label>
