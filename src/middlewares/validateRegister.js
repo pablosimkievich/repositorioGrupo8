@@ -3,8 +3,10 @@ const path = require('path');
 const { nextTick } = require('process');
 
 const validateRegister = [
-    body('nombre').notEmpty().withMessage('Debes ingresar tu nombre'),
-    body('apellido').notEmpty().withMessage('Debes ingresar tu apellido'),
+    body('nombre').notEmpty().withMessage('Debes ingresar tu nombre').bail()
+        .isLength( {min: 2} ).withMessage('El nombre debe tener al menos 2 caracteres'),
+    body('apellido').notEmpty().withMessage('Debes ingresar tu apellido')
+    .isLength( {min: 2} ).withMessage('El apellido debe tener al menos 2 caracteres'),
     body('email')
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Debes ingresar un email válido'),

@@ -153,7 +153,7 @@ const userDelete = async (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
 
-        res.redirect('/usuarios')
+        res.redirect('/')
    } catch (error) {
         console.log (error);
    }

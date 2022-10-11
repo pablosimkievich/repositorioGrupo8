@@ -3,8 +3,10 @@ const path = require('path');
 const { nextTick } = require('process');
 
 const validateUserUpdate = [
-    body('nombre').notEmpty().withMessage('Debes ingresar un nombre'),
-    body('apellido').notEmpty().withMessage('Debes ingresar un apellido'),
+    body('nombre').notEmpty().withMessage('Debes ingresar un nombre')
+    .isLength( {min: 2} ).withMessage('El nombre debe tener al menos 2 caracteres'),
+    body('apellido').notEmpty().withMessage('Debes ingresar un apellido')
+    .isLength( {min: 2} ).withMessage('El apellido debe tener al menos 2 caracteres'),
     body('email')
         .notEmpty().withMessage('Debes ingresar un email').bail()
         .isEmail().withMessage('Debes ingresar un email válido'),
