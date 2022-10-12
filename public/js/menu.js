@@ -18,7 +18,7 @@ menu.classList.toggle('mostrar')
                                         subMenu.removeAttribute('style')
                                         }else{
                                                 subMenu.classList.add('desplegar');
-                                                subMenu.style.height = "200px";
+                                                subMenu.style.height = "150px";
 
                                                 }
                                     

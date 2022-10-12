@@ -59,7 +59,7 @@ const validateCreateForm = [
             .isInt().withMessage('Debes ingresar un numero entero').bail(),
 
             body('description').notEmpty().withMessage('Debes ingresar un descripcion').bail()
-            .isLength({min:3, max:10000}).withMessage('La descripcion debe tener entre 3 y 10000 caracteres').bail(),
+            .isLength({min:20, max:10000}).withMessage('La descripcion debe tener entre 20 y 10000 caracteres').bail(),
 
 
 

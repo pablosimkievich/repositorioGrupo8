@@ -30,34 +30,68 @@
 
         <section class="product">
             <article class="product_infoPrincipal">
+
                 <div class="product_infoPrincipal_images">
+                    <div class="slides">
+                        
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+
+                        <div class="slide img-principal">
+                            <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
+                            
+                            <%if(juguete.secondary_images.image_2){%>
+                                <img class="esconderImagen" id="imagen-principal-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
+                            <% }%>
+
+                            <%if(juguete.secondary_images.image_3){%>
+                                <img  class="esconderImagen" id="imagen-principal-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
+                            <% }%>
+
+                            <% if(juguete.secondary_images.image_4){ %>
+                                <img  class="esconderImagen"  id="imagen-principal-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
+                            <%}%>
+
+                        </div>
+
+                        <div class="slide">
+                            <%if(juguete.secondary_images.image_2){%>
+                                <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
+                            <% }%>
+                        </div>
+
+                        <div class="slide">
+                            <%if(juguete.secondary_images.image_3){%>
+                                <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
+                            <% }%>
+                        </div>
+
                     
-                    <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
+                        <div class="slide">
+                            <% if(juguete.secondary_images.image_4){ %>
+                                <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
+                            <%}%>
+                        </div>
 
-                    <%if(juguete.secondary_images.image_2){%>
-                        <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
-                    <% }%>
+                        <div class="slide">
+                                <img class="imagenAdicional-5" src="/img/products/<%= juguete.principal_img %>" alt="juguete3">
+                        </div>
+              
+                      
+                        
 
-                    <%if(juguete.secondary_images.image_3){%>
-                        <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
-                    <% }%>
-                   
-                    <% if(juguete.secondary_images.image_4){ %>
-                        <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
-                    <%}%>
-                    
-
-                
-             
-
-                    <div class="dots">
-                        <i id="seleccionado" class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                        </div>
                     </div>
 
                 </div>
+
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
                         <h1 class="product-name"> <%= juguete.name %> </h1>
