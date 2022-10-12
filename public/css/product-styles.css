@@ -134,9 +134,9 @@ main {
     
 }
 section.bread-crumbs {
-    border-top: solid 2px rgb(197, 197, 197);
-    border-bottom: solid 2px rgb(197, 197, 197);
-    padding:20px;
+  /*  border-top: solid 2px rgb(197, 197, 197);
+    border-bottom: solid 2px rgb(197, 197, 197);*/
+    padding:10px;
     margin-top: 127px;
     background-color: white;
 }
@@ -189,7 +189,7 @@ ul.breadcrumbs li+li:before {
    margin-bottom: 20px;
    background-color: white;
    margin-top: 10px;
-   box-shadow: 0px 0px 10px rgb(197, 193, 193);
+   /*box-shadow: 0px 0px 10px rgb(197, 193, 193);*/
     
 }
 .product_infoPrincipal {
