@@ -29,6 +29,7 @@
     border: none;
     background-color: #AEBDCA;
     outline: none;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
 }
 
 .space {
@@ -92,6 +93,7 @@
     padding: 7px;
     margin: 3px;
     background-color: #D2DAFF;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
 }
 
 #buttonRegister button:hover {

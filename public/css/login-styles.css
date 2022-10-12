@@ -28,7 +28,7 @@
     
 }
 
-.login input {
+.login .form-input {
     display: block;
     margin: auto;
     margin-top: 20px;
@@ -40,6 +40,20 @@
     border: none;
     background-color: #AEBDCA;
     outline: none;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+}
+
+.check-box {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    width: 30%;
+    font-size: 16px;
+    border-radius: 5px;
+    min-height: 30px;
+    border: none;
+    background-color: #AEBDCA;
 }
 
 .login .links {
