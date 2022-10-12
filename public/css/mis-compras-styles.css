@@ -39,6 +39,7 @@
 .product-row {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     margin: 0px 45px;
 }
 

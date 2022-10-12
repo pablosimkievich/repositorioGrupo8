@@ -1,6 +1,4 @@
 const db = require('../database/models/index');
-// const User = require('../database/models/User');
-// const fs = require('fs');
 const { markAsUntransferable } = require('worker_threads');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
@@ -165,49 +163,61 @@ const login = (req, res) => {
 
 const processLogin = async (req, res) => {
     const resultValidation = validationResult(req);
-    errors = resultValidation.mapped();
+    let errors = resultValidation.mapped();
     oldData = req.body;
     
+   
     let userToLogin = await db.User.findOne({
         where: {
             user_mail: req.body.email
         }
     });
-    // console.log(userToLogin.password)
-    // console.log(req.body.password)
-    if(userToLogin){
-        const password = req.body.password;
-        let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
-        // console.log(passwordMatch);
-        if(passwordMatch){
-            delete userToLogin.password 
-            req.session.userLogged = userToLogin
-
-            if (req.body.remember) {
-                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
+    console.log(errors)
+    if (errors.email || errors.password) {
+        console.log(errors)
+        res.render('users/login', {    
+                errors: resultValidation.mapped(),
+                oldData: req.body
+        })
+    
+    
+    } else if (userToLogin) {
+            const password = req.body.password;
+            let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
+            
+            if(passwordMatch){
+                console.log('es el password')
+                delete userToLogin.password 
+                req.session.userLogged = userToLogin
+    
+                if (req.body.remember) {
+                    res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
+                }
+    
+                return res.redirect('/');
+    
+            } else {
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }               
+                    }, oldData: req.body
+                })
             }
-
-            return res.redirect('/');
-
-        } else {
-            res.render('users/login', {
-                errors: {
-                    password: {
-                        msg: 'Las credenciales son inválidas'
-                    }               
-                }, oldData: req.body
-            })
-        }
-    }else{
-            res.render('users/login' , {
-                errors: {
-                    email: {
-                        msg: 'El email no se encuentra registrado'
-                    }               
-                }, oldData: req.body
-            })        
+    } else {
+                res.render('users/login' , {
+                    errors: {
+                        email: {
+                            msg: 'El email no se encuentra registrado'
+                        }               
+                    }, oldData: req.body
+                })        
     }
 }
+    
+
+
 
 const logout = (req, res) => {
     res.clearCookie('userEmail');

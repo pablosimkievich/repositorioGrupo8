@@ -21,7 +21,7 @@
                         <p class="user-item">Dirección de entrega: <%= e.order_address %></p>
                         <p class="user-item">Método de Pago: <%= e.payment_method.pay_method_type %></p>
                 </div>
-                <div class="product-row" style="display: flex; flex-direction: row; justify-content: space-around;">
+                <div class="product-row">
                 <% misDetallesCompra.map(element => { %>
 
                     <% if (element.fk_order_id == e.id) { %>
