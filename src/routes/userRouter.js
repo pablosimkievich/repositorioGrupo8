@@ -5,12 +5,13 @@ const path = require('path')
 const multer = require('multer');
 const { body } = require('express-validator');
 const validateRegister = require('../middlewares/validateRegister');
+const validateLogin = require('../middlewares/validateLogin');
 const validateUserUpdate = require('../middlewares/validateUserUpdate');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { nextTick } = require('process');
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage( {
     destination: (req, file, cb) => {
         const folderPath = path.join(__dirname,'../../public/img/users');
         cb (null, folderPath);
@@ -38,7 +39,7 @@ router.get('/usuarios', userController.userList) // todos los usuarios
 router.get('/usuario/:id',  authMiddleware, userController.userDetaille) // detalle de usuario
 
 router.get('/login', guestMiddleware, userController.login); // login
-router.post('/login', userController.processLogin)
+router.post('/login', validateLogin, userController.processLogin)
 
 router.get('/registro', guestMiddleware, userController.registro);  // trae formulario registro
 router.post('/registro', uploadFile.single('fotoPerfil'), validateRegister,  userController.userCreate)  //  post de registro de usuarios graba data

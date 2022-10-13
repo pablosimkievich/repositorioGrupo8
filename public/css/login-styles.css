@@ -54,3 +54,13 @@
 .msg-error {
     color: tomato;
 }
+.errores ul {
+    
+    color: tomato;
+    justify-content: flex-start;
+    padding: 20px;
+    display: block;
+    align-items: center;
+    margin: auto;
+
+}
