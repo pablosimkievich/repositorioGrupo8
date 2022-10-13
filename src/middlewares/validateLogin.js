@@ -3,13 +3,13 @@ const path = require('path');
 const { nextTick } = require('process');
 
 const validateLogin = [
-    // body('emailLogin')
-    //     .notEmpty().withMessage('Debes ingresar tu email').bail()
-    //     .isEmail().withMessage('Debes ingresar un email válido'),
+    body('email')
+        // .notEmpty().withMessage('Debes ingresar tu email').bail()
+        .isEmail().withMessage('Debes ingresar un email válido'),
 
-    // body('passwordLogin')
-    //     .notEmpty().withMessage('Debes ingresar una contraseña').bail()
-    //     .isLength( { min: 8 } ).withMessage('La contraseña debe tener un mínimo de 8 caracteres').bail(),
+    body('password')
+        .notEmpty().withMessage('Debes ingresar una contraseña').bail()
+        .isLength( { min: 8 } ).withMessage('La contraseña debe tener un mínimo de 8 caracteres').bail(),
     // body('confirmPassword')
     //     .notEmpty().withMessage('Debes ingresar tu contraseña').bail()
     //     .custom( (value, {req} ) => {
@@ -19,5 +19,7 @@ const validateLogin = [
     //     return true;
     // }),
 ]
+
+console.log("soy el middleware de login")
 
 module.exports = validateLogin;

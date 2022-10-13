@@ -164,49 +164,71 @@ const login = (req, res) => {
 }
 
 const processLogin = async (req, res) => {
-    const resultValidation = validationResult(req);
-    errors = resultValidation.mapped();
-    oldData = req.body;
     
-    let userToLogin = await db.User.findOne({
-        where: {
-            user_mail: req.body.email
-        }
-    });
-    // console.log(userToLogin.password)
-    // console.log(req.body.password)
-    if(userToLogin){
-        const password = req.body.password;
-        let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
-        console.log(passwordMatch);
-        if(passwordMatch){
-            delete userToLogin.password 
-            req.session.userLogged = userToLogin
+    const loginValidation = validationResult(req);
+    // errors2 = loginValidation.mapped();
+    const resultValidation = validationResult(req);
+        errors = resultValidation.mapped();
+        oldData = req.body;
 
-            if (req.body.remember) {
-                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
-            }
-
-            return res.redirect('/');
-
-        } else {
-            res.render('users/login', {
-                errors: {
-                    password: {
-                        msg: 'Las credenciales son inválidas'
-                    }               
-                }, oldData: req.body
-            })
-        }
-    }else{
-            res.render('users/login' , {
-                errors: {
-                    email: {
-                        msg: 'El email no se encuentra registrado'
-                    }               
-                }, oldData: req.body
-            })        
+    if(loginValidation.errors.length > 0) {
+ 
+        res.render("users/login", {
+            errors2: resultValidation.mapped(), 
+            oldData: req.body
+        })
     }
+
+        let userToLogin = await db.User.findOne({
+            where: {
+                user_mail: req.body.email
+            }
+        });
+        // console.log(userToLogin.password)
+        // console.log(req.body.password)
+        
+        if(userToLogin){
+            const password = req.body.password;
+            let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
+            console.log(passwordMatch);
+            if(passwordMatch){
+                delete userToLogin.password 
+                req.session.userLogged = userToLogin
+    
+                if (req.body.remember) {
+                    res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
+                }
+    
+                return res.redirect('/');
+                
+    
+            } else {
+                
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }               
+                    }, oldData: req.body
+                })
+            }
+        }else{
+            
+                res.render('users/login' , {
+                    
+                    errors: {
+                        email: {
+                            msg: 'El email no se encuentra registrado'
+                        }               
+                    }, oldData: req.body,
+                    // errors2: loginValidation.mapped()
+                    
+                    
+                })     
+        } 
+        
+     
+
 }
 
 const logout = (req, res) => {

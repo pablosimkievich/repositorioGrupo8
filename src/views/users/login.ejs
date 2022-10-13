@@ -21,7 +21,17 @@
             <div class="errores">
                 <ul>                   
                 </ul>
-            </div>
+            </div>  
+            
+            <!-- Back End Validation -->
+            <% if (locals.errors2 && errors2.email) { %>
+                <p class="msg-error"><%= errors2.email.msg %></p>
+            <% } %> 
+            <% if (locals.errors2 && errors2.password) { %>
+                <p class="msg-error"><%= errors2.password.msg %></p>
+            <% } %> 
+            
+             <!-- USER validation -->
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
             <% } %> 
