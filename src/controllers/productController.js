@@ -1,7 +1,7 @@
 const { decodeBase64 } = require('bcryptjs');
 const db = require('../database/models/index');
 const op = db.Sequelize.Op;
-
+const { validationResult } = require('express-validator');
 
 
 const create = async (req, res) => {
@@ -14,8 +14,10 @@ const create = async (req, res) => {
 
 
 const saveNewProduct = async (req, res) => {
-     
-    let newProduct = {
+     validationResults = validationResult(req);
+
+    if(validationResults.isEmpty()){
+      let newProduct = {
         name: req.body.name,
         price: req.body.price,
         discount: req.body.discount,
@@ -71,6 +73,15 @@ const saveNewProduct = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+}else{
+
+  const ages = await db.Age.findAll();
+  const category = await db.Category.findAll();
+
+console.log(validationResults.mapped())
+
+  res.render("product/crearProducto", {ages, category, errors: validationResults.mapped(), oldData: req.body});
+}
 };
 
 const productList =  async (_req, res) => {
@@ -154,6 +165,9 @@ const productList =  async (_req, res) => {
      console.log(error)
        }
  };
+
+
+
  
  const edit = async (req, res) => {
   try{

@@ -7,6 +7,7 @@ const { body } = require('express-validator');
 const validateRegister = require('../middlewares/validateRegister');
 const validateLogin = require('../middlewares/validateLogin');
 const validateUserUpdate = require('../middlewares/validateUserUpdate');
+const validateReview = require('../middlewares/validateReviewForm')
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { nextTick } = require('process');
@@ -56,7 +57,7 @@ router.get('/contacto', userController.contacto);
 router.get('/mis-compras/:id', userController.misCompras) // muestra página de ordenes de compra de usuario
 
 router.get('/review-form/:id', userController.reviewForm)
-router.post('/review', userController.reviewCreate)
+router.post('/review',validateReview, userController.reviewCreate)
 
 router.get('/logout', authMiddleware, userController.logout);
 
