@@ -21,9 +21,9 @@
 }
 
 .register form input {
-    margin-top: 10px;
+    margin: 5px 5px;
     width: 30vw;
-    padding: 2px;
+    padding: 7px;
     border-radius: 5px;
     min-height: 30px;
     border: none;

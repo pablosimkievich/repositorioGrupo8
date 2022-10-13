@@ -1,5 +1,4 @@
 const db = require('../database/models/index');
-
 const op = db.Sequelize.Op;
 
 
@@ -17,7 +16,12 @@ const index = async (req, res) => {
               association: 'secondary_images'
           }
       ],
-      limit: 9
+      limit: 9,
+      order: [
+        ["price", "DESC"],
+        [ "stock", "ASC"],
+      ]
+      
   });
 
   const categorias = await db.Category.findAll();
@@ -30,27 +34,6 @@ const index = async (req, res) => {
   
 };
 
-/* const indexCategorias = async(req,res) => {
-        try{
-
-          
-          res.render('pruebaHome', {categorias});
-        }catch(error){
-                console.log(error)
-        }
-
- };
-
- const indexEdad = async (req, res) => {
-    try {
-       
-
-        res.render('porEdad', {edadesRecomendadas});
-
-    } catch(error) {
-        console.log(error);
-    }
- }; */
  
  const searchByUser = async (req, res) => {
     try {

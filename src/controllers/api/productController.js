@@ -23,7 +23,7 @@ const getTheToys = async (req, res) => {
                 category: e.category.category_name,
                 age: e.ages.recommended_age,
                 description: e.description,
-                detail: `http://localhost:3000/api/products/${e.id}`
+                detail: `http://localhost:3001/api/products/${e.id}`
                 }
         })
 
@@ -96,7 +96,7 @@ const getTheToyDetail = async (req, res) => {
             width: productDetail.width,
             weight: productDetail.weight,
             stock: productDetail.stock,
-            img: `http://localhost:3000/../../../img/products/${productDetail.principal_img}`,
+            img: `http://localhost:3001/../../../img/products/${productDetail.principal_img}`,
     
             };
 

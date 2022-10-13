@@ -171,8 +171,11 @@
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-    background-color: white;
-    /*background-color: #e4faf0;*/
+    background-color: #54BAB9;
+    /* background-color: #e4faf0; */
+    border-radius: 5px;
+    border: none;
+    outline: none;
   }
 
   .header-search button {
@@ -216,12 +219,12 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    width: 40px;
+    width: 100px;
     text-decoration: none;
  }
  
  .userLogged-style img {
-     width: 70%
+     max-width: 50px;
  }
  
  .userLogged-style a {

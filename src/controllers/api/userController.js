@@ -11,7 +11,7 @@ const getUsers = async (_req, res) => {
                 name: e.user_first_name + ' ' + e.user_last_name,
                 email: e.user_mail,
 
-                detail: `http://localhost:3000/api/users/${e.id}`
+                detail: `http://localhost:3001/api/users/${e.id}`
                 }
         })
         const count = await db.User.count()
@@ -30,7 +30,7 @@ const userDetail = async (req, res) => {
         let userDetail = await db.User.findByPk(id, {
             include: [
                 {
-                    association: 'order-detail'
+                    association: 'order_detail'
                 },
                 {
                     association: 'reviews'
@@ -42,7 +42,7 @@ const userDetail = async (req, res) => {
                 id: id,
                 name: userDetail.user_first_name + " " + userDetail.user_last_name,
                 email: userDetail.user_mail,
-                img: `http://localhost:3000/../../../img/users/${userDetail.user_img}`,
+                img: `http://localhost:3001/../../../img/users/${userDetail.user_img}`,
                 address: userDetail.user_address,
                 dni: userDetail.dni,
                 cel: userDetail.user_cel 

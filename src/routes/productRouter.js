@@ -22,7 +22,7 @@ router.get('/juguetes/:id', productController.productDetail);
 /********CREATE A PRODUCT***********/
 
 router.get('/crear-producto', onlyAdminMiddleware, productController.create );
-router.post('/crear-producto', productController.saveNewProduct );
+router.post('/crear-producto', validateCreateForm, productController.saveNewProduct );
 
  
 /********EDIT A PRODUCT***********/
