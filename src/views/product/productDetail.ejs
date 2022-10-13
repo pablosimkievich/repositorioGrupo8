@@ -105,7 +105,7 @@
 
                         <form action="/" method="post">
                             <input type="text" name="cp" placeholder="Tu codigo postal">
-                            <button type="submit" ">CALCULAR</button>                
+                            <button type="submit">CALCULAR</button>                
                                 </form>
                                 <a href=" https://codigopostal.com.ar/">No se mi CP</a>
                 </div>
@@ -163,10 +163,9 @@
                    
                     <article class="product_masInfo">
                             <div class='review-user-info'>
-                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar">
-                                <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
+                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar" width="50">
+                                <p>  <%=e.users.user_first_name + " " + e.users.user_last_name%></p><br>
                             </div>          
-
                 <div class="stars-outer">
                     <div class="stars-inner" style ="width:<%= e.rating %>%">
                     </div>
@@ -181,7 +180,9 @@
 
     </section>
     </main>
-
+    <div>
+        <%- include('../partials/whatsappButton.ejs') %>
+    </div>
        
     </body>
 

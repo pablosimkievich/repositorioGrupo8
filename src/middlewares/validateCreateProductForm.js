@@ -60,11 +60,6 @@ const validateCreateForm = [
 
             body('description').notEmpty().withMessage('Debes ingresar un descripcion').bail()
             .isLength({min:20, max:10000}).withMessage('La descripcion debe tener entre 20 y 10000 caracteres').bail(),
-
-
-
-                
-
 ]
 
 

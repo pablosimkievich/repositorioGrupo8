@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tahoma;
+    /* font-family: cursive; */
+    font-weight: 400;
+}
+
+.detail-title {
+    text-align: center;
+    background-color: #fff;
+    margin: 25px 5px;
+    font-size: 2em;
+}
+
+.toy-image {
+    width: 230px;
+    margin: 5px 45px;
+}
+
+.review-product-title {
+    text-align: center;
+    margin: 15px 25px;
+    font-size: 2em;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 45px;
+    padding: 25px;
+    background-color: #e9ff70;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.card-item {
+    margin: 5px 0;
+}
+
+.review-data {
+    margin: 5px 0;
+    padding: 15px 0;
+}
+
+.product-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image img {
+    border-radius: 8px;
+}

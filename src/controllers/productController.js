@@ -158,7 +158,7 @@ const productList =  async (_req, res) => {
 
        res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList});  
      }else {
-       res.send("No existe el juguete");
+      res.send(`No existe el juguete nro. ${req.params.id}`);
      };
  
    } catch(error){
@@ -169,11 +169,23 @@ const productList =  async (_req, res) => {
 
 
  
- const edit = async (req, res) => {
+ 
+const edit = async (req, res) => {
   try{
- let jugueteEdit = await db.Product.findByPk(req.params.id) 
- res.render("product/edit-form", { jugueteEdit });
- }catch(error){
+ let jugueteEdit = await db.Product.findByPk(req.params.id, {
+   include: [
+     {
+       association: 'secondary_images'
+     }
+   ]
+ }) 
+   if (jugueteEdit) {
+     res.render("product/editForm", { jugueteEdit });
+   } else {
+     res.send(`No existe el juguete nro. ${req.params.id}`)
+   }
+
+ } catch(error) {
    alert(error)
  }
  };
@@ -289,7 +301,7 @@ const deleteProduct = async (req, res) => {
                          }
                         });
     
-          res.redirect('/productPanel')
+          res.redirect('/product-panel')
     } catch(error){
             console.log(error)
                 };

@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/review-list-styles.css">
+    <title>Rayuela</title>
 </head>
 <body>
-    <h1>Soy review product list</h1>
+    <h1 class="list-title">Review Product List</h1>
+    <div class="list-container">
+        <% allTheReviews.map(e => { %>
 
-    <% allTheReviews.map(e => { %>
-
-        <div style="background-color: rgb(152, 248, 248);">
-        <a href="/review-product-detail/<%= e.product_fk_id %>" style="text-decoration: none;"> 
-        <p>ID de Review: <%= e.id %></p>
-        <p>Rating de la Review: <%= e.rating %></p>
-        <p>Titulo de la review: <%= e.review_title %></p>
-        <p>Review: <%= e.review %></p>
-        <p>Id del producto: <%= e.product_fk_id %></p>
-        <p>Detalle de Compra Nro. :<%= e.order_detail_fk_id %></p>
-        <p>Nombre del juguete: <%= e.products.name %></p>
-        <img src="/img/products/<%= e.products.principal_img %>" style="max-width: 100px;"> <br>
-        </a>
-        <span></span>
-        </div>
-    <% }) %>
+            <div class="item-card">
+            <a class="item-anchor" href="/review-product-detail/<%= e.product_fk_id %>" style="text-decoration: none;" > 
+            <p class="items">ID de Review: <%= e.id %></p>
+            <img src="/img/users/<%= e.users.user_img %>" alt="usrr" class="image-items">
+            <p class="items">Rating de la Review: <%= e.rating %></p>
+            <p class="items">Titulo de la review: <%= e.review_title %></p>
+            <p class="items">Review: <%= e.review %></p>
+            <p class="items">Id del producto: <%= e.product_fk_id %></p>
+            <p class="items">Detalle de Compra Nro. :<%= e.order_detail_fk_id %></p>
+            <p class="items">Nombre del juguete: <%= e.products.name %></p>
+            <img src="/img/products/<%= e.products.principal_img %>"  class="image-items"> <br>
+            </a>
+            <span></span>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>
