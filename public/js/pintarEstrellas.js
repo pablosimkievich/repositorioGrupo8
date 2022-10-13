@@ -14,14 +14,14 @@ window.addEventListener('load',function(){
     button.addEventListener('click', (e)=>{   
 
         let inputRating = document.querySelector('#rating-input')
-        //let titulo = document.querySelector('#titulo-input')
-        //let review = document.querySelector('#review-input')
+        let titulo = document.querySelector('#titulo-input')
+        let review = document.querySelector('#review-input')
 
         let errores =[];
         let erroresUl = document.querySelector('div.erroresFront ul')
        
 
-       while (erroresDiv.firstChild) {
+       while (erroresUl.firstChild) {
           erroresUl.removeChild(erroresUl.firstChild);
       }
 
@@ -34,21 +34,21 @@ window.addEventListener('load',function(){
                   errores.push('Debes ingresar un numero del 0 al 100')
                   console.log(errores)
                       }
-        
-      /*  if(titulo.value = ""){
+      
+        if(titulo.value == ""){
           errores.push('el campo de titulo debe estar completo')
         }
       if(titulo.value.length < 3){
           errores.push("El titulo tiene que tener al menos 3 caracteres")
         }
 
-        if(review.value = null){
+        if(review.value == ''){
           errores.push("el campo de review no puede estar vacio")
         }
         if(review.value.length < 5){
           errores.push("El comentario tiene que tener al menos 5 caracteres")
         }
-        */
+        
        
         if(errores.length>0){
           e.preventDefault();
