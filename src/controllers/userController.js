@@ -1,20 +1,18 @@
 const db = require('../database/models/index');
-// const User = require('../database/models/User');
-// const fs = require('fs');
 const { markAsUntransferable } = require('worker_threads');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const op = db.Sequelize.Op;
 
-const userList = async (req, res) => {
+/* const userList = async (req, res) => {
     try {
         const allUsers = await db.User.findAll()
         res.render('users/userList', {allUsers})
     } catch (error) {
         console.log(error);
     }
-}
+} */
 
 const userDetaille = async (req, res) => {
     try {
@@ -153,7 +151,7 @@ const userDelete = async (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
 
-        res.redirect('/usuarios')
+        res.redirect('/')
    } catch (error) {
         console.log (error);
    }
@@ -163,50 +161,65 @@ const login = (req, res) => {
     res.render('users/login')
 }
 
+
 const processLogin = async (req, res) => {
     const resultValidation = validationResult(req);
-    errors = resultValidation.mapped();
+    let errors = resultValidation.mapped();
     oldData = req.body;
     
+   
     let userToLogin = await db.User.findOne({
         where: {
             user_mail: req.body.email
         }
     });
+    console.log(errors)
+    if (errors.email || errors.password) {
+        console.log(errors)
+        res.render('users/login', {    
+                errors: resultValidation.mapped(),
+                oldData: req.body
+        })
     
-    if(userToLogin){
-        const password = req.body.password;
-        let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
-        console.log(passwordMatch);
-        if(passwordMatch){
-            delete userToLogin.password 
-            req.session.userLogged = userToLogin
-
-            if (req.body.remember) {
-                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
+    
+    } else if (userToLogin) {
+            const password = req.body.password;
+            let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
+            
+            if(passwordMatch){
+                console.log('es el password')
+                delete userToLogin.password 
+                req.session.userLogged = userToLogin
+    
+                if (req.body.remember) {
+                    res.cookie('userEmail', req.body.email, {maxAge: 1000 * 120});   
+                }
+    
+                return res.redirect('/');
+    
+            } else {
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }               
+                    }, oldData: req.body
+                })
             }
-
-            return res.redirect('/');
-
-        } else {
-            res.render('users/login', {
-                errors: {
-                    password: {
-                        msg: 'Las credenciales son inválidas'
-                    }               
-                }, oldData: req.body
-            })
-        }
-    }else{
-            res.render('users/login' , {
-                errors: {
-                    email: {
-                        msg: 'El email no se encuentra registrado'
-                    }               
-                }, oldData: req.body
-            })        
+    } else {
+                res.render('users/login' , {
+                    errors: {
+                        email: {
+                            msg: 'El email no se encuentra registrado'
+                        }               
+                    }, oldData: req.body
+                })        
     }
 }
+    
+    
+
+
 
 const logout = (req, res) => {
     res.clearCookie('userEmail');
@@ -274,6 +287,7 @@ const misCompras = async (req, res) => {
             res.send(`No has realizado compras todavía, ususario Nro. : ${id} `)
         }
     } catch(error) {
+        console.log(error)
 
     }
     
@@ -308,28 +322,66 @@ const reviewForm = async (req, res) => {
 };
 
 const reviewCreate = async (req, res) => {
+    let resultValidation = validationResult(req);
+   
+        if(resultValidation.isEmpty()){
+            try {
 
-    try {
+                    let newReview = {
+                        order_detail_fk_id: req.body.order_detail_fk_id,
+                        product_fk_id: req.body.product_fk_id,
+                        review_title: req.body.review_title,
+                        review: req.body.review,
+                        rating: req.body.rating,
+                        userr_fk_id: req.body.userr_fk_id
+                    } 
+                    console.log(newReview)
+                 await db.Review.create(newReview);
+    
+                res.redirect('/')
+                } catch(error) {
+                    console.log(error);
+                  }
+        }else{
+            try {
+                const id = req.body.id;
+                console.log(id)
+                const myOrderDetail = await db.OrderDetail.findByPk(id,{
+                    include: [
+                        {
+                            association: 'products'
+                        },
+                        {
+                            association: 'users'
+                        }
+                    ]
+                })
+                if (myOrderDetail) {
+                    res.render('users/reviewForm', {myOrderDetail, errors: resultValidation.mapped(), old: req.body})
+                } else {
+                    res.send(`No existe el detalle de compra Nro.: ${id}`)
+                }
+        
+               
+        
+                
+        
+            } catch(error) {
+                console.log(error)
+            }
+           
+           
+            
+           
+            
+        }
 
-        let newReview = {
-            order_detail_fk_id: req.body.order_detail_fk_id,
-            product_fk_id: req.body.product_fk_id,
-            review_title: req.body.review_title,
-            review: req.body.review,
-            rating: req.body.rating,
-            userr_fk_id: req.body.userr_fk_id
-        } 
-        console.log(newReview)
-        await db.Review.create(newReview);
 
-        res.redirect('/')
-    } catch(error) {
-        comsole.log(error);
-    }
-}
+     }
+
+    
 
 module.exports = {
-    userList,
     userDetaille, 
     registro,
     userCreate,

@@ -9,7 +9,8 @@
 }
 
 footer {
-    background-color:#C2DED1;
+    /* background-color:#C2DED1;   */
+    background-color: #7895B2;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -17,6 +18,11 @@ footer {
     width:100%;
     padding:15px;
 }
+
+.footer-container {
+    max-height: 120px;
+}
+
 
 ul  {
     text-decoration: none;
@@ -27,24 +33,26 @@ ul  {
 }
 
 #footer-logo {
-    width: 200px;
-    /* display: flex; */
-    /* align-items: flex-start; */
+    width: 100px;
+    display: flex; 
+    align-items: flex-start; 
+    display: none;
 }
 
 .lista-footer {
     display: flex;
     /* background-color: red; */
     flex-wrap: nowrap;
-    justify-content: space-between;
-    color: #7D7D7D;
+    justify-content: center;
+    /* color: #7D7D7D; */
+    color: #182747;
     text-decoration: none;
     align-items: center;
     width: 90%;
 }
 
 
-footer ul li a {
+footer div div a {
     list-style: none;
     text-decoration: none;
     margin: 5px;
@@ -66,46 +74,128 @@ footer ul li a {
     text-decoration: none;
 }
 
-.lista-redes li {
+.lista-redes div {
     width: 25%;
     font-size: 1rem;
     text-decoration: none;
 
 }
 
-.lista-medios-pago li { 
+.lista-medios-pago div { 
     width: 25%;
     font-size: 2rem;
-    color: #7D7D7D;
+    color: #182747;
     text-decoration: none;
 }
 
-.lista-redes li img {
+.lista-redes div img {
     width: 40px;
 }
 
-.lista-medios-pago li img {
+.lista-medios-pago div img {
     width: 40px;
     margin: 3px;
 }
 
-.lista-footer li {
+.lista-footer div {
     margin: 8px 4px;
-    color: #7D7D7D;
+    color: #182747;
     text-decoration: none;
 }
 
 ul li h4 {
     text-align: center;
-    color: #7D7D7D;
+    color: #182747;
     font-size: 25px;
     justify-content: center;
 
 }
 
-ul li h5 {
+div div  h5 {
     font-size: 20px ;
+    justify-content: center;
 }
+
+
+div .lista-medios-pago div img {
+    width: 40px;
+    margin: 3px;
+}
+
+div .lista-footer div {
+    margin: 8px 4px;
+    color: #182747;
+    font-style: bold;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+div div h5 {
+    font-size: 14px ;
+
+}
+
+
+
+.lista-redes div {
+    width: 25%;
+    font-size: 1rem;
+    text-decoration: none;
+
+}
+
+.lista-medios-pago div { 
+    width: 25%;
+    font-size: 2rem;
+    color: #182747;
+    text-decoration: none;
+}
+
+.lista-redes div img {
+    width: 40px;
+}
+
+div .redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+
+div .medios-de-pago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.title_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.title_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_ciudad {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px 150px;
+}
+
+
 
 @media (max-width:870px) {
     ul li h5 {
@@ -121,4 +211,7 @@ ul li h5 {
         width: 90%;
     }
 }
+
+
+
 

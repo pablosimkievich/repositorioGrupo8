@@ -125,29 +125,7 @@ const userDetaille = async (req, res) => {
 };
 
 
-const productList = async (req, res) => {
-    try {
 
-        const allTheProducts = await db.Product.findAll({
-            include: [
-                {
-                    association: 'category'
-                },
-                {
-                    association: 'ages'
-                },
-                {
-                    association: 'secondary_images'
-                },
-            ]
-        })
-
-        res.render('admin/productos', {allTheProducts});
-        
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 const reviewList = async (req, res) => {
 
@@ -159,6 +137,9 @@ const reviewList = async (req, res) => {
                 },
                 {
                     association: 'order_detail'
+                },
+                {
+                    association: 'users'
                 }
             ]
         });
@@ -190,6 +171,9 @@ const reviewDetail = async (req, res) => {
             include: [
                 {
                     association: 'products'
+                },
+                {
+                    association: 'users'
                 }
             ]
             
@@ -252,13 +236,24 @@ const productOrders = async (req, res) => {
     }
 }
 
+const controlPanel = (req, res) => {
+    res.render('admin/controlPanel')
+};
+
+const adminLogout = (req, res) => {
+    // res.clearCookie('userEmail');  //  logout desactivado por fines prácticos
+    // req.session.destroy();
+    return res.redirect('/');
+}
+
 module.exports = {
     orderList,
     orderDetail,
     userList,
     userDetaille,
-    productList,
     reviewList,
     reviewDetail,
-    productOrders
+    productOrders,
+    controlPanel,
+    adminLogout
 }

@@ -4,54 +4,69 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+        <link rel="stylesheet" href="/css/product-create-styles.css" title="cont">
         <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
         <title>Crear Juguete</title>
         <link rel="icon" href="/img/logo-icono.png">
     </head>
 <body>
    <main class="main__form">
-    <form action="../crearProducto" method="POST" class="create-form">
+    <form action="/crear-producto" method="POST" class="create-form">
         <div class="form-logo">
         <img id="logo" src="/img/logo5.png" alt="logo">
     </div>
-        <div class="control-formulario">
-            <label for="nombre-producto">Nombre del producto</label>
-            <input type="text" name="name" class="input-control" required>
-        </div>
-        <div class="control-formulario">
-            <label for="precio">Precio</label>
-            <input type="number" name="price" class="input-control" required>
-        </div>
-       
+
+    <div class="control-formulario">
+        <label for="nombre-producto">Nombre del producto</label>
+        <input type="text" name="name" class="input-control" required value="<%=(locals.oldData && oldData.name)?oldData.name:null%>">
+                    <%if(locals.errors && errors.name){%>
+                        <p class="errors"><%= errors.name.msg %></p>
+                    <%}%>
+    </div>
+
+
+    <div class="control-formulario">        
+        <label for="precio">Precio</label>
+        <input type="number" name="price" class="input-control" required value="<%=(locals.oldData && oldData.price)?oldData.price:null%>">
+        <%if(locals.errors && errors.price){%>
+            <p class="errors"><%= errors.price.msg %></p>
+        <%}%>
+    </div>
+            
 
         <div class="control-formulario">   
             <label for="descuento">Descuento a aplicar</label>
-            <input type="number" name="discount" class="input-control">
+            <input type="number" name="discount" class="input-control" value="<%=(locals.oldData && oldData.discount)? oldData.discount : null%>">
+            <%if(locals.errors && errors.discount){%>
+                <p class="errors"><%= errors.discount.msg %></p>
+            <%}%>
         </div>
 
         <div class="control-formulario">
             <label for="materiales">Materiales</label><br>
-            <input type="text" name="materials" class="input-control" >
+            <input type="text" name="materials" class="input-control" value="<%=(locals.oldData && oldData.materials)? oldData.materials : null%>">
+            <%if(locals.errors && errors.materials){%>
+                <p class="errors"><%= errors.materials.msg %></p>
+            <%}%>
         </div>
 
         <div class="control-formulario">
             <label>Categorias</label>
             <select name="category_id" class="input-control" >
-                <option value="1">Sensoriales</option>
-                <option value="2">Musicales</option>
-                <option value="3">Ingenio</option>
-                <option value="4">Movimientos</option>
+                <option value="1" <%=(locals.oldData && oldData.category_id == 1)? 'selected' : null %> >Sensoriales</option>
+                <option value="2" <%=(locals.oldData && oldData.category_id == 2)? 'selected' : null %> >Musicales</option>
+                <option value="3" <%=(locals.oldData && oldData.category_id == 3)? 'selected' : null %> >Ingenio</option>
+                <option value="4" <%=(locals.oldData && oldData.category_id == 4)? 'selected' : null %> >Movimientos</option>
             </select>
         </div>
 
         <div class="control-formulario" id="form-edad-recomendada">
             <label>Edad recomendada</label>
             <select name="age_id" class="input-control" >
-                <option value="1">De 6 meses a 1 año</option>
-                <option value="2">De 1 año a 3 años</option>
-                <option value="3">De 3 a 6 años"</option>
-                <option value="4">Mas de 6 años</option>
+                <option value="1" <%=(locals.oldData && oldData.age_id == 1)? 'selected' : null %>>De 6 meses a 1 año</option>
+                <option value="2" <%=(locals.oldData && oldData.age_id == 2)? 'selected' : null %>>De 1 año a 3 años</option>
+                <option value="3" <%=(locals.oldData && oldData.age_id == 3)? 'selected' : null %>>De 3 a 6 años"</option>
+                <option value="4" <%=(locals.oldData && oldData.age_id == 4)? 'selected' : null %>>Mas de 6 años</option>
             </select>
         </div>
 
@@ -59,32 +74,59 @@
 
         <div class="control-formulario" id="form-images">
             <label for="imagen-producto">Seleccionar la imagen principal</label>
-            <input type="file" name="principal_img" class="control" accept="image/jpg, image/png"></>
+            <input type="file" name="principal_img" class="control"></>
+            <%if(locals.errors && errors.principal_img){%>
+                <p class="errors"><%= errors.principal_img.msg %></p>
+            <%}%>
+
+
         </div>
 
         <div class="control-formulario" id="form-images">
             <label for="imagen-producto">Seleccionar imagenes adicionales</label>
-            <input type="file" name="secondary_img" class="control" multiple ></> 
+            <input type="file" name="secondary_img" class="control" multiple ></>
+            <%if(locals.errors && errors.secondary_img){%>
+                <p class="errors"><%= errors.secondary_img.msg %></p>
+            <%}%> 
+           
         </div> 
 
         
 
         <div class="control-formulario">
             <label for="dimensiones">Dimensiones en cm:</label><br>
-            <label><input type="number" name="width" class="medidas"> <br> Ancho</label><br>
-           <label><input type="number" name="height" class="medidas"> <br> Altura</label><br>
-            <label><input type="number" name="depth" class="medidas"> <br> Profundidad</label><br><br>
-            <label>Peso: <br> <input type="number" name="weight" class="medidas"> Kg <br> </label>
+            <label><input type="number" name="width" class="medidas" value="<%=(locals.oldData && oldData.width)? oldData.width : null%>"> <br> Ancho</label><br>
+            <%if(locals.errors && errors.width){%>
+                <p class="errors"><%= errors.width.msg %></p>
+            <%}%> 
+           <label><input type="number" name="height" class="medidas" value="<%=(locals.oldData && oldData.height)? oldData.height : null%>"> <br> Altura</label><br>
+           <%if(locals.errors && errors.height){%>
+            <p class="errors"><%= errors.height.msg %></p>
+        <%}%> 
+            <label><input type="number" name="depth" class="medidas" value="<%=(locals.oldData && oldData.depth)? oldData.depth: null%>"> <br> Profundidad</label><br><br>
+            <%if(locals.errors && errors.depth){%>
+                <p class="errors"><%= errors.depth.msg %></p>
+            <%}%> 
+            <label>Peso: <br> <input type="number" name="weight" class="medidas" value="<%=(locals.oldData && oldData.weight)? oldData.weight : null%>"> Kg <br> </label>
+            <%if(locals.errors && errors.weight){%>
+                <p class="errors"><%= errors.weight.msg %></p>
+            <%}%> 
         </div>
        
         <div>
             <label for="stock" class="stock-label medidas">Stock del Producto:</label>
-            <input type="number" name="stock" class="stock-input">
+            <input type="number" name="stock" class="stock-input" value="<%=(locals.oldData && oldData.stock)? oldData.stock: null%>">
+            <%if(locals.errors && errors.stock){%>
+                <p class="errors"><%= errors.stock.msg %></p>
+            <%}%>
         </div>
        
         <div class="control-formulario" id="form-description">
             <label id="descripcion">Descripcion del producto</label>
-            <textarea name="description" class="textarea" placeholder="Descricion del juguete"></textarea>
+            <textarea name="description" class="textarea" value='<%=(locals.oldData && oldData.description)? oldData.description:null%>' placeholder="Descricion del juguete"></textarea>
+            <%if(locals.errors && errors.description){%>
+                <p class="errors"><%= errors.description.msg %></p>
+            <%}%>
         </div>
         
         <div class="form-buttons">
