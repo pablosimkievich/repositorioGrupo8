@@ -12,6 +12,9 @@ const getTheToys = async (req, res) => {
                 },
                 {
                     association: 'ages'
+                },
+                {
+                    association: 'reviews'
                 }
             ]
         })
@@ -20,11 +23,14 @@ const getTheToys = async (req, res) => {
             return {
                 id: e.id,
                 name: e.name,
+                price: e.price,
                 category: e.category.category_name,
+                reviews: e.reviews,
+                ratings: e.reviews.map(e=>e.rating),
                 age: e.ages.recommended_age,
                 description: e.description,
                 img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-                detail: `http://localhost:3001/api/products/${e.id}`
+                detail: `http://localhost:3001/juguetes/${e.id}`
                 }
         })
 
