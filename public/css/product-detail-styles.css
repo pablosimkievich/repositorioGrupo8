@@ -135,9 +135,9 @@ main {
 }
 section.bread-crumbs {
   /*  border-top: solid 2px rgb(197, 197, 197);
-    border-bottom: solid 2px rgb(197, 197, 197);*/
-    padding:10px;
-    margin-top: 127px;
+    border-bottom: solid 2px rgb(197, 197, 197);
+    padding:10px;*/
+    margin-top: 150px;
     background-color: white;
 }
 
@@ -160,7 +160,7 @@ ul.breadcrumbs li a {
     color: rgb(124, 124, 124);
     transition-property: all;
     transition-duration: all 1s;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 ul.breadcrumbs li+li:before {
@@ -259,20 +259,7 @@ ul.breadcrumbs li+li:before {
     display: none;
 }
 
-div.dots{
-    display:flex;
-    justify-content: center;
-}
 
-.dots input{
-    border: 2px solid  rgb(112, 108, 108);
-    padding: 5px;
-    margin:10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition:1s;
-    
-}
 
 
 
@@ -333,7 +320,10 @@ span.reviews{
     
   }
 
-
+form.add-to-cart{
+  justify-content: center;
+    display: flex;
+}
 .add-to-cart-button {
     background-color: rgb(45, 185, 138);
     font-size: 18px;
