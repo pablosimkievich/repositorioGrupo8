@@ -210,10 +210,6 @@ ul.breadcrumbs li+li:before {
     position: relative;
     z-index: 80;
     overflow: hidden;
-    
-    
-   
-
 }
 .imagen-principal{
     width:100%;
@@ -231,21 +227,7 @@ ul.breadcrumbs li+li:before {
 .imagenAdicional-5{
     display:none;
 }
-/*
-.slides{
-    height:100%;
-    display: flex;
-    flex-direction: row;
-   
-}
-/*
-.slides input{
-    display: none;
-}
-.slide{
-    width: 20%;
-    transition:1s;
-}*/
+
 .product_infoPrincipal_images img {
         width:100%;
         margin: 5px;        
@@ -259,17 +241,8 @@ ul.breadcrumbs li+li:before {
     display: none;
 }
 
-
-
-
-
-
-
-
-
-
 .product_infoPrincipal_productInfo h1 {
-    font-size: 40px;
+    font-size: 3rem;
     margin-top: 5px;
     margin-bottom: 0;
     text-align: center;
@@ -374,7 +347,7 @@ form.add-to-cart{
 }
 
 
-
+/*
 .productInfo_envio {
     display:flex;
     flex-direction:column;
@@ -439,6 +412,7 @@ form.add-to-cart{
     text-align: left;
     margin-bottom: 10px;
 }
+*/
 .product_masInfo {
     color: rgb(168, 165, 165);
     margin-bottom: 10px;
@@ -724,10 +698,14 @@ flex-direction: row;
         width: 500px;
         border-radius: 10px;
     }
-    section.bread-crumbs {
-       
-        margin-top: 200px;
+    section.bread-crumbs {     
+        margin-top: 150px;
      
+    }
+
+
+    .product{
+        width:80%;
     }
 .product_infoPrincipal{
     flex-direction: row;
@@ -805,23 +783,21 @@ flex-direction: row;
             cursor:pointer;
         }
 
-        div.dots{
-            display:none;
-        }
-
+        
         
 .product_infoPrincipal_productInfo{
-    width:45%
+    width:45%;
+    justify-content: flex-start;
 }
         .productInfo_info {
-            height: 60%;
+            height: 100%;
             display:flex;
             flex-direction:column;
             justify-content: center;
         }
-        .productInfo_info h1{
-            font-size: 55px;
-        }
+       
+
+
         .productInfo_envio{
             height: 40%;
             margin:0;
@@ -936,7 +912,12 @@ flex-direction: row;
 
         width: 600px;
     }
+    ul.breadcrumbs{
+        justify-content: flex-start;
+       
+    }
     .product{
+        width:65%;
         max-width: 1000px;
     }
        
