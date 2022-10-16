@@ -1,20 +1,18 @@
 const db = require('../database/models/index');
-// const User = require('../database/models/User');
-// const fs = require('fs');
 const { markAsUntransferable } = require('worker_threads');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const op = db.Sequelize.Op;
 
-const userList = async (req, res) => {
+/* const userList = async (req, res) => {
     try {
         const allUsers = await db.User.findAll()
         res.render('users/userList', {allUsers})
     } catch (error) {
         console.log(error);
     }
-}
+} */
 
 const userDetaille = async (req, res) => {
     try {
@@ -153,7 +151,7 @@ const userDelete = async (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
 
-        res.redirect('/usuarios')
+        res.redirect('/')
    } catch (error) {
         console.log (error);
    }
@@ -163,35 +161,33 @@ const login = (req, res) => {
     res.render('users/login')
 }
 
+
 const processLogin = async (req, res) => {
-    
-    const loginValidation = validationResult(req);
-    // errors2 = loginValidation.mapped();
     const resultValidation = validationResult(req);
-        errors = resultValidation.mapped();
-        oldData = req.body;
-
-    if(loginValidation.errors.length > 0) {
- 
-        res.render("users/login", {
-            errors2: resultValidation.mapped(), 
-            oldData: req.body
+    let errors = resultValidation.mapped();
+    oldData = req.body;
+    
+   
+    let userToLogin = await db.User.findOne({
+        where: {
+            user_mail: req.body.email
+        }
+    });
+    console.log(errors)
+    if (errors.email || errors.password) {
+        console.log(errors)
+        res.render('users/login', {    
+                errors: resultValidation.mapped(),
+                oldData: req.body
         })
-    }
-
-        let userToLogin = await db.User.findOne({
-            where: {
-                user_mail: req.body.email
-            }
-        });
-        // console.log(userToLogin.password)
-        // console.log(req.body.password)
-        
-        if(userToLogin){
+    
+    
+    } else if (userToLogin) {
             const password = req.body.password;
             let passwordMatch = bcrypt.compareSync(password, userToLogin.password);
-            console.log(passwordMatch);
+            
             if(passwordMatch){
+                console.log('es el password')
                 delete userToLogin.password 
                 req.session.userLogged = userToLogin
     
@@ -200,10 +196,8 @@ const processLogin = async (req, res) => {
                 }
     
                 return res.redirect('/');
-                
     
             } else {
-                
                 res.render('users/login', {
                     errors: {
                         password: {
@@ -212,24 +206,20 @@ const processLogin = async (req, res) => {
                     }, oldData: req.body
                 })
             }
-        }else{
-            
+    } else {
                 res.render('users/login' , {
-                    
                     errors: {
                         email: {
                             msg: 'El email no se encuentra registrado'
                         }               
-                    }, oldData: req.body,
-                    // errors2: loginValidation.mapped()
-                    
-                    
-                })     
-        } 
-        
-     
-
+                    }, oldData: req.body
+                })        
+    }
 }
+    
+    
+
+
 
 const logout = (req, res) => {
     res.clearCookie('userEmail');
@@ -392,7 +382,6 @@ const reviewCreate = async (req, res) => {
     
 
 module.exports = {
-    userList,
     userDetaille, 
     registro,
     userCreate,

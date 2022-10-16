@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+        <link rel="stylesheet" href="/css/product-detail-styles.css" title="cont">
         <link rel="stylesheet" href="/css/whatsapp.css">
 
 
@@ -92,7 +92,7 @@
                      
                         <h2 class="precio">$ <%= juguete.price %> </h2>
                         <form class="add-to-cart" method="POST" action="/add-to-cart">
-                            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
+                            <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
                         </form>
                     </span>
@@ -105,7 +105,7 @@
 
                         <form action="/" method="post">
                             <input type="text" name="cp" placeholder="Tu codigo postal">
-                            <button type="submit" ">CALCULAR</button>                
+                            <button type="submit">CALCULAR</button>                
                                 </form>
                                 <a href=" https://codigopostal.com.ar/">No se mi CP</a>
                 </div>
@@ -143,7 +143,7 @@
                     <img src="/img/products/<%=e.principal_img%>" alt="juguete1">
                 <h3><%= e.name %></h3>
                 <p class="precio-card"><%= e.price %></p>
-                <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
+                <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
                     CARRITO</button>
                 </a>
             </article>
@@ -163,10 +163,9 @@
                    
                     <article class="product_masInfo">
                             <div class='review-user-info'>
-                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar">
-                                <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
+                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar" width="50">
+                                <p>  <%=e.users.user_first_name + " " + e.users.user_last_name%></p><br>
                             </div>          
-
                 <div class="stars-outer">
                     <div class="stars-inner" style ="width:<%= e.rating %>%">
                     </div>
@@ -181,7 +180,9 @@
 
     </section>
     </main>
-
+    <div>
+        <%- include('../partials/whatsappButton.ejs') %>
+    </div>
        
     </body>
 

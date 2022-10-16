@@ -4,49 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/mis-compras-styles.css">
+    <title>Rayuela</title>
 </head>
 <body>
-    <h1>Soy mis ordenes de compra (x usuario)</h1>
+    <h1 class="mis-compras-title">Mis ordenes de compra</h1>
 
-    <% misOrdenesCompra.map(e => { %>
-
-        <p>Usuario: <%= e.users.user_first_name %> <%= e.users.user_last_name %></p>
-        <img src="/img/users/<%= e.users.user_img %>" style="max-width: 100px;">
-        <p>Orden de compra Nro. : <%= e.id %></p>
-        <p>Monto de la compra: <%= e.order_total_amt %></p>
-        <p>Fecha de compra: <%= e.order_date %></p>
-        <p>Status de la compra: <%= e.order_status %></p>
-        <p>Dirección de entrega: <%= e.order_address %></p>
-        <p>Método de Pago: <%= e.payment_method.pay_method_type %></p>
-
-        <div style="display: flex; flex-direction: row; justify-content: space-around;">
-        <% misDetallesCompra.map(element => { %>
-
-            <% if (element.fk_order_id == e.id) { %>
-                <div style="border: 2px solid grey;border-radius: 7px;">
-                    <p>Detalle de compra Nro. : <%= element.id %></p>
-                    <p>Nombre del producto: <%= element.products.name %></p>
-                    <p>Cantidad: <%= element.quantity %></p>
-                    <img src="/img/products/<%= element.products.principal_img %>" style="max-width: 100px;">
-
-
-                    <% if (element.reviews) { %>
-                        <p>Gracias por tu review !</p>
-                    <% } else { %>
-                        <form action="/review-form/<%= element.id %>" method="GET">
-                            <button type="submit">Haz una Review del Producto</button>
-                        </form>
-                    <% } %> 
-                    
+        <% misOrdenesCompra.map(e => { %>
+                <div class="user-card">
+                        <p class="user-title">Usuario: <%= e.users.user_first_name %> <%= e.users.user_last_name %></p>
+                        <img class="user-img" src="/img/users/<%= e.users.user_img %>">
+                        <p class="user-item">Orden de compra Nro. : <%= e.id %></p>
+                        <p class="user-item">Monto de la compra: <%= e.order_total_amt %></p>
+                        <p class="user-item">Fecha de compra: <%= e.order_date %></p>
+                        <p class="user-item">Status de la compra: <%= e.order_status %></p>
+                        <p class="user-item">Dirección de entrega: <%= e.order_address %></p>
+                        <p class="user-item">Método de Pago: <%= e.payment_method.pay_method_type %></p>
                 </div>
-            <% } %>
-           
+                <div class="product-row">
+                <% misDetallesCompra.map(element => { %>
 
-            
+                    <% if (element.fk_order_id == e.id) { %>
+                        <div class="product-card">
+                            <p class="product-item">Detalle de compra Nro. : <%= element.id %></p>
+                            <p class="product-item">Nombre del producto: <%= element.products.name %></p>
+                            <p class="product-item">Cantidad: <%= element.quantity %></p>
+                            <img class="product-img" src="/img/products/<%= element.products.principal_img %>">
+
+
+                            <% if (element.reviews) { %>
+                                <p class="product-item">Gracias por tu review !</p>
+                            <% } else { %>
+                                <form action="/review-form/<%= element.id %>" method="GET">
+                                    <button class="review-button" type="submit">Haz una Review del Producto</button>
+                                </form>
+                            <% } %> 
+                            
+                        </div>
+                    <% } %>
+                
+
+                    
+                <% }) %>
+                </div>
+
         <% }) %>
-        </div>
-
-    <% }) %>
 </body>
 </html>

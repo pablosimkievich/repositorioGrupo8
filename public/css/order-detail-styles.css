@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: cursive;
+    font-family: tahoma;
+    /* font-family: cursive; */
     font-weight: 400; 
 }
 
@@ -19,7 +20,7 @@ body {
 }
 
 .card_container {
-    background-color: #D2DAFF;
+    background-color: #C7F2A4;
     margin: 50px 25px;
     border-radius: 7px;
 }
@@ -55,7 +56,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: #FFCCB3;
     margin: 25px 15px;
     border-radius: 7px;
     
@@ -68,7 +68,7 @@ body {
     align-items: center;
     margin: 50px 15px;
     padding: 15px 15px;
-    background-color: #AAC4FF;
+    background-color: #A0D995;
     border-radius: 7px;
     /* border: 1px solid black; */
 } 

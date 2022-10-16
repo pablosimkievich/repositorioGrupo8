@@ -40,7 +40,7 @@ const validateCreateForm = [
                 
             } 
             return true
-            }).withMessage("Las extensiones de archivo permitidas son '.jpg' y '.png'")
+            }).withMessage("Las extensiones de archivo permitidas son '.jpg' y '.png'").bail()
         .isLength({min:0,max:4}).withMessage('Solo se pueden subir hasta 4 imagenes'),
 
             body('width').notEmpty().withMessage('Debes ingresar un numero').bail()
@@ -60,11 +60,6 @@ const validateCreateForm = [
 
             body('description').notEmpty().withMessage('Debes ingresar un descripcion').bail()
             .isLength({min:20, max:10000}).withMessage('La descripcion debe tener entre 20 y 10000 caracteres').bail(),
-
-
-
-                
-
 ]
 
 

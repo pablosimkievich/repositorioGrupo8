@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:ital,wght@0,300;1,300;1,400&family=Roboto:wght@300&display=swap');
 
@@ -125,7 +124,6 @@
     margin: 5px;
     transition: all 700ms;
 }
-
 #header-links {
     display:none;
     text-decoration: none;
@@ -173,8 +171,11 @@
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-    background-color: white;
-    /*background-color: #e4faf0;*/
+    background-color: #54BAB9;
+    /* background-color: #e4faf0; */
+    border-radius: 5px;
+    border: none;
+    outline: none;
   }
 
   .header-search button {
@@ -218,12 +219,12 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    width: 40px;
+    width: 100px;
     text-decoration: none;
  }
  
  .userLogged-style img {
-     width: 70%
+     max-width: 50px;
  }
  
  .userLogged-style a {
@@ -248,7 +249,6 @@
     width: 100%;
     font-family: cursive, sans-serif;
 }
-
 #header-down-bar li a {
     font-size: 20px;
     text-decoration: none;
@@ -256,7 +256,6 @@
     font-weight: bold;
     transition: all 450ms;
 }
-
 #header-down-bar li a:hover {
     color: #9abfad
 }
