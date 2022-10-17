@@ -1,4 +1,3 @@
-
 const db = require('../../database/models/index');
 const op = db.Sequelize.Op;
 
@@ -14,13 +13,7 @@ const getTheToys = async (req, res) => {
                     association: 'ages'
                 },
                 {
-                    association: 'order_detail'
-                },
-                {
                     association: 'reviews'
-                },
-                {
-                    association: 'secondary_images'
                 }
             ]
         })
@@ -29,10 +22,14 @@ const getTheToys = async (req, res) => {
             return {
                 id: e.id,
                 name: e.name,
+                price: e.price,
                 category: e.category.category_name,
+                reviews: e.reviews,
+                ratings: e.reviews.map(e=>e.rating),
                 age: e.ages.recommended_age,
                 description: e.description,
-                detail: `http://localhost:3001/api/products/${e.id}`
+                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
+                detail: `http://localhost:3001/juguetes/${e.id}`
                 }
         })
 
@@ -68,7 +65,162 @@ const getTheToys = async (req, res) => {
             movimientos: countMovimientos,
         }
 
-        res.status(200).json({count, countByCategory, products})
+     const categoriaSensoriales = await db.Product.findAll(
+                {
+                  where: {
+                          category_id : 1
+                         }
+                         , 
+                         
+                  include: [{
+                                association: 'category'
+                            },
+                            {
+                                association: 'ages'
+                            },
+                            {
+                                association: 'reviews'
+                            }
+                                 
+                                    ]});
+
+     const sensoriales = categoriaSensoriales.map(e =>{
+            
+                                                            return {
+                                                                id: e.id,
+                                                                name: e.name,
+                                                                price: e.price,
+                                                                category: e.category.category_name,
+                                                                reviews: e.reviews,
+                                                                ratings: e.reviews.map(e=>e.rating),
+                                                                age: e.ages.recommended_age,
+                                                                description: e.description,
+                                                                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
+                                                                detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                }
+                                                        });
+
+
+ const categoriaMusicales = await db.Product.findAll(
+                                                     {
+                                                       where: {
+                                                                      category_id : 2
+                                                                     }
+                                                                     , 
+                                                                     
+                                                              include: [{
+                                                                            association: 'category'
+                                                                        },
+                                                                        {
+                                                                            association: 'ages'
+                                                                        },
+                                                                        {
+                                                                            association: 'reviews'
+                                                                        }
+                                                                             
+                                                                                ]});
+                    
+             const musicales = categoriaMusicales.map(e =>{
+            
+                                                                                    return {
+                                                                                        id: e.id,
+                                                                                        name: e.name,
+                                                                                        price: e.price,
+                                                                                        category: e.category.category_name,
+                                                                                        reviews: e.reviews,
+                                                                                        ratings: e.reviews.map(e=>e.rating),
+                                                                                        age: e.ages.recommended_age,
+                                                                                        description: e.description,
+                                                                                        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
+                                                                                        detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                                        }
+                                                                                });                                        
+
+ const categoriaIngenio = await db.Product.findAll(
+                                                                                    {
+                                                                                      where: {
+                                                                                                     category_id : 3
+                                                                                                    }
+                                                                                                    , 
+                                                                                                    
+                                                                                             include: [{
+                                                                                                           association: 'category'
+                                                                                                       },
+                                                                                                       {
+                                                                                                           association: 'ages'
+                                                                                                       },
+                                                                                                       {
+                                                                                                           association: 'reviews'
+                                                                                                       }
+                                                                                                            
+                                                                                                               ]});
+  
+ const categoriaMovimientos = await db.Product.findAll(
+    {
+      where: {
+                     category_id : 4
+                    }
+                    , 
+                    
+             include: [{
+                           association: 'category'
+                       },
+                       {
+                           association: 'ages'
+                       },
+                       {
+                           association: 'reviews'
+                       }
+                            
+                               ]}); 
+
+ 
+  
+
+ const ingenio = categoriaIngenio.map(e =>{
+                                                       return {
+                                                                                                id: e.id,
+                                                                                                name: e.name,
+                                                                                                price: e.price,
+                                                                                                category: e.category.category_name,
+                                                                                                reviews: e.reviews,
+                                                                                                ratings: e.reviews.map(e=>e.rating),
+                                                                                                age: e.ages.recommended_age,
+                                                                                                description: e.description,
+                                                                                                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
+                                                                                                detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                                                }
+                                                                                            })
+
+
+    
+ const movimientos = categoriaMovimientos.map(e =>{
+    
+    return {
+        id: e.id,
+        name: e.name,
+        price: e.price,
+        category: e.category.category_name,
+        reviews: e.reviews,
+        ratings: e.reviews.map(e=>e.rating),
+        age: e.ages.recommended_age,
+        description: e.description,
+        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
+        detail: `http://localhost:3001/juguetes/${e.id}`
+        }
+    })
+      
+const juguetesXCategoria = {
+        sensoriales: sensoriales,
+        musicales: musicales,
+        ingenio: ingenio,
+        movimientos: movimientos
+      }         
+        
+          
+           
+
+        res.status(200).json({count, countByCategory, products, juguetesXCategoria})
     } catch(error){
             console.log(error);
     }
@@ -87,13 +239,7 @@ const getTheToyDetail = async (req, res) => {
                     association: 'ages'
                 },
                 {
-                    association: 'order_detail'
-                },
-                {
                     association: 'reviews'
-                },
-                {
-                    association: 'secondary_images'
                 }
             ]
         })

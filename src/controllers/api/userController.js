@@ -77,10 +77,34 @@ const userDetail = async (req, res) => {
         
     } catch (error) {
         console.log(error);
-    }
-}
+    };
+};
+
+    const getOrders = async (_req,res) => {
+        try {
+          
+            const orders = await db.Order.findAll(
+                {include: [
+                    {association: 'users'}     
+                    ]
+            }
+            );
+            const count = await db.Order.count();
+            const totalSales = await db.Order.sum('order_total_amt')
+
+            res.status(200).json({count,totalSales, orders})
+
+        }catch (error) {
+        console.log(error);
+    };
+    };
+
+
+
+
 
 module.exports ={
    getUsers,
-   userDetail
+   userDetail,
+   getOrders,
 }
