@@ -12,6 +12,15 @@ const getTheToys = async (req, res) => {
                 },
                 {
                     association: 'ages'
+                },
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'reviews'
+                },
+                {
+                    association: 'secondary_images'
                 }
             ]
         })
@@ -78,7 +87,13 @@ const getTheToyDetail = async (req, res) => {
                     association: 'ages'
                 },
                 {
+                    association: 'order_detail'
+                },
+                {
                     association: 'reviews'
+                },
+                {
+                    association: 'secondary_images'
                 }
             ]
         })

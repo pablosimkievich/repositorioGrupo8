@@ -6,7 +6,7 @@ window.addEventListener('load',function(){
 
     console.log('Hola')
     
-    let botones = document.querySelectorAll('.add-to-cart-button')
+    let botones = document.querySelectorAll('.add-to-cart-button2')
     
             for(let boton of botones){
                 boton.addEventListener('click',function(){
@@ -18,8 +18,8 @@ window.addEventListener('load',function(){
                     }
                     
 
-                    let input = document.querySelector('.input-carrito')
-                    console.log(input)
+                    /* let input = document.querySelector('.input-carrito')
+                    console.log(input) */
 
                     })
             }

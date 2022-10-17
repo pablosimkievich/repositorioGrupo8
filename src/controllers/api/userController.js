@@ -4,7 +4,22 @@ const { name } = require('ejs');
 
 const getUsers = async (_req, res) => {
     try {
-        const allUsers = await db.User.findAll()
+        const allUsers = await db.User.findAll({
+            include: [
+                {
+                    association: 'orders'
+                },
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'reviews'
+                },
+                {
+                    association: 'users_type'
+                }
+            ]
+        })
         const users = allUsers.map(e =>{
             return {
                 id: e.id,
@@ -30,10 +45,16 @@ const userDetail = async (req, res) => {
         let userDetail = await db.User.findByPk(id, {
             include: [
                 {
+                    association: 'orders'
+                },
+                {
                     association: 'order_detail'
                 },
                 {
                     association: 'reviews'
+                },
+                {
+                    association: 'users_type'
                 }
             ]
         })
