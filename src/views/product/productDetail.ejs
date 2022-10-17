@@ -143,13 +143,13 @@
     </section>
     <section class="review-list">
       
-        <%if(reviewList){%>
+        <%if(reviewList.length>0){%>
             
-                
+            <h2 class="h2-review-section">Reviews de Clientes</h2>
           
             
                 <%reviewList.map(e => {%> 
-                    <h2 class="h2-review-section">Reviews de Clientes</h2>
+                 
                     <article class="product_masInfo">
                             <div class='review-user-info'>
                                 <img src="/img/users/<%=e.users.user_img %>" class="review-avatar" width="50">
