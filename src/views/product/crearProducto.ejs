@@ -18,7 +18,7 @@
 
     <div class="control-formulario">
         <label for="nombre-producto">Nombre del producto</label>
-        <input type="text" name="name" class="input-control" required value="<%=(locals.oldData && oldData.name)?oldData.name:null%>">
+        <input type="text" name="name" class="input-control" id="input-name" value="<%=(locals.oldData && oldData.name)?oldData.name:null%>">
                     <%if(locals.errors && errors.name){%>
                         <p class="errors"><%= errors.name.msg %></p>
                     <%}%>
@@ -74,7 +74,7 @@
 
         <div class="control-formulario" id="form-images">
             <label for="imagen-producto">Seleccionar la imagen principal</label>
-            <input type="file" name="principal_img" class="control"></>
+            <input type="file" name="principal_img" class="control" id="ppal-img-input"></>
             <%if(locals.errors && errors.principal_img){%>
                 <p class="errors"><%= errors.principal_img.msg %></p>
             <%}%>
@@ -128,15 +128,23 @@
                 <p class="errors"><%= errors.description.msg %></p>
             <%}%>
         </div>
+
+        <div class="erroresFront">
+            <ul>
+    
+            </ul>
+        </div>
         
         <div class="form-buttons">
-       <button type="reset" class="form-button">RESET</button>
+       <button type="reset" class="form-button" id="form-button">RESET</button>
         <button type="submit" class="form-button">GUARDAR</button>
     </div>
     </form>
 </main>
+<script src="/js/crearProductoValidation.js"></script>
 </body>
 <footer>
     <%include('../partials/footer.ejs')%>
 </footer>
+
 </html>
