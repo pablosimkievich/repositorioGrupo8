@@ -59,8 +59,9 @@ const userDetail = async (req, res) => {
     };
 };
 
-    const getOrders = async (req,res) => {
+    const getOrders = async (_req,res) => {
         try {
+          
             const orders = await db.Order.findAll(
                 {include: [
                     {association: 'users'}     
