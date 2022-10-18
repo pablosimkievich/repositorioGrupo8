@@ -58,11 +58,44 @@ const getTheToys = async (req, res) => {
             }   
         });
 
+        const countEdad6meses1Anio = await db.Product.count({
+            where: {
+                age_id: 1
+            }
+        })
+
+        const countEdad1anio3Anios = await db.Product.count({
+            where: {
+                age_id: 2
+            }
+        })
+
+        const countEdad3a6Anios = await db.Product.count({
+            where: {
+                age_id: 3
+            }
+        })
+
+        const countEdadmasDe6Anios = await db.Product.count({
+            where: {
+                age_id: 4
+            }
+        })
+
+
         countByCategory = {
             sensoriales: countSensoriales,
             musicales: countMusicales,
             ingenio: countIngenio,
             movimientos: countMovimientos,
+        }
+
+        countByAges = {
+            edad6meses1Anio: countEdad6meses1Anio,
+            edad1anio3Anios: countEdad1anio3Anios,
+            edad3a6Anios: countEdad3a6Anios,
+            edadmasDe6Anios: countEdadmasDe6Anios
+
         }
 
      const categoriaSensoriales = await db.Product.findAll(
@@ -220,7 +253,7 @@ const juguetesXCategoria = {
           
            
 
-        res.status(200).json({count, countByCategory, products, juguetesXCategoria})
+        res.status(200).json({count, countByCategory, countByAges, products, juguetesXCategoria})
     } catch(error){
             console.log(error);
     }
