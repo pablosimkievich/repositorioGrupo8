@@ -191,32 +191,25 @@ const edit = async (req, res) => {
  };
 
  const saveEdit = async (req, res) => {
-  let jugueteEdit = await db.Product.findByPk(req.params.id) 
-      const {
-        name,
-        price,
-        discount,
-        category_id,
-        principal_img,
-        description,
-        age_id,
-        materials,
-        width,
-        height,
-        depth,
-        weight,
-        stock
-      } = req.body;
-  
-    try {
-      
-    const product = {
+
+  validationResults = validationResult(req);
+
+  if (validationResults.isEmpty()) {
+
+    let jugueteEdit = await db.Product.findByPk(req.params.id, {
+      include: [
+        {
+          association: 'secondary_images'
+        }
+      ]
+    }) 
+    const {
       name,
       price,
       discount,
       category_id,
-      principal_img: req.body.principal_img ? req.body.principal_img: jugueteEdit.principal_img,
-      description: req.body.description ? req.body.description: jugueteEdit.description,
+      principal_img,
+      description,
       age_id,
       materials,
       width,
@@ -224,56 +217,91 @@ const edit = async (req, res) => {
       depth,
       weight,
       stock
-    }
+    } = req.body;
+
+  try {
+    
+  const product = {
+    name,
+    price,
+    discount,
+    category_id,
+    principal_img: req.body.principal_img ? req.body.principal_img: jugueteEdit.principal_img,
+    description: req.body.description ? req.body.description: jugueteEdit.description,
+    age_id,
+    materials,
+    width,
+    height,
+    depth,
+    weight,
+    stock
+  }
+        
+        await db.Product.update(product,
+          {
+            where: {
+                id: req.params.id,
+            }
+        });
+
+        let arrayCheck = Array.isArray(req.body.secondary_img)
+         
+        if (arrayCheck == true) {
+
+          let newImages = {
+            id_product:  req.params.id,
+            image_2: req.body.secondary_img[0],
+            image_3:  req.body.secondary_img[1],
+            image_4: req.body.secondary_img[2],
+              }
+             
+            await db.SecondaryImages.update(newImages,
+                {
+              where: {
+                  id_product:  req.params.id,
+              }
+            }
+            );
+           
+            res.redirect(`/juguetes/${req.params.id}`)
+        } else {
+
+          let newImages = {
+            id_product:  req.params.id,
+            image_2: req.body.secondary_img
+              }
           
-          await db.Product.update(product,
+          await db.SecondaryImages.update(newImages,
             {
               where: {
-                  id: req.params.id,
+                  id_product:  req.params.id,
               }
-          });
-
-          let arrayCheck = Array.isArray(req.body.secondary_img)
+          }
+            );
            
-          if (arrayCheck == true) {
-
-            let newImages = {
-              id_product:  req.params.id,
-              image_2: req.body.secondary_img[0],
-              image_3:  req.body.secondary_img[1],
-              image_4: req.body.secondary_img[2],
-                }
-               
-              await db.SecondaryImages.update(newImages,
-                  {
-                where: {
-                    id_product:  req.params.id,
-                }
-              }
-              );
+            res.redirect(`/juguetes/${req.params.id}`)
+          }
              
-              res.redirect(`/juguetes/${req.params.id}`)
-          } else {
+  } catch(error){
+  console.log(error)
+}
+  } else {
+    const ages = await db.Age.findAll();
+    const category = await db.Category.findAll();
+    let jugueteEdit = await db.Product.findByPk(req.params.id, {
+      include: [
+        {
+          association: 'secondary_images'
+        }
+      ]
+    }) 
 
-            let newImages = {
-              id_product:  req.params.id,
-              image_2: req.body.secondary_img
-                }
-            
-            await db.SecondaryImages.update(newImages,
-              {
-                where: {
-                    id_product:  req.params.id,
-                }
-            }
-              );
-             
-              res.redirect(`/juguetes/${req.params.id}`)
-            }
-               
-    } catch(error){
-    console.log(error)
+    console.log(validationResults.mapped())
+  
+    res.render("product/editForm", {jugueteEdit, ages, category, errors: validationResults.mapped(), oldData: req.body});
   }
+
+
 };
 
 
