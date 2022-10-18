@@ -4,7 +4,6 @@ let botonForm = document.querySelector("#botonLogin")
 
 botonForm.addEventListener("click", function(e) {
 
-
 let errores = [];
 
 let ulErrores = document.querySelector('div.errores ul');
