@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+        <link rel="stylesheet" href="/css/product-detail-styles.css" title="cont">
         <link rel="stylesheet" href="/css/whatsapp.css">
 
 
@@ -30,34 +30,49 @@
 
         <section class="product">
             <article class="product_infoPrincipal">
+
                 <div class="product_infoPrincipal_images">
+                                
+
+                        <div class="slide img-principal">
+                            <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
+                            
+                            <%if(juguete.secondary_images.image_2){%>
+                                <img class="esconderImagen" id="imagen-principal-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
+                            <% }%>
+
+                            <%if(juguete.secondary_images.image_3){%>
+                                <img  class="esconderImagen" id="imagen-principal-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
+                            <% }%>
+
+                            <% if(juguete.secondary_images.image_4){ %>
+                                <img  class="esconderImagen"  id="imagen-principal-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
+                            <%}%>
+                        </div>
+                        <div class="slides">
+                            <%if(juguete.secondary_images.image_2){%>
+                                <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
+                            <% }%>
                     
-                    <img class='imagen-principal' src="/img/products/<%= juguete.principal_img %>">
-
-                    <%if(juguete.secondary_images.image_2){%>
-                        <img class="imagenAdicional-2" src="/img/products/<%= juguete.secondary_images.image_2%>" alt="juguete2">
-                    <% }%>
-
-                    <%if(juguete.secondary_images.image_3){%>
-                        <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
-                    <% }%>
-                   
-                    <% if(juguete.secondary_images.image_4){ %>
-                        <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
-                    <%}%>
+                            <%if(juguete.secondary_images.image_3){%>
+                                <img class="imagenAdicional-3" src="/img/products/<%= juguete.secondary_images.image_3%>" alt="juguete3">
+                            <% }%>
                     
-
-                
-             
-
-                    <div class="dots">
-                        <i id="seleccionado" class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
-                        <i class="fa-regular fa-circle"></i>
-                    </div>
-
+                            <% if(juguete.secondary_images.image_4){ %>
+                                <img class="imagenAdicional-4" src="/img/products/<%= juguete.secondary_images.image_4%>" alt="juguete3">
+                            <%}%>
+            
+                           <img class="imagenAdicional-5" src="/img/products/<%= juguete.principal_img %>" alt="juguete3">   
+                        </div>
                 </div>
+
+                <div class="dots">
+                    <input checked type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                 </div>
+
                 <div class="product_infoPrincipal_productInfo">
                     <span class="productInfo_info">
                         <h1 class="product-name"> <%= juguete.name %> </h1>
@@ -77,7 +92,7 @@
                      
                         <h2 class="precio">$ <%= juguete.price %> </h2>
                         <form class="add-to-cart" method="POST" action="/add-to-cart">
-                            <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping">
+                            <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
                         </form>
                     </span>
@@ -90,7 +105,7 @@
 
                         <form action="/" method="post">
                             <input type="text" name="cp" placeholder="Tu codigo postal">
-                            <button type="submit" ">CALCULAR</button>                
+                            <button type="submit">CALCULAR</button>                
                                 </form>
                                 <a href=" https://codigopostal.com.ar/">No se mi CP</a>
                 </div>
@@ -128,7 +143,7 @@
                     <img src="/img/products/<%=e.principal_img%>" alt="juguete1">
                 <h3><%= e.name %></h3>
                 <p class="precio-card"><%= e.price %></p>
-                <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
+                <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
                     CARRITO</button>
                 </a>
             </article>
@@ -148,10 +163,9 @@
                    
                     <article class="product_masInfo">
                             <div class='review-user-info'>
-                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar">
-                                <p><%=e.users.user_first_name + e.users.user_last_name%></p><br>
+                                <img src="/img/users/<%=e.users.user_img %>" class="review-avatar" width="50">
+                                <p>  <%=e.users.user_first_name + " " + e.users.user_last_name%></p><br>
                             </div>          
-
                 <div class="stars-outer">
                     <div class="stars-inner" style ="width:<%= e.rating %>%">
                     </div>
@@ -166,7 +180,9 @@
 
     </section>
     </main>
-
+    <div>
+        <%- include('../partials/whatsappButton.ejs') %>
+    </div>
        
     </body>
 

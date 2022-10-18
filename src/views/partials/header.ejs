@@ -17,9 +17,9 @@
                 
                 <div class="header-search-bar">
                     <!-- <section > -->
-                        <a href="/"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
-                        <form class="header-search">
-                        <input type="search" name="q" placeholder="Buscar...">
+                        <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                        <form action="/search-by-user" method="GET" class="header-search">
+                        <input type="search" name="keywords" placeholder="Buscar...">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     <!-- </section> -->
@@ -64,7 +64,8 @@
                 <nav class="main-nav">
                     <ul class="menu" id="menu">
                         <li class="menu__item"><a class="menu__link" href="/">INICIO</a></li>
-                        <li class="menu__item"><a class="menu__link" href="/quienesSomos">QUIENES SOMOS</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/quienes-somos">QUIENES SOMOS</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/preguntas-frecuentes/">FAQ</a></li>
                         <li class="menu__item container-submenu">
                              <a class="menu__link submenu-btn" id="submenu-btn-1" href="#">POR CATEGORIA<i class="fa-solid fa-chevron-down" id="menu-arrow"></i></a>
                                 <ul class="submenu">
@@ -84,7 +85,7 @@
                              </ul>
                         </li>    
                         <li class="menu__item"><a class="menu__link" href="/productos/">JUGUETES</a></li>
-                        <li class="menu__item"><a class="menu__link" href="/preguntasFrecuentes/">FAQ</a></li>
+                        
                        
                     </ul>
                 </nav>

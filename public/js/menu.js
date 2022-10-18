@@ -1,5 +1,3 @@
-
-
 const btnMenu = document.querySelector('#btnMenu');
 const menu = document.querySelector('#menu');
 
@@ -18,7 +16,7 @@ menu.classList.toggle('mostrar')
                                         subMenu.removeAttribute('style')
                                         }else{
                                                 subMenu.classList.add('desplegar');
-                                                subMenu.style.height = "200px";
+                                                subMenu.style.height = "150px";
 
                                                 }
                                     
@@ -45,6 +43,3 @@ const subMenuBtnDos = document.getElementById('submenu-btn-2');
      
                                     }
                     })
-    
-
-        

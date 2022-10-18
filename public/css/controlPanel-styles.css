@@ -1,9 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: tahoma;
+    /* font-family: cursive; */
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    margin: 25px 5px;
+    font-size: 2em;
+}
 
 .nav{
     display:flex;
     justify-content: space-between;
     padding: 20px;
-    margin-top: 300px;
+    margin-top: 100px; 
 }
 
 
@@ -66,3 +80,135 @@
     transform: scale(102%);
 
 }
+
+.product-display{
+    margin-top: 20px;    
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card {
+    /*border: solid 1px #808080;*/
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 10px;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: white;
+        transition: all  500ms;
+        
+        
+    }
+
+
+.card:hover {
+    box-shadow: 0px 0px 10px rgb(190, 190, 190);
+    transform: scale(103%);
+
+}
+.card a{
+    text-decoration: none;
+}
+.card img {
+    width: 100%; 
+}
+.card h3 {
+    text-align: center;
+    margin: 5px;
+    font-size: 18px;
+   
+  
+}
+.card .precio-card{
+            text-align: center;
+            margin: 5px;
+            font-weight: 400;
+            
+}
+.card .add-to-cart-button{
+    font-size: 10px;
+    margin: 5px;
+    display: block;
+    margin: auto;
+}
+
+.form-button{
+    background-color: rgb(45, 185, 138);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    margin: 1px;
+    margin-top: 10px;
+    border: solid 1px rgb(197, 197, 197);
+    transition: all 500ms;
+    border-radius: 4px;
+}
+
+.form-button:hover {
+    color:rgb(75, 75, 75);
+    background-color:rgb(197, 194, 194);
+    
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-by-name{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.search-by-name input {
+    min-height: 40px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #e5e5e5;
+    margin: 25px -25px;
+}
+
+.search-by-name2 input {
+    min-height: 40px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #e5e5e5;
+}
+
+.search-by-name {
+    margin: 0px 25px;
+    min-height: 40px;
+    border-radius: 6px;
+    border: none;
+    outline: none;  
+}
+
+.search-by-name2 {
+    margin: 0px 25px;
+    min-height: 40px;
+    border-radius: 6px;
+    border: none;
+    outline: none;  
+}
+
+.form-button  {
+    margin-left: 30px;
+}
+
+.create-button {
+    margin: 0px 35px 0px 0px;
+}
+
+@media (min-width: 361px){
+    .tambien-te-puede-gustar {
+    flex-direction: row;
+    }
+    .card {
+        width: 45%;
+    }
+    }

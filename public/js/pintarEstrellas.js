@@ -1,7 +1,8 @@
 window.addEventListener('load',function(){
-  let formulario = document.getElementById('review-form')
-  let inputRating = document.querySelector('#rating-input')
-  let estrellas = document.querySelector('#starsInner')
+  let formulario = document.getElementById('review-form');
+  let inputRating = document.querySelector('#rating-input');
+  let estrellas = document.querySelector('#starsInner');
+  let button = document.querySelector('.form-button');
 
     inputRating.addEventListener('blur', ()=>{
        
@@ -10,24 +11,19 @@ window.addEventListener('load',function(){
   
           });
 
-
-  
-
-   formulario.addEventListener('submit', (e)=>{   
-  
+    button.addEventListener('click', (e)=>{   
 
         let inputRating = document.querySelector('#rating-input')
-        //let titulo = document.querySelector('#titulo-input')
-        //let review = document.querySelector('#review-input')
+        let titulo = document.querySelector('#titulo-input')
+        let review = document.querySelector('#review-input')
 
         let errores =[];
-        let erroresUl = document.querySelector('.erroresFront ul')
-        let erroresDiv = document.querySelector('.erroresFront')
+        let erroresUl = document.querySelector('div.erroresFront ul')
        
 
-      /*  while (erroresDiv.firstChild) {
-          erroresDiv.removeChild(erroresDiv.firstChild);
-      }*/
+       while (erroresUl.firstChild) {
+          erroresUl.removeChild(erroresUl.firstChild);
+      }
 
         if(inputRating.value == ''){
                   errores.push('Debes ingresar un numero')
@@ -38,26 +34,26 @@ window.addEventListener('load',function(){
                   errores.push('Debes ingresar un numero del 0 al 100')
                   console.log(errores)
                       }
-        
-        if(titulo.value = ""){
+      
+        if(titulo.value == ""){
           errores.push('el campo de titulo debe estar completo')
         }
-     /*   if(titulo.value.length < 3){
+      if(titulo.value.length < 3){
           errores.push("El titulo tiene que tener al menos 3 caracteres")
         }
 
-        if(review.value = null){
+        if(review.value == ''){
           errores.push("el campo de review no puede estar vacio")
         }
         if(review.value.length < 5){
           errores.push("El comentario tiene que tener al menos 5 caracteres")
         }
-        */
+        
        
         if(errores.length>0){
-          e.preventDefault()
-         console.log(errores)
-         console.log(erroresUl)
+          e.preventDefault();
+          let erroresUl = document.querySelector('div.erroresFront ul')
+
         
          errores.map(element=>{
             erroresUl.innerHTML += "<li >" + element + "</li>"
