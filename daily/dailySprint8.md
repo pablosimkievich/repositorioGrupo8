@@ -1,6 +1,6 @@
 > # Sprint 8: Daily Standup
 
-*En esta última etapa las reuniones virtuales se incrementaron, no solo para compartir lo que estamos haciendo o lo que vamos hacer sino también para ir resolviendo juntos algunos detalles que quedan pendientes. *
+*En esta última etapa las reuniones virtuales se incrementaron, no solo para compartir lo que estamos haciendo o lo que vamos hacer sino también para ir resolviendo juntos algunos detalles que quedan pendientes.*
 
 ------------
 
