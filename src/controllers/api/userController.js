@@ -85,7 +85,13 @@ const userDetail = async (req, res) => {
           
             const orders = await db.Order.findAll(
                 {include: [
-                    {association: 'users'}     
+                    {association: 'users'},
+                    {
+                        association: 'order_detail'
+                    },
+                    {
+                        association: 'payment_method'
+                    }   
                     ]
             }
             );
