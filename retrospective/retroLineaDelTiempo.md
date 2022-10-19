@@ -1,6 +1,4 @@
-# Dinámica “La línea de tiempo”
-
-------------
+> # Dinámica “La línea de tiempo”
 
 ***Fase 1: Preparación preliminar (5-10 minutos)***
 Encontrándonos en la instancia final de nuestro proyecto integrador “Rayuela”, dentro de los principales hitos y eventos del proyecto podemos destacar los siguientes:
@@ -47,3 +45,4 @@ Detectados los problemas y sus causas es momento de pasar a la etapa retrospecti
 En cada reunión en donde analizamos nuestras falencias y fortalezas, como equipo dejamos un espacio para que cada uno de los integrantes exprese sus ideas, recordando el compromiso que tenemos como grupo, entendiendo que el crecimiento del equipo es el crecimiento de todos sus integrantes en su conjunto. 
 En general luego de analizar todos los inconvenientes que tuvimos a lo largo del proyecto concluimos que pudimos ir superando los obstáculos e ir solucionando los problemas que se fueron presentando obteniendo buenos resultados. 
 
+------------
