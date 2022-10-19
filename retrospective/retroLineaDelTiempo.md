@@ -5,11 +5,11 @@
 ***Fase 1: Preparación preliminar (5-10 minutos)***
 Encontrándonos en la instancia final de nuestro proyecto integrador “Rayuela”, dentro de los principales hitos y eventos del proyecto podemos destacar los siguientes:
 
-*Negativos: *
+*Negativos:*
 1. Dificultad para aprender a administrar el tiempo en relación a las tareas que debíamos realizar de acuerdo a su complejidad.
 2. No tener una buena comunicación llevo en un principio la duplicación de trabajo o no tener en claro las tareas efectuar.
 
-*Positivos: *
+*Positivos:*
 1. Rápidamente nos acostumbrarnos a la dinámica de reunirnos como grupo de forma periódica.
 2. Gran predisposición de todos los integrantes del grupo para ayudar al otro y reunirse ya sea para ver el avance de las tareas o para solucionar alguna porción de código que no estaba funcionando a alguno de los miembros del grupo.
 3. Entender la importancia de la comunicación.  
