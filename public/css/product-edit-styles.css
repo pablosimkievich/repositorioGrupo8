@@ -718,6 +718,17 @@ table.info-table {
     color:red;
     font-size: 18px;
 }
+
+.erroresFront {
+    margin-left: 15px;
+    color: tomato;
+    font-size: 18px;
+}
+
+.erroresFront ul{
+    list-style: none;
+}
+
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;

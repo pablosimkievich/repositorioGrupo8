@@ -77,8 +77,7 @@
             <% if (locals.errors && errors.dni) { %>
                 <p class="msg-error"><%= errors.dni.msg %></p>
             <% } %>
-            <input type="password" name="password" placeholder="Contraseña" class="password-register"
-            value="<%= locals.oldData ? oldData.dni : null %>">
+            <input type="password" name="password" placeholder="Contraseña" class="password-register">
             <% if (locals.errors && errors.password) { %>
                 <p class="msg-error"><%= errors.password.msg %></p>
             <% } %>
@@ -107,8 +106,8 @@
             <br>
              <!-- Botones -->
             <div id="buttonRegister">
-                 <button id="buttonR" type="reset" value="Borrar" >Borrar</button>
-                 <button id="buttonR" type="submit" value="registrarse" class="register-button">Registrarse</button>
+                 <button class="button-register" id="buttonR" type="reset" value="Borrar" >Borrar</button>
+                 <button class="button-register register-button" id="buttonR" type="submit" value="registrarse" class="register-button">Registrarse</button>
     
             </div>  
             <script src="js/registerJSFront.js"></script>
