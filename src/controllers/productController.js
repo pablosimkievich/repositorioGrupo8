@@ -1,6 +1,7 @@
+const { decodeBase64 } = require('bcryptjs');
 const db = require('../database/models/index');
 const op = db.Sequelize.Op;
-
+const { validationResult } = require('express-validator');
 
 
 const create = async (req, res) => {
@@ -13,8 +14,10 @@ const create = async (req, res) => {
 
 
 const saveNewProduct = async (req, res) => {
-     
-    let newProduct = {
+     validationResults = validationResult(req);
+
+    if(validationResults.isEmpty()){
+      let newProduct = {
         name: req.body.name,
         price: req.body.price,
         discount: req.body.discount,
@@ -70,6 +73,15 @@ const saveNewProduct = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+}else{
+
+  const ages = await db.Age.findAll();
+  const category = await db.Category.findAll();
+
+console.log(validationResults.mapped())
+
+  res.render("product/crearProducto", {ages, category, errors: validationResults.mapped(), oldData: req.body});
+}
 };
 
 const productList =  async (_req, res) => {
@@ -83,42 +95,107 @@ const productList =  async (_req, res) => {
   };
 
   const productDetail= async (req, res) => {                                        
-   try{
-     let id = req.params.id;
-     
-    const juguete = await db.Product.findByPk(id, {
-      include: [{
-        association: 'category',
-    },
-    {
-        association: 'ages',
-        
-    },
-    {
-      association: 'secondary_images',
-    },
- 
-    ]})   ;
-  
-
-    if (juguete) {
-    const cuatro = await db.Product.findAll({
-      where: { category_id : juguete.category_id},
-      limit: 4
-    })
+    try{
+      let id = req.params.id;
+      
+     const juguete = await db.Product.findByPk(id, {
+       include: [{
+         association: 'category',
+     },
+     {
+         association: 'ages',
          
-      res.render("product/productDetail", { juguete, cuatro});  
-    }else {
-        res.send(`No existe el juguete nro. ${req.params.id}`);
-    };
+     },
+     {
+       association: 'secondary_images',
+   },
+   {
+     association: 'reviews',
+ },
+   
+  
+     ]})   ;
 
-  } catch(error){
-      console.log(error)
-      }
-};
+    
+ 
+    if (juguete) {
+      const cuatro = await db.Product.findAll({
+         where: { category_id : juguete.category_id},
+         limit: 4
+      });
+      const countReviews = await db.Review.count(
+       {
+         where: {product_fk_id : juguete.id}
+       }
+      )
+      
+     
+       const ratingSum = await db.Review.sum('rating', 
+       {
+         where: {product_fk_id : juguete.id}
+       }
+      );
 
+      const reviewList = await db.Review.findAll({
+        where: {
+            product_fk_id: juguete.id
+        },
+        include: [
+            {
+                association: 'products'
+            },
+            {
+              association: 'order_detail'
+            },  
+            {
+              association: 'users'
+            },           
+        ]      
+      });
+     
+
+   
+
+       res.render("product/productDetail", { juguete, cuatro, countReviews, ratingSum, reviewList});  
+     }else {
+      res.send(`No existe el juguete nro. ${req.params.id}`);
+     };
+ 
+   } catch(error){
+     console.log(error)
+       }
+ };
+
+
+
+ 
+ 
 const edit = async (req, res) => {
-     try{
+  try{
+ let jugueteEdit = await db.Product.findByPk(req.params.id, {
+   include: [
+     {
+       association: 'secondary_images'
+     }
+   ]
+ }) 
+   if (jugueteEdit) {
+     res.render("product/editForm", { jugueteEdit });
+   } else {
+     res.send(`No existe el juguete nro. ${req.params.id}`)
+   }
+
+ } catch(error) {
+   alert(error)
+ }
+ };
+
+ const saveEdit = async (req, res) => {
+
+  validationResults = validationResult(req);
+
+  if (validationResults.isEmpty()) {
+
     let jugueteEdit = await db.Product.findByPk(req.params.id, {
       include: [
         {
@@ -126,44 +203,13 @@ const edit = async (req, res) => {
         }
       ]
     }) 
-      if (jugueteEdit) {
-        res.render("product/edit-form", { jugueteEdit });
-      } else {
-        res.send(`No existe el juguete nro. ${req.params.id}`)
-      }
-
-    } catch(error) {
-      alert(error)
-    }
-    };
-
- const saveEdit = async (req, res) => {
-  let jugueteEdit = await db.Product.findByPk(req.params.id) 
-      const {
-        name,
-        price,
-        discount,
-        category_id,
-        principal_img,
-        description,
-        age_id,
-        materials,
-        width,
-        height,
-        depth,
-        weight,
-        stock
-      } = req.body;
-  
-    try {
-      
-    const product = {
+    const {
       name,
       price,
       discount,
       category_id,
-      principal_img: req.body.principal_img ? req.body.principal_img: jugueteEdit.principal_img,
-      description: req.body.description ? req.body.description: jugueteEdit.description,
+      principal_img,
+      description,
       age_id,
       materials,
       width,
@@ -171,56 +217,91 @@ const edit = async (req, res) => {
       depth,
       weight,
       stock
-    }
+    } = req.body;
+
+  try {
+    
+  const product = {
+    name,
+    price,
+    discount,
+    category_id,
+    principal_img: req.body.principal_img ? req.body.principal_img: jugueteEdit.principal_img,
+    description: req.body.description ? req.body.description: jugueteEdit.description,
+    age_id,
+    materials,
+    width,
+    height,
+    depth,
+    weight,
+    stock
+  }
+        
+        await db.Product.update(product,
+          {
+            where: {
+                id: req.params.id,
+            }
+        });
+
+        let arrayCheck = Array.isArray(req.body.secondary_img)
+         
+        if (arrayCheck == true) {
+
+          let newImages = {
+            id_product:  req.params.id,
+            image_2: req.body.secondary_img[0],
+            image_3:  req.body.secondary_img[1],
+            image_4: req.body.secondary_img[2],
+              }
+             
+            await db.SecondaryImages.update(newImages,
+                {
+              where: {
+                  id_product:  req.params.id,
+              }
+            }
+            );
+           
+            res.redirect(`/juguetes/${req.params.id}`)
+        } else {
+
+          let newImages = {
+            id_product:  req.params.id,
+            image_2: req.body.secondary_img
+              }
           
-          await db.Product.update(product,
+          await db.SecondaryImages.update(newImages,
             {
               where: {
-                  id: req.params.id,
+                  id_product:  req.params.id,
               }
-          });
-
-          let arrayCheck = Array.isArray(req.body.secondary_img)
+          }
+            );
            
-          if (arrayCheck == true) {
-
-            let newImages = {
-              id_product:  req.params.id,
-              image_2: req.body.secondary_img[0],
-              image_3:  req.body.secondary_img[1],
-              image_4: req.body.secondary_img[2],
-                }
-               
-              await db.SecondaryImages.update(newImages,
-                  {
-                where: {
-                    id_product:  req.params.id,
-                }
-              }
-              );
+            res.redirect(`/juguetes/${req.params.id}`)
+          }
              
-              res.redirect(`/juguetes/${req.params.id}`)
-          } else {
+  } catch(error){
+  console.log(error)
+}
+  } else {
+    const ages = await db.Age.findAll();
+    const category = await db.Category.findAll();
+    let jugueteEdit = await db.Product.findByPk(req.params.id, {
+      include: [
+        {
+          association: 'secondary_images'
+        }
+      ]
+    }) 
 
-            let newImages = {
-              id_product:  req.params.id,
-              image_2: req.body.secondary_img
-                }
-            
-            await db.SecondaryImages.update(newImages,
-              {
-                where: {
-                    id_product:  req.params.id,
-                }
-            }
-              );
-             
-              res.redirect(`/juguetes/${req.params.id}`)
-            }
-               
-    } catch(error){
-    console.log(error)
+    console.log(validationResults.mapped())
+  
+    res.render("product/editForm", {jugueteEdit, ages, category, errors: validationResults.mapped(), oldData: req.body});
   }
+
+
 };
 
 
@@ -248,7 +329,7 @@ const deleteProduct = async (req, res) => {
                          }
                         });
     
-          res.redirect('/productPanel')
+          res.redirect('/product-panel')
     } catch(error){
             console.log(error)
                 };

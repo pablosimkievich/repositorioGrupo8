@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/product-orders-styles.css">
+    <title>Rayuela</title>
+</head>
+<body>
+    <h1 class="the-title" style=" margin: 20px;">Product Orders</h1>
+
+    <div class="product-card" >
+    <p class="product-title">Producto: <%= theProduct.name %></p>
+        <div class="image-container">
+            <img class="product-imgs" src="/img/products/<%= theProduct.principal_img %>" style="max-width: 200px;">
+            
+            <img class="product-imgs" src="/img/products/<%= theProduct.secondary_images.image_2 %>" style="max-width: 200px">
+            <img class="product-imgs" src="/img/products/<%= theProduct.secondary_images.image_3 %>" style="max-width: 200px">
+            <img class="product-imgs" src="/img/products/<%= theProduct.secondary_images.image_4 %>" style="max-width: 200px">
+        </div>  
+        <p class="product-items">Descripción: <%= theProduct.description %></p>
+    <p class="product-items">Categoría: <%= theProduct.category.category_name %></p>
+    <p class="product-items">Edades Recomendadas: <%= theProduct.ages.recommended_age %></p>
+    <p class="product-items">Precio: $<%= theProduct.price %></p>
+    <p class="product-items">Stock: <%= theProduct.stock %> unidades</p>
+    </div>
+
+
+    <div class="row-users" style="display: flex; flex-direction: row;">
+    <% theOrderDetails.map(e => { %>
+
+        <div class="user-card">
+        <p class="user-items"><%= e.users.user_first_name %> <%= e.users.user_last_name %> compró este producto</p> 
+        <img src="/img/users/<%= e.users.user_img %>" style="max-width: 100px;">
+        <p class="user-items">Orden de Compra Nro. : <%= e.fk_order_id %></p>
+        <p class="user-items">Detalle de compra Nro. : <%= e.id %></p>
+        <p class="user-items">Fecha: <%= e.orders.order_date %></p>
+        <p class="user-items">Cantidad: <%= e.quantity %> unidad/es</p>
+        </div>
+    <% }) %>
+
+    </div>
+</body>
+</html>

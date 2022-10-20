@@ -3,14 +3,16 @@ const path = require('path');
 const { nextTick } = require('process');
 
 const validateRegister = [
-    body('nombre').notEmpty().withMessage('Debes ingresar tu nombre'),
-    body('apellido').notEmpty().withMessage('Debes ingresar tu apellido'),
+    body('nombre').notEmpty().withMessage('Debes ingresar tu nombre').bail()
+        .isLength( {min: 2} ).withMessage('El nombre debe tener al menos 2 caracteres'),
+    body('apellido').notEmpty().withMessage('Debes ingresar tu apellido')
+    .isLength( {min: 2} ).withMessage('El apellido debe tener al menos 2 caracteres'),
     body('email')
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Debes ingresar un email válido'),
     body('telefono')
-        .notEmpty().withMessage('Debes ingresar tu número telefónico').bail()
-        .isInt().withMessage('Debes ingresar un número de teléfono válido'),
+        .notEmpty().withMessage('Debes ingresar tu numero telefónico').bail()
+        .isInt().withMessage('Debes ingresar un numero de teléfono válido'),
     body('domicilio').notEmpty().withMessage('Debes ingresar tu domicilio'),
     body('dni').notEmpty().withMessage('Debes ingresar tu DNI'),
     body('password')
@@ -27,7 +29,7 @@ const validateRegister = [
     body('fotoPerfil')
         .custom((value, { req } ) => {
             let file = req.file;
-            let acceptedExtensions = ['.jpg', '.png'];
+            let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
 
             if (file) {
                 let fileExtension = path.extname(file.originalname);

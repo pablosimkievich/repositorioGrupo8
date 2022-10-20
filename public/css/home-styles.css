@@ -8,10 +8,12 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Coming Soon', cursive;
+    /* font-family: tahoma; */
+    font-family: cursive; 
     font-weight: 400;
     font-size: 14px;
 }
+
 
 .banner{
     width:100%;
@@ -86,13 +88,13 @@
     border-radius: 15px; 
 }
 
-.add-to-cart-button {
+.add-to-cart-button2 {
     background-color: #056676;
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
     text-align: center;
     align-items: center;
-    justify-content: center;
     border-radius: 3px;
+    justify-content: center;
     border: none;
     font-size: 12x;
     font-weight: 400;
@@ -103,15 +105,15 @@
     color: #A3D2CA;
 }
 
-.add-to-cart-button i {
+.add-to-cart-button2 i {
     margin: 10px;
 }
-.add-to-cart-button:hover {
+.add-to-cart-button2:hover {
     background-color: #D45D79;
     color: #424874;    
 }
 
-.add-to-cart-button:active {
+.add-to-cart-button2:active {
     transform: scale(1.05);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
 }
@@ -127,7 +129,6 @@
     width: 91vw;
     margin: 25px 10px;
     border-radius: 5px;
-    /*border: 3px solid rgb(131, 131, 150, 0.3);*/
     justify-content: space-around;
 }
 

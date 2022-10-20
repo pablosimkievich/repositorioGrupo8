@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="/css/search-by-user-style.css" title="cont">
+            <link rel="stylesheet" href="/css/whatsapp.css">
+
+
+            <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+            <title>Listado de Juguetes</title>
+        </head>
+        <body>
+     
+            <%- include('./partials/header.ejs') %>  
+
+            <h2 class="result_search_title">Resultado de la Busqueda</h2><br>
+        
+                <section class="product-display">
+
+                    <% if(searchResult && (searchResult !== 0) ) {%>  
+
+                        <% searchResult.map(e=> { %>
+                            <article class="card">
+                                <a href="/juguetes/<%= e.id %>">
+                                    <img src="/img/products/<%= e.principal_img %>" alt="juguete1">
+                                    <h3>
+                                        <%= e.name %>
+                                    </h3>
+                                    <p class="precio-card">
+                                        <%= e.price %>$
+                                    </p>
+                                
+                                    <button type="submit" class="add-to-cart-button2">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button>
+                                </a>
+                            </article>
+
+                        <% }) 
+                        
+                    }else if ( searchResult == 0) {%>
+                                    <div>
+                                        <h2 class="result_search_title2" style="color: tomato;"> No hay productos que coincidan con la búsqueda</h2>
+                                    </div>
+
+                    <%  }  %>   
+                
+                    <div>
+                        <%- include('../views/partials/whatsappButton.ejs') %>
+                    </div>    
+
+                </section>
+                <div class="footer-container">
+                    <footer>
+                    <%- include('./partials/footer.ejs') %>
+                    </footer>
+                </div>
+    </body>
+
+</html>

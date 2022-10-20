@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/css/product-styles.css" title="cont">
+        <link rel="stylesheet" href="/css/product-category-styles.css" title="cont">
 
 
         <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
                     <p class="precio-card">
                         <%=e.price%>$
                     </p>
-                    <button type="submit" class="add-to-cart-button"><i class="fa-solid fa-bag-shopping"></i>
+                    <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>
                         AGREGAR AL
                         CARRITO</button>
                 </a>
@@ -40,7 +40,13 @@
 
             <% }) %>
 
-        
+            <div class="space_div">
+
+            </div>
+
+            <div>
+                <%- include('../partials/whatsappButton.ejs') %>
+            </div>
     </section>
    
   

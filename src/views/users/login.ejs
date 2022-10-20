@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Rayuela</title>
         <link rel="stylesheet" href="/css/login-styles.css">
+        
     </head>
     <body>
 
@@ -16,21 +17,52 @@
         <main class="login">
             
             <h3>Ingresar</h3><br>
+
+
+            <div class="errores">
+                <ul>                   
+                </ul>
+            </div>  
+            
+            <!-- Back End Validation -->
+
+            <!-- <% if (locals.errors2 && errors2.email) { %>
+                <p class="msg-error"><%= errors2.email.msg %></p>
+            <% } %> 
+            <% if (locals.errors2 && errors2.password) { %>
+                <p class="msg-error"><%= errors2.password.msg %></p>
+            <% } %>  -->
+            
+             <!-- USER validation -->
+
+            <!-- <% if (locals.errors && errors.email) { %>
+                <p class="msg-error"><%= errors.email.msg %></p>
+            <% } %> 
+            <% if (locals.errors && errors.password) { %>
+                <p class="msg-error"><%= errors.password.msg %></p>
+            <% } %>  -->
+
+ 
         
-            <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="E-mail" 
-                value="<%= locals.oldData ? oldData.email : null %>" required>
+            <form action="/login" method="POST"  class="formLogin" id="formLogin" novalidate>
+                <input class="emailLogin form-input" type="email" name="email" placeholder=" E-mail" 
+                value="<%= locals.oldData ? oldData.email : null %>" >
                 <% if (locals.errors && errors.email) { %>
                     <p class="msg-error"><%= errors.email.msg %></p>
                 <% } %>
-                <input type="password" name="password" placeholder="Contraseña" required>
+                <input class="passwordLogin form-input" type="password" name="password" placeholder=" Contraseña">
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-error"><%= errors.password.msg %></p>
                 <% } %>
+
                 <label class="">
-                    <input type="checkbox" class="" name="remember">Recordar mi usuario
+                    <input type="checkbox" class="check-box" name="remember">Recordar mi usuario
                 </label>
-                <input type="submit" value="Ingresar" class="botonLogin">
+
+                <br><br>
+                <button type="submit" class="botonLogin form-input" id="botonLogin">Ingresar</button>
+
+
             </form>
 
             <div class="links">
@@ -47,5 +79,7 @@
         <footer>
             <%-include('../partials/footer.ejs') %>
         </footer>
+
+        <script src="js/loginJsFront.js"></script>
     </body>
 </html>

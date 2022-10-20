@@ -41,7 +41,7 @@
             <br>
         <form action="/edicion-usuario?_method=PUT" method="POST" enctype="multipart/form-data">
             
-            <input type="text" name="id" placeholder="Nombre" 
+            <input type="text" name="id" placeholder="id" 
             value="<%= userEdit.id %>" readonly="true">
             <input type="text" name="nombre" placeholder="Nombre" 
             value="<%= locals.oldData ? oldData.nombre : userEdit.user_first_name %>">
@@ -54,7 +54,7 @@
                 <p class="msg-error"><%= errors.apellido.msg %></p>
             <% } %>
             <input type="email" name="email" placeholder="E-mail" 
-            value="<%= locals.oldData ? oldData.email : userEdit.user_mail %>">
+            value="<%= locals.oldData ? oldData.email : userEdit.user_mail %>" readonly="true">
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
             <% } %>
@@ -76,7 +76,7 @@
 
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
-                <h4>Foto de perfil (opcional)</h4>
+                <h4 class="space">Foto de perfil (opcional)</h4>
                 <input type="file" name="fotoPerfil">
                 <% if (locals.errors && errors.fotoPerfil) { %>
                     <p class="msg-error"><%= errors.fotoPerfil.msg %></p>
@@ -95,8 +95,8 @@
             <br>
              <!-- Botones -->
             <div id="buttonRegister">
-                 <button id=buttonR type="reset">Reset</button>
-                 <button id=buttonR type="submit">Guardar</button>
+                 <button class="button-register" id=buttonR type="reset">Reset</button>
+                 <button class="button-register" id=buttonR type="submit">Guardar</button>
     
             </div>  
         </form>
