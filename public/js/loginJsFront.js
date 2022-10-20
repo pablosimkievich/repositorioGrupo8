@@ -18,7 +18,6 @@ let ulErrores = document.querySelector('div.errores ul');
     errores.push("Debes completar el campo con un email")     
  }
 
- 
 
  let passwordLogin = document.querySelector("input.passwordLogin");
   if (passwordLogin.value.length <= 8) {

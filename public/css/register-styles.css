@@ -20,6 +20,17 @@
 
 }
 
+.errores ul {
+    color: tomato;
+    justify-content: center;
+    padding: 20px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+
+}
+
 .register form input {
     margin-top: 10px;
     width: 60vw;

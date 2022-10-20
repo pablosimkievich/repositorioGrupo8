@@ -90,7 +90,7 @@
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
                 <h4>Foto de perfil (opcional)</h4>
-                <input type="file" name="fotoPerfil" accept=".jpg">
+                <input type="file" name="fotoPerfil" accept="image/jpg, image/png, image/jpeg, image/gif" class="fotoPerfilRegister">
                 <% if (locals.errors && errors.fotoPerfil) { %>
                 <p class="msg-error"><%= errors.fotoPerfil.msg %></p>
                 <% } %>
