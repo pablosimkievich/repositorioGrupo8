@@ -47,17 +47,29 @@
 
         <form action="/registro" method="POST" enctype="multipart/form-data" >
             
+<<<<<<< HEAD
             <input type="text" name="nombre" placeholder="Nombre" class="name-register"
+=======
+            <input type="text" name="nombre" placeholder=" Nombre" class="name-register"
+>>>>>>> pablo5
             value="<%= locals.oldData ? oldData.nombre : null %>">
             <% if (locals.errors && errors.nombre) { %>
                 <p class="msg-error"><%= errors.nombre.msg %></p>
             <% } %>
+<<<<<<< HEAD
             <input type="text" name="apellido" placeholder="Apellido" class="apellido-register"
+=======
+            <input type="text" name="apellido" placeholder=" Apellido" class="apellido-register"
+>>>>>>> pablo5
             value="<%= locals.oldData ? oldData.apellido : null %>">
             <% if (locals.errors && errors.apellido) { %>
                 <p class="msg-error"><%= errors.apellido.msg %></p>
             <% } %>
+<<<<<<< HEAD
             <input type="text" name="email" placeholder="E-mail" class="email-register"
+=======
+            <input type="text" name="email" placeholder=" E-mail" class="email-register"
+>>>>>>> pablo5
             value="<%= locals.oldData ? oldData.email : null %>">
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
@@ -77,12 +89,20 @@
             <% if (locals.errors && errors.dni) { %>
                 <p class="msg-error"><%= errors.dni.msg %></p>
             <% } %>
+<<<<<<< HEAD
             <input type="password" name="password" placeholder="Contraseña" class="password-register"
             value="<%= locals.oldData ? oldData.dni : null %>">
             <% if (locals.errors && errors.password) { %>
                 <p class="msg-error"><%= errors.password.msg %></p>
             <% } %>
             <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" class="password-confirm-register">
+=======
+            <input type="password" name="password" placeholder=" Contraseña" class="password-register">
+            <% if (locals.errors && errors.password) { %>
+                <p class="msg-error"><%= errors.password.msg %></p>
+            <% } %>
+            <input type="password" name="confirmPassword" placeholder=" Confirmar contraseña" class="password-confirm-register">
+>>>>>>> pablo5
             <% if (locals.errors && errors.confirmPassword) { %>
                 <p class="msg-error"><%= errors.confirmPassword.msg %></p>
             <% } %>
@@ -122,7 +142,11 @@
         </footer>
         
     </main> 
+<<<<<<< HEAD
     
+=======
+    <script src="js/registerJSFront.js"></script>
+>>>>>>> pablo5
 </body>
 
 </html>

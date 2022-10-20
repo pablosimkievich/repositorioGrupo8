@@ -1,15 +1,13 @@
-# Dinámica “La línea de tiempo”
-
-------------
+> # Dinámica “La línea de tiempo”
 
 ***Fase 1: Preparación preliminar (5-10 minutos)***
 Encontrándonos en la instancia final de nuestro proyecto integrador “Rayuela”, dentro de los principales hitos y eventos del proyecto podemos destacar los siguientes:
 
-*Negativos: *
+*Negativos:*
 1. Dificultad para aprender a administrar el tiempo en relación a las tareas que debíamos realizar de acuerdo a su complejidad.
 2. No tener una buena comunicación llevo en un principio la duplicación de trabajo o no tener en claro las tareas efectuar.
 
-*Positivos: *
+*Positivos:*
 1. Rápidamente nos acostumbrarnos a la dinámica de reunirnos como grupo de forma periódica.
 2. Gran predisposición de todos los integrantes del grupo para ayudar al otro y reunirse ya sea para ver el avance de las tareas o para solucionar alguna porción de código que no estaba funcionando a alguno de los miembros del grupo.
 3. Entender la importancia de la comunicación.  
@@ -47,3 +45,4 @@ Detectados los problemas y sus causas es momento de pasar a la etapa retrospecti
 En cada reunión en donde analizamos nuestras falencias y fortalezas, como equipo dejamos un espacio para que cada uno de los integrantes exprese sus ideas, recordando el compromiso que tenemos como grupo, entendiendo que el crecimiento del equipo es el crecimiento de todos sus integrantes en su conjunto. 
 En general luego de analizar todos los inconvenientes que tuvimos a lo largo del proyecto concluimos que pudimos ir superando los obstáculos e ir solucionando los problemas que se fueron presentando obteniendo buenos resultados. 
 
+------------

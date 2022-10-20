@@ -1,6 +1,6 @@
 const {body} = require('express-validator')
 
-const validateCreateForm = [
+const validateUpdateForm = [
     body('name').notEmpty().withMessage("Este campo no puede estar vacio").bail()
                 .isLength({min:5, max:100}).withMessage('El nombre del producto debe tener entre 5 y 100 caracteres').bail(),
 
@@ -61,23 +61,23 @@ const validateCreateForm = [
         
 
             body('width').notEmpty().withMessage('Debes ingresar un numero').bail()
-            .isInt().withMessage('Debes ingresar un numero entero').bail(),
+            .isDecimal().withMessage('Debes ingresar un numero decimal').bail(),
             
             body('height').notEmpty().withMessage('Debes ingresar un numero').bail()
-            .isInt().withMessage('Debes ingresar un numero entero').bail(),
+            .isDecimal().withMessage('Debes ingresar un numero decimal').bail(),
             
             body('depth').notEmpty().withMessage('Debes ingresar un numero').bail()
-            .isInt().withMessage('Debes ingresar un numero entero').bail(), 
+            .isDecimal().withMessage('Debes ingresar un numero decimal').bail(), 
 
             body('weight').notEmpty().withMessage('Debes ingresar un numero').bail()
-            .isInt().withMessage('Debes ingresar un numero entero').bail(),
+            .isDecimal().withMessage('Debes ingresar un numero decimal').bail(),
 
             body('stock').notEmpty().withMessage('Debes ingresar un numero').bail()
-            .isInt().withMessage('Debes ingresar un numero entero').bail(),
+            .isDecimal().withMessage('Debes ingresar un numero decimal').bail(),
 
             body('description').notEmpty().withMessage('Debes ingresar un descripcion').bail()
             .isLength({min:20, max:10000}).withMessage('La descripcion debe tener entre 20 y 10000 caracteres').bail(),
 ]
 
 
-module.exports = validateCreateForm
+module.exports = validateUpdateForm;

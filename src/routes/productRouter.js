@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
-const validateCreateForm = require('../middlewares/validateCreateProductForm')
+const validateCreateForm = require('../middlewares/validateCreateProductForm');
+const validateUpdateForm = require('../middlewares/validateUpdateProductForm');
 const path=require('path')
 
 const onlyAdminMiddleware = require('../middlewares/onlyAdminMiddleware');
@@ -27,7 +28,7 @@ router.post('/crear-producto', validateCreateForm, productController.saveNewProd
  
 /********EDIT A PRODUCT***********/
 router.get('/edit/:id', onlyAdminMiddleware, productController.edit );
-router.put('/edit/:id', productController.saveEdit );
+router.put('/edit/:id', validateUpdateForm, productController.saveEdit );
 
 /********DELETE A PRODUCT***********/
 router.delete('/:id' , productController.deleteProduct)
