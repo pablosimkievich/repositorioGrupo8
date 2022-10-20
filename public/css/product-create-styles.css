@@ -259,20 +259,7 @@ ul.breadcrumbs li+li:before {
     display: none;
 }
 
-div.dots{
-    display:flex;
-    justify-content: center;
-}
 
-.dots input{
-    border: 2px solid  rgb(112, 108, 108);
-    padding: 5px;
-    margin:10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition:1s;
-    
-}
 
 
 
@@ -715,8 +702,17 @@ table.info-table {
 }
 
 .errors {
-    color:red;
+    color: tomato;
     font-size: 18px;
+}
+
+.erroresFront {
+    margin-left: 15px;
+    color: tomato;
+    font-size: 18px;
+}
+.erroresFront ul{
+    list-style: none;
 }
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
