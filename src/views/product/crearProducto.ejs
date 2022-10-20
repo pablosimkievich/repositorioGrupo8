@@ -74,7 +74,7 @@
 
         <div class="control-formulario" id="form-images">
             <label for="imagen-producto">Seleccionar la imagen principal</label>
-            <input type="file" name="principal_img" class="control" id="ppal-img-input"></>
+            <input type="file" name="principal_img" class="control" id="ppal-img-input" accept="image/jpg, image/png, image/jpeg, image/gif "></>
             <%if(locals.errors && errors.principal_img){%>
                 <p class="errors"><%= errors.principal_img.msg %></p>
             <%}%>
@@ -136,15 +136,16 @@
         </div>
         
         <div class="form-buttons">
-       <button type="reset" class="form-button" id="form-button">RESET</button>
-        <button type="submit" class="form-button">GUARDAR</button>
+       <button type="reset" class="form-button" >RESET</button>
+        <button type="submit" class="form-button" id="form-button">GUARDAR</button>
     </div>
     </form>
 </main>
-<script src="/js/crearProductoValidation.js"></script>
-</body>
+<script src="js/crearProductoValidation.js"></script>
 <footer>
     <%include('../partials/footer.ejs')%>
 </footer>
+</body>
+
 
 </html>
