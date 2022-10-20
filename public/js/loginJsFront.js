@@ -4,7 +4,6 @@ let botonForm = document.querySelector("#botonLogin")
 
 botonForm.addEventListener("click", function(e) {
 
-
 let errores = [];
 
 let ulErrores = document.querySelector('div.errores ul');
@@ -19,7 +18,6 @@ let ulErrores = document.querySelector('div.errores ul');
     errores.push("Debes completar el campo con un email")     
  }
 
- 
 
  let passwordLogin = document.querySelector("input.passwordLogin");
   if (passwordLogin.value.length <= 8) {

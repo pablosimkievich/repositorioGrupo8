@@ -38,30 +38,36 @@
 
     <main class="register">
         <h3>Registrate</h3>
-            <br>
+            
+
+            <div class="errores">
+                <ul>                   
+                </ul>
+            </div> 
+
         <form action="/registro" method="POST" enctype="multipart/form-data" >
             
-            <input type="text" name="nombre" placeholder=" Nombre"
+            <input type="text" name="nombre" placeholder="Nombre" class="name-register"
             value="<%= locals.oldData ? oldData.nombre : null %>">
             <% if (locals.errors && errors.nombre) { %>
                 <p class="msg-error"><%= errors.nombre.msg %></p>
             <% } %>
-            <input type="text" name="apellido" placeholder=" Apellido"
+            <input type="text" name="apellido" placeholder="Apellido" class="apellido-register"
             value="<%= locals.oldData ? oldData.apellido : null %>">
             <% if (locals.errors && errors.apellido) { %>
                 <p class="msg-error"><%= errors.apellido.msg %></p>
             <% } %>
-            <input type="text" name="email" placeholder=" E-mail"
+            <input type="text" name="email" placeholder="E-mail" class="email-register"
             value="<%= locals.oldData ? oldData.email : null %>">
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
             <% } %>
-            <input type="text" name="telefono" placeholder=" Telefono"
+            <input type="text" name="telefono" placeholder="Telefono" 
             value="<%= locals.oldData ? oldData.telefono : null %>">
             <% if (locals.errors && errors.telefono) { %>
                 <p class="msg-error"><%= errors.telefono.msg %></p>
             <% } %>
-            <input type="text" name="domicilio" placeholder=" Domicilio"
+            <input type="text" name="domicilio" placeholder="Domicilio" 
             value="<%= locals.oldData ? oldData.domicilio : null %>">
             <% if (locals.errors && errors.domicilio) { %>
                 <p class="msg-error"><%= errors.domicilio.msg %></p>
@@ -71,19 +77,20 @@
             <% if (locals.errors && errors.dni) { %>
                 <p class="msg-error"><%= errors.dni.msg %></p>
             <% } %>
-            <input type="password" name="password" placeholder=" Contraseña">
+            <input type="password" name="password" placeholder="Contraseña" class="password-register"
+            value="<%= locals.oldData ? oldData.dni : null %>">
             <% if (locals.errors && errors.password) { %>
                 <p class="msg-error"><%= errors.password.msg %></p>
             <% } %>
-            <input type="password" name="confirmPassword" placeholder=" Confirmar contraseña">
+            <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" class="password-confirm-register">
             <% if (locals.errors && errors.confirmPassword) { %>
                 <p class="msg-error"><%= errors.confirmPassword.msg %></p>
             <% } %>
             
             <!-- Foto de Usuario -->
             <div class="register-look-for-img">
-                <h4 class="space">Foto de perfil (opcional)</h4>
-                <input type="file" name="fotoPerfil">
+                <h4>Foto de perfil (opcional)</h4>
+                <input type="file" name="fotoPerfil" accept="image/jpg, image/png, image/jpeg, image/gif" class="fotoPerfilRegister">
                 <% if (locals.errors && errors.fotoPerfil) { %>
                 <p class="msg-error"><%= errors.fotoPerfil.msg %></p>
                 <% } %>
@@ -100,19 +107,20 @@
             <br>
              <!-- Botones -->
             <div id="buttonRegister">
-                 <button class="button-register" id="buttonR" type="reset" value="Borrar" >Borrar</button>
-                 <button class="button-register" id="buttonR" type="submit" value="registrarse">Registrarse</button>
+                 <button id="buttonR" type="reset" value="Borrar" >Borrar</button>
+                 <button id="buttonR" type="submit" value="registrarse" class="register-button">Registrarse</button>
     
             </div>  
+            <script src="js/registerJSFront.js"></script>
         </form>
-
+        
         <div>
             <%- include('../partials/whatsappButton.ejs') %>
         </div>
         <footer>
             <%-include('../partials/footer.ejs') %>
         </footer>
-
+        
     </main> 
        
 </body>
