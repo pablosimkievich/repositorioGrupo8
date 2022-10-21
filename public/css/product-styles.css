@@ -359,7 +359,7 @@ span.reviews{
     text-align: center;
     align-items: center;
     border-radius: 3px;
-    justify-content: center;
+    /* justify-content: center; */
     border: none;
     font-size: 12x;
     font-weight: 400;
@@ -368,6 +368,7 @@ span.reviews{
     display: flex;
     transition: all 0.3s;
     color: #A3D2CA;
+    width: 250px;
 }
 
 .add-to-cart-button2 i {

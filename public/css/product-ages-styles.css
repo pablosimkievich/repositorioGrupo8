@@ -368,6 +368,7 @@ span.reviews{
     display: flex;
     transition: all 0.3s;
     color: #A3D2CA;
+    width: 250px;
 }
 
 .add-to-cart-button2 i {
@@ -638,7 +639,10 @@ table.info-table {
 .titulo-categoria{
     margin-top: 220px;
     margin-left: 25px;
-    font-size: 2em;
+    font-size: 35px;
+    color: #999999;
+    text-align: center;
+    
 }
 
 .space-div {
