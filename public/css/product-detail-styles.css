@@ -164,7 +164,7 @@ ul.breadcrumbs li a {
     color: rgb(124, 124, 124);
     transition-property: all;
     transition-duration: all 1s;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     justify-content: center;
 }
 
@@ -177,7 +177,7 @@ ul.breadcrumbs li+li:before {
 
   ul.breadcrumbs li a:hover {
     color:  #32afa9 ;
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 .product-display{
     margin-top: 20px;    
@@ -322,11 +322,11 @@ form.add-to-cart{
 
 
 .add-to-cart-button2 {
-    background-color: #056676;
+    background-color:rgb(45, 185, 138);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
     text-align: center;
     align-items: center;
-    border-radius: 3px;
+    border-radius: 6px;
     justify-content: center;
     border: none;
     font-size: 12x;
@@ -335,7 +335,7 @@ form.add-to-cart{
     padding: 5px;
     display: flex;
     transition: all 0.3s;
-    color: #A3D2CA;
+    color: #fff;
     width: 250px;
 }
 
@@ -343,8 +343,8 @@ form.add-to-cart{
     margin: 10px;
 }
 .add-to-cart-button2:hover {
-    background-color: #D45D79;
-    color: #424874;    
+    background-color: #BDE6F1;
+    color: #73777B;
 }
 
 .add-to-cart-button2:active {
