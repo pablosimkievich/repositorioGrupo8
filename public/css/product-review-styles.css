@@ -359,7 +359,7 @@ span.reviews{
     text-align: center;
     align-items: center;
     border-radius: 3px;
-    /* justify-content: center; */
+    justify-content: center;
     border: none;
     font-size: 12x;
     font-weight: 400;
@@ -368,7 +368,6 @@ span.reviews{
     display: flex;
     transition: all 0.3s;
     color: #A3D2CA;
-    width: 250px;
 }
 
 .add-to-cart-button2 i {
@@ -547,7 +546,7 @@ table.info-table {
     width: 90%;
     box-shadow: 0px 0px 10px #b9b4b4;
     margin:auto;
-    margin-top: 20px;
+    margin-top: 180px;
     background-color: white;
     padding:10px;
     display:flex;
@@ -559,7 +558,6 @@ table.info-table {
  }
  .main__form{
     background-color: rgb(210,218,255);
-    height: 100vh;
  }
  .control-formulario{
     padding-top:10px;
@@ -720,18 +718,6 @@ table.info-table {
     color:red;
     font-size: 18px;
 }
-
-.erroresFront {
-    margin-left: 15px;
-    color: tomato;
-    font-size: 18px;
-}
-
-.erroresFront ul{
-    list-style: none;
-}
-
-
 @media (min-width: 361px){
 .tambien-te-puede-gustar {
 flex-direction: row;
