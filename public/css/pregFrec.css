@@ -1,4 +1,4 @@
-h2 {
+.titulo-req {
     margin-top: 230px;
     text-decoration: underline;
     font-weight: bold;
@@ -6,21 +6,22 @@ h2 {
     font-size: 25px;
 }
 
-p {
+.parrafo-freq {
     padding: 20px;
     font-size: 20px;
     font-style: italic;
 }
 
-h3 {
+.titulo2-freq {
     padding-left: 20px;
     padding-right: 20px;
     font-size: 18px;
     font-weight: bold;
 }
 
-h4 {
+
+.titulo3-freq {
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 18px;
+    font-size: 14px; 
 }

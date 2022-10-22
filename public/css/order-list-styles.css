@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: cursive;
+    font-family: tahoma;
+    /* font-family: cursive; */
     font-weight: 400;
     
 }
@@ -56,6 +57,13 @@ body {
 .data-box-links {
     text-decoration: none;
 }
+
+.data-box-links:visited {
+    text-decoration: none;
+    color: #576F72;
+}
+
+
 
 .order_card_data_box2 {
     margin: 0px 25px;

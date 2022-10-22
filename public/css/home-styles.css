@@ -8,14 +8,16 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Coming Soon', cursive;
+    /* font-family: tahoma; */
+    font-family: cursive; 
     font-weight: 400;
     font-size: 14px;
 }
 
+
 .banner{
     width:100%;
-    margin-top: 127px;
+    margin: 200px 0px;
    
 }
 
@@ -86,13 +88,13 @@
     border-radius: 15px; 
 }
 
-.add-to-cart-button {
-    background-color: #056676;
+.add-to-cart-button2 {
+    background-color:rgb(45, 185, 138);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
     text-align: center;
     align-items: center;
+    border-radius: 6px;
     justify-content: center;
-    border-radius: 3px;
     border: none;
     font-size: 12x;
     font-weight: 400;
@@ -100,18 +102,18 @@
     padding: 5px;
     display: flex;
     transition: all 0.3s;
-    color: #A3D2CA;
+    color: #fff;
 }
 
-.add-to-cart-button i {
+.add-to-cart-button2 i {
     margin: 10px;
 }
-.add-to-cart-button:hover {
-    background-color: #D45D79;
-    color: #424874;    
+.add-to-cart-button2:hover {
+    background-color: #BDE6F1;
+    color: #73777B;
 }
 
-.add-to-cart-button:active {
+.add-to-cart-button2:active {
     transform: scale(1.05);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
 }
@@ -127,7 +129,6 @@
     width: 91vw;
     margin: 25px 10px;
     border-radius: 5px;
-    /*border: 3px solid rgb(131, 131, 150, 0.3);*/
     justify-content: space-around;
 }
 

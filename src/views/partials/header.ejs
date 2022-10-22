@@ -12,88 +12,90 @@
                 <i class="fa-solid fa-truck"></i>
                 <h4>Envío gratis a partir de $ 5000</h4>
             </section>
-
             
-    <section class="header-topbar">
-
-         
-
-                <div class="header-topbar-burger-menu">
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
-                    <script>
-                        function myFunction() {
-                    var x = document.getElementById("header-links");
-                    if (x.style.display === "block") {
-                        x.style.display = "none";
-                    } else {
-                        x.style.display = "block";
-                    }
-                }
-                    </script>
-                    <ul id="header-links">
-                        <li><a href="/quienesSomos">Quienes Somos</a></li>
-                        <li><a href="/index-categorias">Por categoria</a></li>
-                        <li><a href="/index-edad">Por edad</a></li>
-                        <li><a href="/preguntasFrecuentes">FAQ</a></li>
-                        <li><a href="/contacto">Contacto</a></li>
-                    </ul>
-                </div>
+            <section class="header-topbar">
                 
                 <div class="header-search-bar">
                     <!-- <section > -->
-                        <a href="/"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
-                        <form class="header-search">
-                        <input type="search" name="q" placeholder="Buscar...">
+                        <a href="/control-panel"><img id="header-logo" src="/img/logo5.png" alt="logo"></a>
+                        <form action="/search-by-user" method="GET" class="header-search">
+                        <input type="search" name="keywords" placeholder="Buscar...">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     <!-- </section> -->
-
+    
                 </div>
-                       
-                
-                <div class="header-topbar-icons">
-                    <nav>
-                        <div class="header-topbar-each-icon">
-                            <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
-                        </div>
-
-                            
-                        <div class="header-topbar-each-icon">
-                            <% if (!locals.isLogged) { %>
-                            <a href="/login"><i class="fa-solid fa-user"></i></a>
-                            <% } %>
-                       </div>
-
-                       <div class="userLogged-style">    
-                        <% if (locals.isLogged) { %>
-                            <% if (locals.userLogged.user_img == "" ) { %>
-                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
-                                      <% } else { %> 
-                                <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
-                                      <% } %>
-              
-                            Hola <%= locals.userLogged.user_first_name %>
-                            <a href="/logout" class="user-style__logout">Logout</a>
-                        <% } %>
-                        </div>
-                    </nav>
-                </div>
-
-                
-
                   
-            </section>
-<section>
-    <ul id="header-down-bar">
-        <li><a href="/quienesSomos">QUIENES SOMOS</a></li>
-        <li><a href="/index-categorias">POR CATEGORÍA</a></li>
-        <li><a href="/index-edad">POR EDAD</a></li>
-        <li><a href="/preguntasFrecuentes">PREGUNTAS FRECUENTES</a></li>
-        <li><a href="/contacto">CONTACTO</a></li>
-    </ul>
-</section>
             
-        </header
+
+               
+                <span class="nav-bar" id="btnMenu">
+                    <i class="fa-solid fa-bars"></i>
+                    <div class="header-topbar-icons">
+                        <nav>
+                            <div class="header-topbar-each-icon">
+                                <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                            </div>
+    
+                                
+                            <div class="header-topbar-each-icon">
+                                <% if (!locals.isLogged) { %>
+                                <a href="/login"><i class="fa-solid fa-user"></i></a>
+                                <% } %>
+                           </div>
+    
+                           <div class="userLogged-style">    
+                            <% if (locals.isLogged) { %>
+                                <% if (locals.userLogged.user_img == "" ) { %>
+                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/undefined-user1280.png" alt="fotoPerfil" class="user-style__img"> </a> 
+                                          <% } else { %> 
+                                    <a href="/usuario/<%= locals.userLogged.id %>"> <img src="/img/users/<%= locals.userLogged.user_img %>" alt="fotoPerfil" class="user-style__img"> </a>   
+                                          <% } %>
+                  
+                                Hola <%= locals.userLogged.user_first_name %>
+                                <a href="/logout" class="user-style__logout">Logout</a>
+                            <% } %>
+                            </div>
+                        </nav>
+                    </div>
+    
+                </span>
+            </section>
+                <nav class="main-nav">
+                    <ul class="menu" id="menu">
+                        <li class="menu__item"><a class="menu__link" href="/">INICIO</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/quienes-somos">QUIENES SOMOS</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/preguntas-frecuentes/">FAQ</a></li>
+                        <li class="menu__item container-submenu">
+                             <a class="menu__link submenu-btn" id="submenu-btn-1" href="#">POR CATEGORIA<i class="fa-solid fa-chevron-down" id="menu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li class="menu__item"><a class="menu__link" href="/categorias/1">Sensoriales</a></li>
+                                    <li class="menu__item"><a class="menu__link" href="/categorias/2">Musicales</a></li>
+                                    <li class="menu__item"><a class="menu__link" href="/categorias/3">Ingenio</a></li>
+                                    <li class="menu__item"><a class="menu__link" href="/categorias/4">Movimiento</a></li>
+                                </ul>
+                         </li>
+                         <li class="menu__item container-submenu">
+                            <a class="menu__link submenu-btn" id="submenu-btn-2" href="#">POR EDAD<i class="fa-solid fa-chevron-down" id="menu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li class="menu__item"><a class="menu__link" href="/edad/1">De 6 meses a 1 año</a></li>
+                                <li class="menu__item"><a class="menu__link" href="/edad/2">De 1 año a 3 años</a></li>
+                                <li class="menu__item"><a class="menu__link" href="/edad/3">De 3 a 6 años</a></li>
+                                <li class="menu__item"><a class="menu__link" href="/edad/4">Mas de 6 años</a></li>
+                             </ul>
+                        </li>    
+                        <li class="menu__item"><a class="menu__link" href="/productos/">JUGUETES</a></li>
+                        
+                       
+                    </ul>
+                </nav>
+            
+
+     
+            
+
+            <script src="/js/menu.js"></script>
+        </header>
        
 
 </html>

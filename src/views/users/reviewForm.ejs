@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejanos tu comentarios!</title>
+    <link rel="stylesheet" href="/css/product-review-styles.css" title="cont">
+    <link rel="icon" href="/img/logo-icono.png">
+</head>
+<body>
+  
+
+    
+    <main class="main__form">
+    
+    <form action="/review" method="POST" class="create-form" id="review-form">
+                
+        <div class="form-logo">
+                
+            
+            <h1 class="h1-edit-form"><img src="/img/products/<%= myOrderDetail.products.principal_img %>" style="max-width: 100px;"> Review de <%= myOrderDetail.products.name %></h1>
+                
+            
+            <div class="control-formulario">
+                
+                <input type="number" name='id' style='display:none' readonly value=<%=myOrderDetail.id%> ><br>
+                <label class="control-formulario">Rating: <div class="stars-outer">      
+                    <div class="stars-inner" id="starsInner" >
+                    </div>
+                </div> </label><br>
+                <input type="number" name="rating" placeholder="Escribe un puntaje del 1 al 100" value="<%=(locals.old && old.rating)? old.rating:null %>"class="input-control" id="rating-input"><br>
+            </div>
+            <%if(locals.errors && errors.rating){%>
+                <p class="errors"><%= errors.rating.msg %></p>
+            <%}%>
+        </div>
+            
+        </div>
+
+
+        <div class="control-formulario">
+        <label for="">Titulo de la review: </label><br>
+        <input type="text" name="review_title" placeholder="Titulo de tu comentario" value="<%=(locals.old && old.review_title)? old.review_title:null %>"  class="input-control"id="titulo-input"><br>
+        <% if(locals.errors && errors.review_title){%>
+            <p class="errors"><%= errors.review_title.msg %></p>
+        <%}%>
+    </div>
+
+
+        <div class="control-formulario">
+        <label for="">Review: </label><br>
+        <input type="textarea" name="review" class="textarea"value="<%=(locals.old && old.review)? old.review:null %>" placeholder="Escribe aquí tu review" id="review-input"><br>
+        <% if(locals.errors && errors.review){%>
+            <p class="errors"><%= errors.review.msg %></p>
+        <%}%>
+    </div>
+
+    <div class="control-formulario">
+        <input type="number" name="userr_fk_id" value="<%= myOrderDetail.fk_user_id %>" readonly style="display:none"><br>
+    </div>
+
+    <div class="control-formulario">
+            <input type="number" name="order_detail_fk_id" value="<%= myOrderDetail.id %>" readonly style="display:none"><br>
+    </div>
+    
+
+    <div class="control-formulario">
+       <input type="number" name="product_fk_id" value="<%= myOrderDetail.fk_product_id %>" readonly style="display:none"><br>
+    </div>
+    <div class="erroresFront">
+        <ul>
+
+        </ul>
+    </div>
+    
+    <div class="form-buttons">
+        <input type="submit" value="Enviar" class="form-button">
+    </div>
+   
+
+
+    </form>
+
+
+    </main>
+
+    <footer style="display: none;">
+        <%-include('../../views/partials/footer.ejs')%>
+    </footer>
+ 
+    <script src="/js/pintarEstrellas.js"></script>
+</body>
+</html>

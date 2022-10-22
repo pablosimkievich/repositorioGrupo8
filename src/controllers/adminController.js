@@ -125,28 +125,125 @@ const userDetaille = async (req, res) => {
 };
 
 
-const productList = async (req, res) => {
+
+
+const reviewList = async (req, res) => {
+
+    try {
+        const allTheReviews = await db.Review.findAll({
+            include: [
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'users'
+                }
+            ]
+        });
+
+        res.render('admin/reviewProductList', {allTheReviews});
+
+    } catch(error) {
+
+    }
+};
+
+const reviewDetail = async (req, res) => {
+
     try {
 
-        const allTheProducts = await db.Product.findAll({
+        const id = req.params.id;
+
+        const theProduct = await db.Product.findByPk(id, {
             include: [
+                {
+                    association: 'reviews'
+                }
+            ]
+        })
+        const reviewDetails = await db.Review.findAll({
+            where: {
+                product_fk_id: id
+            },
+            include: [
+                {
+                    association: 'products'
+                },
+                {
+                    association: 'users'
+                }
+            ]
+            
+
+        });
+
+        if (reviewDetails) {
+            res.render('admin/reviewProductDetail', { reviewDetails, theProduct });
+        } else {
+            res.send(`No existen las reviews del producto Nro. : ${req.params.id}`)
+        };
+    } catch(error) {
+
+    }
+};
+
+const productOrders = async (req, res) => {
+    try {
+        const id = req.params.id
+        const theProduct = await db.Product.findByPk(id, {
+            include: [
+                {
+                    association: 'order_detail'
+                },
+                {
+                    association: 'secondary_images'
+                },
                 {
                     association: 'category'
                 },
                 {
                     association: 'ages'
-                },
-                {
-                    association: 'secondary_images'
-                },
+                }
             ]
         })
 
-        res.render('admin/productos', {allTheProducts});
-        
-    } catch (error) {
+        const theOrderDetails = await db.OrderDetail.findAll({
+            where: {
+                fk_product_id: id
+            },
+            include: [
+                {
+                    association: 'users'
+                },
+                {
+                    association: 'orders'
+                }
+            ]
+        })
+
+        if (theProduct) {
+
+        } else {
+            res.send(`No existe el producto Nro. ${id}`)
+        }
+
+        res.render('admin/productOrders', {theProduct, theOrderDetails})
+    }catch(error) {
         console.log(error);
     }
+}
+
+const controlPanel = (req, res) => {
+    res.render('admin/controlPanel')
+};
+
+const adminLogout = (req, res) => {
+    // res.clearCookie('userEmail');  //  logout desactivado por fines prácticos
+    // req.session.destroy();
+    return res.redirect('/');
 }
 
 module.exports = {
@@ -154,5 +251,9 @@ module.exports = {
     orderDetail,
     userList,
     userDetaille,
-    productList
+    reviewList,
+    reviewDetail,
+    productOrders,
+    controlPanel,
+    adminLogout
 }

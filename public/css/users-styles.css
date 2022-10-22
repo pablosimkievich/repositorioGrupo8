@@ -8,16 +8,17 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: cursive;
+    font-family: tahoma;
+    /* font-family: cursive; */
     font-weight: 400;
     font-size: 14px;
 }
 
-.banner{
+/* .banner{
     width:100%;
-    margin-top: 127px;
+    margin-top: 250px;
    
-}
+} */
 
 .banner img {
     width: 100%;
@@ -26,6 +27,9 @@
     height: 300px;
 }  
 
+.banner_space {
+    margin-top: 250px;
+}
 
 .lista-de-usuarios {
     display: flex;
@@ -37,14 +41,15 @@
 .button-box {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-list-tittle {
-    font-size: 2rem;
-    margin: 15px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;    
+      
+    text-align: center;
+    margin: 25px 5px;
+    font-size: 2em;
 }
 
 .user-list-link {
@@ -64,6 +69,7 @@
     object-fit: contain;
     display: flex;
     flex-direction: column;
+    max-width: 250px;
 }
 
 .producto img {
@@ -108,28 +114,30 @@
 }
 
 .add-to-cart-button {
-    background-color: #056676;
+    background-color:rgb(45, 185, 138);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
     text-align: center;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
+    border-radius: 6px;
     border: none;
-    font-size: 12x;
+    font-size: 13px;
     font-weight: 400;
     margin: 10px;
     padding: 5px;
     display: flex;
     transition: all 0.3s;
-    color: #A3D2CA;
+    color: #fff;
+    min-width: 150px;
+    min-height: 45px;
 }
 
 .add-to-cart-button i {
     margin: 10px;
 }
 .add-to-cart-button:hover {
-    background-color: #D45D79;
-    color: #424874;    
+    background-color: #BDE6F1;
+    color: #73777B;
 }
 
 .add-to-cart-button:active {
@@ -180,6 +188,29 @@
     transform: scale(1.05);    
     /*background-color:  rgb(131, 131, 150, 0.3);*/
     border-radius: 15px;
+}
+
+
+.user_detail {
+   max-width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 25px;
+   padding: 25px;
+}
+
+.user_detail img {
+    width: 120%;
+} 
+
+.user_detail p {
+    padding: 5px;
+}
+
+.user_detail h3 {
+    padding: 15px;
 }
 
 @media (min-width: 361px) {

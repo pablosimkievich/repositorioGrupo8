@@ -4,12 +4,16 @@ const path = require('path');
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
-const adminRouter = require('./routes/adminRouter')
+const adminRouter = require('./routes/adminRouter');
+
+const apiUserRouter = require('./routes/api/apiUserRouter');
+const apiProductRouter = require('./routes/api/apiProductRouter');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const cors =require('cors')
 
 app.use(express.static(path.join(__dirname,'../public')));
 
@@ -28,17 +32,23 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedMiddleware);
 
+app.use(cors());
+
 app.use('/', mainRouter);
 app.use(userRouter);
 app.use(productRouter);
 app.use(adminRouter);
+
+app.use(apiUserRouter);
+app.use(apiProductRouter);
+
 app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })
 
 
 
-app.set('puerto',process.env.PORT || 3000)
+app.set('puerto',process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
 
 

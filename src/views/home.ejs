@@ -7,19 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rayuela</title>
     <link rel="stylesheet" href="/css/home-styles.css">
+    <link rel="stylesheet" href="/css/pruebahome-styless.css">
+    <link rel="stylesheet" href="/css/porEdad.css">
     <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
-    
+   
+   
 </head>
 
 <body>
+    
 
     <header>
         <%- include('../views/partials/header.ejs') %>
     </header>
 
     <section class="banner" id="home-banner">
-        <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
-    </section>
+        
+    </section>   
 
     <section class="galeria-juguetes">
 
@@ -31,9 +35,66 @@
                 </a>
                 <p>$  <%= e.price %> </p>
                 
-                <button type="submit" class="add-to-cart-button">AGREGAR AL CARRITO<i class="fa-solid fa-bag-shopping"></i></button>
+                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>AGREGAR AL CARRITO</button></input>
+                
             </article>
         <% }) %>
+  
+        <section class="home_categoria">
+            <h2 class="home_header">Elegí por Categoría</h2>
+    
+            <div class="container categorias-de-home">
+            <% categorias.map(e => { %>
+            <article class="card">
+              
+                <a href="/categorias/<%= e.id %>"><img src="/img/<%= e.category_img %>" alt="imagen">
+            <div class="category_name_link">
+                <%= e.category_name %>
+               
+            </div></a>
+           
+            </article>
+            <% }) %>
+        </section>
+       
+
+        <section class="container">
+            <h2 class="home_header">Elegí por Edad</h2>
+
+            <div class="container">
+                <article class="card">
+                    
+                    <a href="/edad/1"><img src="/img/<%= edadesRecomendadas[0].age_img %>" alt="banco">
+                    <div class="age_links">
+                    <%= edadesRecomendadas[0].recommended_age %>
+                </div></a>
+                </article>
+
+                <article class="card">
+                    <a href="/edad/2"><img src="/img/<%= edadesRecomendadas[1].age_img %>" alt="banco">
+                    <div class="age_links">
+                    <%= edadesRecomendadas[1].recommended_age %>
+                </div></a>
+                </article>
+
+                <article class="card">
+                    <a href="/edad/3"><img src="/img/<%= edadesRecomendadas[2].age_img %>" alt="banco">
+                    <div class="age_links">
+                    <%= edadesRecomendadas[2].recommended_age %>
+                </div></a>
+                </article>
+
+                <article class="card">
+                    <a href="/edad/4"><img src="/img/<%= edadesRecomendadas[3].age_img %>" alt="banco">
+                    <div class="age_links">
+                    <%= edadesRecomendadas[3].recommended_age %>
+                </div></a>
+                </article>  
+
+            </div>
+     
+
+   </section> 
        
 
         <div>
@@ -47,7 +108,7 @@
     <footer>
     <%-include('../views/partials/footer.ejs')%>
     </footer>
-
+    <script src="/js/agregarAlCarrito.js"></script>
 </body>
 
 

@@ -17,8 +17,8 @@
         <%- include('../../views/partials/header.ejs') %>
     </header>
 
-    <section class="banner" id="home-banner">
-        <img src="\img\banner-azul.png" alt="juguetes con fondo verde">
+    <section class="banner_space" id="home-banner">
+       
     </section>
 
     <h2 class="user-list-tittle">Detalle de Usuario</h2>
@@ -26,7 +26,7 @@
     
         
             <article class="producto">
-                    <% if (userDetail.user_img == "" || userDetail.user_img == null ) { %>
+                    <% if (userDetail.user_img == "" ) { %>
                     <img src="/img/users/undefined-user1280.png" alt="banco">
                     <% } else { %> 
                     <img src="/img/users/<%= userDetail.user_img %>" alt="banco">
@@ -41,11 +41,20 @@
                     <form action="/delete/<%=userDetail.id%>?_method=DELETE" method="POST">
                         <button type="submit" class="add-to-cart-button">BORRAR USUARIO</i></button>
                     </form>
+                       
+                    <% if (orders.length >= 1) { %>
+                        <form action="/mis-compras/<%= userDetail.id %>" method="GET" class="button-box">
+                            <button type="submit" class="add-to-cart-button">MIS COMPRAS</button>
+                        </form>
+                    <% } %>
+                  
                 </div>
             </article>
-        
+          
     </section>
-
+    <div>
+        <%- include('../../views/partials/whatsappButton.ejs') %>
+    </div>
     <footer>
         <%-include('../../views/partials/footer.ejs')%>
     </footer>

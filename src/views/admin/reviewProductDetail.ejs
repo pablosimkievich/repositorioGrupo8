@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/review-detail.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="detail-title">Review Product Detail</h1>
+    <h2 class="review-product-title">Reviews del producto: <%= theProduct.name %></h2>
+   
+    
+    <div class="card-container">
+    <% reviewDetails.map(e => { %>
+        <div class="card">
+            <div class="review-data">
+                <p class="card-item">ID de la review: <%= e.id %> </p>
+                <img src="/img/users/<%= e.users.user_img %>" alt="usrr" width="100">
+                <p class="card-item">Rating: <%= e.rating %> </p>
+                <p class="card-item">Título de la review: <%= e.review_title %> </p>
+                <p class="card-item">Review: <%= e.review %> </p>
+                <p class="card-item">Detalle de compra Nro. : <%= e.order_detail_fk_id %> </p>
+                <p class="card-item">Id de Producto: <%= e.product_fk_id %> </p>
+            </div>
+            <div class="product-image">
+                <img class="toy-image" src="/img/products/<%= theProduct.principal_img %>">
+            </div>
+        </div>
+        
+    
+        
+    <% }) %>
+    </div>
+ 
+    
+</body>
+</html>
