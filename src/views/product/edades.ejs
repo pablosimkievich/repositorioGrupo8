@@ -31,10 +31,11 @@
                     <p class="precio-card">
                         <%=e.price%>$
                     </p>
-                    <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>
+                </a>
+                    <button type="submit" id="<%= e.id %>" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>
                         AGREGAR AL
                         CARRITO</button>
-                </a>
+                
             </article>
 
             <% }) %>
@@ -48,6 +49,7 @@
         <%- include('../partials/footer.ejs') %>
     </footer>
     
+    <script src="/js/agregarAlCarrito.js"></script>
 </body>
     
 

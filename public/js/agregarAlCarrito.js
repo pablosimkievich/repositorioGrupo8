@@ -2,7 +2,7 @@
 window.addEventListener('load',function(){
 
     let carrito =[];
-    let storage = JSON.parse(localStorage.getItem('carrito'));
+    let storage = JSON.parse(sessionStorage.getItem('carrito'));
     if(storage){
         carrito = storage;
         
@@ -63,7 +63,7 @@ window.addEventListener('load',function(){
     getTheSelectedToy(url)
 
     function addLocalStorage(){
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
       }
 })
 
