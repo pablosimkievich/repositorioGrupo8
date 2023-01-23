@@ -53,6 +53,8 @@
         <% if (!locals.isLogged) { %>
         <p class="reminder">Recuerda que debes iniciar sesión para poder efectuar tu compra</p>
         <a class="botoncito-link" href="/login"><button class="add-to-cart-button2">Login</button></a>
+      
+      
         <% }  else  {%>
           <div class="vertical">
             
@@ -70,13 +72,13 @@
           <div class="vertical">
             <label class="labels" for="">Elige tu Método de Pago:</label>
             <select class="user-inputs">
-              <option value="<%= metodosDePago[0].pay_method_type %>"><%= metodosDePago[0].pay_method_type %></option>
-              <option value="<%= metodosDePago[1].pay_method_type %>"><%= metodosDePago[1].pay_method_type %></option>
-              <option value="<%= metodosDePago[2].pay_method_type %>"><%= metodosDePago[2].pay_method_type %></option>
-              <option value="<%= metodosDePago[3].pay_method_type %>"><%= metodosDePago[3].pay_method_type %></option>
-              <option value="<%= metodosDePago[4].pay_method_type %>"><%= metodosDePago[4].pay_method_type %></option>
-              <option value="<%= metodosDePago[5].pay_method_type %>"><%= metodosDePago[5].pay_method_type %></option>
-              <option value="<%= metodosDePago[6].pay_method_type %>"><%= metodosDePago[6].pay_method_type %></option>
+              <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
+              <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
+              <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
+              <option value="<%= metodosDePago[3].id %>"><%= metodosDePago[3].pay_method_type %></option>
+              <option value="<%= metodosDePago[4].id %>"><%= metodosDePago[4].pay_method_type %></option>
+              <option value="<%= metodosDePago[5].id %>"><%= metodosDePago[5].pay_method_type %></option>
+              <option value="<%= metodosDePago[6].id %>"><%= metodosDePago[6].pay_method_type %></option>
 
             </select>
 
@@ -86,7 +88,7 @@
           
         
           
-        <% } %>
+          <% } %>
       </div>
 
       

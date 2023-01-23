@@ -12,33 +12,12 @@ window.addEventListener('load', function() {
                 .map((x) => {
                     let {id, quantity} = x;
                     let search = carrito.find((y) => y.id == id) || []; // encuentra los productos de los ids del carrito
-                /* return `
-                <div class="cart-item">
-                    <img width="100" src=${search.img} alt="img" />
-                    <div class="details">
-                        <div class="title-price-x">
-                            <h4 class="title-price">
-                                <p>${search.name}</p>
-                                <p class="cart-item-price">$ ${search.price}</p>
-                            </h4>
-                            <i onClick=removeItem(${id}) class="bi bi-x-lg"></i>
-                        </div>
-                        
-                        <div class="buttons">
-                            <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                            <div id=${id} class="quantity">
-                            ${quantity}
-                            </div>
-                            <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-                        </div>
-                        
-                        <h3>$ ${ quantity * search.price }</h3>
-                    </div>
-                </div> */
+                    
                     return `
                     <tr class="ItemCarrito">
                 <th class="columns" scope="columns"></th>
             <td class="table__productos">
+            <input type="number" value="${search.id}" id="id-search" style="display:none;">
             <img src=${search.img}  alt="">
             <h6 class="title">${search.name}</h6>
             </td>
@@ -51,6 +30,7 @@ window.addEventListener('load', function() {
                 `
             }).join(""))
             
+           
         }
         else {
             // console.log('basket is totally empty')
@@ -63,10 +43,13 @@ window.addEventListener('load', function() {
             `
 
 
+
             
         }
+        tr = document.getElementsByClassName('ItemCarrito')
         tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
-        tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+        tr.querySelector(".input__elemento").addEventListener('change', CarritoTotal)
+
         CarritoTotal()
     }
     
@@ -88,23 +71,27 @@ window.addEventListener('load', function() {
     function removeItemCarrito(e) {
         const buttonDelete = e.target
         const tr = buttonDelete.closest('.ItemCarrito')
-        const title = tr.querySelector('.title').textContent;
+        // const title = tr.querySelector('.title').textContent;
+        const idToyElement = document.getElementById("id-search")
+        const idToy = idToyElement.value
+        console.log(idToy)
         for(let i=0; i < carrito.length ; i++){
     
-            if(carrito[i].id === id()){
+            if(carrito[i].id == idToy){
               carrito.splice(i, 1);
+
             }
-          }
+        }
         
-          const alert = document.querySelector('.remove')
-        
+        // const alert = document.querySelector('.remove')
+        /*
           setTimeout( function(){
             alert.classList.add('remove')
           }, 1000)
             alert.classList.remove('remove')
-        
-          
-          CarritoTotal()
+        */
+        tr.remove()
+        CarritoTotal()
     }
 
     function addSessionStorage(){
