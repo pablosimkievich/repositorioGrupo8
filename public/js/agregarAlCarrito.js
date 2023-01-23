@@ -1,15 +1,15 @@
 
 window.addEventListener('load',function(){
 
-    let carrito =[];
+    
+    // sessionStorage.clear('carrito')
+    // let carrito =[]; 
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
-    if(storage){
-        carrito = storage;
-        
-      }
+    storage ? carrito = storage: carrito = [];
 
-    let botones = document.querySelectorAll('.add-to-cart-button2')
 
+
+    
     let url = 'http://localhost:3001/api/products';
     
 
@@ -35,22 +35,28 @@ window.addEventListener('load',function(){
             let botones = document.querySelectorAll('.add-to-cart-button2')
 
             for (let boton of botones) {
-                boton.addEventListener('click',function(e){
-                    e.preventDefault
+                boton.addEventListener('click', function(e){
+                    console.log(e.target)
                     console.log(boton.id)
                     selectedToy = losResultadosResumidos.find(toy => {
                         return toy.id == boton.id
                      })   
                     
                     for ( i = 0; i < carrito.length; i++) {
-                        if (carrito[i].name.trim() === selectedToy.name.trim()) {
-                            carrito[i].quantity++;
-                            addLocalStorage()
-                            return console.log(carrito)
+                        if (carrito[i].id == selectedToy.id) {
+                            carrito[i].quantity = carrito[i].quantity + 1;
+                            calculation();
+                            addSessionStorage()
+                            
+                            console.log(carrito)
+                            return null
                         }
                     }
                     carrito.push(selectedToy)
-                    addLocalStorage()
+                    // carrito = []
+                    calculation();
+                    addSessionStorage()
+                    
                     console.log(carrito)
 
                 })
@@ -62,10 +68,25 @@ window.addEventListener('load',function(){
 
     getTheSelectedToy(url)
 
-    function addLocalStorage(){
+ 
+
+    let calculation = () => {
+        let cartIcon = document.getElementById("cartAmount");
+        let totalItemsQ = carrito.map( (x) => x.quantity).reduce((x, y) => x + y, 0);
+        cartIcon.innerHTML = totalItemsQ; // ? se manda los items y  cantidades al contador rojo del  icono del carrito 
+    };
+    
+    calculation()
+
+    function addSessionStorage(){
+        
         sessionStorage.setItem('carrito', JSON.stringify(carrito));
+       
       }
+
+ 
 })
+
 
  
   

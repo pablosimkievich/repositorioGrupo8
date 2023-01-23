@@ -92,3 +92,7 @@
     margin: auto;
 
 }
+
+.links a:visited {
+    color: black;
+}

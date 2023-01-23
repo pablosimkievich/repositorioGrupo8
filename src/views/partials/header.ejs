@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
         <header class="header-style">
-            <section class="header-top-banner">
+            <!-- <section class="header-top-banner">
                 <i class="fa-solid fa-truck"></i>
                 <h4>Envío gratis a partir de $ 5000</h4>
-            </section>
+            </section> -->
             
             <section class="header-topbar">
                 
@@ -34,7 +34,10 @@
                     <div class="header-topbar-icons">
                         <nav>
                             <div class="header-topbar-each-icon">
-                                <a href="/carrito"><i class="fa-solid fa-bag-shopping"></i></a>
+                                <a href="/carrito">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <div id="cartAmount" class="cartAmount"> 0</div>
+                                </a>
                             </div>
     
                                 
@@ -61,6 +64,7 @@
     
                 </span>
             </section>
+            
                 <nav class="main-nav">
                     <ul class="menu" id="menu">
                         <li class="menu__item"><a class="menu__link" href="/">INICIO</a></li>
@@ -94,7 +98,8 @@
      
             
 
-            <script src="/js/menu.js"></script>
+            <script src="/js/menu.js"></script> 
+            <script src="/js/agregarAlCarrito.js"></script>
         </header>
        
 

@@ -179,11 +179,13 @@ div .medios-de-pago {
 }
 
 .title_1 {
+    font-size: 14px; 
     display: flex;
     justify-content: center;
 }
 
 .title_2 {
+    font-size: 14px;
     display: flex;
     justify-content: center;
 }

@@ -239,9 +239,32 @@ const quienesSomos = (req, res) => {
     res.render('users/quienesSomos');
 }
 
-const productCart = (req, res) => {
+/* const productCart = (req, res) => {
     res.render('users/productCart');
+}; */
+
+const shoppingCart = async (req, res) => {
+    try {
+        if (req.session.userLogged) {
+            let id = req.session.userLogged.id
+            let comprador = await db.User.findByPk(id);
+            let metodosDePago = await db.PaymentMethod.findAll()
+            res.render('users/shoppingCart', { comprador, metodosDePago })
+        }
+        res.render('users/shoppingCart');
+    } catch (error) {
+        console.log(error);
+    }
+
 };
+
+const peocessShoppingCart = async (req, res) => {
+    try {
+        res.send('Soy process cart')
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const misCompras = async (req, res) => {
 
@@ -394,7 +417,8 @@ module.exports = {
     contacto,
     preguntasFrecuentes,
     quienesSomos,
-    productCart,
+    shoppingCart,
+    peocessShoppingCart,
     misCompras,
     reviewForm,
     reviewCreate

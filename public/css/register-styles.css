@@ -114,3 +114,11 @@
 .msg-error {
     color: tomato;
 }
+
+.links a:visited {
+    color: black;
+}
+
+.register-termYCond a:visited {
+    color: black;
+}
