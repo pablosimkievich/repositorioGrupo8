@@ -164,6 +164,7 @@ const login = (req, res) => {
 
 const processLogin = async (req, res) => {
     const resultValidation = validationResult(req);
+    console.log(req.body)
     let errors = resultValidation.mapped();
     oldData = req.body;
     
@@ -245,18 +246,24 @@ const quienesSomos = (req, res) => {
 
 const shoppingCart = async (req, res) => {
     try {
-        if (req.session.userLogged) {
-            let id = req.session.userLogged.id
-            let comprador = await db.User.findByPk(id);
-            let metodosDePago = await db.PaymentMethod.findAll()
-            res.render('users/shoppingCart', { comprador, metodosDePago })
-        }
         res.render('users/shoppingCart');
     } catch (error) {
         console.log(error);
     }
-
 };
+
+const shoppingCartUser = async function(req, res) {
+    try {
+        if (req.session.userLogged) {
+            let id = req.session.userLogged.id
+            let comprador = await db.User.findByPk(id);
+            let metodosDePago = await db.PaymentMethod.findAll()
+            res.render(`users/shoppingCart`, { comprador, metodosDePago })
+        }
+    } catch(error) {
+        console.log(error)
+    }
+}
 
 const peocessShoppingCart = async (req, res) => {
     try {
@@ -418,6 +425,7 @@ module.exports = {
     preguntasFrecuentes,
     quienesSomos,
     shoppingCart,
+    shoppingCartUser,
     peocessShoppingCart,
     misCompras,
     reviewForm,

@@ -16,6 +16,11 @@
 
 }
 
+a:visited {
+    text-decoration: none;
+    color: rgb(151,151,151);
+}
+
 .header-style{
     width:100%;
     position: fixed;
@@ -76,6 +81,11 @@
     margin: 0; 
 }
 
+.menu:visited {
+    color: rgb(151,151,151);
+    text-decoration: none;
+}
+
 .submenu {
     margin-top: 0;
     
@@ -100,6 +110,7 @@
 }
 .menu__link:hover {
     background: #e4faf0;
+    color:  rgb(151,151,151);;
 
 }
 .submenu{

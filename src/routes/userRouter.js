@@ -52,6 +52,7 @@ router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'), validateUserUpd
 router.delete('/delete/:id', userController.userDelete) // borra usuario
 
 router.get('/carrito', userController.shoppingCart);
+router.get('/carrito/:id', userController.shoppingCartUser);
 router.post('/procesar-carrito', userController.peocessShoppingCart)
 
 router.get('/quienes-Somos', userController.quienesSomos);

@@ -71,25 +71,23 @@ window.addEventListener('load', function() {
     function removeItemCarrito(e) {
         const buttonDelete = e.target
         const tr = buttonDelete.closest('.ItemCarrito')
-        // const title = tr.querySelector('.title').textContent;
-        const idToyElement = document.getElementById("id-search")
-        const idToy = idToyElement.value
-        console.log(idToy)
+        const title = tr.querySelector('.title').textContent;
+      
         for(let i=0; i < carrito.length ; i++){
     
-            if(carrito[i].id == idToy){
+            if(carrito[i].title.trim() === title.trim()){
               carrito.splice(i, 1);
 
             }
         }
         
-        // const alert = document.querySelector('.remove')
-        /*
+        const alert = document.querySelector('.remove')
+        
           setTimeout( function(){
             alert.classList.add('remove')
           }, 1000)
             alert.classList.remove('remove')
-        */
+        
         tr.remove()
         CarritoTotal()
     }

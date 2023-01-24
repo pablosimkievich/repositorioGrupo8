@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-const cors =require('cors')
+const cors = require('cors')
 
 app.use(express.static(path.join(__dirname,'../public')));
 
@@ -31,6 +31,7 @@ app.use(session({
 
 app.use(cookies());
 app.use(userLoggedMiddleware);
+// const whiteList = ['http://localhost:3001/api/shopping-cart', null]
 
 app.use(cors());
 

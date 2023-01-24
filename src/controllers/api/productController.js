@@ -445,7 +445,36 @@ const getTheToyDetail = async (req, res) => {
     }
 }
 
+const getUserToysCart = async function(req, res) {
+    try {
+        console.log('hola que tal')
+        console.log(req.body)
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+const fetching = function(req, res) {
+
+    res.render('users/fetch')
+}
+
+const fetching2 = async function(req, res) {
+    try {
+        console.log('holas')
+    } catch(error) {
+        console.log(error)
+    }
+        
+}    
+
+
+/* "http://localhost:3001/api/shopping-cart" */
+
 module.exports = {
     getTheToys,
-    getTheToyDetail
+    getTheToyDetail,
+    getUserToysCart,
+    fetching,
+    fetching2
 }
