@@ -1,7 +1,6 @@
 
-window.addEventListener('load',function(){
+window.addEventListener('load',function() {
 
-    
     // sessionStorage.clear('carrito')
     // let carrito =[]; 
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
@@ -31,34 +30,32 @@ window.addEventListener('load',function(){
                 }
             })
 
-            console.log(losResultadosResumidos)
+            // console.log(losResultadosResumidos)
             let botones = document.querySelectorAll('.add-to-cart-button2')
 
             for (let boton of botones) {
                 boton.addEventListener('click', function(e){
-                    console.log(e.target)
-                    console.log(boton.id)
+                    // console.log(e.target)
+                    // console.log(boton.id)
                     selectedToy = losResultadosResumidos.find(toy => {
                         return toy.id == boton.id
                      })   
                     
                     for ( i = 0; i < carrito.length; i++) {
-                        if (carrito[i].id == selectedToy.id) {
+                        if (carrito[i].id === selectedToy.id) {
                             carrito[i].quantity = carrito[i].quantity + 1;
                             calculation();
                             addSessionStorage()
                             
-                            console.log(carrito)
-                            return null
+                            // console.log(carrito)
+                            return 
                         }
                     }
                     carrito.push(selectedToy)
                     // carrito = []
                     calculation();
                     addSessionStorage()
-                    
-                    console.log(carrito)
-
+                    // console.log(carrito)
                 })
             }
             } catch(error) {
@@ -67,8 +64,6 @@ window.addEventListener('load',function(){
     }
 
     getTheSelectedToy(url)
-
- 
 
     let calculation = () => {
         let cartIcon = document.getElementById("cartAmount");
@@ -79,12 +74,8 @@ window.addEventListener('load',function(){
     calculation()
 
     function addSessionStorage(){
-        
         sessionStorage.setItem('carrito', JSON.stringify(carrito));
-       
       }
-
- 
 })
 
 

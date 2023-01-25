@@ -254,18 +254,51 @@ const shoppingCart = async (req, res) => {
 
 const shoppingCartUser = async function(req, res) {
     try {
+        // funciones para formatear fecha corriente para enviar al ejs
+        function padTo2Digits(num) {
+            return num.toString().padStart(2, '0');
+          }
+          
+        let dateFormated = (date = new Date()) => {
+            return [
+                date.getFullYear(),
+                padTo2Digits(date.getMonth() + 1),
+                padTo2Digits(date.getDate()),
+              ].join('-');
+        }
+        let fecha = new Date()
+        console.log(fecha)
+        console.log(dateFormated())
+        variableFecha = dateFormated()
+        // si hay usuario llevamos sus datos y los metodos de pago
         if (req.session.userLogged) {
             let id = req.session.userLogged.id
             let comprador = await db.User.findByPk(id);
             let metodosDePago = await db.PaymentMethod.findAll()
-            res.render(`users/shoppingCart`, { comprador, metodosDePago })
+            res.render(`users/shoppingCart`, { comprador, metodosDePago, variableFecha })
         }
     } catch(error) {
         console.log(error)
     }
 }
 
-const peocessShoppingCart = async (req, res) => {
+const processShopOrder = async function(req, res) {
+    try {
+        console.log(req.body);
+    } catch(error) {
+        console.log(error)
+    }
+}
+
+const processOrderDetail = async function(req, res) {
+    try {
+        console.log(req.body);
+    } catch(error) {
+        console.log(error)
+    }
+}
+
+const processShoppingCart = async (req, res) => {
     try {
         res.send('Soy process cart')
     } catch (error) {
@@ -426,7 +459,9 @@ module.exports = {
     quienesSomos,
     shoppingCart,
     shoppingCartUser,
-    peocessShoppingCart,
+    processShopOrder,
+    processOrderDetail,
+    processShoppingCart,
     misCompras,
     reviewForm,
     reviewCreate

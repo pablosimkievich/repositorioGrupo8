@@ -79,6 +79,26 @@
     text-decoration: none;
 }
 
+
+.add-to-cart-button22 {
+    /* background-color:rgb(45, 185, 138); */
+    background-color: #54BAB9;
+    /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+    text-align: center;
+    align-items: center;
+    border-radius: 6px;
+    justify-content: center;
+    border: none;
+    font-size: 15x;
+    font-weight: 400;
+    
+    padding: 9px 15px;
+    display: flex;
+    transition: all 0.3s;
+    color: #fff;
+    text-decoration: none;
+}
+
 .add-to-cart-button2:hover {
     background-color: #BDE6F1;
     color: #73777B;
@@ -87,6 +107,10 @@
 .add-to-cart-button2:active {
     transform: scale(1.05);
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+.center-form1-button {
+    margin: 25px 35px 0 0;
 }
 
 .cart-styles {
@@ -108,6 +132,12 @@
     
 }
 
+.titulo-tus-datos {
+    text-align: left;
+    font-size: 1.3rem;
+    margin: 20px 0 0 55px;
+}
+
 .labels {
     margin: 0px 5px;
     padding: 5px;
@@ -116,7 +146,7 @@
 .user-inputs {
     border-radius: 8px;
     border: 1px solid rgb(0, 0, 0, 0.3);
-    margin: 25px 15px;
+    margin: 25px 5px 15px 5px;
     padding: 5px;
 }
 
@@ -124,8 +154,12 @@
     order: 1px solid rgb(255, 0, 0, 0.1);
 }
 
-.vertical {
+.flex-container {
+    display: flex;
     flex-direction: row;
+}
+.vertical {
+    
     margin: 15px;
 }
 

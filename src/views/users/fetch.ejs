@@ -7,29 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <form id="formu"> 
+        <input type="text" value="Horace">
+        <input type="text" value="salta">
+        <input type="text" value="visa">
+        <button id="botoncito">Send</button>
+    
+    </form>
 
-    <button id="botoncito">Send</button>
-
-    <script>
+    <script async>
         
 
 window.addEventListener('load',function(){
 
-    
     // sessionStorage.clear('carrito')
     // let carrito =[]; 
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
-    storage ? carrito = storage: carrito = ["succes", "ok", "reintentando"]
-    
- 
+    storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
 
     console.log(carrito)
     let boton = document.getElementById('botoncito')
 
     async function sendingJson() {
         try {
-
-            console.log('Buen día')
+            // console.log('Buen día')
             let response = await fetch("http://localhost:3001/api/shopping-cart", {
             method: "POST",
             /* mode: 'no-cors', */
@@ -52,9 +53,18 @@ window.addEventListener('load',function(){
     
     sendingJson()
 
-    boton.addEventListener('click', (e) => {
+    botoncito.addEventListener('click', (e) => {
+        e.preventDefault()
+    
+        let formu = document.querySelector("form")
+        formData = new FormData(formu);
+        let blobing = new Blob(carrito,  { type: "application/json" })
+        formData.append("cart", carrito)
+        let data = JSON.stringify(blobing)
+        console.log(blobing)
 
-    sendingJson()
+        // formu.submit()
+        sendingJson()
     })
 
 

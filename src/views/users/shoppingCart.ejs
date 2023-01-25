@@ -48,63 +48,80 @@
     </section>
 
 
-    
-      <div class="user-container">
-        <% if (!locals.isLogged) { %>
-        <p class="reminder">Recuerda que debes iniciar sesión para poder efectuar tu compra</p>
-        <a class="botoncito-link" href="/login"><button class="add-to-cart-button2">Login</button></a>
-      
-      
-        <% }  else  {%>
-          <div class="vertical">
-            
-            <input class="user-inputs" type="text" value="<%= comprador.id %>" style="display:none;">
-          </div>
-
-          <div class="vertical">
-            <label class="labels" for="">Nombre de Usuario:</label>
-            <input class="user-inputs" type="text" value="<%= comprador.user_first_name + ` ` + comprador.user_last_name %>" readonly>
-          </div>
-          <div class="vertical">
-            <label class="labels" for="">Dirección de Entrega:</label>
-            <input class="user-inputs" type="text" value="<%=comprador.user_address %>">
-          </div>
-          <div class="vertical">
-            <label class="labels" for="">Elige tu Método de Pago:</label>
-            <select class="user-inputs">
-              <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
-              <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
-              <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
-              <option value="<%= metodosDePago[3].id %>"><%= metodosDePago[3].pay_method_type %></option>
-              <option value="<%= metodosDePago[4].id %>"><%= metodosDePago[4].pay_method_type %></option>
-              <option value="<%= metodosDePago[5].id %>"><%= metodosDePago[5].pay_method_type %></option>
-              <option value="<%= metodosDePago[6].id %>"><%= metodosDePago[6].pay_method_type %></option>
-
-            </select>
-
-            <!-- <input class="user-inputs" type="text" placeholder="Método de pago"> -->
-          </div>
-          
-          
+    <% if (!locals.isLogged) { %>
+      <div class="vertical user-container">
         
+        <p class="reminder">Recuerda que debes iniciar sesión para poder efectuar tu compra</p>
+        <a class="botoncito-link" href="/login"><button class="add-to-cart-button22">Login</button></a>
+      
+      </div>>
+        <% }  else  {%>
+          <div class="user-container">
+
+            <form action="">
+              <h3 class="titulo-tus-datos">Por favor completa y confirma tus datos:</h3>
+              <div class="flex-container">
+
+                
+                <div class="vertical">
+                
+                  <input name="id-user" id="id-user" class="user-inputs" type="text" value="<%= comprador.id %>" style="display:none">
+                  <input name="shop-date" id="order-date" class="user-inputs" type="date" value="<%= variableFecha %>" style="display:none">
+                  <input name="total-amount" id="introducir-monto-compra" class="user-inputs" type="number"  style="display:none">
+                </div>
+      
+                
+                <div class="vertical">
+                  <label class="labels" for="">Nombre de Usuario:</label>
+                  <input name="user-name" class="user-inputs" type="text" value="<%= comprador.user_first_name + ` ` + comprador.user_last_name %>" readonly>
+                </div>
+      
+                <div class="vertical">
+                  <label class="labels" for="">Dirección de Entrega:</label>
+                  <input id="user-address" name="user-adress" class="user-inputs" type="text" value="<%=comprador.user_address %>">
+                </div>
+      
+                <div class="vertical">
+                  <label class="labels" for="">Elige tu Método de Pago:</label>
+                  <select id="payment-method" class="user-inputs">
+                    <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
+                    <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
+                    <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
+                    <option value="<%= metodosDePago[3].id %>"><%= metodosDePago[3].pay_method_type %></option>
+                    <option value="<%= metodosDePago[4].id %>"><%= metodosDePago[4].pay_method_type %></option>
+                    <option value="<%= metodosDePago[5].id %>"><%= metodosDePago[5].pay_method_type %></option>
+                    <option value="<%= metodosDePago[6].id %>"><%= metodosDePago[6].pay_method_type %></option>
+      
+                  </select>
+                </div>
+                <div class="vertical">
+                  <button id="order-button" class="add-to-cart-button2 center-form1-button">CONFIRMA TU COMPRA</button>
+                </div>
+                
+              </div>
+              
+             </form> 
+          </div>
+         
+          
           
           <% } %>
-      </div>
+      
 
       
       <div class="total-container row mx-4">
         <div class="col cart-styles">
-          <h3 class="itemCartTotal text-dark ">Total: $ 0</h3>
+          <h3 id="introducir-monto-compra" class=" itemCartTotal text-dark ">Total: $ 0</h3>
         </div>
         <div class="cart-styles col d-flex justify-content-end">
-          <button class=" btnoo btn add-to-cart-button2">COMPRAR</button>
+          <button id="order-detail-button" class=" btnoo btn add-to-cart-button2">COMPRAR</button>
         </div>
       </div>
       
       
         <table class="table table-striped  ">
             <thead>
-              <tr  class="titulo">
+              <tr  class="titulo esconder-titulo-tabla">
                 <th  scope="col"></th>
                 <th class="titulo" scope="col">Juguetes</th>
                 <th class="titulo" scope="col">Precio</th>
