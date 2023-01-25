@@ -65,25 +65,25 @@
                 
                 <div class="vertical">
                 
-                  <input name="id-user" id="id-user" class="user-inputs" type="text" value="<%= comprador.id %>" style="display:none">
-                  <input name="shop-date" id="order-date" class="user-inputs" type="date" value="<%= variableFecha %>" style="display:none">
-                  <input name="total-amount" id="introducir-monto-compra" class="user-inputs" type="number"  style="display:none">
+                  <input name="id" id="id-user" class="user-inputs" type="text" value="<%= comprador.id %>" style="display:none">
+                  <input name="date" id="order-date" class="user-inputs" type="date" value="<%= variableFecha %>" style="display:none">
+                  <input name="total" id="introducir-monto-compra" class="user-inputs" type="number"  style="display:none">
                 </div>
       
                 
                 <div class="vertical">
                   <label class="labels" for="">Nombre de Usuario:</label>
-                  <input name="user-name" class="user-inputs" type="text" value="<%= comprador.user_first_name + ` ` + comprador.user_last_name %>" readonly>
+                  <input name="name" class="user-inputs" type="text" value="<%= comprador.user_first_name + ` ` + comprador.user_last_name %>" readonly>
                 </div>
       
                 <div class="vertical">
                   <label class="labels" for="">Dirección de Entrega:</label>
-                  <input id="user-address" name="user-adress" class="user-inputs" type="text" value="<%=comprador.user_address %>">
+                  <input id="user-address" name="address" class="user-inputs" type="text" value="<%=comprador.user_address %>">
                 </div>
       
                 <div class="vertical">
                   <label class="labels" for="">Elige tu Método de Pago:</label>
-                  <select name="pay-method" id="payment-method" class="user-inputs">
+                  <select name="pay" id="payment-method" class="user-inputs">
                     <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
                     <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
                     <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
@@ -107,18 +107,26 @@
           
           <% } %>
       
+          <form>
 
-      <div class=" user-container">
-        <div class="container total-margin row mx-4">
-          <div class="col cart-styles">
-            <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
-          </div>
-          <div class="button-total-container col">
-            <button id="order-detail-button" class="total-button btnoo   button-new-class add-to-cart-button22">CHECKOUT</button>
-          </div>
-        </div>
-        
-      </div>
+            <div class=" user-container">
+              <div class="container total-margin row mx-4">
+
+                <div class="col cart-styles">
+                  <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
+                </div>
+
+                <div class="button-total-container col">
+                  <button type="submit" id="order-detail-button" class="total-button btnoo   button-new-class add-to-cart-button22">CHECKOUT</button>
+                </div>
+
+              </div>
+              
+            </div>
+
+          </form>
+
+
     
       
         <table class="table table-striped  ">

@@ -121,11 +121,11 @@ window.addEventListener('load', function() {
     }
 
     let botoncito2 = document.getElementById('order-button')
+    
     botoncito2.addEventListener('click', (e) => {
         e.preventDefault()
         
         fetchPostOrder()
-        // form(submit)
         botoncito2.disabled= ('disabled')
         botoncito2.style.backgroundColor = ('#DDD')
         botoncito2.classList.remove('button-new-class')
@@ -167,15 +167,20 @@ window.addEventListener('load', function() {
     }
 
     let botoncito = document.getElementById('order-detail-button')
+    
     botoncito.addEventListener('click', (e) => {
         e.preventDefault()
 
-        fetchOrderDetail();
-        botoncito.disabled = ('disabled')
-        botoncito.style.backgroundColor = ('#DDD')
-        botoncito.classList.remove('button-new-class')
-        botoncito.classList.add('button-new-class3')
-        
+        if (botoncito2.disabled) {
+            fetchOrderDetail();
+            botoncito.disabled = ('disabled')
+            botoncito.style.backgroundColor = ('#DDD')
+            botoncito.classList.remove('button-new-class')
+            botoncito.classList.add('button-new-class3')
+            
+            // e.target(submit)
+            sessionStorage.clear('carrito')
+        }
     })
 
 
@@ -185,8 +190,3 @@ window.addEventListener('load', function() {
 
 })
 
-/*
-function disabke(x) {
-    x.disable = true
-}
-*/

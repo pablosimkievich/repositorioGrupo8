@@ -285,6 +285,7 @@ const shoppingCartUser = async function(req, res) {
 const processShopOrder = async function(req, res) {
     try {
         console.log(req.body);
+        console.log(req.body.address);
     } catch(error) {
         console.log(error)
     }
@@ -293,6 +294,8 @@ const processShopOrder = async function(req, res) {
 const processOrderDetail = async function(req, res) {
     try {
         console.log(req.body);
+        console.log(req.body[0].name);
+        console.log(req.body.length)
     } catch(error) {
         console.log(error)
     }
