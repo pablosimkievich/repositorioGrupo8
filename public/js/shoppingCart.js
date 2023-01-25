@@ -1,9 +1,7 @@
 window.addEventListener('load', function() {
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
-    
     let ShoppingCart = document.getElementById('shopping-cart'); // ? aqui se agregaran los productos
-
 
     let generateCartItems = () => {
         if (carrito.length !== 0) {
@@ -38,10 +36,12 @@ window.addEventListener('load', function() {
             hiding.style.display ='none'
             ShoppingCart.innerHTML = ``
             ShoppingCart.innerHTML = `
+            <div style="min-height: 250px">
             <h2>Cart is Empty</h2>
-            <a href="index.html" style="text-decoration: none">
+            <a href="/" style="text-decoration: none">
                 <button class="add-to-cart-button2">Back to Home</Button>
             </a>
+            </div>
             `
             
         }
@@ -96,7 +96,6 @@ window.addEventListener('load', function() {
     const fetchPostOrder = async function()  {
 
         try {
-
             let form = document.querySelector('.formulario-1')
             let formData = new FormData(form)
             console.log(formData.get('shop-date'))
@@ -115,32 +114,6 @@ window.addEventListener('load', function() {
             .then(data => console.log(data))
             .catch(error => console.log(error))
 
-            /*
-            const idUserInput = document.getElementById("id-user").value
-            const shopDateInput = document.getElementById("order-date").value
-            const totalAmountInput = document.getElementById("introducir-monto-compra").value
-            const addressInput = document.getElementById("user-address")
-            const payMethodInput = document.getElementById("payment-method")
-            const orderButton = document.getElementById('order-button')
-            const orderStatus = 'Enviado'
-    
-            addressInput.addEventListener('change', (e) => {
-                let addressIncoming = addressInput.value
-                console.log(addressIncoming)
-            })
-            payMethodInput.addEventListener('change', (e) => {
-               let payMethodIncoming = payMethodInput.value
-               console.log(payMethodIncoming)
-            })
-            */
-            /* orderButton.addEventListener('click', (e) => {
-                e.preventDefault()
-     
-                console.log(idUserInput)
-                console.log(shopDateInput)
-                console.log(totalAmountInput)
-                console.log(orderStatus)
-            }) */
         } catch (error) {
             console.log(error);
         }
@@ -153,6 +126,11 @@ window.addEventListener('load', function() {
         
         fetchPostOrder()
         // form(submit)
+        botoncito2.disabled= ('disabled')
+        botoncito2.style.backgroundColor = ('#DDD')
+        botoncito2.classList.remove('button-new-class')
+        botoncito2.classList.add('button-new-class2')
+        
     })
 
 
@@ -193,6 +171,11 @@ window.addEventListener('load', function() {
         e.preventDefault()
 
         fetchOrderDetail();
+        botoncito.disabled = ('disabled')
+        botoncito.style.backgroundColor = ('#DDD')
+        botoncito.classList.remove('button-new-class')
+        botoncito.classList.add('button-new-class3')
+        
     })
 
 
@@ -202,3 +185,8 @@ window.addEventListener('load', function() {
 
 })
 
+/*
+function disabke(x) {
+    x.disable = true
+}
+*/
