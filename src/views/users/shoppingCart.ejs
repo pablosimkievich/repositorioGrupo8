@@ -42,7 +42,7 @@
         <%- include('../partials/header.ejs') %>
     </header>
 
-    <section style="min-height: 200px;">
+    <section style="min-height: 160px;">
 
 
     </section>
@@ -58,7 +58,7 @@
         <% }  else  {%>
           <div class="user-container">
 
-            <form action="">
+            <form class="formulario-1" action="">
               <h3 class="titulo-tus-datos">Por favor completa y confirma tus datos:</h3>
               <div class="flex-container">
 
@@ -83,7 +83,7 @@
       
                 <div class="vertical">
                   <label class="labels" for="">Elige tu Método de Pago:</label>
-                  <select id="payment-method" class="user-inputs">
+                  <select name="pay-method" id="payment-method" class="user-inputs">
                     <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
                     <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
                     <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
@@ -94,8 +94,8 @@
       
                   </select>
                 </div>
-                <div class="vertical">
-                  <button id="order-button" class="add-to-cart-button2 center-form1-button">CONFIRMA TU COMPRA</button>
+                <div class="vertical button-order-style">
+                  <button id="order-button" class="button-order-style-button add-to-cart-button22 center-form1-button">CONFIRMA TU COMPRA</button>
                 </div>
                 
               </div>
@@ -108,16 +108,18 @@
           <% } %>
       
 
-      
-      <div class="total-container row mx-4">
-        <div class="col cart-styles">
-          <h3 id="introducir-monto-compra" class=" itemCartTotal text-dark ">Total: $ 0</h3>
+      <div class=" user-container">
+        <div class="container total-margin row mx-4">
+          <div class="col cart-styles">
+            <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
+          </div>
+          <div class="button-total-container col">
+            <button id="order-detail-button" class="total-button btnoo btn add-to-cart-button22">CHECKOUT</button>
+          </div>
         </div>
-        <div class="cart-styles col d-flex justify-content-end">
-          <button id="order-detail-button" class=" btnoo btn add-to-cart-button2">COMPRAR</button>
-        </div>
+        
       </div>
-      
+    
       
         <table class="table table-striped  ">
             <thead>

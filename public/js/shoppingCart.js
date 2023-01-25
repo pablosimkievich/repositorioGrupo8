@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
     
     let ShoppingCart = document.getElementById('shopping-cart'); // ? aqui se agregaran los productos
 
+
     let generateCartItems = () => {
         if (carrito.length !== 0) {
             // console.log('basket is not empty')
@@ -54,6 +55,7 @@ window.addEventListener('load', function() {
     generateCartItems();  // ! renderiza los productos del carrito
     CarritoTotal()
 
+
     function CarritoTotal() {
         let Total = 0;
         const itemCartTotal= document.querySelector('.itemCartTotal');
@@ -67,6 +69,7 @@ window.addEventListener('load', function() {
         itemCartTotal.innerHTML = `Total $ ${ Total}`
         addSessionStorage()
     }
+
 
     function removeItemCarrito(e) {
         const buttonDelete = e.target
@@ -89,9 +92,30 @@ window.addEventListener('load', function() {
         CarritoTotal()
     }
 
+
     const fetchPostOrder = async function()  {
 
         try {
+
+            let form = document.querySelector('.formulario-1')
+            let formData = new FormData(form)
+            console.log(formData.get('shop-date'))
+            let data = new URLSearchParams(formData);
+            // let data = Object.fromEntries(formData)
+
+            url = "http://localhost:3001/carrito-shop-order"
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            }).then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+
+            /*
             const idUserInput = document.getElementById("id-user").value
             const shopDateInput = document.getElementById("order-date").value
             const totalAmountInput = document.getElementById("introducir-monto-compra").value
@@ -108,27 +132,35 @@ window.addEventListener('load', function() {
                let payMethodIncoming = payMethodInput.value
                console.log(payMethodIncoming)
             })
-    
-            orderButton.addEventListener('click', (e) => {
+            */
+            /* orderButton.addEventListener('click', (e) => {
                 e.preventDefault()
      
                 console.log(idUserInput)
                 console.log(shopDateInput)
                 console.log(totalAmountInput)
                 console.log(orderStatus)
-            })
+            }) */
         } catch (error) {
             console.log(error);
         }
 
     }
 
+    let botoncito2 = document.getElementById('order-button')
+    botoncito2.addEventListener('click', (e) => {
+        e.preventDefault()
+        
+        fetchPostOrder()
+        // form(submit)
+    })
+
+
     const fetchOrderDetail = async function () {
         let storage = JSON.parse(sessionStorage.getItem('carrito'));
         storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
     
         console.log(carrito)
-        let boton = document.getElementById('botoncito')
     
         async function sendingJson()  {
             try {
@@ -163,14 +195,6 @@ window.addEventListener('load', function() {
         fetchOrderDetail();
     })
 
-    let botoncito2 = document.getElementById('order-button')
-    botoncito2.addEventListener('click', (e) => {
-        e.preventDefault()
-
-        fetchPostOrder()
-    })
-    
-    
 
     function addSessionStorage(){
         sessionStorage.setItem('carrito', JSON.stringify(carrito));

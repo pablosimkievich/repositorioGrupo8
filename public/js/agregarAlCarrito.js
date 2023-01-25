@@ -5,9 +5,6 @@ window.addEventListener('load',function() {
     // let carrito =[]; 
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
-
-
-
     
     let url = 'http://localhost:3001/api/products';
     
@@ -65,6 +62,7 @@ window.addEventListener('load',function() {
 
     getTheSelectedToy(url)
 
+
     let calculation = () => {
         let cartIcon = document.getElementById("cartAmount");
         let totalItemsQ = carrito.map( (x) => x.quantity).reduce((x, y) => x + y, 0);
@@ -73,6 +71,7 @@ window.addEventListener('load',function() {
     
     calculation()
 
+    
     function addSessionStorage(){
         sessionStorage.setItem('carrito', JSON.stringify(carrito));
       }
