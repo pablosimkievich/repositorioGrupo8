@@ -2,33 +2,43 @@ window.addEventListener('load', function() {
     let storage = JSON.parse(sessionStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
     let ShoppingCart = document.getElementById('shopping-cart'); // ? aqui se agregaran los productos
+    const tableHead = document.querySelector('thead');
+
+    let calculation = () => {
+        let cartIcon = document.getElementById("cartAmount");
+        let totalItemsQ = carrito.map( (x) => x.quantity).reduce((x, y) => x + y, 0);
+        cartIcon.innerHTML = totalItemsQ; // ? se manda los items y  cantidades al contador rojo del  icono del carrito 
+    };
+    
 
     let generateCartItems = () => {
         if (carrito.length !== 0) {
-            // console.log('basket is not empty')
+            const tbody = document.querySelector('.tbody')
             
+            // tbody.innerHTML = ''
             return (ShoppingCart.innerHTML = carrito // ?  agrega los productos desde el localStorage
                 .map((x) => {
                     let {id, quantity} = x;
                     let search = carrito.find((y) => y.id == id) || []; // encuentra los productos de los ids del carrito
-                    
-                    return `
-                    <tr class="ItemCarrito">
+                    const Content = `   
+                    <tr class="itemCarrito ">
                 <th class="columns" scope="columns"></th>
             <td class="table__productos">
-            <input type="number" value="${search.id}" id="id-search" style="display:none;">
+            <input class="input__id" type="number" value="${id}"  style="display:none;">
             <img src=${search.img}  alt="">
             <h6 class="title">${search.name}</h6>
             </td>
             <td class="table__price"><p>$ ${search.price}</p></td>
             <td class="table__cantidad">
-            <input id="${search.id}"  type="number" min="1" value=${search.quantity} class="input__elemento">
+            <input  type="number" min="1" value=${quantity} class="input__elemento">
             <button class="delete btn btn-danger">x</button>
             </td>
             </tr>
-                `
-            }).join(""))
-           
+                `  
+                return Content    
+            }
+            
+            ).join("")) 
         }
         else {
             // console.log('basket is totally empty')
@@ -45,17 +55,9 @@ window.addEventListener('load', function() {
             `
             
         }
-        /* tr = document.getElementsByClassName('ItemCarrito')
-        tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
-        tr.querySelector(".input__elemento").addEventListener('change', CarritoTotal) */
-
-        // CarritoTotal()
     }
     
     function CarritoTotal() {
-        console.log('buenas')
-        // let theTarget = document.getElementById(`${search.id}`)
-        // console.log(theTarget)
         let Total = 0;
         const itemCartTotal= document.querySelector('.itemCartTotal');
         carrito.forEach( item => {
@@ -69,33 +71,67 @@ window.addEventListener('load', function() {
         addSessionStorage()
     }
 
-    generateCartItems();  // ! renderiza los productos del carrito
-    
+    const removeItemCarrito = (e) => {
+        const buttonDelete = e.target
+        const tr = buttonDelete.closest('.itemCarrito')
+        const title = tr.querySelector('.title').textContent;
+        for(let i=0; i < carrito.length ; i++){
+
+            if(carrito[i].name.trim() === title.trim()){
+            carrito.splice(i, 1);
+        }
+
+        tr.remove()
+        calculation()
+        CarritoTotal()
+
+        if (carrito.length == 0) {
+            tableHead.style.display = ('none')
+            ShoppingCart.innerHTML = ``
+            ShoppingCart.innerHTML = `
+            <div class="empty-cart" style="min-height: 270px">
+            <h2>El carrito de compras esta vacío</h2>
+            <a href="/" style="text-decoration: none">
+                <button class="add-to-cart-button2">Back to Home</Button>
+            </a>
+            </div>
+            `
+        }
+      }
+    }
+ 
 
 
-    const tableRows = document.getElementsByClassName('ItemCarrito')
-    const deleteButtons = document.getElementsByClassName('.delete')
-    const inputElements = document.getElementsByClassName('input__elemento')
-
-    for ( let tableRow of tableRows) {
-        tableRow.querySelector('tr')
+    const incrementDecrement = function() {
+        console.log('buenas noches')
+        for (let inputId of inputIds) {
+            console.log(inputId.value)
+        }
+        // console.log('Helllo')
+        // const inputQ = e.target
+        // console.log(inputQ)
+        // const cerca = inputQ.closest('.input__id')
+        // console.log(cerca)
+        // const idJuguete = cerca.value
+        // console.log(idJuguete)
+        //const QJuguete = inputQ.value
+        // console.log(QJuguete)
     }
 
+    generateCartItems();  // ! renderiza los productos del carrito
+    CarritoTotal()
+
+    const deleteButtons = document.getElementsByClassName('delete')
+    const inputElements = document.getElementsByClassName('input__elemento')
+    const inputIds = document.getElementsByClassName('input__id')
+ 
     for (let deleteButton of deleteButtons) {
         deleteButton.addEventListener('click', removeItemCarrito)
     }
 
     for (let inputElement of inputElements) {
-        inputElement.addEventListener('change', CarritoTotal)
+        inputElement.addEventListener('change', incrementDecrement)
     } 
-
-
-    const removeItemCarrito = (e) => {
-        console.log('buenos dias')
-    }
-
-
-    CarritoTotal()
 
     const fetchPostOrder = async function()  {
         try {

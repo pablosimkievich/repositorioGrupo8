@@ -13,10 +13,8 @@ window.addEventListener('load',function() {
         try {
             const response = await fetch(url)
             const results = await response.json();
-            // console.log(results.products)
-
             const losResultados = results.products
-            // console.log(losResultados)
+           
             losResultadosResumidos = losResultados.map ( e => {
                 return {
                     id: e.id,
@@ -25,9 +23,7 @@ window.addEventListener('load',function() {
                     img: e.img,
                     quantity: 1
                 }
-            })
-
-            // console.log(losResultadosResumidos)
+            })         
             let botones = document.querySelectorAll('.add-to-cart-button2')
 
             for (let boton of botones) {
