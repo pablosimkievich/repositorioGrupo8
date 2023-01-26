@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
             </td>
             <td class="table__price"><p>$ ${search.price}</p></td>
             <td class="table__cantidad">
-            <input type="number" min="1" value=${search.quantity} class="input__elemento">
+            <input id="${search.id}"  type="number" min="1" value=${search.quantity} class="input__elemento">
             <button class="delete btn btn-danger">x</button>
             </td>
             </tr>
@@ -36,8 +36,8 @@ window.addEventListener('load', function() {
             hiding.style.display ='none'
             ShoppingCart.innerHTML = ``
             ShoppingCart.innerHTML = `
-            <div style="min-height: 250px">
-            <h2>Cart is Empty</h2>
+            <div class="empty-cart" style="min-height: 270px">
+            <h2>El carrito de compras esta vacío</h2>
             <a href="/" style="text-decoration: none">
                 <button class="add-to-cart-button2">Back to Home</Button>
             </a>
@@ -45,18 +45,17 @@ window.addEventListener('load', function() {
             `
             
         }
-        tr = document.getElementsByClassName('ItemCarrito')
+        /* tr = document.getElementsByClassName('ItemCarrito')
         tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
-        tr.querySelector(".input__elemento").addEventListener('change', CarritoTotal)
+        tr.querySelector(".input__elemento").addEventListener('change', CarritoTotal) */
 
-        CarritoTotal()
+        // CarritoTotal()
     }
     
-    generateCartItems();  // ! renderiza los productos del carrito
-    CarritoTotal()
-
-
     function CarritoTotal() {
+        console.log('buenas')
+        // let theTarget = document.getElementById(`${search.id}`)
+        // console.log(theTarget)
         let Total = 0;
         const itemCartTotal= document.querySelector('.itemCartTotal');
         carrito.forEach( item => {
@@ -70,31 +69,35 @@ window.addEventListener('load', function() {
         addSessionStorage()
     }
 
-
-    function removeItemCarrito(e) {
-        const buttonDelete = e.target
-        const tr = buttonDelete.closest('.ItemCarrito')
-        const title = tr.querySelector('.title').textContent;
-        for(let i=0; i < carrito.length ; i++){
+    generateCartItems();  // ! renderiza los productos del carrito
     
-            if(carrito[i].title.trim() === title.trim()){
-              carrito.splice(i, 1);
-            }
-        }
-        const alert = document.querySelector('.remove')
-        
-          setTimeout( function(){
-            alert.classList.add('remove')
-          }, 1000)
-            alert.classList.remove('remove')
-        
-        tr.remove()
-        CarritoTotal()
+
+
+    const tableRows = document.getElementsByClassName('ItemCarrito')
+    const deleteButtons = document.getElementsByClassName('.delete')
+    const inputElements = document.getElementsByClassName('input__elemento')
+
+    for ( let tableRow of tableRows) {
+        tableRow.querySelector('tr')
+    }
+
+    for (let deleteButton of deleteButtons) {
+        deleteButton.addEventListener('click', removeItemCarrito)
+    }
+
+    for (let inputElement of inputElements) {
+        inputElement.addEventListener('change', CarritoTotal)
+    } 
+
+
+    const removeItemCarrito = (e) => {
+        console.log('buenos dias')
     }
 
 
-    const fetchPostOrder = async function()  {
+    CarritoTotal()
 
+    const fetchPostOrder = async function()  {
         try {
             let form = document.querySelector('.formulario-1')
             let formData = new FormData(form)
@@ -122,24 +125,25 @@ window.addEventListener('load', function() {
 
     let botoncito2 = document.getElementById('order-button')
     
-    botoncito2.addEventListener('click', (e) => {
+    botoncito2? botoncito2.addEventListener('click', (e) => {
         e.preventDefault()
+        if (carrito.length > 0) {
+            fetchPostOrder()
+            botoncito2.disabled= ('disabled')
+            botoncito2.style.backgroundColor = ('#DDD')
+            botoncito2.classList.remove('button-new-class')
+            botoncito2.classList.add('button-new-class2')
+        }
+
         
-        fetchPostOrder()
-        botoncito2.disabled= ('disabled')
-        botoncito2.style.backgroundColor = ('#DDD')
-        botoncito2.classList.remove('button-new-class')
-        botoncito2.classList.add('button-new-class2')
-        
-    })
+    }): "";
 
 
     const fetchOrderDetail = async function () {
         let storage = JSON.parse(sessionStorage.getItem('carrito'));
         storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
-    
-        console.log(carrito)
-    
+        // console.log(carrito)
+
         async function sendingJson()  {
             try {
                 // console.log('Buen día')
@@ -150,13 +154,11 @@ window.addEventListener('load', function() {
                     'Access-Control-Allow-Origin': '*',
                     "Content-Type": "application/json",  
                 },
-                body: JSON.stringify(carrito),
-                
+                body: JSON.stringify(carrito), 
                 })
                 let data = await response.json();
                 console.log(response);
-                console.log(data)
-                
+                console.log(data)     
             } catch (error) {
                 console.log(error)
             }
@@ -167,8 +169,9 @@ window.addEventListener('load', function() {
     }
 
     let botoncito = document.getElementById('order-detail-button')
-    
-    botoncito.addEventListener('click', (e) => {
+    let misComprasButton = document.getElementById('new-button')
+
+    botoncito? botoncito.addEventListener('click', (e) => {
         e.preventDefault()
 
         if (botoncito2.disabled) {
@@ -180,8 +183,14 @@ window.addEventListener('load', function() {
             
             // e.target(submit)
             sessionStorage.clear('carrito')
-        }
-    })
+            misComprasButton.classList.add('show-button')    
+            Swal.fire({
+                icon: "success",
+                title: "Compra efectuada con éxito",
+                text: "A la brevedad tu pedido será entregado"
+            })
+            }
+    }): "";
 
 
     function addSessionStorage(){

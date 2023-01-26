@@ -33,6 +33,7 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous"
   />
+
     <link rel="stylesheet" href="/css/shopping-cart-styles.css">
 </head>
 
@@ -49,12 +50,13 @@
 
 
     <% if (!locals.isLogged) { %>
-      <div class="vertical user-container">
+      <div class=" user-container3">
         
         <p class="reminder">Recuerda que debes iniciar sesión para poder efectuar tu compra</p>
         <a class="botoncito-link" href="/login"><button class="add-to-cart-button22">Login</button></a>
       
-      </div>>
+      </div>
+
         <% }  else  {%>
           <div class="user-container">
 
@@ -101,30 +103,38 @@
               </div>
               
              </form> 
+
           </div>
          
           
           
           <% } %>
       
-          <form>
+          
 
-            <div class=" user-container">
-              <div class="container total-margin row mx-4">
+            <div class=" user-container total-margin ">
 
-                <div class="col cart-styles">
-                  <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
-                </div>
+              <div class="user-container2 "> <!-- container total-margin row mx-4 -->
 
-                <div class="button-total-container col">
-                  <button type="submit" id="order-detail-button" class="total-button btnoo   button-new-class add-to-cart-button22">CHECKOUT</button>
-                </div>
+
+                  <div class="col cart-styles">
+                    <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
+                  </div>
+
+                  <% if (locals.isLogged) { %>
+                    <a class="link-mis-compras" href="/mis-compras/<%= comprador.id %>"><button id="new-button" class="new-button hide-button">IR A MIS COMPRAS</button></a> 
+                  <% } %>
+                  
+
+                  <div class="button-total-container col">
+                    <button  type="submit" id="order-detail-button" class="total-button btnoo   button-new-class add-to-cart-button22">CHECKOUT</button>
+                  </div>
 
               </div>
               
             </div>
 
-          </form>
+          
 
 
     
@@ -167,6 +177,7 @@
     ></script>
     <!-- <script src="/js/agregarAlCarrito.js"></script> -->
     <script src="/js/shoppingCart.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

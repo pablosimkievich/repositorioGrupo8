@@ -129,6 +129,48 @@
     transform: scale(1.05);
 }
 
+.new-button {
+     /* background-color:rgb(45, 185, 138); */
+     background-color: #FF8B13;
+     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+     text-align: center;
+     align-items: center;
+     border-radius: 6px;
+     justify-content: center;
+     border: none;
+     font-size: 13x;
+     font-weight: 400;
+     min-width: 100px;
+     min-height: 50px;
+     padding: 9px 15px;
+     display: flex;
+     transition: all 0.3s;
+     color: #fff;
+     text-decoration: none;
+     margin-right: 100px;
+}
+
+.hide-button {
+    display: none;
+}
+
+.show-button {
+    display: flex;
+}
+
+
+
+.new-button:active {
+    transform: scale(1.05);
+}
+
+.new-button:hover {
+    background-color: #F15412;
+}
+
+.link-mis-compras {
+    text-decoration: none;
+}
 /* .add-to-cart-button2:active {
     transform: scale(1.05);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -136,6 +178,14 @@
 
 .center-form1-button {
     margin: 25px 35px 0 0;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .cart-styles {
@@ -150,12 +200,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: -85px;
+    margin-right: -60px;
     padding: 0 0 0 10px;
 }
 
 .total-button {
-    margin-right: -30px;
+    margin-right: 50px;
     padding: 15px;
     min-width: 120px;
 }
@@ -166,12 +216,43 @@
 
 .user-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     justify-content: center;
     align-items: center;
     border: 1px solid rgb(0, 0, 0, 0.1);
     border-radius: 25px;
     margin: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-container2 {
+    width: 100%;
+     display: flex;
+     flex-direction: row; 
+     justify-content: space-between;
+     align-items: center;
+     /* border: 1px solid rgb(0, 0, 0, 0.1); */
+     border-radius: 25px;
+     margin: 30px;
+ }
+
+.user-container3 {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    border-radius: 25px;
+    margin: 0px 30px; 
+}
+
+.ultimate-container {
+    display: flex;
+    
 }
 
 .titulo-tus-datos {
@@ -204,9 +285,7 @@
 .total-margin {
     display: flex;
     flex-direction: row;
-    margin: -10px;
-    padding: 15px;
-    position: 20px;
+    
 }
 
 .container {
