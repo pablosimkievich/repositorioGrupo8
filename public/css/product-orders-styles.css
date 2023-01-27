@@ -51,6 +51,7 @@
     border-radius: 8px;
     margin: 25px 45px;
     padding: 25px;
+    align-items: center;
 }
 
 .user-items {

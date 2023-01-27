@@ -20,6 +20,7 @@
     border-radius: 8px;
     margin: 25px 45px;
     padding: 25px;
+    align-items: center;
 }
 
 .user-title {
@@ -49,13 +50,17 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border-radius: 8px;
-    margin: 25px 5px;
-    padding: 5px 20px;
+    /* margin: 25px 5px;
+    padding: 5px 20px; */
+    margin: 15px 15px;
+    padding: 15px;
 }
 
 .product-img {
-    width: 150px;
+    width: 180px;
     border-radius: 8px;
     margin: 15px 0;
 }
