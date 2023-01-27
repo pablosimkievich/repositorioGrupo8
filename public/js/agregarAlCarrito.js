@@ -1,9 +1,9 @@
 
 window.addEventListener('load',function() {
 
-    // sessionStorage.clear('carrito')
+    // localStorage.clear('carrito')
     // let carrito =[]; 
-    let storage = JSON.parse(sessionStorage.getItem('carrito'));
+    let storage = JSON.parse(localStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
     
     let url = 'http://localhost:3001/api/products';
@@ -38,7 +38,7 @@ window.addEventListener('load',function() {
                         if (carrito[i].id === selectedToy.id) {
                             carrito[i].quantity = carrito[i].quantity + 1;
                             calculation();
-                            addSessionStorage()
+                            addlocalStorage()
                             
                             console.log(carrito)
                             return 
@@ -47,7 +47,7 @@ window.addEventListener('load',function() {
                     carrito.push(selectedToy)
                     // carrito = []
                     calculation();
-                    addSessionStorage()
+                    addlocalStorage()
                     console.log(carrito)
                 })
             }
@@ -68,8 +68,8 @@ window.addEventListener('load',function() {
     calculation()
 
     
-    function addSessionStorage(){
-        sessionStorage.setItem('carrito', JSON.stringify(carrito));
+    function addlocalStorage(){
+        localStorage.setItem('carrito', JSON.stringify(carrito));
       }
 })
 

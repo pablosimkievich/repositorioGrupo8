@@ -57,3 +57,18 @@
 .user-items {
     padding: 5px;
 }
+
+.admin-button {
+    margin: 40px 40px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #93C6E7;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #8EA7E9;
+}

@@ -57,3 +57,19 @@
 .product-image img {
     border-radius: 8px;
 }
+
+.admin-button {
+    margin: 40px 44px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #FFF323;
+    
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #F7D716;
+}

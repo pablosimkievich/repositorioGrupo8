@@ -43,3 +43,18 @@
 .item-anchor:visited {
     color: #000;
 }
+
+.admin-button {
+    margin: 40px 45px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #FD841F;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #E14D2A;
+}

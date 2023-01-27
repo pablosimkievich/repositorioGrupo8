@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-    let storage = JSON.parse(sessionStorage.getItem('carrito'));
+    let storage = JSON.parse(localStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
     let ShoppingCart = document.getElementById('shopping-cart'); // ? aqui se agregaran los productos
     const tableHead = document.querySelector('thead');
@@ -66,7 +66,7 @@ window.addEventListener('load', function() {
         itemCartTotal.innerHTML = ``
         itemCartTotal.innerHTML = `Total $ ${ Total}`
         calculation()
-        // addSessionStorage()
+        // addlocalStorage()
     }
 
     const removeItemCarrito = (e) => {
@@ -82,7 +82,7 @@ window.addEventListener('load', function() {
         tr.remove()
         
         CarritoTotal()
-        addSessionStorage()
+        addlocalStorage()
 
         if (carrito.length === 0) {
             tableHead.style.display = ('none')
@@ -113,7 +113,7 @@ window.addEventListener('load', function() {
             sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
             sumaInput.value > 20 ?  (sumaInput.value = 20) : sumaInput.value;
             item.quantity = Number(sumaInput.value);     
-            addSessionStorage()
+            addlocalStorage()
             CarritoTotal()    
             // calculation()
             console.log(carrito)  
@@ -180,7 +180,7 @@ window.addEventListener('load', function() {
 
 
     const fetchOrderDetail = async function () {
-        let storage = JSON.parse(sessionStorage.getItem('carrito'));
+        let storage = JSON.parse(localStorage.getItem('carrito'));
         storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
 
         async function sendingJson()  {
@@ -222,7 +222,7 @@ window.addEventListener('load', function() {
             botoncito.classList.add('button-new-class3')
             
             // e.target(submit)
-            sessionStorage.clear('carrito')
+            localStorage.clear('carrito')
                
             Swal.fire({
                 icon: "success",
@@ -234,8 +234,8 @@ window.addEventListener('load', function() {
     }): "";
 
 
-    function addSessionStorage(){
-        sessionStorage.setItem('carrito', JSON.stringify(carrito));
+    function addlocalStorage(){
+        localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
 })

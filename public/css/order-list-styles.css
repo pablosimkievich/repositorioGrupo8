@@ -115,7 +115,7 @@ body {
 }
 
 .card_items {
-    margin: 5px;
+    margin: 4px;
 }
 
 .order-card-link {
@@ -127,5 +127,20 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    justify-content: flex-start; 
+}
+
+.admin-button {
+    margin: 30px 30px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #93C6E7;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #8EA7E9;
 }
