@@ -56,7 +56,6 @@ router.get('/carrito/:id', authMiddleware, userController.shoppingCartUser);
 router.post('/carrito-shop-order', userController.processShopOrder)
 router.post('/carrito-order-detail', userController.processOrderDetail)
 
-router.post('/procesar-carrito', userController.processShoppingCart)
 
 router.get('/quienes-somos', userController.quienesSomos);
 router.get('/preguntas-frecuentes', userController.preguntasFrecuentes);

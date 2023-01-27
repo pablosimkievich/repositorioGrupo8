@@ -2,6 +2,7 @@ const db = require('../database/models/index');
 const { markAsUntransferable } = require('worker_threads');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+// const { sequelize } = require('sequelize')
 
 const op = db.Sequelize.Op;
 
@@ -240,9 +241,7 @@ const quienesSomos = (req, res) => {
     res.render('users/quienesSomos');
 }
 
-/* const productCart = (req, res) => {
-    res.render('users/productCart');
-}; */
+
 
 const shoppingCart = async (req, res) => {
     try {
@@ -284,8 +283,17 @@ const shoppingCartUser = async function(req, res) {
 
 const processShopOrder = async function(req, res) {
     try {
-        console.log(req.body);
-        console.log(req.body.address);
+        const processNewOrder = {
+            user_id: req.body.id,
+            order_total_amt: req.body.total,
+            order_date: req.body.date,
+            order_status: 'Enviado',
+            order_address: req.body.address,
+            pay_method_id: req.body.pay
+        }
+        console.log(processNewOrder)
+        await db.Order.create(processNewOrder)
+
     } catch(error) {
         console.log(error)
     }
@@ -293,21 +301,38 @@ const processShopOrder = async function(req, res) {
 
 const processOrderDetail = async function(req, res) {
     try {
-        console.log(req.body);
-        console.log(req.body[0].name);
-        console.log(req.body.length)
+        // console.log(req.body);
+        // console.log(req.body[0].name);
+       
+        const lastOrderId = await db.Order.max('id');
+        console.log(lastOrderId)
+        
+        const lastOrder = await db.Order.findOne({
+            where: {
+                id: lastOrderId
+            }
+        })
+        const userId = lastOrder.user_id
+        console.log(userId)
+
+
+        const carrito = req.body
+        for ( i = 0; i < carrito.length; i++) {
+            let item = {
+                fk_order_id: lastOrderId,
+                fk_user_id: userId,
+                fk_product_id: carrito[i].id,
+                quantity: carrito[i].quantity
+            }
+            console.log(item)
+            await db.OrderDetail.create(item)
+        } 
+
     } catch(error) {
         console.log(error)
     }
 }
 
-const processShoppingCart = async (req, res) => {
-    try {
-        res.send('Soy process cart')
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 const misCompras = async (req, res) => {
 
@@ -402,9 +427,9 @@ const reviewCreate = async (req, res) => {
                         userr_fk_id: req.body.userr_fk_id
                     } 
                     console.log(newReview)
-                 await db.Review.create(newReview);
+                await db.Review.create(newReview);
     
-                res.redirect('/')
+                res.redirect(`/juguetes/${newReview.product_fk_id}`)
                 } catch(error) {
                     console.log(error);
                   }
@@ -427,22 +452,11 @@ const reviewCreate = async (req, res) => {
                 } else {
                     res.send(`No existe el detalle de compra Nro.: ${id}`)
                 }
-        
-               
-        
-                
-        
+
             } catch(error) {
                 console.log(error)
-            }
-           
-           
-            
-           
-            
+            }        
         }
-
-
      }
 
     
@@ -464,7 +478,6 @@ module.exports = {
     shoppingCartUser,
     processShopOrder,
     processOrderDetail,
-    processShoppingCart,
     misCompras,
     reviewForm,
     reviewCreate
