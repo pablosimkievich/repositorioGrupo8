@@ -31,7 +31,9 @@
                         <h4>Dirección de Entrega: <%= e.order_address %></h4>
                     </div><br>
 
-                    <a href="/order-detail/<%= e.id %>" class="data-box-links"> <div class="order_detail_data_box">
+                    <a class="order-card-link" href="/order-detail/<%= e.id %>" class="data-box-links"> <div class="order_detail_data_box">
+                        
+                       <div class="card-space">
                         <h4 class="order_detail">Detalle de Compra:</h4><br>
                         <% allTheOrderDetails.map (elem => { %>
                             
@@ -47,7 +49,9 @@
                                     </div>
                                 <% } %>
                             
-                        <% }) %></h4>
+                        <% }) %>
+                       </div> 
+                        
                     </div> </a> 
 
                 </div><br>
