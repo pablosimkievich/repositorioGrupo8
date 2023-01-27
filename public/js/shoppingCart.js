@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
         let cartIcon = document.getElementById("cartAmount");
         let totalItemsQ = carrito.map( (x) => x.quantity).reduce((x, y) => x + y, 0);
         cartIcon.innerHTML = totalItemsQ; // ? se manda los items y  cantidades al contador rojo del  icono del carrito 
-    };
+    }; 
     
 
     let generateCartItems = () => {
@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
                     <tr class="itemCarrito ">
                 <th class="columns" scope="columns"></th>
             <td class="table__productos">
-            <input class="input__id" type="number" value="${id}"  style="display:none;">
+            <input class="input__id id__class" type="number" value="${id}"  style="display:none;">
             <img src=${search.img}  alt="">
             <h6 class="title">${search.name}</h6>
             </td>
@@ -36,12 +36,9 @@ window.addEventListener('load', function() {
             </tr>
                 `  
                 return Content    
-            }
-            
-            ).join("")) 
+            }).join("")) 
         }
         else {
-            // console.log('basket is totally empty')
             let hiding = document.querySelector('.esconder-titulo-tabla')
             hiding.style.display ='none'
             ShoppingCart.innerHTML = ``
@@ -52,8 +49,7 @@ window.addEventListener('load', function() {
                 <button class="add-to-cart-button2">Back to Home</Button>
             </a>
             </div>
-            `
-            
+            `   
         }
     }
     
@@ -68,7 +64,8 @@ window.addEventListener('load', function() {
         inputMontoTotal.value = Total
         itemCartTotal.innerHTML = ``
         itemCartTotal.innerHTML = `Total $ ${ Total}`
-        addSessionStorage()
+        calculation()
+        // addSessionStorage()
     }
 
     const removeItemCarrito = (e) => {
@@ -82,7 +79,7 @@ window.addEventListener('load', function() {
         }
 
         tr.remove()
-        calculation()
+        // calculation()
         CarritoTotal()
 
         if (carrito.length == 0) {
@@ -101,29 +98,33 @@ window.addEventListener('load', function() {
     }
  
 
-
-    const incrementDecrement = function() {
-        console.log('buenas noches')
-        for (let inputId of inputIds) {
-            console.log(inputId.value)
-        }
-        // console.log('Helllo')
-        // const inputQ = e.target
-        // console.log(inputQ)
-        // const cerca = inputQ.closest('.input__id')
-        // console.log(cerca)
-        // const idJuguete = cerca.value
-        // console.log(idJuguete)
-        //const QJuguete = inputQ.value
-        // console.log(QJuguete)
+    const incrementDecrement = function(e) {
+        // console.log('buenas noches')
+        const sumaInput  = e.target
+        const tr = sumaInput.closest(".itemCarrito")
+        // console.log(tr)
+        const title = tr.querySelector('.title').textContent;
+        carrito.forEach(item => {
+          if(item.name.trim() == title.trim()){
+            sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
+            sumaInput.value > 20 ?  (sumaInput.value = 20) : sumaInput.value;
+            item.quantity = Number(sumaInput.value);     
+            addSessionStorage()
+            CarritoTotal()    
+            // calculation()
+            console.log(carrito)  
+          }
+        })   
     }
 
     generateCartItems();  // ! renderiza los productos del carrito
     CarritoTotal()
+    
+
 
     const deleteButtons = document.getElementsByClassName('delete')
-    const inputElements = document.getElementsByClassName('input__elemento')
-    const inputIds = document.getElementsByClassName('input__id')
+    const inputElements = document.querySelectorAll('.input__elemento')
+    const inputIds = document.getElementsByClassName('.input__id')
  
     for (let deleteButton of deleteButtons) {
         deleteButton.addEventListener('click', removeItemCarrito)
@@ -131,7 +132,8 @@ window.addEventListener('load', function() {
 
     for (let inputElement of inputElements) {
         inputElement.addEventListener('change', incrementDecrement)
-    } 
+    }
+
 
     const fetchPostOrder = async function()  {
         try {
@@ -139,8 +141,6 @@ window.addEventListener('load', function() {
             let formData = new FormData(form)
             console.log(formData.get('shop-date'))
             let data = new URLSearchParams(formData);
-            // let data = Object.fromEntries(formData)
-
             url = "http://localhost:3001/carrito-shop-order"
 
             fetch(url, {
@@ -156,8 +156,8 @@ window.addEventListener('load', function() {
         } catch (error) {
             console.log(error);
         }
-
     }
+
 
     let botoncito2 = document.getElementById('order-button')
     
@@ -178,7 +178,6 @@ window.addEventListener('load', function() {
     const fetchOrderDetail = async function () {
         let storage = JSON.parse(sessionStorage.getItem('carrito'));
         storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
-        // console.log(carrito)
 
         async function sendingJson()  {
             try {
@@ -204,6 +203,7 @@ window.addEventListener('load', function() {
         
     }
 
+    
     let botoncito = document.getElementById('order-detail-button')
     let misComprasButton = document.getElementById('new-button')
 
@@ -219,12 +219,13 @@ window.addEventListener('load', function() {
             
             // e.target(submit)
             sessionStorage.clear('carrito')
-            misComprasButton.classList.add('show-button')    
+               
             Swal.fire({
                 icon: "success",
                 title: "Compra efectuada con éxito",
                 text: "A la brevedad tu pedido será entregado"
             })
+            misComprasButton.classList.add('show-button') 
             }
     }): "";
 

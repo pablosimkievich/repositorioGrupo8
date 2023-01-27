@@ -40,7 +40,7 @@ window.addEventListener('load',function() {
                             calculation();
                             addSessionStorage()
                             
-                            // console.log(carrito)
+                            console.log(carrito)
                             return 
                         }
                     }
@@ -48,7 +48,7 @@ window.addEventListener('load',function() {
                     // carrito = []
                     calculation();
                     addSessionStorage()
-                    // console.log(carrito)
+                    console.log(carrito)
                 })
             }
             } catch(error) {
