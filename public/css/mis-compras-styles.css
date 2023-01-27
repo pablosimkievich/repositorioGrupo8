@@ -80,3 +80,10 @@
 .review-button:hover {
     background-color: #874C62;
 }
+
+.homie-button {
+    margin: 0px 45px;
+    min-height: 50px;
+    max-width: 80px;
+    font-size: 1rem;
+}

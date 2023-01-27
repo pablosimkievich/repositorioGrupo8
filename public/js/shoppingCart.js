@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
             <div class="empty-cart" style="min-height: 270px">
             <h2>El carrito de compras esta vacío</h2>
             <a href="/" style="text-decoration: none">
-                <button class="add-to-cart-button2">Back to Home</Button>
+                <button class="add-to-cart-button2">Volver a Home</Button>
             </a>
             </div>
             `   
@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
             <div class="empty-cart" style="min-height: 270px">
             <h2>El carrito de compras esta vacío</h2>
             <a href="/" style="text-decoration: none">
-                <button class="add-to-cart-button2">Back to Home</Button>
+                <button class="add-to-cart-button2">Volver a Home</Button>
             </a>
             </div>
             `
