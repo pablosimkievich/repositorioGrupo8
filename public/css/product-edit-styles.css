@@ -12,12 +12,12 @@
 .admin-button {
     margin: 0px 45px;
     min-height: 50px;
-    max-width: 80px;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
     background-color: #98a1df;
     border: none;
     border-radius: 8px;
-    min-width: 160px;
+    min-width: 200px;
 }
 
 .admin-button:hover {

@@ -9,6 +9,22 @@
     font-size: 14px;
 }
 /* Header section*/
+
+.admin-button {
+    margin: 0px 45px;
+    min-height: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background-color: #98a1df;
+    border: none;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.admin-button:hover {
+    background-color: #7983c4;
+}
+
 .header {
     position:relative;
     background-color: white;
