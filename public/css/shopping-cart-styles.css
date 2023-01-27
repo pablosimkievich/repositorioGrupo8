@@ -19,6 +19,7 @@
 
 .title {
     font-size: 1.1rem;
+    margin: 10px;
 }
 
 .table__productos{
@@ -29,7 +30,7 @@
     width: 8.5rem;
     object-fit: contain;
     border-radius: 6px;
-    margin-right: 20px;
+    margin: 10px;
   }
 
   img {
@@ -303,5 +304,9 @@
 
 .total-container {
     display: flex;
+}
+
+.cart-link {
+    text-decoration: none;
 }
 

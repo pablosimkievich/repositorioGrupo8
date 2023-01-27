@@ -25,7 +25,8 @@ window.addEventListener('load', function() {
                 <th class="columns" scope="columns"></th>
             <td class="table__productos">
             <input class="input__id id__class" type="number" value="${id}"  style="display:none;">
-            <img src=${search.img}  alt="">
+            <a class="cart-link" href="/juguetes/${id}"><img src=${search.img}  alt=""></a>
+            <br></br>
             <h6 class="title">${search.name}</h6>
             </td>
             <td class="table__price"><p>$ ${search.price}</p></td>
