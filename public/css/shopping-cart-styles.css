@@ -4,7 +4,9 @@
     padding: 0;
 }
 
-
+.table {
+    min-height: 250px;
+}
 
 .carrito{
     min-height: 50vh;
