@@ -337,6 +337,9 @@ const deleteProduct = async (req, res) => {
 
 const getCategory = async (req,res)=>{
     try{
+      if (req.params.categoria > 4 || req.params.categoria < 1) {
+        res.send(`No existe la categpría ${req.params.categoria}`)
+      }
      const juguetesCategoria = await db.Product.findAll(
         {
           where: {
@@ -357,6 +360,9 @@ const getCategory = async (req,res)=>{
    
 const getEdad =  async (req,res)=>{
     try{
+      if (req.params.edadrecomendada > 4 || req.params.edadrecomendada < 1) {
+        res.send(`No existe la categpría ${req.params.edadrecomendada}`)
+      }
      const juguetesXedad =  await db.Product.findAll(
     {
       where: {
