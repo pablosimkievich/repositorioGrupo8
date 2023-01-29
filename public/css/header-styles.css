@@ -318,6 +318,10 @@ a:visited {
     color: #000;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
 
 @media (min-width:750px) {

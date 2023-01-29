@@ -283,6 +283,7 @@ const shoppingCartUser = async function(req, res) {
 
 const processShopOrder = async function(req, res) {
     try {
+        console.log(req.body);
         const processNewOrder = {
             user_id: req.body.id,
             order_total_amt: req.body.total,
@@ -301,7 +302,7 @@ const processShopOrder = async function(req, res) {
 
 const processOrderDetail = async function(req, res) {
     try {
-        // console.log(req.body);
+        console.log(req.body);
         // console.log(req.body[0].name);
        
         const lastOrderId = await db.Order.max('id');

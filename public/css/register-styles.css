@@ -32,6 +32,7 @@
 }
 
 .register form input {
+    font-size: 15px;
     margin: 5px 5px;
     width: 30vw;
     padding: 7px;

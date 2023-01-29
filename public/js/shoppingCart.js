@@ -95,9 +95,7 @@ window.addEventListener('load', function() {
             </a>
             </div>
             `
-        } else if ( carrito.length < 3) {
-            
-        }
+        } 
       }
     }
  
@@ -230,6 +228,9 @@ window.addEventListener('load', function() {
                 text: "A la brevedad tu pedido será entregado"
             })
             misComprasButton.classList.add('show-button') 
+            } 
+            if (!botoncito2.disabled) {
+                
             }
     }): "";
 

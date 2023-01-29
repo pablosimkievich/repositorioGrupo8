@@ -587,6 +587,10 @@ table.info-table {
  #form-description{
     flex:90%;
  }
+.medidas {
+    min-width: 65px;
+}
+
  .textarea{
     width: 90%;
   height: 150px;

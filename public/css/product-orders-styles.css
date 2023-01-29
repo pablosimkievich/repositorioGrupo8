@@ -17,8 +17,9 @@
 .product-card {
    background-color: #ecf8f8;
    border-radius: 8px;
-   margin: 25px 45px;
+   margin: 10px 25px;
    padding: 25px;
+   min-width: 350px;
 }
 
 .product-title {
@@ -43,13 +44,16 @@
 }
 
 .row-users {
+    display: flex;
     justify-content: start;
+    flex-wrap: wrap;
+    margin: 0 5px;
 }
 
 .user-card {
     background-color: #ecf8f8;
     border-radius: 8px;
-    margin: 25px 45px;
+    margin: 20px 20px;
     padding: 25px;
     align-items: center;
 }
