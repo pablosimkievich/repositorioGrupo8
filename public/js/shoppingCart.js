@@ -84,11 +84,11 @@ window.addEventListener('load', function() {
         CarritoTotal()
         addlocalStorage()
 
-        if (carrito.length === 0) {
+        if (carrito.length == 0) {
             tableHead.style.display = ('none')
             ShoppingCart.innerHTML = ``
             ShoppingCart.innerHTML = `
-            <div class="empty-cart" style="min-height:220px;">
+            <div class="empty-cart" >
             <h2>El carrito de compras esta vacío</h2>
             <a href="/" style="text-decoration: none">
                 <button class="add-to-cart-button2">Volver a Home</Button>
