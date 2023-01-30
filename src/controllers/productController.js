@@ -387,7 +387,7 @@ const search = async (req, res) => {
     try {
       let searchKeyword = req.query.keywords;
 
-      if (searchKeyword) {
+      if (searchKeyword.length > 0) {
     
         let searchResult = await db.Product.findAll({
           where: {
@@ -404,7 +404,7 @@ const search = async (req, res) => {
             res.render('product/searchResults', {searchResult});
           }
         
-      } else if (!searchKeyword) {
+      } else if (!searchKeyword.length) {
         let searchResult = 0;
         res.render('product/searchResults', {searchResult});
       }

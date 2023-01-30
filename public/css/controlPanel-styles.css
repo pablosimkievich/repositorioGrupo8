@@ -221,6 +221,10 @@
     background-color: #7983c4;
 }
 
+input {
+    padding: 5px;
+}
+
 @media (min-width: 361px){
     .tambien-te-puede-gustar {
     flex-direction: row;
