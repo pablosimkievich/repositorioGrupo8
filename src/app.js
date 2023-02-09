@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+
+require('dotenv').config({path: './.env'});
+
+
 const path = require('path');
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
@@ -47,10 +51,13 @@ app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })
 
+const puerto = process.env.PORT;
 
-
-app.set('puerto',process.env.PORT || 3001)
+app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
 
+/* app.listen(puerto, () => {
+    console.log('Servidor corriendo en puerto ' + puerto);
+}) */
 
 
