@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 require('dotenv').config({path: './.env'});
-
+const mysql = require('mysql2');
+const conn = require('express-myconnection');
 
 const path = require('path');
 const mainRouter = require('./routes/mainRouter');
@@ -52,6 +53,16 @@ app.use( (req,res,next) => {
 })
 
 const puerto = process.env.PORT;
+
+const dbConfig = {
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || "3306",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "",
+    database: process.env.DB_NAME || "rayuela",
+  };
+  
+app.use(conn(mysql, dbConfig, "single"));
 
 app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
