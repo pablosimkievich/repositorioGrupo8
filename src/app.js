@@ -56,7 +56,7 @@ const puerto = process.env.PORT;
 
 const dbConfig = {
     host: process.env.HOST || "localhost",
-    db_port: process.env.DB_PORT || "3306",
+    port: process.env.DB_PORT || '3306', 
     user: process.env.USER || "root",
     password: process.env.PASSWORD || "",
     database: process.env.DATABASE || "rayuela",
@@ -68,7 +68,7 @@ app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
 
 /* app.listen(puerto, () => {
-    console.log('Servidor corriendo en puerto ' + puerto);
+    console.log(`Servidor corriendo en puerto ${puerto}`)
 }) */
 
 
