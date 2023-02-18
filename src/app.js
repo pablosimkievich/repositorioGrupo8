@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 require('dotenv').config({path: './.env'});
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const conn = require('express-myconnection');
 
 const path = require('path');
@@ -55,6 +55,16 @@ app.use( (req,res,next) => {
 // config para railway.app
 
 const puerto = process.env.PORT;
+
+const dbConfig = {
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || '3306', 
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "",
+    database: process.env.DB_DATABASE || "rayuela",
+  };
+  
+app.use(conn(mysql, dbConfig, "single"));
 
 app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
