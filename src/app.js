@@ -52,7 +52,7 @@ app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })
 
-// config para railway.app sin promise
+// config para railway.app sin promise, ver tema async
 
 const puerto = process.env.PORT;
 
