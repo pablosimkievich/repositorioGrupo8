@@ -64,9 +64,8 @@ const dbConfig = {
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_DATABASE || "rayuela",
   };
-  /*
-app.use(conn(mysql, dbConfig, "single"));
-*/
+
+app.use(conn(mysql, dbConfig, "pool"));
 
 app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
