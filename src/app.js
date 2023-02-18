@@ -52,7 +52,7 @@ app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })
 
-// config para railway.app
+// config para railway.app sin promise
 
 const puerto = process.env.PORT;
 
