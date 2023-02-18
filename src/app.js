@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 require('dotenv').config({path: './.env'});
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 const conn = require('express-myconnection');
 
 const path = require('path');
