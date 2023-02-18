@@ -56,6 +56,7 @@ app.use( (req,res,next) => {
 
 const puerto = process.env.PORT;
 
+/*
 const dbConfig = {
     host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT || '3306', 
@@ -63,8 +64,8 @@ const dbConfig = {
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_DATABASE || "rayuela",
   };
-  
 app.use(conn(mysql, dbConfig, "single"));
+*/
 
 app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
