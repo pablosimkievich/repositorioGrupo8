@@ -143,7 +143,7 @@ window.addEventListener('load', function() {
             let formData = new FormData(form)
             console.log(formData.get('shop-date'))
             let data = new URLSearchParams(formData);
-            url = "http://localhost:3001/carrito-shop-order"
+            url = "https://rayuela.onrender.com/carrito-shop-order"
 
             fetch(url, {
                 method: "POST",
@@ -184,7 +184,7 @@ window.addEventListener('load', function() {
         async function sendingJson()  {
             try {
                 // console.log('Buen día')
-                let response = await fetch("http://localhost:3001/carrito-order-detail", {
+                let response = await fetch("https://rayuela.onrender.com/carrito-order-detail", {
                 method: "POST",
                 /* mode: 'no-cors', */
                 headers: {
