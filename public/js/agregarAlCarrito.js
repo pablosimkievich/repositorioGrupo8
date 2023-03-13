@@ -6,7 +6,7 @@ window.addEventListener('load',function() {
     let storage = JSON.parse(localStorage.getItem('carrito'));
     storage ? carrito = storage: carrito = [];
     
-    let url = 'http://localhost:3001/api/products';
+    let url = 'https://rayuela.onrender.com/api/products';
     
 
     const getTheSelectedToy = async (url) => {
