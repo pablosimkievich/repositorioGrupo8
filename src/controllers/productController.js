@@ -308,7 +308,7 @@ const edit = async (req, res) => {
 const productPanel = async (_req, res) => {
     try {
         const data = await db.Product.findAll()
-        res.render("product/ProductPanel", { data })
+        res.render("product/productPanel", { data })
     } catch(error){
             console.log(error);
     }
