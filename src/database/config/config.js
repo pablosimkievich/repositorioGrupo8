@@ -1,10 +1,10 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": '',
+    "password": 'ZDozENoKzNZOCd2GpgDX',
     "database": "rayuela",
-    "host": "0.0.0.0",
-    "dialect": "6745"
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -15,9 +15,9 @@ module.exports = {
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": 'ZDozENoKzNZOCd2GpgDX',
     "database": "database_production",
-    "host": "0.0.0.0",
-    "dialect": "6745"
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
