@@ -3,7 +3,8 @@ module.exports = {
     "username": "root",
     "password": 'ZDozENoKzNZOCd2GpgDX',
     "database": "railway",
-    "host": "127.0.0.1",
+    "host": "containers-us-west-187.railway.app",
+    "port": "6745",
     "dialect": "mysql"
   },
   "test": {
@@ -17,7 +18,8 @@ module.exports = {
     "username": "root",
     "password": 'ZDozENoKzNZOCd2GpgDX',
     "database": "railway",
-    "host": "127.0.0.1",
+    "host": "containers-us-west-187.railway.app",
+    "port": "6745",
     "dialect": "mysql"
   }
 }
