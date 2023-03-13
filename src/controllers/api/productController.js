@@ -29,7 +29,7 @@ const getTheToys = async (req, res) => {
                 age: e.ages.recommended_age,
                 description: e.description,
                 img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
-                detail: `https://rayuela.onrender.com//juguetes/${e.id}`
+                detail: `https://rayuela.onrender.com/juguetes/${e.id}`
                 }
         })
 
