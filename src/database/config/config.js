@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": 'ZDozENoKzNZOCd2GpgDX',
+    "password": 'GnecVkaSF27ATusfBuUt',
     "database": "railway",
     "host": "containers-us-west-187.railway.app",
     "port": "6745",
@@ -16,7 +16,7 @@ module.exports = {
   },
   "production": {
     "username": "root",
-    "password": 'ZDozENoKzNZOCd2GpgDX',
+    "password": 'GnecVkaSF27ATusfBuUt',
     "database": "railway",
     "host": "containers-us-west-187.railway.app",
     "port": "6745",
