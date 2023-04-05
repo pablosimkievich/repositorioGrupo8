@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formu"> 
+        <input type="text" value="Horace">
+        <input type="text" value="salta">
+        <input type="text" value="visa">
+        <button id="botoncito">Send</button>
+    
+    </form>
+
+    <script async>
+        
+
+window.addEventListener('load',function(){
+
+    // sessionStorage.clear('carrito')
+    // let carrito =[]; 
+    let storage = JSON.parse(sessionStorage.getItem('carrito'));
+    storage? carrito = storage: carrito = ["succes", "ok", "ye", "reintentando"]
+
+    console.log(carrito)
+    let boton = document.getElementById('botoncito')
+
+    async function sendingJson() {
+        try {
+            // console.log('Buen día')
+            let response = await fetch("http://localhost:3001/api/shopping-cart", {
+            method: "POST",
+            /* mode: 'no-cors', */
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": "application/json",  
+            },
+            body: JSON.stringify(carrito),
+            
+            })
+            let data = await response.json();
+            console.log(response);
+            console.log(data)
+
+        } catch (error) {
+            console.log(error)
+        }
+   
+    }
+    
+    sendingJson()
+
+    botoncito.addEventListener('click', (e) => {
+        e.preventDefault()
+    
+        let formu = document.querySelector("form")
+        formData = new FormData(formu);
+        let data = JSON.stringify(formData)
+        console.log(data)
+
+        // formu.submit()
+        sendingJson()
+    })
+
+
+})
+
+    </script>
+</body>
+</html>

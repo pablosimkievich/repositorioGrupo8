@@ -51,9 +51,14 @@ router.get('/edicion-usuario/:id', authMiddleware, userController.userEdit) // t
 router.put('/edicion-usuario',  uploadFile.single('fotoPerfil'), validateUserUpdate, userController.userUpdate) // graba edición usuario
 router.delete('/delete/:id', userController.userDelete) // borra usuario
 
-router.get('/carrito', userController.productCart);
-router.get('/quienes-Somos', userController.quienesSomos);
-router.get('/preguntas-Frecuentes', userController.preguntasFrecuentes);
+router.get('/carrito', userController.shoppingCart);
+router.get('/carrito/:id', authMiddleware, userController.shoppingCartUser);
+router.post('/carrito-shop-order', userController.processShopOrder)
+router.post('/carrito-order-detail', userController.processOrderDetail)
+
+
+router.get('/quienes-somos', userController.quienesSomos);
+router.get('/preguntas-frecuentes', userController.preguntasFrecuentes);
 router.get('/contacto', userController.contacto);
 
 router.get('/mis-compras/:id', userController.misCompras) // muestra página de ordenes de compra de usuario

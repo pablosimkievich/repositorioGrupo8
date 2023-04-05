@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 class="mis-compras-title">Mis ordenes de compra</h1>
+    <a href="/"><button class="review-button homie-button" >Volver a Home</button></a> 
 
         <% misOrdenesCompra.map(e => { %>
                 <div class="user-card">
@@ -27,7 +28,7 @@
                     <% if (element.fk_order_id == e.id) { %>
                         <div class="product-card">
                             <p class="product-item">Detalle de compra Nro. : <%= element.id %></p>
-                            <p class="product-item">Nombre del producto: <%= element.products.name %></p>
+                            <p class="product-item"> <%= element.products.name %></p>
                             <p class="product-item">Cantidad: <%= element.quantity %></p>
                             <img class="product-img" src="/img/products/<%= element.products.principal_img %>">
 

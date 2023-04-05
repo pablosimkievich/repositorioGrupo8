@@ -206,6 +206,25 @@
     margin: 0px 35px 0px 0px;
 }
 
+.admin-button {
+    margin: 30px 20px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #98a1df;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #7983c4;
+}
+
+input {
+    padding: 5px;
+}
+
 @media (min-width: 361px){
     .tambien-te-puede-gustar {
     flex-direction: row;

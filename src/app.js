@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+
+require('dotenv').config({path: './.env'});
+const mysql = require('mysql2');
+const conn = require('express-myconnection');
+
 const path = require('path');
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
@@ -13,7 +18,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-const cors =require('cors')
+const cors = require('cors')
 
 app.use(express.static(path.join(__dirname,'../public')));
 
@@ -31,6 +36,7 @@ app.use(session({
 
 app.use(cookies());
 app.use(userLoggedMiddleware);
+// const whiteList = ['http://localhost:3001/api/shopping-cart', null]
 
 app.use(cors());
 
@@ -46,10 +52,26 @@ app.use( (req,res,next) => {
     res.status(404).render('not-found-404');
 })
 
+// config para railway.app sin promise, ver tema async
+
+const puerto = process.env.PORT;
 
 
-app.set('puerto',process.env.PORT || 3001)
+const dbConfig = {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT, 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+  };
+
+app.use(conn(mysql, dbConfig, "pool"));
+
+app.set('puerto', process.env.PORT || 3001)
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
 
+/* app.listen(puerto, () => {
+    console.log(`Servidor corriendo en puerto ${puerto}`)
+}) */
 
 

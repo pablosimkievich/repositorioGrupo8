@@ -20,6 +20,7 @@
     border-radius: 8px;
     margin: 25px 45px;
     padding: 25px;
+    align-items: center;
 }
 
 .user-title {
@@ -39,6 +40,7 @@
 .product-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     margin: 0px 45px;
 }
@@ -48,13 +50,17 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border-radius: 8px;
-    margin: 25px 5px;
-    padding: 5px 20px;
+    /* margin: 25px 5px;
+    padding: 5px 20px; */
+    margin: 15px 15px;
+    padding: 15px;
 }
 
 .product-img {
-    width: 150px;
+    width: 180px;
     border-radius: 8px;
     margin: 15px 0;
 }
@@ -79,4 +85,11 @@
 
 .review-button:hover {
     background-color: #874C62;
+}
+
+.homie-button {
+    margin: 0px 45px;
+    min-height: 50px;
+    max-width: 80px;
+    font-size: 1rem;
 }

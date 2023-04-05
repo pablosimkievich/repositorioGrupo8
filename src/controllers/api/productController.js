@@ -28,8 +28,8 @@ const getTheToys = async (req, res) => {
                 ratings: e.reviews.map(e=>e.rating),
                 age: e.ages.recommended_age,
                 description: e.description,
-                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-                detail: `http://localhost:3001/juguetes/${e.id}`
+                img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+                detail: `https://rayuela.onrender.com/juguetes/${e.id}`
                 }
         })
 
@@ -128,8 +128,8 @@ const getTheToys = async (req, res) => {
                                                                 ratings: e.reviews.map(e=>e.rating),
                                                                 age: e.ages.recommended_age,
                                                                 description: e.description,
-                                                                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-                                                                detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+                                                                detail: `https://rayuela.onrender.com/juguetes/${e.id}`
                                                                 }
                                                         });
 
@@ -164,8 +164,8 @@ const getTheToys = async (req, res) => {
                                                                                         ratings: e.reviews.map(e=>e.rating),
                                                                                         age: e.ages.recommended_age,
                                                                                         description: e.description,
-                                                                                        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-                                                                                        detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                                        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+                                                                                        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
                                                                                         }
                                                                                 });                                        
 
@@ -220,8 +220,8 @@ const getTheToys = async (req, res) => {
                                                                                                 ratings: e.reviews.map(e=>e.rating),
                                                                                                 age: e.ages.recommended_age,
                                                                                                 description: e.description,
-                                                                                                img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-                                                                                                detail: `http://localhost:3001/juguetes/${e.id}`
+                                                                                                img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+                                                                                                detail: `https://rayuela.onrender.com/juguetes/${e.id}`
                                                                                                 }
                                                                                             })
 
@@ -238,8 +238,8 @@ const getTheToys = async (req, res) => {
         ratings: e.reviews.map(e=>e.rating),
         age: e.ages.recommended_age,
         description: e.description,
-        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-        detail: `http://localhost:3001/juguetes/${e.id}`
+        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
         }
     })
       
@@ -272,8 +272,8 @@ const edad6MesesA1Anio = agesedad6MesesA1Anio.map( e => {
         ratings: e.reviews.map(e=>e.rating),
         age: e.ages.recommended_age,
         description: e.description,
-        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-        detail: `http://localhost:3001/juguetes/${e.id}`
+        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
 
     }
 })
@@ -305,8 +305,8 @@ const edad1AnioA3Anios = agesedad1AnioA3Anios.map( e => {
         ratings: e.reviews.map(e=>e.rating),
         age: e.ages.recommended_age,
         description: e.description,
-        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-        detail: `http://localhost:3001/juguetes/${e.id}`
+        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
 
     }
 })
@@ -338,8 +338,8 @@ const edad3A6Anios = agesedad3A6Anios.map( e => {
         ratings: e.reviews.map(e=>e.rating),
         age: e.ages.recommended_age,
         description: e.description,
-        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-        detail: `http://localhost:3001/juguetes/${e.id}`
+        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
 
     }
 })
@@ -371,8 +371,8 @@ const edadMasDe6Anios = agesedadMasDe6Anios.map( e => {
         ratings: e.reviews.map(e=>e.rating),
         age: e.ages.recommended_age,
         description: e.description,
-        img: `http://localhost:3001/../../../img/products/${e.principal_img}`,
-        detail: `http://localhost:3001/juguetes/${e.id}`
+        img: `https://rayuela.onrender.com/../../../img/products/${e.principal_img}`,
+        detail: `https://rayuela.onrender.com/juguetes/${e.id}`
 
     }
 })
@@ -430,7 +430,7 @@ const getTheToyDetail = async (req, res) => {
             width: productDetail.width,
             weight: productDetail.weight,
             stock: productDetail.stock,
-            img: `http://localhost:3001/../../../img/products/${productDetail.principal_img}`,
+            img: `https://rayuela.onrender.com/../../../img/products/${productDetail.principal_img}`,
     
             };
 
@@ -445,7 +445,36 @@ const getTheToyDetail = async (req, res) => {
     }
 }
 
+const getUserToysCart = async function(req, res) {
+    try {
+        console.log('hola que tal')
+        console.log(req.body)
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+const fetching = function(req, res) {
+
+    res.render('users/fetch')
+}
+
+const fetching2 = async function(req, res) {
+    try {
+        console.log('holas')
+    } catch(error) {
+        console.log(error)
+    }
+        
+}    
+
+
+/* "https://rayuela.onrender.com/api/shopping-cart" */
+
 module.exports = {
     getTheToys,
-    getTheToyDetail
+    getTheToyDetail,
+    getUserToysCart,
+    fetching,
+    fetching2
 }

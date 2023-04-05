@@ -25,10 +25,10 @@ const getUsers = async (_req, res) => {
                 email: e.user_mail,
                 cel: e.user_cel,
                 address: e.user_address,
-                img: `http://localhost:3001/../../../img/users/${e.user_img}`,
+                img: `https://rayuela.onrender.com/../../../img/users/${e.user_img}`,
                 dni: e.dni,
                 reviews: e.reviews,
-                detail: `http://localhost:3001/api/users/${e.id}`
+                detail: `https://rayuela.onrender.com/api/users/${e.id}`
                 }
         })
         const count = await db.User.count()
@@ -59,7 +59,7 @@ const userDetail = async (req, res) => {
                 id: id,
                 name: userDetail.user_first_name + " " + userDetail.user_last_name,
                 email: userDetail.user_mail,
-                img: `http://localhost:3001/../../../img/users/${userDetail.user_img}`,
+                img: `https://rayuela.onrender.com/../../../img/users/${userDetail.user_img}`,
                 address: userDetail.user_address,
                 dni: userDetail.dni,
                 cel: userDetail.user_cel 

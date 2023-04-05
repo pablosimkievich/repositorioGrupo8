@@ -213,6 +213,22 @@
     padding: 15px;
 }
 
+.admin-button {
+    margin: 30px 30px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #B2B2B2;
+}
+
+
 @media (min-width: 361px) {
     .producto {
         width: 40%;

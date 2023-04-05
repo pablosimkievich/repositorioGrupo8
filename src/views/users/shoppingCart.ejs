@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayuela</title>
+
+    <!-- iconos -->
+    <script src="https://kit.fontawesome.com/4c9feabc71.js"
+    crossorigin="anonymous"></script>
+
+    <!-- Link con CSS -->
+    <!-- <link rel="stylesheet" href="/css/productCart-styles.css"> -->
+
+    <!-- Fuente Roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Fuente Monserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+        </style>
+
+    <!-- Viewport -->
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+
+    <link rel="stylesheet" href="/css/shopping-cart-styles.css">
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <section style="min-height: 180px;">
+
+
+    </section>
+
+
+    <% if (!locals.isLogged) { %>
+      <div class=" user-container3">
+        
+        <p class="reminder">Recuerda que debes iniciar sesión para poder efectuar tu compra</p>
+        <a class="botoncito-link" href="/login"><button class="add-to-cart-button22">Login</button></a>
+      
+      </div>
+
+        <% }  else  {%>
+          <div class="user-container">
+
+            <form class="formulario-1" action="">
+              <h3 class="titulo-tus-datos">Por favor completa y confirma tus datos:</h3>
+              <div class="flex-container">
+
+                
+                <div class="vertical">
+                
+                  <input name="id" id="id-user" class="user-inputs" type="text" value="<%= comprador.id %>" style="display:none">
+                  <input name="date" id="order-date" class="user-inputs" type="date" value="<%= variableFecha %>" style="display:none">
+                  <input name="total" id="introducir-monto-compra" class="user-inputs" type="number"  style="display:none">
+                </div>
+      
+                
+                <div class="vertical">
+                  <label class="labels" for="">Nombre de Usuario:</label>
+                  <input name="name" class="user-inputs" type="text" value="<%= comprador.user_first_name + ` ` + comprador.user_last_name %>" readonly>
+                </div>
+      
+                <div class="vertical">
+                  <label class="labels" for="">Dirección de Entrega:</label>
+                  <input id="user-address" name="address" class="user-inputs" type="text" value="<%=comprador.user_address %>">
+                </div>
+      
+                <div class="vertical">
+                  <label class="labels" for="">Elige tu Método de Pago:</label>
+                  <select name="pay" id="payment-method" class="user-inputs">
+                    <option value="<%= metodosDePago[0].id %>"><%= metodosDePago[0].pay_method_type %></option>
+                    <option value="<%= metodosDePago[1].id %>"><%= metodosDePago[1].pay_method_type %></option>
+                    <option value="<%= metodosDePago[2].id %>"><%= metodosDePago[2].pay_method_type %></option>
+                    <option value="<%= metodosDePago[3].id %>"><%= metodosDePago[3].pay_method_type %></option>
+                    <option value="<%= metodosDePago[4].id %>"><%= metodosDePago[4].pay_method_type %></option>
+                    <option value="<%= metodosDePago[5].id %>"><%= metodosDePago[5].pay_method_type %></option>
+                    <option value="<%= metodosDePago[6].id %>"><%= metodosDePago[6].pay_method_type %></option>
+      
+                  </select>
+                </div>
+                <div class="vertical button-order-style">
+                  <button id="order-button" class=" add-to-cart-button22 button-new-class center-form1-button">CONFIRMA TU COMPRA</button>
+                </div>
+                
+              </div>
+              
+             </form> 
+
+          </div>
+            
+          <% } %>
+
+            <div class=" user-container total-margin ">
+
+              <div class="user-container2 "> <!-- container total-margin row mx-4 -->
+
+
+                  <div class="col cart-styles">
+                    <h3 id="introducir-monto-compra" class="total-titulo itemCartTotal text-dark ">Total: $ 0</h3>
+                  </div>
+
+                  <% if (locals.isLogged) { %>
+                    <a class="link-mis-compras" href="/mis-compras/<%= comprador.id %>"><button id="new-button" class="new-button hide-button">IR A MIS COMPRAS</button></a> 
+                  <% } %>
+                  
+
+                  <div class="button-total-container col">
+                    <button  type="submit" id="order-detail-button" class="total-button btnoo   button-new-class add-to-cart-button22">CHECKOUT</button>
+                  </div>
+
+              </div>
+              
+            </div>
+
+          
+    <div class="table-container" style="min-height:90px;">
+    
+      <table class="table table-striped" >
+        <thead>
+          <tr  class="titulo esconder-titulo-tabla">
+            <th  scope="col"></th>
+            <th class="titulo" scope="col">Juguetes</th>
+            <th class="titulo" scope="col">Precio</th>
+            <th class="titulo" scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody id="shopping-cart">
+       
+          
+        </tbody>
+        
+
+      </table>
+      <div style="min-height:30px">
+
+      </div> 
+      <div style="min-height:30px">
+
+      </div> 
+
+    </div>
+      
+
+         
+    
+
+
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/agregarAlCarrito.js"></script> -->
+    <script src="/js/shoppingCart.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

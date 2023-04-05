@@ -9,6 +9,21 @@
     font-size: 14px;
 }
 
+.admin-button {
+    margin: 0px 45px;
+    min-height: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background-color: #98a1df;
+    border: none;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.admin-button:hover {
+    background-color: #7983c4;
+}
+
 /* Header section*/
 .header {
     position:relative;
@@ -686,7 +701,7 @@ table.info-table {
 }
 
 .medidas {
-    max-width: 50px;
+    max-width: 65px;
 }
 
 

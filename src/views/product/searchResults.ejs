@@ -26,7 +26,7 @@
 
             <section class="product-display">
 
-                <% if(searchResult && (searchResult !== 0) ) {%>  
+                <% if(searchResult.length > 0) {%>  
                     <% searchResult.map(e=> { %>
                         <article class="card">
                             <a href="/juguetes/<%= e.id %>">

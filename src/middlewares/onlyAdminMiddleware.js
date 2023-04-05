@@ -3,7 +3,7 @@
 // ? redirijido a home. En caso de estar logueado pero no ser admin, también es redirijido a home.
 
 function onlyAdminMiddleware (req, res, next) {
-    if (!req.session.userLogged) {
+      if (!req.session.userLogged) {
         return res.redirect('/')
         
     } else if (req.session.userLogged.user_type_id !== 2){ // ? user_type_id == 2 // es el admin

@@ -47,12 +47,12 @@ window.addEventListener('load', ()=>{
          
                                         }
                         });
-     window.addEventListener('scroll',function(){
+    /*  window.addEventListener('scroll',function(){
     
-        console.log('hola baner')
+        // console.log('hola baner')
         banner.style.display='none';
     
-    });
+    }); */
     
 
 

@@ -308,7 +308,7 @@ const edit = async (req, res) => {
 const productPanel = async (_req, res) => {
     try {
         const data = await db.Product.findAll()
-        res.render("product/ProductPanel", { data })
+        res.render("product/productPanel", { data })
     } catch(error){
             console.log(error);
     }
@@ -337,6 +337,9 @@ const deleteProduct = async (req, res) => {
 
 const getCategory = async (req,res)=>{
     try{
+      if (req.params.categoria > 4 || req.params.categoria < 1) {
+        res.send(`No existe la categpría ${req.params.categoria}`)
+      }
      const juguetesCategoria = await db.Product.findAll(
         {
           where: {
@@ -357,6 +360,9 @@ const getCategory = async (req,res)=>{
    
 const getEdad =  async (req,res)=>{
     try{
+      if (req.params.edadrecomendada > 4 || req.params.edadrecomendada < 1) {
+        res.send(`No existe la categpría ${req.params.edadrecomendada}`)
+      }
      const juguetesXedad =  await db.Product.findAll(
     {
       where: {
@@ -381,7 +387,7 @@ const search = async (req, res) => {
     try {
       let searchKeyword = req.query.keywords;
 
-      if (searchKeyword) {
+      if (searchKeyword.length > 0) {
     
         let searchResult = await db.Product.findAll({
           where: {
@@ -398,7 +404,7 @@ const search = async (req, res) => {
             res.render('product/searchResults', {searchResult});
           }
         
-      } else if (!searchKeyword) {
+      } else if (!searchKeyword.length) {
         let searchResult = 0;
         res.render('product/searchResults', {searchResult});
       }

@@ -23,6 +23,7 @@ body {
     background-color: #D2DAFF;
     border-radius: 7px;
     margin: 50px 30px;
+   
 }
 
 .order_card_data {
@@ -30,7 +31,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin: 15px 15px;
-
+    
 }
 
 .order_card_data-box {
@@ -71,9 +72,11 @@ body {
 }
 
 .order_detail {
+    display: flex;
     flex-direction: column;
-    margin: 15px 15px;
-    
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px 15px;  
 }
 
 
@@ -87,12 +90,14 @@ body {
 }
 
 .detalle_compra {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    margin: 0px 15px;
+    align-items: center;
+    margin: 15px 15px;
     border-radius: 7px;
     background-color: #EEF1FF;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     font-size: 0.8em;
     
 }
@@ -110,5 +115,41 @@ body {
 }
 
 .card_items {
-    margin: 5px;
+    margin: 4px;
+}
+
+.order-card-link {
+    color: black;
+    text-decoration: none;
+}
+
+.card-space {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+}
+
+.admin-button {
+    margin: 30px 30px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #93C6E7;
+    border: none;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.admin-button:hover {
+    background-color: #8EA7E9;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:visited {
+    color: black
 }

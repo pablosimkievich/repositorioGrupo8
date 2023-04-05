@@ -8,8 +8,9 @@
     <title>Rayuela</title>
 </head>
 <body>
+    <a href="/control-panel"><button class="admin-button">Volver a Admin Control Panel</button></a>
     <h1 class="the-title" style=" margin: 20px;">Product Orders</h1>
-
+    
     <div class="product-card" >
     <p class="product-title">Producto: <%= theProduct.name %></p>
         <div class="image-container">
@@ -41,5 +42,7 @@
     <% }) %>
 
     </div>
+
+    <a href="/product-orders/<%= theProduct.id + 1 %>"> <button class="admin-button">Siguiente Juguete</button></a>
 </body>
 </html>

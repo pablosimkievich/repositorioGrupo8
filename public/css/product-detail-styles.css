@@ -331,7 +331,7 @@ form.add-to-cart{
     border: none;
     font-size: 12x;
     font-weight: 400;
-    margin: 10px;
+    margin: auto;
     padding: 5px;
     display: flex;
     transition: all 0.3s;

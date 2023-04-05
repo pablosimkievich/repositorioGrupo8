@@ -13,7 +13,7 @@
         <title>Rayuela</title>
     </head>
 
-    <body>
+<body>
      <%- include('../partials/header.ejs') %>
     
     
@@ -32,15 +32,16 @@
                     <p class="precio-card">
                         <%=e.price%>$
                     </p>
-                    <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                    <button type="submit" id="<%= e.id %>" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>
                         AGREGAR AL
                         CARRITO</button>
-                </a>
+                
             </article>
 
             <% }) %>
 
-            <div class="space_div">
+            <div class="">
 
             </div>
 
@@ -48,8 +49,8 @@
                 <%- include('../partials/whatsappButton.ejs') %>
             </div>
     </section>
-   
-  
-    <%- include('../partials/footer.ejs') %>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
 </body>
 </html>

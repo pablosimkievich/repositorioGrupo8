@@ -35,7 +35,7 @@
                 </a>
                 <p>$  <%= e.price %> </p>
                 
-                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>AGREGAR AL CARRITO</button></input>
+                <input value="<%=e.id%>" class='input-carrito' style="display:none;"><button type="submit" id="<%=e.id%>" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i>AGREGAR AL CARRITO</button></input>
                 
             </article>
         <% }) %>
@@ -108,7 +108,7 @@
     <footer>
     <%-include('../views/partials/footer.ejs')%>
     </footer>
-    <script src="/js/agregarAlCarrito.js"></script>
+    <!-- <script src="/js/agregarAlCarrito.js"></script> -->
 </body>
 
 

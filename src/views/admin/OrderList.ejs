@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/order-list-styles.css">
 </head>
 <body>
+    <a href="/control-panel"><button class="admin-button">Volver a Admin Control Panel</button></a>
     <h1 class="page_title">Orders List</h1>
 
     <% allTheOrders.map(e => { %>
@@ -31,7 +32,9 @@
                         <h4>Dirección de Entrega: <%= e.order_address %></h4>
                     </div><br>
 
-                    <a href="/order-detail/<%= e.id %>" class="data-box-links"> <div class="order_detail_data_box">
+                    <a class="order-card-link" href="/order-detail/<%= e.id %>" class="data-box-links"> <div class="order_detail_data_box">
+                        
+                       <div class="card-space">
                         <h4 class="order_detail">Detalle de Compra:</h4><br>
                         <% allTheOrderDetails.map (elem => { %>
                             
@@ -47,7 +50,9 @@
                                     </div>
                                 <% } %>
                             
-                        <% }) %></h4>
+                        <% }) %>
+                       </div> 
+                        
                     </div> </a> 
 
                 </div><br>

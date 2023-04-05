@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="botoncito">Send</button>
+
+    <script>
+        
+
+window.addEventListener('load',function(){
+
+    
+    // sessionStorage.clear('carrito')
+    // let carrito =[]; 
+    let storage = JSON.parse(sessionStorage.getItem('carrito'));
+    storage ? carrito = storage: carrito = ["succes", "ok", "yes", "posta", "postman"]
+    
+ 
+
+    console.log(carrito)
+    let boton = document.getElementById('botoncito')
+
+    async function sendingJson() {
+        try {
+
+            console.log('Buen día')
+            let response = await fetch("http://localhost:3001/api/shopping-cart", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(carrito)
+        })
+        console.log(response);
+
+        } catch (error) {
+            console.log(error)
+        }
+   
+    }
+    
+    sendingJson()
+
+    boton.addEventListener('click', (e) => {
+
+    sendingJson()
+    })
+
+
+})
+
+    </script>
+</body>
+</html>

@@ -16,12 +16,17 @@
 
 }
 
+a:visited {
+    text-decoration: none;
+    color: rgb(151,151,151);
+}
+
 .header-style{
     width:100%;
     position: fixed;
     z-index: 1000;
-    top:0;
-    
+    top: 0;
+    background-color: white;
 }
 
 /* Envio Gratis a Partir de 5K */
@@ -39,12 +44,15 @@
 .header-top-banner h4 {
     font-size: 1rem;
     color: white;
+    position: inherit;
 }
 .header-top-banner i {
     margin: 10px;
     color: white;
     font-size: 18px;
 }
+
+
 
 /* --------Menu, buscar y botones -----------*/
 #btn-menu{
@@ -53,7 +61,7 @@
     
 }
 .fa-solid, .fas{
-    margin: 20px;
+    margin: 10px 10px 10px 10px;
     font-size: 20px;
     color: rgb(151,151,151);
    
@@ -65,50 +73,77 @@
     color:rgb(109, 108, 108);
     cursor: pointer;
     font-size: 1.5em;
-    width:100%;
+    width: 100%;
 }
 .menu, .submenu{
-    list-style:none;
-    padding:0;
-    margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
 }
+
+.menu:visited {
+    color: rgb(151,151,151);
+    text-decoration: none;
+}
+
+.submenu {
+    margin-top: 0;
+    
+}
+
 .menu{
     background: white;
     width:100%;
     margin-left: -100%;
     transition: all 0.5s;
 }
+
+
+
 .menu__link {
     display:block;
-    padding:10px;
+    /* padding: 15px 15px; */
     color: rgb(151, 147, 147);
     font-size: 1em;
     font-weight: 600;
     text-decoration: none;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 10px 10px 10px 10px;
 }
 .menu__link:hover {
-    background: #e4faf0;
-
+    /* background: #e4faf0; */
+    background-color: #EEEEEE;
+    color:  rgb(151,151,151);;
+    border-radius: 6px;
+    margin: 0;
+    padding: 10px 10px 10px 10px;
 }
+
+
+
+
 .submenu{
-    height:0;
+    height: 0;
     overflow: hidden;
-    transition:all 0.3s;
+    transition: all 0.3s;
 
 }
 .submenu .menu__link{
-    padding-left: 50px;
+    padding-left: 15px;
 }
 .mostrar {
     margin-left: 0;
+    margin-right: 0; 
+    
 }
 
 .header-topbar {
     display: block;
-    background-color: white;
-    margin: 0px 0px 0px 0px ;
+    /* background-color: white; */
+    padding: 50px;
+    max-height: 120px;
 }
+
 /*
 .header-topbar-burger-menu{
     justify-self: flex-start;
@@ -262,6 +297,33 @@
 }
 */
 
+.cartAmount {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 16px;
+    min-width: 25px;
+    justify-content: center;
+    background-color: #e63946;
+    color:rgb(235, 222, 222); 
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.header-topbar-each-icon {
+    position: relative;
+}
+
+.user-style__logout a:visited {
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
 @media (min-width:750px) {
 .header-topbar {
         display: flex;
@@ -293,7 +355,7 @@ i.fa-solid.fa-bars {
     background-color: white;
   
 }
-.container submenu{
+.container .submenu{
     position: relative;
 }
 .submenu{
@@ -307,7 +369,7 @@ i.fa-solid.fa-bars {
     visibility:hidden;
 }
 .container-submenu:hover .submenu{
-    opacity:1;
+    opacity: 1;
     visibility: visible;
 }
 

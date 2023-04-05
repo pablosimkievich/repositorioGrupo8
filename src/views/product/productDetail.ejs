@@ -92,10 +92,10 @@
 
                      
                         <h2 class="precio">$ <%= juguete.price %> </h2>
-                        <form class="add-to-cart" method="POST" action="/add-to-cart">
-                            <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping">
+                        <!-- <form class="add-to-cart" method="POST" action="/add-to-cart"> -->
+                            <button type="submit" class="add-to-cart-button2" id="<%= juguete.id %>"><i class="fa-solid fa-bag-shopping">
                                 </i>AGREGAR AL CARRITO</button>
-                        </form>
+                        <!-- </form> -->
                     </span>
 
                    
@@ -132,9 +132,10 @@
                     <img src="/img/products/<%=e.principal_img%>" alt="juguete1">
                 <h3><%= e.name %></h3>
                 <p class="precio-card"><%= e.price %></p>
-                <button type="submit" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
-                    CARRITO</button>
                 </a>
+                <button type="submit" id="<%= e.id %>" class="add-to-cart-button2"><i class="fa-solid fa-bag-shopping"></i> AGREGAR AL
+                    CARRITO</button>
+                
             </article>
             <%})%>
       
@@ -179,6 +180,8 @@
         <%-include('../partials/footer.ejs')%>
     </footer>
     <script src="/js/image-display.js"></script>
+    <!-- <script src="/js/agregarAlCarrito.js"></script> -->
+</body>
     </html>
 
 
