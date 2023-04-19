@@ -4,7 +4,7 @@ module.exports = {
     "password": "pscale_pw_Sfa1v9azwk2rZAkO4z7zxCu2Z7ltNKnR0tlbBLjrHMp",
     "database": "rayuela",
     "host": "aws.connect.psdb.cloud",
-    "port": "6745", 
+    "port": "3306", 
     "dialect": "mysql"
   },
   "test": {
