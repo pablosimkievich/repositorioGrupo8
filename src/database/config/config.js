@@ -1,10 +1,11 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": 'GnecVkaSF27ATusfBuUt',
-    "database": "railway",
-    "host": "containers-us-west-187.railway.app",
-    "port": "6745",
+    "username": "oc3yd2lel6vhplcp59yz",
+    "password": 'pscale_pw_Sfa1v9azwk2rZAkO4z7zxCu2Z7ltNKnR0tlbBLjrHMp
+',
+    "database": "rayuela",
+    "host": "aws.connect.psdb.cloud",
+    /* "port": "6745", */
     "dialect": "mysql"
   },
   "test": {
@@ -15,11 +16,12 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": 'GnecVkaSF27ATusfBuUt',
-    "database": "railway",
-    "host": "containers-us-west-187.railway.app",
-    "port": "6745",
+    "username": "oc3yd2lel6vhplcp59yz",
+    "password": 'pscale_pw_Sfa1v9azwk2rZAkO4z7zxCu2Z7ltNKnR0tlbBLjrHMp
+',
+    "database": "rayuela",
+    "host": "aws.connect.psdb.cloud",
+    /* "port": "6745", */
     "dialect": "mysql"
   }
 }
