@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
-    "username": "yv557ufptbx5eyv20466",
-    "password": "pscale_pw_vj6p6dkV2KYwvFDbI8PTfR5hCVleAl3nBX53LHQpt6x",
+    "username": "8786dvy4ne8arxoi1hyl",
+    "password": "pscale_pw_vJW5aj9ByYul79lhf3xpR6EodQfSJSudpd9GzoA7ykd",
     "database": "rayuela",
     "host": "aws.connect.psdb.cloud",
     "port": "3306", 
@@ -18,8 +18,8 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "yv557ufptbx5eyv20466",
-    "password": "pscale_pw_vj6p6dkV2KYwvFDbI8PTfR5hCVleAl3nBX53LHQpt6x",
+    "username": "8786dvy4ne8arxoi1hyl",
+    "password": "pscale_pw_vJW5aj9ByYul79lhf3xpR6EodQfSJSudpd9GzoA7ykd",
     "database": "rayuela",
     "host": "aws.connect.psdb.cloud",
     "port": "3306",
