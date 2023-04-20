@@ -7,7 +7,7 @@ module.exports = {
     "port": "3306", 
     "dialect": "mysql",
     "ssl": {
-      "rejectUnauthorized": false
+      "rejectUnauthorized": "false"
     }
   },
   "test": {
@@ -25,7 +25,7 @@ module.exports = {
     "port": "3306",
     "dialect": "mysql",
         "ssl": {
-      "rejectUnauthorized": false
+      "rejectUnauthorized": "false"
     }
   }
 }
