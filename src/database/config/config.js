@@ -6,7 +6,9 @@ module.exports = {
     "host": "aws.connect.psdb.cloud",
     "port": "3306", 
     "dialect": "mysql",
-    "ssl": true,
+    "ssl": {
+      rejectUnauthorized: false
+    }
   },
   "test": {
     "username": "root",
@@ -22,6 +24,8 @@ module.exports = {
     "host": "aws.connect.psdb.cloud",
     "port": "3306",
     "dialect": "mysql",
-    "ssl": true,
+        "ssl": {
+      rejectUnauthorized: false
+    }
   }
 }
