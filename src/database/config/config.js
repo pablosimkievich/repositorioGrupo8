@@ -1,24 +1,24 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": 'GnecVkaSF27ATusfBuUt',
-    "database": "railway",
-    "host": "containers-us-west-187.railway.app",
+    "username": "rayuela_user",
+    "password": 'k_VS=GEDRr?%',
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
     "port": "6745",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": "rayuela_user",
     "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": 'GnecVkaSF27ATusfBuUt',
-    "database": "railway",
-    "host": "containers-us-west-187.railway.app",
+    "username": "rayuela_user",
+    "password": 'k_VS=GEDRr?%',
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
     "port": "6745",
     "dialect": "mysql"
   }
