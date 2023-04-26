@@ -3,7 +3,7 @@ module.exports = {
     "username": "rayuela_user",
     "password": "k_VS=GEDRr?%",
     "database": "lucas_rayuela",
-    "host": "138.128.163.34:localhost:3306",
+    "host": "138.128.163.34:3306",
     /* "port": "6745", */
     "dialect": "mysql"
   },
@@ -11,14 +11,14 @@ module.exports = {
     "username": "rayuela_user",
     "password": "k_VS=GEDRr?%",
     "database": "lucas_rayuela",
-    "host": "138.128.163.34:localhost:3306",
+    "host": "138.128.163.34:3306",
     "dialect": "mysql"
   },
   "production": {
     "username": "rayuela_user",
     "password": "k_VS=GEDRr?%",
     "database": "lucas_rayuela",
-    "host": "138.128.163.34:localhost:3306",
+    "host": "138.128.163.34:3306",
     /* "port": "6745", */
     "dialect": "mysql"
   }
