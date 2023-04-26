@@ -4,7 +4,7 @@ module.exports = {
     "password": "k_VS=GEDRr?%",
     "database": "lucas_rayuela",
     "host": "138.128.163.34",
-    /* "port": "6745",*/
+    "port": "6745",
     "dialect": "mysql"
   },
   "test": {
@@ -19,7 +19,7 @@ module.exports = {
     "password": "k_VS=GEDRr?%",
     "database": "lucas_rayuela",
     "host": "138.128.163.34",
-    /* "port": "6745",*/
+    "port": "6745",
     "dialect": "mysql"
   }
 }
