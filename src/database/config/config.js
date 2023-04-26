@@ -1,25 +1,25 @@
 module.exports = {
   "development": {
-    "username": "",
-    "password": '',
-    "database": "",
-    "host": "",
-    "port": "6745",
+    "username": "rayuela_user",
+    "password": "k_VS=GEDRr?%",
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
+    /* "port": "6745",*/
     "dialect": "mysql"
   },
   "test": {
-    "username": "",
-    "password": null,
-    "database": "",
-    "host": "",
+    "username": "rayuela_user",
+    "password": "k_VS=GEDRr?%",
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
     "dialect": "mysql"
   },
   "production": {
-    "username": "",
-    "password": '',
-    "database": "",
-    "host": "",
-    "port": "6745",
+    "username": "rayuela_user",
+    "password": "k_VS=GEDRr?%",
+    "database": "lucas_rayuela",
+    "host": "138.128.163.34",
+    /* "port": "6745",*/
     "dialect": "mysql"
   }
 }
