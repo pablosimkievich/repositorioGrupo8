@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "lucasvar_rayuela_user",
-    "password": "k_VS=GEDRr?%",
+    "password": ".MIDQ_.Ifjm}",
     "database": "lucasvar_rayuela",
     "host": "138.128.163.34",
     "port": 3306,
@@ -9,7 +9,7 @@ module.exports = {
     },
   "test": {
  "username": "lucasvar_rayuela_user",
-    "password": "k_VS=GEDRr?%",
+    "password": ".MIDQ_.Ifjm}",
     "database": "lucasvar_rayuela",
     "host": "138.128.163.34",
     "port": 3306,
@@ -17,7 +17,7 @@ module.exports = {
      },
   "production": {
     "username": "lucasvar_rayuela_user",
-    "password": "k_VS=GEDRr?%",
+    "password": ".MIDQ_.Ifjm}",
     "database": "lucasvar_rayuela",
     "host": "138.128.163.34",
     "port": 3306,
