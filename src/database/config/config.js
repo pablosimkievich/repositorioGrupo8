@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "sql10732295",
-    "password": "RQ2wlHiAZI",
-    "database": "sql10732295",
-    "host": "sql10.freesqldatabase.com",
+    "username": "sql5754365",
+    "password": "LFALEV3tDB",
+    "database": "sql5754365",
+    "host": "sql5.freesqldatabase.com",
     "port": 3306,
     "dialect": "mysql",
       "ssl": {
@@ -11,10 +11,10 @@ module.exports = {
     }
     },
   "test": {
- "username": "sql10732295",
-    "password": "RQ2wlHiAZI",
-    "database": "sql10732295",
-    "host": "sql10.freesqldatabase.com",
+ "username": "sql5754365",
+    "password": "LFALEV3tDB",
+    "database": "sql5754365",
+    "host": "sql5.freesqldatabase.com",
     "port": 3306,
     "dialect": "mysql",
       "ssl": {
@@ -22,10 +22,10 @@ module.exports = {
     }
      },
   "production": {
-    "username": "sql10732295",
-    "password": "RQ2wlHiAZI",
-    "database": "sql10732295",
-    "host": "sql10.freesqldatabase.com",
+    "username": "sql5754365",
+    "password": "LFALEV3tDB",
+    "database": "sql5754365",
+    "host": "sql5.freesqldatabase.com",
     "port": 3306,
     "dialect": "mysql",
       "ssl": {
